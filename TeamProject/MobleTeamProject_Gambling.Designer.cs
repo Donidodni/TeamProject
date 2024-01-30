@@ -1,4 +1,6 @@
-﻿namespace TeamProject
+﻿using System.Collections.Generic;
+
+namespace TeamProject
 {
     partial class MobleTeamProject_Gambling
     {
@@ -26,6 +28,27 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        /// 
+        private void InitializeWeapons()
+        {
+            WeaponUpgrade lv0 = new WeaponUpgrade() //0번 무기 속성
+            {
+                Level = 0,
+                Name = "Black",
+                Attack = 0,
+                SellPrice = 0,
+            };
+            weaponsDictionary.Add(0, lv0);
+
+            WeaponUpgrade lv1 = new WeaponUpgrade() //1번 무기 속성
+            {
+                Level = 1,
+                Name = "Red",
+                Attack = 1,
+                SellPrice = 1,
+            };
+            weaponsDictionary.Add(1, lv1);
+        }
         private void InitializeComponent()
         {
             lbox_Chat = new System.Windows.Forms.ListBox();
