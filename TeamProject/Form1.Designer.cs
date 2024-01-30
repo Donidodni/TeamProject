@@ -46,9 +46,9 @@
             label2.AutoSize = true;
             label2.Location = new System.Drawing.Point(300, 189);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(51, 15);
+            label2.Size = new System.Drawing.Size(100, 15);
             label2.TabIndex = 0;
-            label2.Text = "asdfasdf";
+            label2.Text = "asdfas1341234df";
             // 
             // Form1
             // 
