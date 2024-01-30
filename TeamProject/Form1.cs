@@ -14,7 +14,7 @@ namespace TeamProject
     {
         public Form1()
         {
-            InitializeComponent(); // 1/30 푸시 테스트
+            InitializeComponent(); // 1/30 푸시 테스트 2
         }
 
     }
