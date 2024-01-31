@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinFormsApp2;
 
 
 namespace TeamProject
@@ -18,7 +19,7 @@ namespace TeamProject
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MobleTeamProject_Gambling());
+            Application.Run(new main_screen());
         }
     }
 }
