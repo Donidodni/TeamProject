@@ -134,24 +134,50 @@ namespace TeamProject
         private void MakeButton(Panel clickedPanel)
         {
             enhanceButton = new Button();
-            enhanceButton.Text = "강화하기";
+            enhanceButton.Text = "강화";
             enhanceButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 10);
             enhanceButton.Click += (s, ev) => StartMovePanelUp(clickedPanel);
             panel_Main.Controls.Add(enhanceButton);
 
             sendButton = new Button();
-            sendButton.Text = "일터 보내기";
+            sendButton.Text = "일터";
             sendButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 40);
             // sendButton 클릭 이벤트 처리
             sendButton.Click += (s, ev) => StartMovePanelRight(clickedPanel);
             panel_Main.Controls.Add(sendButton);
 
             sellButton = new Button();
-            sellButton.Text = "판매하기";
+            sellButton.Text = "판매";
             sellButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 70);
             // sellButton 클릭 이벤트 처리
             sellButton.Click += (s, ev) => Sell(clickedPanel);
             panel_Main.Controls.Add(sellButton);
+        }
+
+        private void MakeButton(Button clickedButton, Panel[] panels)
+        {
+            enhanceButton = new Button();
+            enhanceButton.Text = "강화";
+            enhanceButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 10);
+            enhanceButton.Size = new Size(60, 25);
+            enhanceButton.Click += (s, ev) => StartMove_FromButton_Up(panels);
+            flowLayoutPanel1.Controls.Add(enhanceButton);
+
+            sendButton = new Button();
+            sendButton.Text = "일터";
+            sendButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 40);
+            sendButton.Size = new Size(60, 25);
+            // sendButton 클릭 이벤트 처리
+            sendButton.Click += (s, ev) => StartMove_FromButton_Right(panels);
+            flowLayoutPanel1.Controls.Add(sendButton);
+
+            sellButton = new Button();
+            sellButton.Text = "판매";
+            sellButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 70);
+            sellButton.Size = new Size(60, 25);
+            // sellButton 클릭 이벤트 처리
+            sellButton.Click += (s, ev) => Sell_FromButton(panels);
+            flowLayoutPanel1.Controls.Add(sellButton);
         }
         private void StartMovePanelUp(Panel panel)
         {
@@ -233,6 +259,7 @@ namespace TeamProject
             if (enhanceButton != null)
             {
                 panel_Main.Controls.Remove(enhanceButton);
+                flowLayoutPanel1.Controls.Remove(enhanceButton);
                 enhanceButton.Dispose();
                 enhanceButton = null;
             }
@@ -240,6 +267,7 @@ namespace TeamProject
             if (sendButton != null)
             {
                 panel_Main.Controls.Remove(sendButton);
+                flowLayoutPanel1.Controls.Remove(sendButton);
                 sendButton.Dispose();
                 sendButton = null;
             }
@@ -247,6 +275,7 @@ namespace TeamProject
             if (sellButton != null)
             {
                 panel_Main.Controls.Remove(sellButton);
+                flowLayoutPanel1.Controls.Remove(sellButton);
                 sellButton.Dispose();
                 sellButton = null;
             }
@@ -323,18 +352,18 @@ namespace TeamProject
                 flowLayoutPanel1.Visible = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_CreateAllButton(object sender, EventArgs e)
         {
+            RemoveButtons();
             Button clickedButton = (Button)sender;
-            Panel[] clickedPanel = FindPanelFromButton(clickedButton,0);
-            foreach (Panel panel in clickedPanel)
-                StartMovePanelRight(panel);
+            Panel[] clickedPanel = FindPanelFromButton(int.Parse(clickedButton.Tag.ToString()));
+            MakeButton(clickedButton, clickedPanel);            
         }
         private void tabPage1_Click(object sender, EventArgs e)
         {
             RemoveButtons();
         }
-        private Panel[] FindPanelFromButton(Control button, int i)
+        private Panel[] FindPanelFromButton(int i)
         {
             List<Panel> panels = new List<Panel>();
             foreach (Control control in panel_Main.Controls)
@@ -342,12 +371,37 @@ namespace TeamProject
                 if (control is Panel panel && control.Tag != null)
                 {
                     string[] tagParts = control.Tag.ToString().Split(',');
-                    if (tagParts[0] == "0")
+                    if (tagParts[0] == i.ToString())
                         panels.Add(panel);
                 }
                 
             }
             return panels.ToArray();
+        }
+
+        private void StartMove_FromButton_Up(Panel[] panels)
+        {
+            foreach (Panel panel in panels)
+            {
+                StartMovePanelUp(panel);
+            }
+            
+        }
+
+        private void StartMove_FromButton_Right(Panel[] panels)
+        {
+            foreach (Panel panel in panels)
+            {
+                StartMovePanelRight(panel);
+            }
+        }
+
+        private void Sell_FromButton(Panel[] panels)
+        {
+            foreach (Panel panel in panels)
+            {
+                Sell(panel);
+            }
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
