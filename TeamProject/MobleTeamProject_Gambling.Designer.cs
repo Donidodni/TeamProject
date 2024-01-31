@@ -64,11 +64,18 @@ namespace TeamProject
             btn_Test2 = new System.Windows.Forms.Button();
             btn_Test = new System.Windows.Forms.Button();
             tabPage2 = new System.Windows.Forms.TabPage();
+            btUnitMake = new System.Windows.Forms.Button();
+            pbBuildHP = new System.Windows.Forms.ProgressBar();
+            panel6 = new System.Windows.Forms.Panel();
+            panel5 = new System.Windows.Forms.Panel();
+            panel4 = new System.Windows.Forms.Panel();
+            panel3 = new System.Windows.Forms.Panel();
             tabPage3 = new System.Windows.Forms.TabPage();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
             SuspendLayout();
             // 
             // lbox_Chat
@@ -194,6 +201,12 @@ namespace TeamProject
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(btUnitMake);
+            tabPage2.Controls.Add(pbBuildHP);
+            tabPage2.Controls.Add(panel6);
+            tabPage2.Controls.Add(panel5);
+            tabPage2.Controls.Add(panel4);
+            tabPage2.Controls.Add(panel3);
             tabPage2.Location = new System.Drawing.Point(4, 24);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -201,6 +214,54 @@ namespace TeamProject
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // btUnitMake
+            // 
+            btUnitMake.Location = new System.Drawing.Point(200, 660);
+            btUnitMake.Name = "btUnitMake";
+            btUnitMake.Size = new System.Drawing.Size(75, 39);
+            btUnitMake.TabIndex = 5;
+            btUnitMake.Text = "유닛 생성";
+            btUnitMake.UseVisualStyleBackColor = true;
+            btUnitMake.Click += UnitMake_Click;
+            // 
+            // pbBuildHP
+            // 
+            pbBuildHP.Location = new System.Drawing.Point(200, 576);
+            pbBuildHP.Name = "pbBuildHP";
+            pbBuildHP.Size = new System.Drawing.Size(500, 45);
+            pbBuildHP.TabIndex = 4;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = System.Drawing.Color.Gray;
+            panel6.Location = new System.Drawing.Point(706, 338);
+            panel6.Name = "panel6";
+            panel6.Size = new System.Drawing.Size(50, 50);
+            panel6.TabIndex = 1;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = System.Drawing.Color.Gray;
+            panel5.Location = new System.Drawing.Point(144, 338);
+            panel5.Name = "panel5";
+            panel5.Size = new System.Drawing.Size(50, 50);
+            panel5.TabIndex = 1;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = System.Drawing.Color.Gray;
+            panel4.Location = new System.Drawing.Point(424, 114);
+            panel4.Name = "panel4";
+            panel4.Size = new System.Drawing.Size(50, 50);
+            panel4.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            panel3.Location = new System.Drawing.Point(200, 170);
+            panel3.Name = "panel3";
+            panel3.Size = new System.Drawing.Size(500, 386);
+            panel3.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -227,6 +288,7 @@ namespace TeamProject
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -246,5 +308,11 @@ namespace TeamProject
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button btn_Test;
         private System.Windows.Forms.Button btn_Test2;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.ProgressBar pbBuildHP;
+        private System.Windows.Forms.Button btUnitMake;
     }
 }
