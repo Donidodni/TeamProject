@@ -135,18 +135,19 @@ namespace TeamProject
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MobleTeamProject_Gambling));
             lbox_Chat = new System.Windows.Forms.ListBox();
             panel_Upgrade = new System.Windows.Forms.Panel();
             flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             btn_All0 = new System.Windows.Forms.Button();
             btn_All1 = new System.Windows.Forms.Button();
-            button3 = new System.Windows.Forms.Button();
-            button4 = new System.Windows.Forms.Button();
-            button5 = new System.Windows.Forms.Button();
-            button6 = new System.Windows.Forms.Button();
-            button7 = new System.Windows.Forms.Button();
-            button8 = new System.Windows.Forms.Button();
-            button9 = new System.Windows.Forms.Button();
+            btn_All2 = new System.Windows.Forms.Button();
+            btn_All3 = new System.Windows.Forms.Button();
+            btn_All4 = new System.Windows.Forms.Button();
+            btn_All5 = new System.Windows.Forms.Button();
+            btn_All6 = new System.Windows.Forms.Button();
+            btn_All7 = new System.Windows.Forms.Button();
+            btn_All8 = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             panel2 = new System.Windows.Forms.Panel();
             label2 = new System.Windows.Forms.Label();
@@ -172,6 +173,7 @@ namespace TeamProject
             panel3 = new System.Windows.Forms.Panel();
             tabPage3 = new System.Windows.Forms.TabPage();
             timer1 = new System.Windows.Forms.Timer(components);
+            characters = new System.Windows.Forms.ImageList(components);
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -197,7 +199,7 @@ namespace TeamProject
             panel_Upgrade.Controls.Add(label1);
             panel_Upgrade.Location = new System.Drawing.Point(15, 61);
             panel_Upgrade.Name = "panel_Upgrade";
-            panel_Upgrade.Size = new System.Drawing.Size(848, 241);
+            panel_Upgrade.Size = new System.Drawing.Size(848, 250);
             panel_Upgrade.TabIndex = 1;
             // 
             // flowLayoutPanel1
@@ -205,16 +207,16 @@ namespace TeamProject
             flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Highlight;
             flowLayoutPanel1.Controls.Add(btn_All0);
             flowLayoutPanel1.Controls.Add(btn_All1);
-            flowLayoutPanel1.Controls.Add(button3);
-            flowLayoutPanel1.Controls.Add(button4);
-            flowLayoutPanel1.Controls.Add(button5);
-            flowLayoutPanel1.Controls.Add(button6);
-            flowLayoutPanel1.Controls.Add(button7);
-            flowLayoutPanel1.Controls.Add(button8);
-            flowLayoutPanel1.Controls.Add(button9);
+            flowLayoutPanel1.Controls.Add(btn_All2);
+            flowLayoutPanel1.Controls.Add(btn_All3);
+            flowLayoutPanel1.Controls.Add(btn_All4);
+            flowLayoutPanel1.Controls.Add(btn_All5);
+            flowLayoutPanel1.Controls.Add(btn_All6);
+            flowLayoutPanel1.Controls.Add(btn_All7);
+            flowLayoutPanel1.Controls.Add(btn_All8);
             flowLayoutPanel1.Location = new System.Drawing.Point(632, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new System.Drawing.Size(213, 213);
+            flowLayoutPanel1.Size = new System.Drawing.Size(213, 535);
             flowLayoutPanel1.TabIndex = 1;
             flowLayoutPanel1.Visible = false;
             // 
@@ -224,9 +226,10 @@ namespace TeamProject
             btn_All0.Name = "btn_All0";
             btn_All0.Size = new System.Drawing.Size(64, 64);
             btn_All0.TabIndex = 0;
-            btn_All0.Text = "button1";
+            btn_All0.Tag = "0";
+            btn_All0.Text = "0강";
             btn_All0.UseVisualStyleBackColor = true;
-            btn_All0.Click += button1_Click;
+            btn_All0.Click += btn_CreateAllButton;
             // 
             // btn_All1
             // 
@@ -234,71 +237,87 @@ namespace TeamProject
             btn_All1.Name = "btn_All1";
             btn_All1.Size = new System.Drawing.Size(64, 64);
             btn_All1.TabIndex = 1;
-            btn_All1.Text = "button2";
+            btn_All1.Tag = "1";
+            btn_All1.Text = "1강";
             btn_All1.UseVisualStyleBackColor = true;
+            btn_All1.Click += btn_CreateAllButton;
             // 
-            // button3
+            // btn_All2
             // 
-            button3.Location = new System.Drawing.Point(143, 3);
-            button3.Name = "button3";
-            button3.Size = new System.Drawing.Size(64, 64);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = true;
+            btn_All2.Location = new System.Drawing.Point(143, 3);
+            btn_All2.Name = "btn_All2";
+            btn_All2.Size = new System.Drawing.Size(64, 64);
+            btn_All2.TabIndex = 2;
+            btn_All2.Tag = "2";
+            btn_All2.Text = "2강";
+            btn_All2.UseVisualStyleBackColor = true;
+            btn_All2.Click += btn_CreateAllButton;
             // 
-            // button4
+            // btn_All3
             // 
-            button4.Location = new System.Drawing.Point(3, 73);
-            button4.Name = "button4";
-            button4.Size = new System.Drawing.Size(64, 64);
-            button4.TabIndex = 3;
-            button4.Text = "button4";
-            button4.UseVisualStyleBackColor = true;
+            btn_All3.Location = new System.Drawing.Point(3, 73);
+            btn_All3.Name = "btn_All3";
+            btn_All3.Size = new System.Drawing.Size(64, 64);
+            btn_All3.TabIndex = 3;
+            btn_All3.Tag = "3";
+            btn_All3.Text = "3강";
+            btn_All3.UseVisualStyleBackColor = true;
+            btn_All3.Click += btn_CreateAllButton;
             // 
-            // button5
+            // btn_All4
             // 
-            button5.Location = new System.Drawing.Point(73, 73);
-            button5.Name = "button5";
-            button5.Size = new System.Drawing.Size(64, 64);
-            button5.TabIndex = 4;
-            button5.Text = "button5";
-            button5.UseVisualStyleBackColor = true;
+            btn_All4.Location = new System.Drawing.Point(73, 73);
+            btn_All4.Name = "btn_All4";
+            btn_All4.Size = new System.Drawing.Size(64, 64);
+            btn_All4.TabIndex = 4;
+            btn_All4.Tag = "4";
+            btn_All4.Text = "4강";
+            btn_All4.UseVisualStyleBackColor = true;
+            btn_All4.Click += btn_CreateAllButton;
             // 
-            // button6
+            // btn_All5
             // 
-            button6.Location = new System.Drawing.Point(143, 73);
-            button6.Name = "button6";
-            button6.Size = new System.Drawing.Size(64, 64);
-            button6.TabIndex = 5;
-            button6.Text = "button6";
-            button6.UseVisualStyleBackColor = true;
+            btn_All5.Location = new System.Drawing.Point(143, 73);
+            btn_All5.Name = "btn_All5";
+            btn_All5.Size = new System.Drawing.Size(64, 64);
+            btn_All5.TabIndex = 5;
+            btn_All5.Tag = "5";
+            btn_All5.Text = "5강";
+            btn_All5.UseVisualStyleBackColor = true;
+            btn_All5.Click += btn_CreateAllButton;
             // 
-            // button7
+            // btn_All6
             // 
-            button7.Location = new System.Drawing.Point(3, 143);
-            button7.Name = "button7";
-            button7.Size = new System.Drawing.Size(64, 64);
-            button7.TabIndex = 6;
-            button7.Text = "button7";
-            button7.UseVisualStyleBackColor = true;
+            btn_All6.Location = new System.Drawing.Point(3, 143);
+            btn_All6.Name = "btn_All6";
+            btn_All6.Size = new System.Drawing.Size(64, 64);
+            btn_All6.TabIndex = 6;
+            btn_All6.Tag = "6";
+            btn_All6.Text = "6강";
+            btn_All6.UseVisualStyleBackColor = true;
+            btn_All6.Click += btn_CreateAllButton;
             // 
-            // button8
+            // btn_All7
             // 
-            button8.Location = new System.Drawing.Point(73, 143);
-            button8.Name = "button8";
-            button8.Size = new System.Drawing.Size(64, 64);
-            button8.TabIndex = 7;
-            button8.Text = "button8";
-            button8.UseVisualStyleBackColor = true;
+            btn_All7.Location = new System.Drawing.Point(73, 143);
+            btn_All7.Name = "btn_All7";
+            btn_All7.Size = new System.Drawing.Size(64, 64);
+            btn_All7.TabIndex = 7;
+            btn_All7.Tag = "7";
+            btn_All7.Text = "7강";
+            btn_All7.UseVisualStyleBackColor = true;
+            btn_All7.Click += btn_CreateAllButton;
             // 
-            // button9
+            // btn_All8
             // 
-            button9.Location = new System.Drawing.Point(143, 143);
-            button9.Name = "button9";
-            button9.Size = new System.Drawing.Size(64, 64);
-            button9.TabIndex = 8;
-            button9.Text = "button9";
-            button9.UseVisualStyleBackColor = true;
+            btn_All8.Location = new System.Drawing.Point(143, 143);
+            btn_All8.Name = "btn_All8";
+            btn_All8.Size = new System.Drawing.Size(64, 64);
+            btn_All8.TabIndex = 8;
+            btn_All8.Tag = "8";
+            btn_All8.Text = "8강";
+            btn_All8.UseVisualStyleBackColor = true;
+            btn_All8.Click += btn_CreateAllButton;
             // 
             // label1
             // 
@@ -329,9 +348,9 @@ namespace TeamProject
             // 
             // panel_Main
             // 
-            panel_Main.Location = new System.Drawing.Point(51, 288);
+            panel_Main.Location = new System.Drawing.Point(51, 250);
             panel_Main.Name = "panel_Main";
-            panel_Main.Size = new System.Drawing.Size(631, 384);
+            panel_Main.Size = new System.Drawing.Size(651, 422);
             panel_Main.TabIndex = 3;
             panel_Main.Click += panel_Main_Click_1;
             // 
@@ -549,6 +568,14 @@ namespace TeamProject
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // characters
+            // 
+            characters.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
+            characters.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("characters.ImageStream");
+            characters.TransparentColor = System.Drawing.Color.Transparent;
+            characters.Images.SetKeyName(0, "peasent_front.gif");
+            characters.Images.SetKeyName(1, "peasent_red_front.gif");
+            // 
             // MobleTeamProject_Gambling
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -595,13 +622,13 @@ namespace TeamProject
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btn_All0;
         private System.Windows.Forms.Button btn_All1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btn_All2;
+        private System.Windows.Forms.Button btn_All3;
+        private System.Windows.Forms.Button btn_All4;
+        private System.Windows.Forms.Button btn_All5;
+        private System.Windows.Forms.Button btn_All6;
+        private System.Windows.Forms.Button btn_All7;
+        private System.Windows.Forms.Button btn_All8;
         private System.Windows.Forms.Button btn_AllChoice;
         private System.Windows.Forms.Label lbHP;
         private System.Windows.Forms.Label label5;
@@ -610,5 +637,6 @@ namespace TeamProject
         private System.Windows.Forms.Label lbAttackSum;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ImageList characters;
     }
 }
