@@ -75,8 +75,10 @@ namespace TeamProject
                     WeaponUpgrade existingWeapon = weaponsDictionary[type];
 
                     Panel testPanel = new Panel(); // 패널 객체 생성
-                    testPanel.Size = new System.Drawing.Size(50, 30); // 패널 크기 설정
-                    testPanel.BackColor = Color.FromName(existingWeapon.Name); // 색깔 설정(없어도 됨)
+                    testPanel.Size = new System.Drawing.Size(50, 50); // 패널 크기 설정
+                    testPanel.BackgroundImage = characters.Images[type]; // 색깔 설정(없어도 됨)
+                    // 현재 characters 이미지 리스트에 2강 밖에 없어서 그 이상 강화시 인덱스 오류
+
                     testPanel.Name = existingWeapon.Name; // 이부분에서 기사,농부등 무기별 이미지 설정
                     testPanel.Location = new Point(x * 50, y * 50);
 

@@ -38,9 +38,11 @@
             pictureBox1 = new System.Windows.Forms.PictureBox();
             button1 = new System.Windows.Forms.Button();
             pictureBox3 = new System.Windows.Forms.PictureBox();
+            panel3 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // Main_Title
@@ -52,7 +54,7 @@
             // 
             pictureBox2.BackColor = System.Drawing.Color.Transparent;
             pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new System.Drawing.Point(334, 172);
+            pictureBox2.Location = new System.Drawing.Point(313, 17);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new System.Drawing.Size(646, 218);
             pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -82,13 +84,13 @@
             panel2.Dock = System.Windows.Forms.DockStyle.Top;
             panel2.Location = new System.Drawing.Point(0, 0);
             panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(784, 56);
+            panel2.Size = new System.Drawing.Size(784, 60);
             panel2.TabIndex = 4;
             // 
             // pictureBox1
             // 
             pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new System.Drawing.Point(12, 161);
+            pictureBox1.Location = new System.Drawing.Point(-27, 14);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(115, 240);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -102,7 +104,7 @@
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             button1.ForeColor = System.Drawing.Color.Transparent;
-            button1.Location = new System.Drawing.Point(224, 413);
+            button1.Location = new System.Drawing.Point(224, 418);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(331, 64);
             button1.TabIndex = 6;
@@ -113,7 +115,7 @@
             // pictureBox3
             // 
             pictureBox3.Image = (System.Drawing.Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new System.Drawing.Point(83, 161);
+            pictureBox3.Location = new System.Drawing.Point(44, 14);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new System.Drawing.Size(115, 240);
             pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -121,28 +123,38 @@
             pictureBox3.TabStop = false;
             pictureBox3.Visible = false;
             // 
-            // Form1
+            // panel3
+            // 
+            panel3.Controls.Add(pictureBox3);
+            panel3.Controls.Add(pictureBox1);
+            panel3.Controls.Add(pictureBox2);
+            panel3.Location = new System.Drawing.Point(0, 154);
+            panel3.Name = "panel3";
+            panel3.Size = new System.Drawing.Size(797, 253);
+            panel3.TabIndex = 7;
+            // 
+            // main_screen
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.ControlLight;
+            BackgroundImage = (System.Drawing.Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             ClientSize = new System.Drawing.Size(784, 561);
+            Controls.Add(panel3);
             Controls.Add(button1);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox1);
             Controls.Add(panel2);
             Controls.Add(panel1);
-            Controls.Add(pictureBox2);
             DoubleBuffered = true;
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            Name = "Form1";
+            Name = "main_screen";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -155,5 +167,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.Panel panel3;
     }
 }
