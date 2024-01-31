@@ -329,8 +329,10 @@ namespace TeamProject
         public int[,] PntArr = { { 144, 506 }, { 144, 450 }, { 144, 394 }, { 144, 282 }, { 144, 226 }, { 144, 170 }, { 200, 114 }, { 256, 114 }, { 312, 114 }, { 368, 114 }, { 480, 114 }, { 536, 114 }, { 592, 114 }, { 650, 114 }, { 706, 170 }, { 706, 226 }, { 706, 282 }, { 706, 394 }, { 706, 450 }, { 706, 506 } };
         public bool[] full = new bool[20]; //array 인덱스 좌표에 패널 할당 여부
 
-        private void UnitMake_Click(object sender, EventArgs e)  //유닛 생성
+        private void Move(Panel weapon)
         {
+            string tagString = weapon.Tag?.ToString();
+            string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
             int cnt = 0;
             for (int i = 0; i < 20; i++)    //유닛의 자리가 모두 할당되었는지
             {
@@ -342,13 +344,15 @@ namespace TeamProject
             if (cnt >= 20)
             {
                 MessageBox.Show("20개 이상 추가할 수 없습니다.");
+                AddPanels(int.Parse(tagParts[0].Trim()), 1);
+
             }
             else
             {
                 Panel testPanel = new Panel(); // 패널 객체 생성
                 testPanel.Size = new System.Drawing.Size(50, 50); // 패널 크기 설정
-                //testPanel.BackColor = Color.Black;
-                testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);
+                testPanel.BackColor = Color.Black;
+                //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);
                 testPanel.Name = "Test";
                 for (int i = 0; i < 20; i++)
                 {
@@ -362,7 +366,7 @@ namespace TeamProject
                 testPanel.Click += Panel1_Click;
 
                 NewUnit(testPanel);     //유닛의 레벨, 공격력 정보 할당
-                Controls.Add(testPanel);    //유닛패널 생성
+                tabControl1.TabPages[1].Controls.Add(testPanel);    //유닛패널 생성
             }
         }
 

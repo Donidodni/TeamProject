@@ -296,6 +296,15 @@ namespace TeamProject
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btUnitMake
+            // 
+            btUnitMake.Location = new System.Drawing.Point(200, 660);
+            btUnitMake.Name = "btUnitMake";
+            btUnitMake.Size = new System.Drawing.Size(75, 39);
+            btUnitMake.TabIndex = 5;
+            btUnitMake.Text = "유닛 생성";
+            btUnitMake.UseVisualStyleBackColor = true;
+            // 
             // pbBuildHP
             // 
             pbBuildHP.Location = new System.Drawing.Point(200, 576);
