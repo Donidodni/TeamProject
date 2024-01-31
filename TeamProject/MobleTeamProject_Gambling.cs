@@ -100,7 +100,7 @@ namespace TeamProject
                         Attack = existingWeapon.Attack,
                         SellPrice = existingWeapon.SellPrice,
                     };
-                    testPanel.Tag = $"{newWeapon.Level},{newWeapon.Attack},{newWeapon.SellPrice}";
+                    testPanel.Tag = $"{newWeapon.Level},{newWeapon.Attack},{newWeapon.SellPrice},{newWeapon.Name}";
                     weaponUpgradeList.Add(newWeapon);
 
                     Timer moveTimer = new Timer();
@@ -188,7 +188,7 @@ namespace TeamProject
             clickedPanel.Location = new Point(clickedPanel.Location.X + speed, clickedPanel.Location.Y);
             CheckCollisionWithWorkPanel(clickedPanel);
 
-            if (clickedPanel.Location.X >=670)
+            if (clickedPanel.Location.X ==670)
             {
                 moveTimer.Stop();
             }
@@ -258,7 +258,7 @@ namespace TeamProject
 
         private void CheckCollisionWithWorkPanel(Panel selectedPanel)
         {
-            if (selectedPanel.Location.X >= 670)
+            if (selectedPanel.Location.X == 670)
             {
                 MoveWork(selectedPanel);
                 RemovePanel(selectedPanel);
@@ -307,7 +307,7 @@ namespace TeamProject
             string tagString = clickedPanel.Tag?.ToString();
             string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
             int index = int.Parse(tagParts[0].Trim());
-            lbox_Chat.Items.Add($"일터로 +{tagParts[1]} 무기가 이동하였습니다.");
+            lbox_Chat.Items.Add($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
