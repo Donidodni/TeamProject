@@ -135,6 +135,7 @@ namespace TeamProject
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MobleTeamProject_Gambling));
             lbox_Chat = new System.Windows.Forms.ListBox();
             panel_Upgrade = new System.Windows.Forms.Panel();
             flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -172,6 +173,7 @@ namespace TeamProject
             panel3 = new System.Windows.Forms.Panel();
             tabPage3 = new System.Windows.Forms.TabPage();
             timer1 = new System.Windows.Forms.Timer(components);
+            characters = new System.Windows.Forms.ImageList(components);
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -549,6 +551,14 @@ namespace TeamProject
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // characters
+            // 
+            characters.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
+            characters.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("characters.ImageStream");
+            characters.TransparentColor = System.Drawing.Color.Transparent;
+            characters.Images.SetKeyName(0, "peasent_front.gif");
+            characters.Images.SetKeyName(1, "peasent_red_front.gif");
+            // 
             // MobleTeamProject_Gambling
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -609,5 +619,6 @@ namespace TeamProject
         private System.Windows.Forms.Label lbAttackSum;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ImageList characters;
     }
 }
