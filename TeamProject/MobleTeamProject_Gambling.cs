@@ -37,6 +37,7 @@ namespace TeamProject
         Dictionary<int, WeaponUpgrade> weaponsDictionary = new Dictionary<int, WeaponUpgrade>(); //키,값 형태로 무기강화별 정보를 저장
         Dictionary<Panel, Timer> timerDictionary = new Dictionary<Panel, Timer>(); //패널마다 타이머를 달아주어 개별 행동 가능
         List<Panel> MainPanelList = new List<Panel>(); // 무기들 랜덤생성시 중복 검사
+        int[] SuccessProbability = { 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 5 };
 
         private Button enhanceButton;
         private Button sendButton;
@@ -279,14 +280,34 @@ namespace TeamProject
             RemoveButtons();
         }
 
-        private void UpgradeWeapon(Panel panel)
+        private void UpgradeWeapon(Panel clickedPanel)
         {
-            lbox_Chat.Items.Add($"강화시도 : panel의 좌표 : x = {panel.Location.X} y = {panel.Location.Y}");
+            string tagString = clickedPanel.Tag?.ToString();
+            string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            int index = int.Parse(tagParts[0].Trim());
+            Random random = new Random();
+            int randomValue = random.Next(1, 101);
+            if (randomValue <= SuccessProbability[index]) //강화 성공시
+            {
+                AddPanels(index + 1, 1);
+                lbox_Chat.Items.Add($"강화가 성공하여 +{index+1} 무기가 제련되었습니다.");
+
+            }
+            else //강화 실패시
+            {
+                lbox_Chat.Items.Add($"강화가 실패하여 +{index} 무기가 파괴되었습니다.");
+            }
+
+
         }
 
-        private void MoveWork(Panel panel)
+        private void MoveWork(Panel clickedPanel)
         {
             //Move(panel);
+            string tagString = clickedPanel.Tag?.ToString();
+            string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            int index = int.Parse(tagParts[0].Trim());
+            lbox_Chat.Items.Add($"일터로 +{tagParts[1]} 무기가 이동하였습니다.");
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -343,7 +364,7 @@ namespace TeamProject
 
                 NewUnit(testPanel);     //유닛의 레벨, 공격력 정보 할당
                 Controls.Add(testPanel);    //유닛패널 생성
-                tabControl2.
+               // tabControl2.
             }
         }
 

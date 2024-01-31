@@ -31,6 +31,7 @@ namespace TeamProject
         /// 
         private void InitializeWeapons()
         {
+
             WeaponUpgrade lv0 = new WeaponUpgrade() //0번 무기 속성
             {
                 Level = 0,
@@ -48,6 +49,70 @@ namespace TeamProject
                 SellPrice = 1,
             };
             weaponsDictionary.Add(1, lv1);
+
+            WeaponUpgrade lv2 = new WeaponUpgrade() //2번 무기 속성
+            {
+                Level = 2,
+                Name = "Red",
+                Attack = 2,
+                SellPrice = 2,
+            };
+            weaponsDictionary.Add(2, lv2);
+
+            WeaponUpgrade lv3 = new WeaponUpgrade() //3번 무기 속성
+            {
+                Level = 3,
+                Name = "Red",
+                Attack = 3,
+                SellPrice = 3,
+            };
+            weaponsDictionary.Add(3, lv3);
+
+            WeaponUpgrade lv4 = new WeaponUpgrade() //4번 무기 속성
+            {
+                Level = 4,
+                Name = "Red",
+                Attack = 4,
+                SellPrice = 4,
+            };
+            weaponsDictionary.Add(4, lv4);
+
+            WeaponUpgrade lv5 = new WeaponUpgrade() //5번 무기 속성
+            {
+                Level = 5,
+                Name = "Red",
+                Attack = 5,
+                SellPrice = 5,
+            };
+            weaponsDictionary.Add(5, lv5);
+
+            WeaponUpgrade lv6 = new WeaponUpgrade() //6번 무기 속성
+            {
+                Level = 6,
+                Name = "Red",
+                Attack = 6,
+                SellPrice = 6,
+            };
+            weaponsDictionary.Add(6, lv6);
+
+            WeaponUpgrade lv7 = new WeaponUpgrade() //7번 무기 속성
+            {
+                Level = 7,
+                Name = "Red",
+                Attack = 7,
+                SellPrice = 7,
+            };
+            weaponsDictionary.Add(7, lv7);
+
+            WeaponUpgrade lv8 = new WeaponUpgrade() //8번 무기 속성
+            {
+                Level = 8,
+                Name = "Red",
+                Attack = 8,
+                SellPrice = 8,
+            };
+            weaponsDictionary.Add(8, lv8);
+
         }
         private void InitializeComponent()
         {
