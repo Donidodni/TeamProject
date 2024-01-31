@@ -338,10 +338,6 @@ namespace TeamProject
         private void MoveWork(Panel clickedPanel)
         {
             Move(clickedPanel);
-            string tagString = clickedPanel.Tag?.ToString();
-            string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-            int index = int.Parse(tagParts[0].Trim());
-            lbox_Chat.Items.Add($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
         }
 
         private void btn_AllChoice_Click(object sender, EventArgs e)
@@ -374,7 +370,7 @@ namespace TeamProject
                     if (tagParts[0] == i.ToString())
                         panels.Add(panel);
                 }
-                
+
             }
             return panels.ToArray();
         }
@@ -412,17 +408,11 @@ namespace TeamProject
 
 
         String Unit_Image1 = "C:\\Users\\user\\Pictures\\Screenshots\\스크린샷 2024-01-05 110728.png";
-        private void NewUnit(Panel panel)
-        {
-            //string tagString = clickedPanel.Tag?.ToString();
-            //string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);   //강화소에서 온 유닛정보 스플릿
-            //int level = int.Parse(tagParts[0].Trim());  //유닛 레벨
-            //int Attack = int.Parse(tagParts[1].Trim()); //유닛 공격력
-        }
 
         //유닛 위치 정보 배열
         public int[,] PntArr = { { 144, 506 }, { 144, 450 }, { 144, 394 }, { 144, 282 }, { 144, 226 }, { 144, 170 }, { 200, 114 }, { 256, 114 }, { 312, 114 }, { 368, 114 }, { 480, 114 }, { 536, 114 }, { 592, 114 }, { 650, 114 }, { 706, 170 }, { 706, 226 }, { 706, 282 }, { 706, 394 }, { 706, 450 }, { 706, 506 } };
-        public bool[] full = new bool[20]; //array 인덱스 좌표에 패널 할당 여부
+        public bool[] full = new bool[20];  //array 인덱스 좌표에 패널 할당 여부 초기값 false
+        public int[] Attack = new int[20];  //좌표마다 유닛의 공격력 값 
 
         private void Move(Panel weapon)
         {
@@ -440,29 +430,30 @@ namespace TeamProject
             {
                 MessageBox.Show("20개 이상 추가할 수 없습니다.");
                 AddPanels(int.Parse(tagParts[0].Trim()), 1);
-
             }
             else
             {
                 Panel testPanel = new Panel(); // 패널 객체 생성
                 testPanel.Size = new System.Drawing.Size(50, 50); // 패널 크기 설정
-                testPanel.BackColor = Color.Black;
-                //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);
+                testPanel.BackColor = Color.FromName(tagParts[3].Trim());
+                //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
                 testPanel.Name = "Test";
                 for (int i = 0; i < 20; i++)
                 {
                     if (!full[i])   //비어있을 경우
                     {
                         testPanel.Location = new Point(PntArr[i, 0], PntArr[i, 1]);   //유닛 생성 좌표 설정
-                        full[i] = true;
+                        full[i] = true; Attack[i] = int.Parse(tagParts[1]); //공격력 추가
                         break;
                     }
                 }
                 testPanel.Click += Panel1_Click;
 
-                NewUnit(testPanel);     //유닛의 레벨, 공격력 정보 할당
                 tabControl1.TabPages[1].Controls.Add(testPanel);    //유닛패널 생성
+                timer1.Start();
             }
+            int index = int.Parse(tagParts[0].Trim());
+            lbox_Chat.Items.Add($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
         }
 
         private void Panel1_Click(object sender, EventArgs e)    //패널 제거
@@ -471,7 +462,31 @@ namespace TeamProject
             Controls.Remove(clickedPanel); clickedPanel.Dispose();
             for (int i = 0; i < 20; i++)   //패널 좌표와 비교
                 if (clickedPanel.Location.X == PntArr[i, 0] && clickedPanel.Location.Y == PntArr[i, 1])
-                    full[i] = false;
+                {
+                    full[i] = false; Attack[i] = 0;
+                }
+        }
+
+        private void AttackBuild()
+        {
+            int sum = 0;
+            foreach (int i in Attack)
+            {
+                sum += i;
+            }
+            pbBuildHP.Value -= sum;
+            lbHP.Text = pbBuildHP.Value.ToString();
+            lbAttackSum.Text = sum.ToString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            AttackBuild();
+            if (pbBuildHP.Value <= 0)
+            {
+                timer1.Stop();
+                pbBuildHP.Value = 0;
+            }
         }
 
 

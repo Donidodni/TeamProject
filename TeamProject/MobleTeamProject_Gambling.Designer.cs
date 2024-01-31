@@ -134,6 +134,7 @@ namespace TeamProject
         }
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             lbox_Chat = new System.Windows.Forms.ListBox();
             panel_Upgrade = new System.Windows.Forms.Panel();
             flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -158,12 +159,19 @@ namespace TeamProject
             btn_Test2 = new System.Windows.Forms.Button();
             btn_Test = new System.Windows.Forms.Button();
             tabPage2 = new System.Windows.Forms.TabPage();
+            lbAttackSum = new System.Windows.Forms.Label();
+            lbHP = new System.Windows.Forms.Label();
+            label7 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
             pbBuildHP = new System.Windows.Forms.ProgressBar();
             panel6 = new System.Windows.Forms.Panel();
             panel5 = new System.Windows.Forms.Panel();
             panel4 = new System.Windows.Forms.Panel();
             panel3 = new System.Windows.Forms.Panel();
             tabPage3 = new System.Windows.Forms.TabPage();
+            timer1 = new System.Windows.Forms.Timer(components);
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -425,6 +433,12 @@ namespace TeamProject
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(lbAttackSum);
+            tabPage2.Controls.Add(lbHP);
+            tabPage2.Controls.Add(label7);
+            tabPage2.Controls.Add(label5);
+            tabPage2.Controls.Add(label6);
+            tabPage2.Controls.Add(label4);
             tabPage2.Controls.Add(pbBuildHP);
             tabPage2.Controls.Add(panel6);
             tabPage2.Controls.Add(panel5);
@@ -438,12 +452,73 @@ namespace TeamProject
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // lbAttackSum
+            // 
+            lbAttackSum.AutoSize = true;
+            lbAttackSum.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lbAttackSum.Location = new System.Drawing.Point(339, 690);
+            lbAttackSum.Name = "lbAttackSum";
+            lbAttackSum.Size = new System.Drawing.Size(24, 32);
+            lbAttackSum.TabIndex = 5;
+            lbAttackSum.Text = "-";
+            // 
+            // lbHP
+            // 
+            lbHP.AutoSize = true;
+            lbHP.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lbHP.Location = new System.Drawing.Point(339, 639);
+            lbHP.Name = "lbHP";
+            lbHP.Size = new System.Drawing.Size(24, 32);
+            lbHP.TabIndex = 5;
+            lbHP.Text = "-";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label7.Location = new System.Drawing.Point(309, 690);
+            label7.Name = "label7";
+            label7.Size = new System.Drawing.Size(20, 32);
+            label7.TabIndex = 5;
+            label7.Text = ":";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label5.Location = new System.Drawing.Point(309, 639);
+            label5.Name = "label5";
+            label5.Size = new System.Drawing.Size(20, 32);
+            label5.TabIndex = 5;
+            label5.Text = ":";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label6.Location = new System.Drawing.Point(161, 690);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(142, 32);
+            label6.TabIndex = 5;
+            label6.Text = "현재 공격력";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label4.Location = new System.Drawing.Point(200, 639);
+            label4.Name = "label4";
+            label4.Size = new System.Drawing.Size(103, 32);
+            label4.TabIndex = 5;
+            label4.Text = "남은 HP";
+            // 
             // pbBuildHP
             // 
             pbBuildHP.Location = new System.Drawing.Point(200, 576);
             pbBuildHP.Name = "pbBuildHP";
             pbBuildHP.Size = new System.Drawing.Size(500, 45);
             pbBuildHP.TabIndex = 4;
+            pbBuildHP.Value = 100;
             // 
             // panel6
             // 
@@ -486,6 +561,11 @@ namespace TeamProject
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
             // MobleTeamProject_Gambling
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -503,6 +583,7 @@ namespace TeamProject
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -538,5 +619,12 @@ namespace TeamProject
         private System.Windows.Forms.Button btn_All7;
         private System.Windows.Forms.Button btn_All8;
         private System.Windows.Forms.Button btn_AllChoice;
+        private System.Windows.Forms.Label lbHP;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label lbAttackSum;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
     }
 }
