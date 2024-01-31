@@ -53,7 +53,7 @@ namespace TeamProject
             WeaponUpgrade lv2 = new WeaponUpgrade() //2번 무기 속성
             {
                 Level = 2,
-                Name = "Red",
+                Name = "Blue",
                 Attack = 2,
                 SellPrice = 2,
             };
@@ -112,6 +112,24 @@ namespace TeamProject
                 SellPrice = 8,
             };
             weaponsDictionary.Add(8, lv8);
+
+            WeaponUpgrade lv9 = new WeaponUpgrade() //9번 무기 속성
+            {
+                Level = 9,
+                Name = "Red",
+                Attack = 9,
+                SellPrice = 9,
+            };
+            weaponsDictionary.Add(9, lv9);
+
+            WeaponUpgrade lv10 = new WeaponUpgrade() //10번 무기 속성
+            {
+                Level = 10,
+                Name = "Red",
+                Attack = 10,
+                SellPrice = 10,
+            };
+            weaponsDictionary.Add(10, lv10);
 
         }
         private void InitializeComponent()
