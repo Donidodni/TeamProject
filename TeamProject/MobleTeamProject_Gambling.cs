@@ -475,6 +475,7 @@ namespace TeamProject
                 }
         }
 
+        Panel pnBuilding = new Panel();
         private void AttackBuild()
         {
             int sum = 0;
@@ -490,6 +491,8 @@ namespace TeamProject
                 pbBuildHP.Value = pbBuildHP.Minimum;
                 timer1.Stop();
                 Money += 100;
+                lbox_Chat.Items.Add($"첫번 째 건물을 파괴했습니다.");
+                tabControl1.TabPages[1].Controls.Remove(pnBuilding);
             }
             lbHP.Text = pbBuildHP.Value.ToString();
             lbAttackSum.Text = sum.ToString();
@@ -503,11 +506,19 @@ namespace TeamProject
         private void MobleTeamProject_Gambling_Load(object sender, EventArgs e)
         {
             timer1.Start();
+
+            //프로그레스바 초기값
+            pbBuildHP.Maximum = 200;
+            pbBuildHP.Minimum = 0;
+            pbBuildHP.Value = pbBuildHP.Maximum;
+
+            pnBuilding.Location = new Point(200, 170);   //건물 생성 좌표 설정
+            pnBuilding.Size = new Size(500, 386); // 패널 크기 설정
+            pnBuilding.BackColor = Color.Black;
+            //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
+
+            tabControl1.TabPages[1].Controls.Add(pnBuilding);    //건물패널 생성
         }
-
-
-
-
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
