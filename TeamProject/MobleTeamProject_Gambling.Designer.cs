@@ -136,6 +136,16 @@ namespace TeamProject
         {
             lbox_Chat = new System.Windows.Forms.ListBox();
             panel_Upgrade = new System.Windows.Forms.Panel();
+            flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            btn_All0 = new System.Windows.Forms.Button();
+            btn_All1 = new System.Windows.Forms.Button();
+            button3 = new System.Windows.Forms.Button();
+            button4 = new System.Windows.Forms.Button();
+            button5 = new System.Windows.Forms.Button();
+            button6 = new System.Windows.Forms.Button();
+            button7 = new System.Windows.Forms.Button();
+            button8 = new System.Windows.Forms.Button();
+            button9 = new System.Windows.Forms.Button();
             label1 = new System.Windows.Forms.Label();
             panel2 = new System.Windows.Forms.Panel();
             label2 = new System.Windows.Forms.Label();
@@ -144,6 +154,7 @@ namespace TeamProject
             lb_Money = new System.Windows.Forms.Label();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabPage1 = new System.Windows.Forms.TabPage();
+            btn_AllChoice = new System.Windows.Forms.Button();
             btn_Test2 = new System.Windows.Forms.Button();
             btn_Test = new System.Windows.Forms.Button();
             tabPage2 = new System.Windows.Forms.TabPage();
@@ -154,6 +165,7 @@ namespace TeamProject
             panel3 = new System.Windows.Forms.Panel();
             tabPage3 = new System.Windows.Forms.TabPage();
             panel_Upgrade.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -173,11 +185,112 @@ namespace TeamProject
             // panel_Upgrade
             // 
             panel_Upgrade.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            panel_Upgrade.Controls.Add(flowLayoutPanel1);
             panel_Upgrade.Controls.Add(label1);
             panel_Upgrade.Location = new System.Drawing.Point(15, 61);
             panel_Upgrade.Name = "panel_Upgrade";
             panel_Upgrade.Size = new System.Drawing.Size(848, 241);
             panel_Upgrade.TabIndex = 1;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Highlight;
+            flowLayoutPanel1.Controls.Add(btn_All0);
+            flowLayoutPanel1.Controls.Add(btn_All1);
+            flowLayoutPanel1.Controls.Add(button3);
+            flowLayoutPanel1.Controls.Add(button4);
+            flowLayoutPanel1.Controls.Add(button5);
+            flowLayoutPanel1.Controls.Add(button6);
+            flowLayoutPanel1.Controls.Add(button7);
+            flowLayoutPanel1.Controls.Add(button8);
+            flowLayoutPanel1.Controls.Add(button9);
+            flowLayoutPanel1.Location = new System.Drawing.Point(632, 3);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new System.Drawing.Size(213, 213);
+            flowLayoutPanel1.TabIndex = 1;
+            flowLayoutPanel1.Visible = false;
+            // 
+            // btn_All0
+            // 
+            btn_All0.Location = new System.Drawing.Point(3, 3);
+            btn_All0.Name = "btn_All0";
+            btn_All0.Size = new System.Drawing.Size(64, 64);
+            btn_All0.TabIndex = 0;
+            btn_All0.Text = "button1";
+            btn_All0.UseVisualStyleBackColor = true;
+            btn_All0.Click += button1_Click;
+            // 
+            // btn_All1
+            // 
+            btn_All1.Location = new System.Drawing.Point(73, 3);
+            btn_All1.Name = "btn_All1";
+            btn_All1.Size = new System.Drawing.Size(64, 64);
+            btn_All1.TabIndex = 1;
+            btn_All1.Text = "button2";
+            btn_All1.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new System.Drawing.Point(143, 3);
+            button3.Name = "button3";
+            button3.Size = new System.Drawing.Size(64, 64);
+            button3.TabIndex = 2;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            button4.Location = new System.Drawing.Point(3, 73);
+            button4.Name = "button4";
+            button4.Size = new System.Drawing.Size(64, 64);
+            button4.TabIndex = 3;
+            button4.Text = "button4";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            button5.Location = new System.Drawing.Point(73, 73);
+            button5.Name = "button5";
+            button5.Size = new System.Drawing.Size(64, 64);
+            button5.TabIndex = 4;
+            button5.Text = "button5";
+            button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            button6.Location = new System.Drawing.Point(143, 73);
+            button6.Name = "button6";
+            button6.Size = new System.Drawing.Size(64, 64);
+            button6.TabIndex = 5;
+            button6.Text = "button6";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            button7.Location = new System.Drawing.Point(3, 143);
+            button7.Name = "button7";
+            button7.Size = new System.Drawing.Size(64, 64);
+            button7.TabIndex = 6;
+            button7.Text = "button7";
+            button7.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            button8.Location = new System.Drawing.Point(73, 143);
+            button8.Name = "button8";
+            button8.Size = new System.Drawing.Size(64, 64);
+            button8.TabIndex = 7;
+            button8.Text = "button8";
+            button8.UseVisualStyleBackColor = true;
+            // 
+            // button9
+            // 
+            button9.Location = new System.Drawing.Point(143, 143);
+            button9.Name = "button9";
+            button9.Size = new System.Drawing.Size(64, 64);
+            button9.TabIndex = 8;
+            button9.Text = "button9";
+            button9.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -217,7 +330,7 @@ namespace TeamProject
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(628, 32);
+            label3.Location = new System.Drawing.Point(517, 28);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(54, 15);
             label3.TabIndex = 0;
@@ -226,7 +339,7 @@ namespace TeamProject
             // lb_Money
             // 
             lb_Money.AutoSize = true;
-            lb_Money.Location = new System.Drawing.Point(688, 32);
+            lb_Money.Location = new System.Drawing.Point(577, 28);
             lb_Money.Name = "lb_Money";
             lb_Money.Size = new System.Drawing.Size(59, 15);
             lb_Money.TabIndex = 0;
@@ -245,6 +358,7 @@ namespace TeamProject
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(btn_AllChoice);
             tabPage1.Controls.Add(btn_Test2);
             tabPage1.Controls.Add(btn_Test);
             tabPage1.Controls.Add(panel2);
@@ -260,6 +374,17 @@ namespace TeamProject
             tabPage1.TabIndex = 0;
             tabPage1.Text = "강화소";
             tabPage1.UseVisualStyleBackColor = true;
+            tabPage1.Click += tabPage1_Click;
+            // 
+            // btn_AllChoice
+            // 
+            btn_AllChoice.Location = new System.Drawing.Point(781, 6);
+            btn_AllChoice.Name = "btn_AllChoice";
+            btn_AllChoice.Size = new System.Drawing.Size(73, 49);
+            btn_AllChoice.TabIndex = 5;
+            btn_AllChoice.Text = "전체 선택";
+            btn_AllChoice.UseVisualStyleBackColor = true;
+            btn_AllChoice.Click += btn_AllChoice_Click;
             // 
             // btn_Test2
             // 
@@ -295,15 +420,6 @@ namespace TeamProject
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btUnitMake
-            // 
-            btUnitMake.Location = new System.Drawing.Point(200, 660);
-            btUnitMake.Name = "btUnitMake";
-            btUnitMake.Size = new System.Drawing.Size(75, 39);
-            btUnitMake.TabIndex = 5;
-            btUnitMake.Text = "유닛 생성";
-            btUnitMake.UseVisualStyleBackColor = true;
             // 
             // pbBuildHP
             // 
@@ -363,6 +479,7 @@ namespace TeamProject
             Text = "MobleTeamProject_Gambling";
             panel_Upgrade.ResumeLayout(false);
             panel_Upgrade.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             tabControl1.ResumeLayout(false);
@@ -393,5 +510,16 @@ namespace TeamProject
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ProgressBar pbBuildHP;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btn_All0;
+        private System.Windows.Forms.Button btn_All1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btn_AllChoice;
     }
 }
