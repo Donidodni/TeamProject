@@ -479,8 +479,10 @@ namespace TeamProject
                 pbBuildHP.Value -= sum;
             else
             {
+                //건물 파괴 시
                 pbBuildHP.Value = pbBuildHP.Minimum;
                 timer1.Stop();
+                Money += 100;
             }
             lbHP.Text = pbBuildHP.Value.ToString();
             lbAttackSum.Text = sum.ToString();
