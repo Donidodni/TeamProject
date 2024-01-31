@@ -303,7 +303,7 @@ namespace TeamProject
 
         private void MoveWork(Panel clickedPanel)
         {
-            //Move(panel);
+            Move(clickedPanel);
             string tagString = clickedPanel.Tag?.ToString();
             string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
             int index = int.Parse(tagParts[0].Trim());
@@ -363,7 +363,6 @@ namespace TeamProject
 
                 NewUnit(testPanel);     //유닛의 레벨, 공격력 정보 할당
                 Controls.Add(testPanel);    //유닛패널 생성
-                tabControl2.
             }
         }
 

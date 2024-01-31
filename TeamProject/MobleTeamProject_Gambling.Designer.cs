@@ -147,7 +147,6 @@ namespace TeamProject
             btn_Test2 = new System.Windows.Forms.Button();
             btn_Test = new System.Windows.Forms.Button();
             tabPage2 = new System.Windows.Forms.TabPage();
-            btUnitMake = new System.Windows.Forms.Button();
             pbBuildHP = new System.Windows.Forms.ProgressBar();
             panel6 = new System.Windows.Forms.Panel();
             panel5 = new System.Windows.Forms.Panel();
@@ -284,7 +283,6 @@ namespace TeamProject
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(btUnitMake);
             tabPage2.Controls.Add(pbBuildHP);
             tabPage2.Controls.Add(panel6);
             tabPage2.Controls.Add(panel5);
@@ -297,16 +295,6 @@ namespace TeamProject
             tabPage2.TabIndex = 1;
             tabPage2.Text = "tabPage2";
             tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // btUnitMake
-            // 
-            btUnitMake.Location = new System.Drawing.Point(200, 660);
-            btUnitMake.Name = "btUnitMake";
-            btUnitMake.Size = new System.Drawing.Size(75, 39);
-            btUnitMake.TabIndex = 5;
-            btUnitMake.Text = "유닛 생성";
-            btUnitMake.UseVisualStyleBackColor = true;
-            btUnitMake.Click += UnitMake_Click;
             // 
             // pbBuildHP
             // 
@@ -396,6 +384,5 @@ namespace TeamProject
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ProgressBar pbBuildHP;
-        private System.Windows.Forms.Button btUnitMake;
     }
 }
