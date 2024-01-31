@@ -458,7 +458,7 @@ namespace TeamProject
             // 
             lbAttackSum.AutoSize = true;
             lbAttackSum.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lbAttackSum.Location = new System.Drawing.Point(339, 690);
+            lbAttackSum.Location = new System.Drawing.Point(377, 690);
             lbAttackSum.Name = "lbAttackSum";
             lbAttackSum.Size = new System.Drawing.Size(24, 32);
             lbAttackSum.TabIndex = 5;
@@ -468,7 +468,7 @@ namespace TeamProject
             // 
             lbHP.AutoSize = true;
             lbHP.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lbHP.Location = new System.Drawing.Point(339, 639);
+            lbHP.Location = new System.Drawing.Point(377, 639);
             lbHP.Name = "lbHP";
             lbHP.Size = new System.Drawing.Size(24, 32);
             lbHP.TabIndex = 5;
@@ -478,7 +478,7 @@ namespace TeamProject
             // 
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label7.Location = new System.Drawing.Point(309, 690);
+            label7.Location = new System.Drawing.Point(347, 690);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(20, 32);
             label7.TabIndex = 5;
@@ -488,7 +488,7 @@ namespace TeamProject
             // 
             label5.AutoSize = true;
             label5.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label5.Location = new System.Drawing.Point(309, 639);
+            label5.Location = new System.Drawing.Point(347, 639);
             label5.Name = "label5";
             label5.Size = new System.Drawing.Size(20, 32);
             label5.TabIndex = 5;
@@ -498,7 +498,7 @@ namespace TeamProject
             // 
             label6.AutoSize = true;
             label6.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label6.Location = new System.Drawing.Point(161, 690);
+            label6.Location = new System.Drawing.Point(199, 690);
             label6.Name = "label6";
             label6.Size = new System.Drawing.Size(142, 32);
             label6.TabIndex = 5;
@@ -517,10 +517,12 @@ namespace TeamProject
             // pbBuildHP
             // 
             pbBuildHP.Location = new System.Drawing.Point(200, 576);
+            pbBuildHP.Maximum = 200;
             pbBuildHP.Name = "pbBuildHP";
             pbBuildHP.Size = new System.Drawing.Size(500, 45);
+            pbBuildHP.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             pbBuildHP.TabIndex = 4;
-            pbBuildHP.Value = 100;
+            pbBuildHP.Value = 200;
             // 
             // panel6
             // 
@@ -552,6 +554,7 @@ namespace TeamProject
             panel3.Name = "panel3";
             panel3.Size = new System.Drawing.Size(500, 386);
             panel3.TabIndex = 0;
+            panel3.Visible = false;
             // 
             // tabPage3
             // 
@@ -584,6 +587,7 @@ namespace TeamProject
             Controls.Add(tabControl1);
             Name = "MobleTeamProject_Gambling";
             Text = "MobleTeamProject_Gambling";
+            Load += MobleTeamProject_Gambling_Load;
             panel_Upgrade.ResumeLayout(false);
             panel_Upgrade.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
