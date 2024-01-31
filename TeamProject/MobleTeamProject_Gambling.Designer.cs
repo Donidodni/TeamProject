@@ -119,10 +119,11 @@ namespace TeamProject
             // 
             // panel_Main
             // 
-            panel_Main.Location = new System.Drawing.Point(45, 353);
+            panel_Main.Location = new System.Drawing.Point(51, 296);
             panel_Main.Name = "panel_Main";
-            panel_Main.Size = new System.Drawing.Size(588, 319);
+            panel_Main.Size = new System.Drawing.Size(631, 376);
             panel_Main.TabIndex = 3;
+            panel_Main.Click += panel_Main_Click_1;
             // 
             // label3
             // 

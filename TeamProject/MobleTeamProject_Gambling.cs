@@ -4,9 +4,11 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
 
 //const int one_to_two = 90;
@@ -29,10 +31,19 @@ namespace TeamProject
             public int Attack { get; set; }
             public int SellPrice { get; set; }
         }
+        public int Money;
         List<List<WeaponUpgrade>> weapons = new List<List<WeaponUpgrade>>(); // 무기의 숫자를 나타냄. weapons[0]에는 0강 무기 n개 존재
         Dictionary<int, WeaponUpgrade> weaponsDictionary = new Dictionary<int, WeaponUpgrade>(); //키,값 형태로 무기강화별 정보를 저장
+        Dictionary<Panel, Timer> timerDictionary = new Dictionary<Panel, Timer>();
 
         List<Panel> MainPanelList = new List<Panel>(); // 무기들 랜덤생성시 중복 검사
+        private Button enhanceButton;
+        private Button sendButton;
+        private Button sellButton;
+        private Panel clickedPanel;
+        
+        private int speed = 10; // 이동 속도 조절 가능
+
         public MobleTeamProject_Gambling()
         {
             InitializeComponent();
@@ -42,7 +53,8 @@ namespace TeamProject
                 List<WeaponUpgrade> weaponUpgrades = new List<WeaponUpgrade>();
                 weapons.Add(weaponUpgrades); // 0~10강 무기를 담을 리스트 생성
             }
-
+            Money = 0;
+            lb_Money.Text = Money.ToString() + " 골드";
         }
 
 
@@ -75,7 +87,7 @@ namespace TeamProject
                     }
 
                     lbox_Chat.Items.Add($"x : {x} y : {y}");
-                    panel_Main.Controls.Add(testPanel); // 메인 패널에 패널 추가
+                    
                     testPanel.Click += Panel_Click;
 
                     // 새로운 무기를 추가하는 대신 이미 있는 무기 속성을 사용
@@ -86,12 +98,14 @@ namespace TeamProject
                         Attack = existingWeapon.Attack,
                         SellPrice = existingWeapon.SellPrice,
                     };
-                    testPanel.Tag = $"Level: {newWeapon.Level}, Attack: {newWeapon.Attack}, Sell Price: {newWeapon.SellPrice}";
-
-
+                    testPanel.Tag = $"{newWeapon.Level},{newWeapon.Attack},{newWeapon.SellPrice}";
                     weaponUpgradeList.Add(newWeapon);
 
+                    Timer moveTimer = new Timer();
+                    moveTimer.Interval = 20;
+                    timerDictionary.Add(testPanel, moveTimer);
 
+                    panel_Main.Controls.Add(testPanel); // 메인 패널에 패널 추가
                 }
             }
         }
@@ -109,41 +123,110 @@ namespace TeamProject
 
         private void Panel_Click(object sender, EventArgs e)
         {
+            RemoveButtons();
+
             Panel clickedPanel = (Panel)sender;
-            Button enhanceButton = new Button();
+            enhanceButton = new Button();
             enhanceButton.Text = "강화하기";
             enhanceButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 10);
-            // enhanceButton 클릭 이벤트 처리
-            enhanceButton.Click += (s, ev) =>
-            {
-                // 강화하기 기능 구현
-                // ...
-            };
+            enhanceButton.Click += (s, ev) => StartMovePanelUp(clickedPanel);
             panel_Main.Controls.Add(enhanceButton);
 
-            Button sendButton = new Button();
+            sendButton = new Button();
             sendButton.Text = "일터 보내기";
             sendButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 40);
             // sendButton 클릭 이벤트 처리
-            sendButton.Click += (s, ev) =>
-            {
-                // 일터 보내기 기능 구현
-                // ...
-            };
+            sendButton.Click += (s, ev) => StartMovePanelRight(clickedPanel);
             panel_Main.Controls.Add(sendButton);
 
-            Button sellButton = new Button();
+            sellButton = new Button();
             sellButton.Text = "판매하기";
             sellButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 70);
             // sellButton 클릭 이벤트 처리
-            sellButton.Click += (s, ev) =>
-            {
-                // 판매하기 기능 구현
-                // ...
-            };
+            sellButton.Click += (s, ev) => Sell(clickedPanel);            
             panel_Main.Controls.Add(sellButton);
         }
+        private void StartMovePanelUp(Panel panel)
+        {
+            RemoveButtons();
+            Timer moveTimer = timerDictionary[panel];
+            moveTimer.Interval = 20; // 타이머 주기 (20ms로 설정, 조절 가능)
+            moveTimer.Tick += (s, ev) => MovePanelUp(panel,moveTimer);
+            moveTimer.Start(); // 타이머 시작
 
+        }
+
+        private void StartMovePanelRight(Panel panel)
+        {
+            RemoveButtons();
+            Timer moveTimer = timerDictionary[panel];
+            moveTimer.Interval = 20; // 타이머 주기 (20ms로 설정, 조절 가능)
+            moveTimer.Tick += (s, ev) => MovePanelRight(panel, moveTimer);
+            moveTimer.Start(); // 타이머 시작
+        }
+
+        private void MovePanelUp(Panel clickedPanel, Timer moveTimer)
+        {            
+            clickedPanel.Location = new Point(clickedPanel.Location.X, clickedPanel.Location.Y - speed);
+
+        }
+
+        private void MovePanelRight(Panel clickedPanel, Timer moveTimer)
+        {
+            clickedPanel.Location = new Point(clickedPanel.Location.X + speed, clickedPanel.Location.Y);
+            
+        }
+
+        private void Sell(Panel clickedPanel)
+        {
+            string tagString = clickedPanel.Tag?.ToString();
+            string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            int index = int.Parse(tagParts[0].Trim());
+            string sellPriceString = tagParts[2].Trim();
+            if(int.TryParse(sellPriceString, out int price))
+            {
+                Money += price;
+                lb_Money.Text = Money.ToString() + " 골드";
+                RemovePanel(clickedPanel);
+            }
+            RemoveButtons();
+        }
+
+        private void RemovePanel(Panel clickedPanel)
+        {
+            string tagString = clickedPanel.Tag?.ToString();
+            string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            int index = int.Parse(tagParts[0].Trim());
+            string sellPriceString = tagParts[2].Trim();
+            weapons[index].RemoveAt(0);
+            timerDictionary.Remove(clickedPanel);
+            panel_Main.Controls.Remove(clickedPanel);
+        }
+
+
+        private void RemoveButtons()
+        {
+            if (enhanceButton != null)
+            {
+                panel_Main.Controls.Remove(enhanceButton);
+                enhanceButton.Dispose();
+                enhanceButton = null;
+            }
+
+            if (sendButton != null)
+            {
+                panel_Main.Controls.Remove(sendButton);
+                sendButton.Dispose();
+                sendButton = null;
+            }
+
+            if (sellButton != null)
+            {
+                panel_Main.Controls.Remove(sellButton);
+                sellButton.Dispose();
+                sellButton = null;
+            }
+        }
 
         private void btn_Test_Click(object sender, EventArgs e)
         {
@@ -154,13 +237,18 @@ namespace TeamProject
         {
             AddPanels(1, 5);
         }
+
+        private void panel_Main_Click_1(object sender, EventArgs e)
+        {
+            RemoveButtons();
+        }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////강화소///////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                                            /*일터 코드*/
+        /*일터 코드*/
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -168,7 +256,7 @@ namespace TeamProject
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-                                                            /*상점 코드*/
+        /*상점 코드*/
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
