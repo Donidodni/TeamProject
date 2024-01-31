@@ -557,6 +557,7 @@ namespace TeamProject
             Controls.Add(tabControl1);
             Name = "MobleTeamProject_Gambling";
             Text = "MobleTeamProject_Gambling";
+            Load += MobleTeamProject_Gambling_Load;
             panel_Upgrade.ResumeLayout(false);
             panel_Upgrade.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);

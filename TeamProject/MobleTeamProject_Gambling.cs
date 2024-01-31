@@ -396,7 +396,6 @@ namespace TeamProject
                 testPanel.Click += Panel1_Click;
 
                 tabControl1.TabPages[1].Controls.Add(testPanel);    //유닛패널 생성
-                timer1.Start();
             }
             int index = int.Parse(tagParts[0].Trim());
             lbox_Chat.Items.Add($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
@@ -420,7 +419,13 @@ namespace TeamProject
             {
                 sum += i;
             }
-            pbBuildHP.Value -= sum;
+            if (pbBuildHP.Value > sum) 
+                pbBuildHP.Value -= sum;
+            else
+            {
+                pbBuildHP.Value = pbBuildHP.Minimum;
+                timer1.Stop();
+            }
             lbHP.Text = pbBuildHP.Value.ToString();
             lbAttackSum.Text = sum.ToString();
         }
@@ -428,11 +433,11 @@ namespace TeamProject
         private void timer1_Tick(object sender, EventArgs e)
         {
             AttackBuild();
-            if (pbBuildHP.Value <= 0)
-            {
-                timer1.Stop();
-                pbBuildHP.Value = 0;
-            }
+        }
+
+        private void MobleTeamProject_Gambling_Load(object sender, EventArgs e)
+        {
+            timer1.Start();
         }
 
 
