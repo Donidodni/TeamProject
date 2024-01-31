@@ -322,7 +322,7 @@ namespace TeamProject
         private void button1_Click(object sender, EventArgs e)
         {
             Button clickedButton = (Button)sender;
-            Panel[] clickedPanel = FindPanelFromButton(clickedButton,0);
+            Panel[] clickedPanel = FindPanelFromButton(clickedButton, 0);
             foreach (Panel panel in clickedPanel)
                 StartMovePanelRight(panel);
         }
@@ -341,7 +341,7 @@ namespace TeamProject
                     if (tagParts[0] == "0")
                         panels.Add(panel);
                 }
-                
+
             }
             return panels.ToArray();
         }
@@ -372,7 +372,7 @@ namespace TeamProject
                 else
                     continue;
             }
-            if (cnt >= 2)
+            if (cnt >= 20)
             {
                 MessageBox.Show("20개 이상 추가할 수 없습니다.");
                 AddPanels(int.Parse(tagParts[0].Trim()), 1);
@@ -389,13 +389,14 @@ namespace TeamProject
                     if (!full[i])   //비어있을 경우
                     {
                         testPanel.Location = new Point(PntArr[i, 0], PntArr[i, 1]);   //유닛 생성 좌표 설정
-                        full[i] = true; Attack[i] = int.Parse(tagParts[1]);
+                        full[i] = true; Attack[i] = int.Parse(tagParts[1]); //공격력 추가
                         break;
                     }
                 }
                 testPanel.Click += Panel1_Click;
 
                 tabControl1.TabPages[1].Controls.Add(testPanel);    //유닛패널 생성
+                timer1.Start();
             }
             int index = int.Parse(tagParts[0].Trim());
             lbox_Chat.Items.Add($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
@@ -414,7 +415,24 @@ namespace TeamProject
 
         private void AttackBuild()
         {
-            pbBuildHP.Value = 100;
+            int sum = 0;
+            foreach (int i in Attack)
+            {
+                sum += i;
+            }
+            pbBuildHP.Value -= sum;
+            lbHP.Text = pbBuildHP.Value.ToString();
+            lbAttackSum.Text = sum.ToString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            AttackBuild();
+            if (pbBuildHP.Value <= 0)
+            {
+                timer1.Stop();
+                pbBuildHP.Value = 0;
+            }
         }
 
 
