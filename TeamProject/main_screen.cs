@@ -72,8 +72,6 @@ namespace WinFormsApp2
         private void button1_Click(object sender, EventArgs e)
         {
             playSimpleSound(0); // 음악을 종료합니다.
-            MobleTeamProject_Gambling gameStart = new MobleTeamProject_Gambling();
-            MobleTeamProject_Gambling.Show();
             this.Close();
         }
 
