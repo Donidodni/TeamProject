@@ -38,6 +38,9 @@ namespace TeamProject
         Dictionary<Panel, Timer> timerDictionary = new Dictionary<Panel, Timer>(); //패널마다 타이머를 달아주어 개별 행동 가능
         List<Panel> MainPanelList = new List<Panel>(); // 무기들 랜덤생성시 중복 검사
         int[] SuccessProbability = { 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 5 };
+        int upgradeX = 670;
+        int workY = -90;
+        public bool EsterEgg = true;
 
         private Button enhanceButton;
         private Button sendButton;
@@ -70,7 +73,8 @@ namespace TeamProject
                 {
                     Random random = new Random();
                     int x = random.Next(0, 10);
-                    int y = random.Next(4, 10);
+                    int y = random.Next(2, 8);
+                    int limit = 10 * 6;
 
                     WeaponUpgrade existingWeapon = weaponsDictionary[type];
 
@@ -82,14 +86,21 @@ namespace TeamProject
                     testPanel.Name = existingWeapon.Name; // 이부분에서 기사,농부등 무기별 이미지 설정
                     testPanel.Location = new Point(x * 50, y * 50);
 
-                    while (CheckOverlap(testPanel, MainPanelList))
+                    if (MainPanelList.Count == limit)
+                    {
+                        MessageBox.Show("강화 공간 부족");
+                        break;
+                    }
+
+                    while (CheckOverlap(testPanel, MainPanelList) && MainPanelList.Count != limit)
                     {
                         //lbox_Chat.Items.Add($"겹침 x : {x} y : {y}");
                         x = random.Next(0, 10);
-                        y = random.Next(3, 10);
+                        y = random.Next(2, 8);
                         testPanel.Location = new Point(x * 50, y * 50);
                     }
 
+                    
                     //lbox_Chat.Items.Add($"x : {x} y : {y}");
 
                     testPanel.Click += Panel_Click;
@@ -206,7 +217,7 @@ namespace TeamProject
                 clickedPanel.Location = new Point(clickedPanel.Location.X, clickedPanel.Location.Y - speed);
                 CheckCollisionWithUpgradePanel(clickedPanel);
 
-                if (clickedPanel.Location.Y <= -90)
+                if (clickedPanel.Location.Y <= workY)
                 {
                     moveTimer.Stop();
                 }
@@ -221,7 +232,7 @@ namespace TeamProject
             clickedPanel.Location = new Point(clickedPanel.Location.X + speed, clickedPanel.Location.Y);
             CheckCollisionWithWorkPanel(clickedPanel);
 
-            if (clickedPanel.Location.X == 670)
+            if (clickedPanel.Location.X == upgradeX)
             {
                 moveTimer.Stop();
             }
@@ -285,17 +296,26 @@ namespace TeamProject
 
         private void CheckCollisionWithUpgradePanel(Panel selectedPanel)
         {
-            if (selectedPanel.Location.Y <= -90)
+            if (selectedPanel.Location.Y <= workY)
             {
                 UpgradeWeapon(selectedPanel);
-                RemovePanel(selectedPanel);
             }
         }
 
         private void CheckCollisionWithWorkPanel(Panel selectedPanel)
         {
-            if (selectedPanel.Location.X == 670)
+            if (selectedPanel.Location.Y <= workY + 10 && selectedPanel.Location.X >= upgradeX - 10)
             {
+                MessageBox.Show("이스터에그 발견! 1000골드가 추가됩니다");
+                Money += 1000;
+                lb_Money.Text = Money.ToString();
+                EsterEgg = false;
+
+            }
+                
+                if (selectedPanel.Location.X == upgradeX)
+            {
+                
                 MoveWork(selectedPanel);
                 RemovePanel(selectedPanel);
             }
@@ -303,7 +323,7 @@ namespace TeamProject
 
         private void btn_Test_Click(object sender, EventArgs e)
         {
-            AddPanels(0, 1);
+            AddPanels(0, 10);
         }
 
         private void btn_Test2_Click(object sender, EventArgs e)
@@ -325,12 +345,14 @@ namespace TeamProject
             int randomValue = random.Next(1, 101);
             if (randomValue <= SuccessProbability[index]) //강화 성공시
             {
+                RemovePanel(clickedPanel);
                 AddPanels(index + 1, 1);
                 lbox_Chat.Items.Add($"강화가 성공하여 +{index + 1} 무기가 제련되었습니다.");
                 lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
             }
             else //강화 실패시
             {
+                RemovePanel(clickedPanel);
                 lbox_Chat.Items.Add($"강화가 실패하여 +{index} 무기가 파괴되었습니다.");
                 lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
             }
