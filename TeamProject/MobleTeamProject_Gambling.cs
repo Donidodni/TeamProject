@@ -43,7 +43,7 @@ namespace TeamProject
         private Button sendButton;
         private Button sellButton;
         private Panel clickedPanel;
-        
+
         private int speed = 10; // 이동 속도 조절 가능
 
         public MobleTeamProject_Gambling()
@@ -89,7 +89,7 @@ namespace TeamProject
                     }
 
                     lbox_Chat.Items.Add($"x : {x} y : {y}");
-                    
+
                     testPanel.Click += Panel_Click;
 
                     // 새로운 무기를 추가하는 대신 이미 있는 무기 속성을 사용
@@ -128,6 +128,11 @@ namespace TeamProject
             RemoveButtons();
 
             Panel clickedPanel = (Panel)sender;
+            MakeButton(clickedPanel);
+        }
+
+        private void MakeButton(Panel clickedPanel)
+        {
             enhanceButton = new Button();
             enhanceButton.Text = "강화하기";
             enhanceButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 10);
@@ -145,7 +150,7 @@ namespace TeamProject
             sellButton.Text = "판매하기";
             sellButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 70);
             // sellButton 클릭 이벤트 처리
-            sellButton.Click += (s, ev) => Sell(clickedPanel);            
+            sellButton.Click += (s, ev) => Sell(clickedPanel);
             panel_Main.Controls.Add(sellButton);
         }
         private void StartMovePanelUp(Panel panel)
@@ -153,7 +158,7 @@ namespace TeamProject
             RemoveButtons();
             Timer moveTimer = timerDictionary[panel];
             moveTimer.Interval = 20; // 타이머 주기 (20ms로 설정, 조절 가능)
-            moveTimer.Tick += (s, ev) => MovePanelUp(panel,moveTimer);
+            moveTimer.Tick += (s, ev) => MovePanelUp(panel, moveTimer);
             moveTimer.Start(); // 타이머 시작
         }
 
@@ -167,7 +172,7 @@ namespace TeamProject
         }
 
         private void MovePanelUp(Panel clickedPanel, Timer moveTimer)
-        {            
+        {
             if (moveTimer != null)
             {
                 clickedPanel.Location = new Point(clickedPanel.Location.X, clickedPanel.Location.Y - speed);
@@ -177,9 +182,9 @@ namespace TeamProject
                 {
                     moveTimer.Stop();
                 }
-              
-                
-            }          
+
+
+            }
 
         }
 
@@ -188,7 +193,7 @@ namespace TeamProject
             clickedPanel.Location = new Point(clickedPanel.Location.X + speed, clickedPanel.Location.Y);
             CheckCollisionWithWorkPanel(clickedPanel);
 
-            if (clickedPanel.Location.X ==670)
+            if (clickedPanel.Location.X == 670)
             {
                 moveTimer.Stop();
             }
@@ -201,7 +206,7 @@ namespace TeamProject
             string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
             int index = int.Parse(tagParts[0].Trim());
             string sellPriceString = tagParts[2].Trim();
-            if(int.TryParse(sellPriceString, out int price))
+            if (int.TryParse(sellPriceString, out int price))
             {
                 Money += price;
                 lb_Money.Text = Money.ToString() + " 골드";
@@ -290,7 +295,7 @@ namespace TeamProject
             if (randomValue <= SuccessProbability[index]) //강화 성공시
             {
                 AddPanels(index + 1, 1);
-                lbox_Chat.Items.Add($"강화가 성공하여 +{index+1} 무기가 제련되었습니다.");
+                lbox_Chat.Items.Add($"강화가 성공하여 +{index + 1} 무기가 제련되었습니다.");
 
             }
             else //강화 실패시
@@ -305,6 +310,42 @@ namespace TeamProject
         {
             Move(clickedPanel);
         }
+
+        private void btn_AllChoice_Click(object sender, EventArgs e)
+        {
+            if (flowLayoutPanel1.Visible)
+                flowLayoutPanel1.Visible = false;
+            else
+                flowLayoutPanel1.Visible = true;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Button clickedButton = (Button)sender;
+            Panel[] clickedPanel = FindPanelFromButton(clickedButton,0);
+            foreach (Panel panel in clickedPanel)
+                StartMovePanelRight(panel);
+        }
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            RemoveButtons();
+        }
+        private Panel[] FindPanelFromButton(Control button, int i)
+        {
+            List<Panel> panels = new List<Panel>();
+            foreach (Control control in panel_Main.Controls)
+            {
+                if (control is Panel panel && control.Tag != null)
+                {
+                    string[] tagParts = control.Tag.ToString().Split(',');
+                    if (tagParts[0] == "0")
+                        panels.Add(panel);
+                }
+                
+            }
+            return panels.ToArray();
+        }
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////강화소///////////////////////////////////////////////////////
@@ -375,6 +416,11 @@ namespace TeamProject
         {
             pbBuildHP.Value = 100;
         }
+
+
+
+
+
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
