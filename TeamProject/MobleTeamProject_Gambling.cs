@@ -316,14 +316,13 @@ namespace TeamProject
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-        String testPanel_Tag = "1,1,1";   //합칠 때 지우기
         String Unit_Image1 = "C:\\Users\\user\\Pictures\\Screenshots\\스크린샷 2024-01-05 110728.png";
         private void NewUnit(Panel panel)
         {
-            string tagString = testPanel_Tag.ToString();    //합칠 때 이름 수정 -> testPanel.Tag?.ToString();
-            string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);   //강화소에서 온 유닛정보 스플릿
-            int level = int.Parse(tagParts[0].Trim());  //유닛 레벨
-            int Attack = int.Parse(tagParts[1].Trim()); //유닛 공격력
+            //string tagString = clickedPanel.Tag?.ToString();
+            //string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);   //강화소에서 온 유닛정보 스플릿
+            //int level = int.Parse(tagParts[0].Trim());  //유닛 레벨
+            //int Attack = int.Parse(tagParts[1].Trim()); //유닛 공격력
         }
 
         //유닛 위치 정보 배열
@@ -348,8 +347,8 @@ namespace TeamProject
             {
                 Panel testPanel = new Panel(); // 패널 객체 생성
                 testPanel.Size = new System.Drawing.Size(50, 50); // 패널 크기 설정
-                testPanel.BackColor = Color.Black;
-                //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);
+                //testPanel.BackColor = Color.Black;
+                testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);
                 testPanel.Name = "Test";
                 for (int i = 0; i < 20; i++)
                 {
@@ -364,7 +363,7 @@ namespace TeamProject
 
                 NewUnit(testPanel);     //유닛의 레벨, 공격력 정보 할당
                 Controls.Add(testPanel);    //유닛패널 생성
-               // tabControl2.
+                tabControl2.
             }
         }
 
