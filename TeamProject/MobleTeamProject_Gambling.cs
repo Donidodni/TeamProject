@@ -69,8 +69,8 @@ namespace TeamProject
                 for (int i = 0; i < count; i++)
                 {
                     Random random = new Random();
-                    int x = random.Next(0, 3);
-                    int y = random.Next(3, 6);
+                    int x = random.Next(0, 10);
+                    int y = random.Next(4, 10);
 
                     WeaponUpgrade existingWeapon = weaponsDictionary[type];
 
@@ -84,13 +84,13 @@ namespace TeamProject
 
                     while (CheckOverlap(testPanel, MainPanelList))
                     {
-                        lbox_Chat.Items.Add($"겹침 x : {x} y : {y}");
-                        x = random.Next(0, 3);
-                        y = random.Next(3, 6);
+                        //lbox_Chat.Items.Add($"겹침 x : {x} y : {y}");
+                        x = random.Next(0, 10);
+                        y = random.Next(3, 10);
                         testPanel.Location = new Point(x * 50, y * 50);
                     }
 
-                    lbox_Chat.Items.Add($"x : {x} y : {y}");
+                    //lbox_Chat.Items.Add($"x : {x} y : {y}");
 
                     testPanel.Click += Panel_Click;
 
@@ -327,13 +327,20 @@ namespace TeamProject
             {
                 AddPanels(index + 1, 1);
                 lbox_Chat.Items.Add($"강화가 성공하여 +{index + 1} 무기가 제련되었습니다.");
-
+                lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
             }
             else //강화 실패시
             {
                 lbox_Chat.Items.Add($"강화가 실패하여 +{index} 무기가 파괴되었습니다.");
+                lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
             }
-
+            while (lbox_Chat.Items.Count > 10)
+            {
+                lbox_Chat.Items.RemoveAt(0);
+            }
+            // 스크롤 아래로 이동
+            lbox_Chat.SelectedIndex = lbox_Chat.Items.Count - 1;
+            lbox_Chat.SelectedIndex = -1; // 선택 해제
 
         }
 
