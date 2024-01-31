@@ -35,9 +35,9 @@ namespace TeamProject
         public int Money;
         List<List<WeaponUpgrade>> weapons = new List<List<WeaponUpgrade>>(); // 무기의 숫자를 나타냄. weapons[0]에는 0강 무기 n개 존재
         Dictionary<int, WeaponUpgrade> weaponsDictionary = new Dictionary<int, WeaponUpgrade>(); //키,값 형태로 무기강화별 정보를 저장
-        Dictionary<Panel, Timer> timerDictionary = new Dictionary<Panel, Timer>();
-
+        Dictionary<Panel, Timer> timerDictionary = new Dictionary<Panel, Timer>(); //패널마다 타이머를 달아주어 개별 행동 가능
         List<Panel> MainPanelList = new List<Panel>(); // 무기들 랜덤생성시 중복 검사
+
         private Button enhanceButton;
         private Button sendButton;
         private Button sellButton;
@@ -68,8 +68,8 @@ namespace TeamProject
                 for (int i = 0; i < count; i++)
                 {
                     Random random = new Random();
-                    int x = random.Next(0, 10);
-                    int y = random.Next(0, 5);
+                    int x = random.Next(0, 3);
+                    int y = random.Next(3, 6);
 
                     WeaponUpgrade existingWeapon = weaponsDictionary[type];
 
@@ -82,8 +82,8 @@ namespace TeamProject
                     while (CheckOverlap(testPanel, MainPanelList))
                     {
                         lbox_Chat.Items.Add($"겹침 x : {x} y : {y}");
-                        x = random.Next(0, 5);
-                        y = random.Next(0, 5);
+                        x = random.Next(0, 3);
+                        y = random.Next(3, 6);
                         testPanel.Location = new Point(x * 50, y * 50);
                     }
 
@@ -154,7 +154,6 @@ namespace TeamProject
             moveTimer.Interval = 20; // 타이머 주기 (20ms로 설정, 조절 가능)
             moveTimer.Tick += (s, ev) => MovePanelUp(panel,moveTimer);
             moveTimer.Start(); // 타이머 시작
-
         }
 
         private void StartMovePanelRight(Panel panel)
@@ -168,14 +167,31 @@ namespace TeamProject
 
         private void MovePanelUp(Panel clickedPanel, Timer moveTimer)
         {            
-            clickedPanel.Location = new Point(clickedPanel.Location.X, clickedPanel.Location.Y - speed);
+            if (moveTimer != null)
+            {
+                clickedPanel.Location = new Point(clickedPanel.Location.X, clickedPanel.Location.Y - speed);
+                CheckCollisionWithUpgradePanel(clickedPanel);
+
+                if (clickedPanel.Location.Y <= -90)
+                {
+                    moveTimer.Stop();
+                }
+              
+                
+            }          
 
         }
 
         private void MovePanelRight(Panel clickedPanel, Timer moveTimer)
         {
             clickedPanel.Location = new Point(clickedPanel.Location.X + speed, clickedPanel.Location.Y);
-            
+            CheckCollisionWithWorkPanel(clickedPanel);
+
+            if (clickedPanel.Location.X >=670)
+            {
+                moveTimer.Stop();
+            }
+
         }
 
         private void Sell(Panel clickedPanel)
@@ -202,6 +218,7 @@ namespace TeamProject
             weapons[index].RemoveAt(0);
             timerDictionary.Remove(clickedPanel);
             panel_Main.Controls.Remove(clickedPanel);
+            MainPanelList.Remove(clickedPanel);
         }
 
 
@@ -229,19 +246,47 @@ namespace TeamProject
             }
         }
 
+        private void CheckCollisionWithUpgradePanel(Panel selectedPanel)
+        {
+            if (selectedPanel.Location.Y <= -90)
+            {
+                UpgradeWeapon(selectedPanel);
+                RemovePanel(selectedPanel);
+            }
+        }
+
+        private void CheckCollisionWithWorkPanel(Panel selectedPanel)
+        {
+            if (selectedPanel.Location.X >= 670)
+            {
+                MoveWork(selectedPanel);
+                RemovePanel(selectedPanel);
+            }
+        }
+
         private void btn_Test_Click(object sender, EventArgs e)
         {
-            AddPanels(0, 5);
+            AddPanels(0, 1);
         }
 
         private void btn_Test2_Click(object sender, EventArgs e)
         {
-            AddPanels(1, 5);
+            AddPanels(1, 1);
         }
 
         private void panel_Main_Click_1(object sender, EventArgs e)
         {
             RemoveButtons();
+        }
+
+        private void UpgradeWeapon(Panel panel)
+        {
+            lbox_Chat.Items.Add($"강화시도 : panel의 좌표 : x = {panel.Location.X} y = {panel.Location.Y}");
+        }
+
+        private void MoveWork(Panel panel)
+        {
+            lbox_Chat.Items.Add($"일 보내기 : panel의 좌표 : x = {panel.Location.X} y = {panel.Location.Y}");
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

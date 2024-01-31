@@ -52,7 +52,7 @@ namespace TeamProject
         private void InitializeComponent()
         {
             lbox_Chat = new System.Windows.Forms.ListBox();
-            panel1 = new System.Windows.Forms.Panel();
+            panel_Upgrade = new System.Windows.Forms.Panel();
             label1 = new System.Windows.Forms.Label();
             panel2 = new System.Windows.Forms.Panel();
             label2 = new System.Windows.Forms.Label();
@@ -71,7 +71,7 @@ namespace TeamProject
             panel4 = new System.Windows.Forms.Panel();
             panel3 = new System.Windows.Forms.Panel();
             tabPage3 = new System.Windows.Forms.TabPage();
-            panel1.SuspendLayout();
+            panel_Upgrade.SuspendLayout();
             panel2.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -88,14 +88,14 @@ namespace TeamProject
             lbox_Chat.Size = new System.Drawing.Size(379, 116);
             lbox_Chat.TabIndex = 0;
             // 
-            // panel1
+            // panel_Upgrade
             // 
-            panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            panel1.Controls.Add(label1);
-            panel1.Location = new System.Drawing.Point(15, 61);
-            panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(848, 241);
-            panel1.TabIndex = 1;
+            panel_Upgrade.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            panel_Upgrade.Controls.Add(label1);
+            panel_Upgrade.Location = new System.Drawing.Point(15, 61);
+            panel_Upgrade.Name = "panel_Upgrade";
+            panel_Upgrade.Size = new System.Drawing.Size(848, 241);
+            panel_Upgrade.TabIndex = 1;
             // 
             // label1
             // 
@@ -126,9 +126,9 @@ namespace TeamProject
             // 
             // panel_Main
             // 
-            panel_Main.Location = new System.Drawing.Point(51, 296);
+            panel_Main.Location = new System.Drawing.Point(51, 288);
             panel_Main.Name = "panel_Main";
-            panel_Main.Size = new System.Drawing.Size(631, 376);
+            panel_Main.Size = new System.Drawing.Size(631, 384);
             panel_Main.TabIndex = 3;
             panel_Main.Click += panel_Main_Click_1;
             // 
@@ -166,7 +166,7 @@ namespace TeamProject
             tabPage1.Controls.Add(btn_Test2);
             tabPage1.Controls.Add(btn_Test);
             tabPage1.Controls.Add(panel2);
-            tabPage1.Controls.Add(panel1);
+            tabPage1.Controls.Add(panel_Upgrade);
             tabPage1.Controls.Add(lbox_Chat);
             tabPage1.Controls.Add(panel_Main);
             tabPage1.Controls.Add(lb_Money);
@@ -281,8 +281,8 @@ namespace TeamProject
             Controls.Add(tabControl1);
             Name = "MobleTeamProject_Gambling";
             Text = "MobleTeamProject_Gambling";
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
+            panel_Upgrade.ResumeLayout(false);
+            panel_Upgrade.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             tabControl1.ResumeLayout(false);
@@ -295,7 +295,7 @@ namespace TeamProject
         #endregion
 
         private System.Windows.Forms.ListBox lbox_Chat;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel_Upgrade;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
