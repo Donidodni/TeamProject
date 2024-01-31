@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            btUnitMake = new System.Windows.Forms.Button();
             pnBuild = new System.Windows.Forms.Panel();
             pbBuildHP = new System.Windows.Forms.ProgressBar();
             UnitPosition7 = new System.Windows.Forms.Panel();
@@ -55,16 +54,6 @@
             UnitPosition23 = new System.Windows.Forms.Panel();
             UnitPosition1 = new System.Windows.Forms.Panel();
             SuspendLayout();
-            // 
-            // btUnitMake
-            // 
-            btUnitMake.Location = new System.Drawing.Point(170, 676);
-            btUnitMake.Name = "btUnitMake";
-            btUnitMake.Size = new System.Drawing.Size(75, 39);
-            btUnitMake.TabIndex = 1;
-            btUnitMake.Text = "유닛 생성";
-            btUnitMake.UseVisualStyleBackColor = true;
-            btUnitMake.Click += button1_Click;
             // 
             // pnBuild
             // 
@@ -272,7 +261,6 @@
             ClientSize = new System.Drawing.Size(884, 861);
             Controls.Add(pbBuildHP);
             Controls.Add(pnBuild);
-            Controls.Add(btUnitMake);
             Controls.Add(UnitPosition1);
             Controls.Add(UnitPosition2);
             Controls.Add(UnitPosition3);
@@ -302,7 +290,6 @@
         }
 
         #endregion
-        private System.Windows.Forms.Button btUnitMake;
         private System.Windows.Forms.Panel pnBuild;
         private System.Windows.Forms.ProgressBar pbBuildHP;
         private System.Windows.Forms.Panel UnitPosition7;

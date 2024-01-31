@@ -288,7 +288,6 @@ namespace TeamProject
             btUnitMake.TabIndex = 5;
             btUnitMake.Text = "유닛 생성";
             btUnitMake.UseVisualStyleBackColor = true;
-            btUnitMake.Click += UnitMake_Click;
             // 
             // pbBuildHP
             // 
