@@ -1,4 +1,6 @@
-﻿namespace TeamProject
+﻿using System.Collections.Generic;
+
+namespace TeamProject
 {
     partial class MobleTeamProject_Gambling
     {
@@ -26,6 +28,27 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
+        /// 
+        private void InitializeWeapons()
+        {
+            WeaponUpgrade lv0 = new WeaponUpgrade() //0번 무기 속성
+            {
+                Level = 0,
+                Name = "Black",
+                Attack = 0,
+                SellPrice = 0,
+            };
+            weaponsDictionary.Add(0, lv0);
+
+            WeaponUpgrade lv1 = new WeaponUpgrade() //1번 무기 속성
+            {
+                Level = 1,
+                Name = "Red",
+                Attack = 1,
+                SellPrice = 1,
+            };
+            weaponsDictionary.Add(1, lv1);
+        }
         private void InitializeComponent()
         {
             lbox_Chat = new System.Windows.Forms.ListBox();
@@ -38,10 +61,10 @@
             lb_Money = new System.Windows.Forms.Label();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabPage1 = new System.Windows.Forms.TabPage();
+            btn_Test2 = new System.Windows.Forms.Button();
             btn_Test = new System.Windows.Forms.Button();
             tabPage2 = new System.Windows.Forms.TabPage();
             tabPage3 = new System.Windows.Forms.TabPage();
-            btn_Test2 = new System.Windows.Forms.Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             tabControl1.SuspendLayout();
@@ -148,13 +171,23 @@
             tabPage1.Text = "강화소";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // btn_Test2
+            // 
+            btn_Test2.Location = new System.Drawing.Point(487, 762);
+            btn_Test2.Name = "btn_Test2";
+            btn_Test2.Size = new System.Drawing.Size(119, 23);
+            btn_Test2.TabIndex = 4;
+            btn_Test2.Text = "1강 5개구매";
+            btn_Test2.UseVisualStyleBackColor = true;
+            btn_Test2.Click += btn_Test2_Click;
+            // 
             // btn_Test
             // 
             btn_Test.Location = new System.Drawing.Point(487, 717);
             btn_Test.Name = "btn_Test";
-            btn_Test.Size = new System.Drawing.Size(75, 23);
+            btn_Test.Size = new System.Drawing.Size(111, 23);
             btn_Test.TabIndex = 0;
-            btn_Test.Text = "test";
+            btn_Test.Text = "0강 5개구매";
             btn_Test.UseVisualStyleBackColor = true;
             btn_Test.Click += btn_Test_Click;
             // 
@@ -177,16 +210,6 @@
             tabPage3.TabIndex = 2;
             tabPage3.Text = "tabPage3";
             tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // btn_Test2
-            // 
-            btn_Test2.Location = new System.Drawing.Point(487, 762);
-            btn_Test2.Name = "btn_Test2";
-            btn_Test2.Size = new System.Drawing.Size(75, 23);
-            btn_Test2.TabIndex = 4;
-            btn_Test2.Text = "test2";
-            btn_Test2.UseVisualStyleBackColor = true;
-            btn_Test2.Click += btn_Test2_Click;
             // 
             // MobleTeamProject_Gambling
             // 
