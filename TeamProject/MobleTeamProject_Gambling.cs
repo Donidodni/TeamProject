@@ -58,7 +58,10 @@ namespace TeamProject
             lb_Money.Text = Money.ToString() + " 골드";
         }
 
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
 
         void AddPanels(int type, int count) // type만큼 강화된 무기 count만큼 생성
         {
@@ -339,7 +342,16 @@ namespace TeamProject
         }
         private void MoveWork(Panel clickedPanel) // 일터로 이동
         {
-            if (!full[19])
+            bool isNotFull = false;
+            for (int i = 0; i < 20; i++)    //유닛의 자리가 모두 할당되었는지
+            {
+                if (!full[i])
+                {
+                    isNotFull = true;
+                    break;
+                }
+            }
+            if (isNotFull)
             {
                 Move(clickedPanel);
                 RemovePanel(clickedPanel);
