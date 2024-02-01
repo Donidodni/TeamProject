@@ -326,7 +326,7 @@ namespace TeamProject
             if (selectedPanel.Location.X == workX)
             {
                 MoveWork(selectedPanel);
-                RemovePanel(selectedPanel);
+
             }
         }
 
@@ -340,7 +340,23 @@ namespace TeamProject
         }
         private void MoveWork(Panel clickedPanel) // 일터로 이동
         {
-            Move(clickedPanel);
+            if (!full[19])
+            {
+                Move(clickedPanel);
+                RemovePanel(clickedPanel);
+            }
+            else
+            {
+                ShowMessage("일터에 유닛이 가득 찼습니다.");
+                string tagString = clickedPanel.Tag?.ToString();
+                string[] tagParts = tagString.Split(',');
+                RemovePanel(clickedPanel);
+                AddPanels(int.Parse(tagParts[0]), 1);
+            }
+            while (lbox_Chat.Items.Count > 10)
+            {
+                lbox_Chat.Items.RemoveAt(0);
+            }
         }
         private void btn_AllChoice_Click(object sender, EventArgs e) //모두 강화 버튼 보이게/안보이게
         {
@@ -349,6 +365,34 @@ namespace TeamProject
         private void btn_ViewUnit_Click(object sender, EventArgs e) // 김민석 - 유닛 보기 UI
         {
             flowLayoutPanel2.Visible = !flowLayoutPanel2.Visible;
+
+            UpdateUnitCountLabel(lb_Puls_0_Count, 0);
+            UpdateUnitCountLabel(lb_Puls_1_Count, 1);
+            UpdateUnitCountLabel(lb_Puls_2_Count, 2);
+            UpdateUnitCountLabel(lb_Puls_3_Count, 3);
+            UpdateUnitCountLabel(lb_Puls_4_Count, 4);
+            UpdateUnitCountLabel(lb_Puls_5_Count, 5);
+            UpdateUnitCountLabel(lb_Puls_6_Count, 6);
+            UpdateUnitCountLabel(lb_Puls_7_Count, 7);
+            UpdateUnitCountLabel(lb_Puls_8_Count, 8);
+        }
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            UpdateUnitCountLabel(lb_Puls_0_Count, 0);
+            UpdateUnitCountLabel(lb_Puls_1_Count, 1);
+            UpdateUnitCountLabel(lb_Puls_2_Count, 2);
+            UpdateUnitCountLabel(lb_Puls_3_Count, 3);
+            UpdateUnitCountLabel(lb_Puls_4_Count, 4);
+            UpdateUnitCountLabel(lb_Puls_5_Count, 5);
+            UpdateUnitCountLabel(lb_Puls_6_Count, 6);
+            UpdateUnitCountLabel(lb_Puls_7_Count, 7);
+            UpdateUnitCountLabel(lb_Puls_8_Count, 8);
+        }
+
+
+        private void UpdateUnitCountLabel(Label label, int weaponIndex)
+        {
+            label.Text = weapons[weaponIndex].Count.ToString() + " 개";
         }
 
         private void btn_CreateAllButton(object sender, EventArgs e) //모두 강화 버튼 선택시 강화/일터/판매 보이게
@@ -485,15 +529,24 @@ namespace TeamProject
             }
             if (cnt >= 20)
             {
-                //MessageBox.Show("20개 이상 추가할 수 없습니다.");
                 AddPanels(int.Parse(tagParts[0].Trim()), 1);
 
-                lbox_Chat.Items.Add("20개 이상 추가할 수 없습니다.");
-                lbox_Chat.SelectedIndex = lbox_Chat.Items.Count - 1;
-                lbox_Chat.SelectedIndex = -1; // 선택 해제
+                //lbox_Chat.Items.Add("20개 이상 추가할 수 없습니다.");
+                //lbox_Chat.SelectedIndex = lbox_Chat.Items.Count - 1;
+                //lbox_Chat.SelectedIndex = -1; // 선택 해제
             }
             else
             {
+                List<WeaponUpgrade> we = weapons[int.Parse(tagParts[0].Trim())]; //weapons에 추가
+                WeaponUpgrade newWeapon = new WeaponUpgrade()
+                {
+                    Level = int.Parse(tagParts[0].Trim()),
+                    Name = tagParts[3],
+                    Attack = int.Parse(tagParts[1].Trim()),
+                    SellPrice = int.Parse(tagParts[2].Trim()),
+                };
+                we.Add(newWeapon);
+
                 Panel testPanel = new Panel(); // 패널 객체 생성
                 testPanel.Size = new System.Drawing.Size(50, 50); // 패널 크기 설정
                 testPanel.BackColor = Color.FromName(tagParts[3].Trim());
@@ -511,46 +564,57 @@ namespace TeamProject
                 testPanel.Click += Panel1_Click;
 
                 tabControl1.TabPages[1].Controls.Add(testPanel);    //유닛패널 생성
+                ShowMessage($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
             }
             int index = int.Parse(tagParts[0].Trim());
-            lbox_Chat.Items.Add($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
+            ShowMessage($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
+            //lbox_Chat.Items.Add($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
         }
 
         private void Panel1_Click(object sender, EventArgs e)    //패널 제거 -> 강화소 반환으로 수정예정
         {
             Panel clickedPanel = (Panel)sender;
+            string tagString = clickedPanel.Tag?.ToString();
+            string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            weapons[int.Parse(tagParts[0].Trim())].RemoveAt(0);
             Controls.Remove(clickedPanel); clickedPanel.Dispose();
             for (int i = 0; i < 20; i++)   //패널 좌표와 비교
                 if (clickedPanel.Location.X == PntArr[i, 0] && clickedPanel.Location.Y == PntArr[i, 1])
                 {
-                    full[i] = false; Attack[i] = 0;
+                    full[i] = false; Attack[i] = 0; break;
                 }
         }
 
         Panel pnBuilding = new Panel();
         private void AttackBuild()
         {
+            int[] BuildArmor = { 1, 2, 3, 4, 5 };  //단계별 빌딩 방어력
             if (cbSelectBuild.SelectedIndex != -1)  //건물을 선택했을 경우
             {
-                int sum = 0;
+                int Attacksum = 0, Demage = 0;
                 foreach (int i in Attack)
                 {
-                    sum += i;
+                    Attacksum += i;
                 }
-                if (pbBuildHP.Value > sum)
-                    pbBuildHP.Value -= sum;
+                if (pbBuildHP.Value > Attacksum)
+                {
+                    //공격력이 방어력보다 클 때만 공격
+                    //if (Attacksum >= BuildArmor[cbSelectBuild.SelectedIndex])
+                        pbBuildHP.Value = pbBuildHP.Value - Attacksum + BuildArmor[cbSelectBuild.SelectedIndex];
+                }
+
                 //건물 파괴 시
                 else
                 {
                     pbBuildHP.Value = pbBuildHP.Minimum;    //HP = 0
-                    Money += pbBuildHP.Maximum; //보상
+                    Money += pbBuildHP.Maximum;             //건물 파괴 보상
                     lb_Money.Text = Money.ToString();
-                    lbox_Chat.Items.Add($"{cbSelectBuild.SelectedIndex + 1}단계 건물을 파괴했습니다. (+{pbBuildHP.Maximum}골드)");
+                    ShowMessage($"{cbSelectBuild.SelectedIndex + 1}단계 건물을 파괴했습니다. (+{pbBuildHP.Maximum}골드)");
                     tabControl1.TabPages[1].Controls.Remove(pnBuilding);
-                    timer1.Stop();
+                    NewBuilding(cbSelectBuild.SelectedIndex);
                 }
                 lbHP.Text = pbBuildHP.Value.ToString();
-                lbAttackSum.Text = sum.ToString();
+                lbAttackSum.Text = Attacksum.ToString();
             }
         }
 
@@ -559,76 +623,35 @@ namespace TeamProject
             AttackBuild();
         }
 
-        private void MobleTeamProject_Gambling_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             pnBuilding.Location = new Point(200, 170);   //건물 생성 좌표 설정
             pnBuilding.Size = new Size(500, 386); // 패널 크기 설정
             pbBuildHP.Minimum = 0;
-            if (cbSelectBuild.SelectedIndex == 0)    //1단계 건물
-            {
-                //빌딩 생성
-                pnBuilding.BackColor = Color.Black;
-                //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
 
-                //빌딩 HP 초기값
-                pbBuildHP.Maximum = 100;
-                pbBuildHP.Value = pbBuildHP.Maximum;
-
-            }
-            if (cbSelectBuild.SelectedIndex == 1)    //2단계 건물
-            {
-                //빌딩 생성
-                pnBuilding.BackColor = Color.Red;
-                //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
-
-                //빌딩 HP 초기값
-                pbBuildHP.Maximum = 200;
-                pbBuildHP.Value = pbBuildHP.Maximum;
-
-            }
-            if (cbSelectBuild.SelectedIndex == 2)    //3단계 건물
-            {
-                //빌딩 생성
-                pnBuilding.BackColor = Color.Purple;
-                //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
-
-                //빌딩 HP 초기값
-                pbBuildHP.Maximum = 500;
-                pbBuildHP.Value = pbBuildHP.Maximum;
-
-            }
-            if (cbSelectBuild.SelectedIndex == 3)    //4단계 건물
-            {
-                //빌딩 생성
-                pnBuilding.BackColor = Color.Plum;
-                //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
-
-                //빌딩 HP 초기값
-                pbBuildHP.Maximum = 1000;
-                pbBuildHP.Value = pbBuildHP.Maximum;
-
-            }
-            if (cbSelectBuild.SelectedIndex == 4)    //5단계 건물
-            {
-                //빌딩 생성
-                pnBuilding.BackColor = Color.Pink;
-                //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
-
-                //빌딩 HP 초기값
-                pbBuildHP.Maximum = 2000;
-                pbBuildHP.Value = pbBuildHP.Maximum;
-
-            }
-            tabControl1.TabPages[1].Controls.Add(pnBuilding);    //빌딩패널 생성
+            NewBuilding(cbSelectBuild.SelectedIndex);
             timer1.Start(); //건물 공격 시작
         }
 
- 
+        private void NewBuilding(int BLevel)    //BLevel = cbSelectBuild.SelectedIndex
+        {
+            Color[] BColor = { Color.Black, Color.Red, Color.Pink, Color.Plum, Color.Gold}; //단계별 빌딩 색상
+            int[] BuildHP = { 100, 200, 500, 1000, 2000 };  //단계별 빌딩 HP
+            //빌딩 생성
+            pnBuilding.BackColor = BColor[BLevel];
+            //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
+
+            //빌딩 HP 초기값
+            pbBuildHP.Maximum = BuildHP[BLevel];
+            pbBuildHP.Value = pbBuildHP.Maximum;
+            tabControl1.TabPages[1].Controls.Add(pnBuilding);    //빌딩패널 생성
+        }
+
+  
+
+
+
+
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
