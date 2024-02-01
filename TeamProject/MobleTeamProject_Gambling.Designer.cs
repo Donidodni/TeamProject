@@ -184,6 +184,8 @@ namespace TeamProject
             lb_Money = new System.Windows.Forms.Label();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabPage1 = new System.Windows.Forms.TabPage();
+            label10 = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
             pictureBox3 = new System.Windows.Forms.PictureBox();
             panel_Main = new System.Windows.Forms.Panel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -201,6 +203,7 @@ namespace TeamProject
             label7 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
+            lbBuildInfo = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             pbBuildHP = new System.Windows.Forms.ProgressBar();
             panel6 = new System.Windows.Forms.Panel();
@@ -210,8 +213,6 @@ namespace TeamProject
             tabPage3 = new System.Windows.Forms.TabPage();
             timer1 = new System.Windows.Forms.Timer(components);
             Allview0_value = new System.Windows.Forms.Label();
-            label8 = new System.Windows.Forms.Label();
-            label10 = new System.Windows.Forms.Label();
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -719,6 +720,28 @@ namespace TeamProject
             tabPage1.Text = "강화소";
             tabPage1.Click += tabPage1_Click;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = System.Drawing.Color.FromArgb(128, 64, 64);
+            label10.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label10.ForeColor = System.Drawing.SystemColors.Control;
+            label10.Location = new System.Drawing.Point(740, 439);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(71, 37);
+            label10.TabIndex = 21;
+            label10.Text = "던전";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = System.Drawing.Color.Transparent;
+            label8.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label8.Location = new System.Drawing.Point(756, 348);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(0, 37);
+            label8.TabIndex = 16;
+            // 
             // pictureBox3
             // 
             pictureBox3.BackgroundImage = Properties.Resources.mine;
@@ -834,6 +857,7 @@ namespace TeamProject
             tabPage2.Controls.Add(label7);
             tabPage2.Controls.Add(label5);
             tabPage2.Controls.Add(label6);
+            tabPage2.Controls.Add(lbBuildInfo);
             tabPage2.Controls.Add(label4);
             tabPage2.Controls.Add(pbBuildHP);
             tabPage2.Controls.Add(panel6);
@@ -909,6 +933,16 @@ namespace TeamProject
             label6.TabIndex = 5;
             label6.Text = "현재 공격력";
             // 
+            // lbBuildInfo
+            // 
+            lbBuildInfo.AutoSize = true;
+            lbBuildInfo.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lbBuildInfo.Location = new System.Drawing.Point(307, 55);
+            lbBuildInfo.Name = "lbBuildInfo";
+            lbBuildInfo.Size = new System.Drawing.Size(248, 32);
+            lbBuildInfo.TabIndex = 5;
+            lbBuildInfo.Text = "1단계 건물 방어력 : 1";
+            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -979,28 +1013,6 @@ namespace TeamProject
             Allview0_value.Name = "Allview0_value";
             Allview0_value.Size = new System.Drawing.Size(100, 23);
             Allview0_value.TabIndex = 0;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = System.Drawing.Color.Transparent;
-            label8.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label8.Location = new System.Drawing.Point(756, 348);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(0, 37);
-            label8.TabIndex = 16;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = System.Drawing.Color.FromArgb(128, 64, 64);
-            label10.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label10.ForeColor = System.Drawing.SystemColors.Control;
-            label10.Location = new System.Drawing.Point(740, 439);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(71, 37);
-            label10.TabIndex = 21;
-            label10.Text = "던전";
             // 
             // MobleTeamProject_Gambling
             // 
@@ -1102,5 +1114,6 @@ namespace TeamProject
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbBuildInfo;
     }
 }
