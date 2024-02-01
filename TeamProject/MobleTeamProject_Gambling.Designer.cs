@@ -216,7 +216,7 @@ namespace TeamProject
             tabPage1.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage2.SuspendLayout();
             SuspendLayout();
@@ -961,7 +961,7 @@ namespace TeamProject
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+           // ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
@@ -982,6 +982,15 @@ namespace TeamProject
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button btn_Test;
         private System.Windows.Forms.Button btn_Test2;
+        private System.Windows.Forms.Button btn_All0;
+        private System.Windows.Forms.Button btn_All1;
+        private System.Windows.Forms.Button btn_All2;
+        private System.Windows.Forms.Button btn_All3;
+        private System.Windows.Forms.Button btn_All4;
+        private System.Windows.Forms.Button btn_All5;
+        private System.Windows.Forms.Button btn_All6;
+        private System.Windows.Forms.Button btn_All7;
+        private System.Windows.Forms.Button btn_All8;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel5;
@@ -1002,9 +1011,9 @@ namespace TeamProject
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lb_Allview0;
         private System.Windows.Forms.Label Allview0_value;
-        private System.Windows.Forms.Panel panel_Main;
-        private System.Windows.Forms.PictureBox pictureBox2;
+       // private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel flowLayoutPanel2;
+        private System.Windows.Forms.Panel flowLayoutPanel1;
         private System.Windows.Forms.Label lb_Allview5;
         private System.Windows.Forms.Label lb_Allview8;
         private System.Windows.Forms.Label lb_Allview4;
@@ -1020,16 +1029,12 @@ namespace TeamProject
         private System.Windows.Forms.Label lb_Puls_3_Count;
         private System.Windows.Forms.Label lb_Puls_7_Count;
         private System.Windows.Forms.Label lb_Puls_6_Count;
-        private System.Windows.Forms.Label Allview0_value;
         private System.Windows.Forms.Label lb_Puls_2_Count;
         private System.Windows.Forms.Label lb_Puls_1_Count;
         private System.Windows.Forms.Panel panel_Upgrade;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lb_Puls_0_Count;
-        private System.Windows.Forms.Label lb_Allview;
         private System.Windows.Forms.Button btn_Refresh;
-        private System.Windows.Forms.Panel panel_Main;
-        private System.Windows.Forms.Label lb_Allview;
     }
 }
