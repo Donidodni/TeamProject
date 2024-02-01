@@ -320,10 +320,10 @@ namespace TeamProject
             flowLayoutPanel2.Controls.Add(panel7);
             flowLayoutPanel2.Controls.Add(panel2);
             flowLayoutPanel2.Controls.Add(btn_Refresh);
-            flowLayoutPanel2.Location = new System.Drawing.Point(18, 74);
+            flowLayoutPanel2.Location = new System.Drawing.Point(50, 74);
             flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new System.Drawing.Size(788, 341);
+            flowLayoutPanel2.Size = new System.Drawing.Size(748, 341);
             flowLayoutPanel2.TabIndex = 11;
             flowLayoutPanel2.Visible = false;
             // 
@@ -1215,7 +1215,7 @@ namespace TeamProject
             panel1.BackgroundImage = Properties.Resources.message;
             panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             panel1.Controls.Add(label2);
-            panel1.Location = new System.Drawing.Point(201, 134);
+            panel1.Location = new System.Drawing.Point(222, 134);
             panel1.Margin = new System.Windows.Forms.Padding(4);
             panel1.Name = "panel1";
             panel1.Size = new System.Drawing.Size(265, 74);
