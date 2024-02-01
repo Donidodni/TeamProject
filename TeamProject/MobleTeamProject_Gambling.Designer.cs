@@ -1014,16 +1014,6 @@ namespace TeamProject
         private System.Windows.Forms.ImageList characters;
         private System.Windows.Forms.ComboBox cbSelectBuild;
         private System.Windows.Forms.Button btn_ViewUnit;
-        private System.Windows.Forms.Button btn_All0;
-        private System.Windows.Forms.Button btn_All1;
-        private System.Windows.Forms.Button btn_All2;
-        private System.Windows.Forms.Button btn_All3;
-        private System.Windows.Forms.Button btn_All4;
-        private System.Windows.Forms.Button btn_All5;
-        private System.Windows.Forms.Button btn_All6;
-        private System.Windows.Forms.Button btn_All7;
-        private System.Windows.Forms.Button btn_All8;
-        private System.Windows.Forms.Button btn_All9;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lb_Allview0;
