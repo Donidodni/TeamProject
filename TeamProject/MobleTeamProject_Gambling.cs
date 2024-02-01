@@ -237,7 +237,7 @@ namespace TeamProject
         {
             RemoveButtons();
             Timer moveTimer = timerDictionary[panel];
-            moveTimer.Interval = 50; // 타이머 주기 (20ms로 설정, 조절 가능)
+            moveTimer.Interval = 20; // 타이머 주기 (20ms로 설정, 조절 가능)
             moveTimer.Tick += (s, ev) => MovePanelUp(panel, moveTimer);
             moveTimer.Start(); // 타이머 시작
         }
@@ -246,7 +246,7 @@ namespace TeamProject
         {
             RemoveButtons();
             Timer moveTimer = timerDictionary[panel];
-            moveTimer.Interval = 50; // 타이머 주기 (20ms로 설정, 조절 가능)
+            moveTimer.Interval = 20; // 타이머 주기 (20ms로 설정, 조절 가능)
             moveTimer.Tick += (s, ev) => MovePanelRight(panel, moveTimer);
             moveTimer.Start(); // 타이머 시작
         }
@@ -634,7 +634,7 @@ namespace TeamProject
 
         private void NewBuilding(int BLevel)    //BLevel = cbSelectBuild.SelectedIndex
         {
-            Color[] BColor = { Color.Black, Color.Red, Color.Pink, Color.Plum, Color.Gold}; //단계별 빌딩 색상
+            Color[] BColor = { Color.Black, Color.Red, Color.Pink, Color.Plum, Color.Gold }; //단계별 빌딩 색상
             int[] BuildHP = { 100, 200, 500, 1000, 2000 };  //단계별 빌딩 HP
             //빌딩 생성
             pnBuilding.BackColor = BColor[BLevel];
@@ -646,7 +646,15 @@ namespace TeamProject
             tabControl1.TabPages[1].Controls.Add(pnBuilding);    //빌딩패널 생성
         }
 
-  
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab == tabPage3)
+            {
+                tabPage3.Focus();
+            }
+        }
+
+
 
 
 

@@ -214,9 +214,6 @@ namespace TeamProject
             panel2.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
-            flowLayoutPanel2.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage2.SuspendLayout();
             SuspendLayout();
@@ -306,7 +303,7 @@ namespace TeamProject
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(43, 28);
             label9.TabIndex = 0;
-            label9.Text = "0강";
+            label9.Text = "8강";
             // 
             // lb_Allview8
             // 
@@ -704,6 +701,7 @@ namespace TeamProject
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new System.Drawing.Size(883, 863);
             tabControl1.TabIndex = 4;
+            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
             // tabPage1
             // 
@@ -964,10 +962,6 @@ namespace TeamProject
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
-            flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel2.ResumeLayout(false);
-            flowLayoutPanel2.PerformLayout();
-           // ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
@@ -1019,7 +1013,6 @@ namespace TeamProject
         private System.Windows.Forms.Label Allview0_value;
        // private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel flowLayoutPanel2;
-        private System.Windows.Forms.Panel flowLayoutPanel1;
         private System.Windows.Forms.Label lb_Allview5;
         private System.Windows.Forms.Label lb_Allview8;
         private System.Windows.Forms.Label lb_Allview4;
@@ -1042,5 +1035,6 @@ namespace TeamProject
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lb_Puls_0_Count;
         private System.Windows.Forms.Button btn_Refresh;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
