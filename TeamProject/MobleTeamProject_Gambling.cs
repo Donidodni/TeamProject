@@ -598,6 +598,7 @@ namespace TeamProject
         }
 
         Panel pnBuilding = new Panel();
+        int[] BuildReward = { 1, 2, 5, 10, 20 };
         private void AttackBuild()
         {
             if (cbSelectBuild.SelectedIndex != -1)  //건물을 선택했을 경우
@@ -618,9 +619,9 @@ namespace TeamProject
                 else
                 {
                     pbBuildHP.Value = pbBuildHP.Minimum;    //HP = 0
-                    Money += pbBuildHP.Maximum;             //건물 파괴 보상
+                    Money += BuildReward[cbSelectBuild.SelectedIndex];             //건물 파괴 보상
                     lb_Money.Text = Money.ToString();
-                    ShowMessage($"{cbSelectBuild.SelectedIndex + 1}단계 건물을 파괴했습니다. (+{pbBuildHP.Maximum}골드)");
+                    ShowMessage($"{cbSelectBuild.SelectedIndex + 1}단계 건물을 파괴했습니다. (+{BuildReward[cbSelectBuild.SelectedIndex]}골드)");
                     tabControl1.TabPages[1].Controls.Remove(pnBuilding);
                     NewBuilding(cbSelectBuild.SelectedIndex);
                 }
