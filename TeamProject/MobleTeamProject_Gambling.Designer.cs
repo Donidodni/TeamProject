@@ -182,6 +182,7 @@ namespace TeamProject
             lb_Money = new System.Windows.Forms.Label();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabPage1 = new System.Windows.Forms.TabPage();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
             btn_ViewUnit = new System.Windows.Forms.Button();
             btn_AllChoice = new System.Windows.Forms.Button();
             btn_Test2 = new System.Windows.Forms.Button();
@@ -202,13 +203,34 @@ namespace TeamProject
             tabPage3 = new System.Windows.Forms.TabPage();
             timer1 = new System.Windows.Forms.Timer(components);
             characters = new System.Windows.Forms.ImageList(components);
-            panel_Upgrade.SuspendLayout();
-            flowLayoutPanel2.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
+            lb_Allview2 = new System.Windows.Forms.Label();
+            Allview5_value = new System.Windows.Forms.Label();
+            Allview4_value = new System.Windows.Forms.Label();
+            Allview8_value = new System.Windows.Forms.Label();
+            Allview3_value = new System.Windows.Forms.Label();
+            Allview7_value = new System.Windows.Forms.Label();
+            Allview6_value = new System.Windows.Forms.Label();
+            Allview0_value = new System.Windows.Forms.Label();
+            Allview2_value = new System.Windows.Forms.Label();
+            Allview1_value = new System.Windows.Forms.Label();
+            flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            btn_All0 = new System.Windows.Forms.Button();
+            btn_All1 = new System.Windows.Forms.Button();
+            btn_All2 = new System.Windows.Forms.Button();
+            btn_All3 = new System.Windows.Forms.Button();
+            btn_All4 = new System.Windows.Forms.Button();
+            btn_All5 = new System.Windows.Forms.Button();
+            btn_All6 = new System.Windows.Forms.Button();
+            btn_All7 = new System.Windows.Forms.Button();
+            btn_All8 = new System.Windows.Forms.Button();
             panel2.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage2.SuspendLayout();
+            panel_Upgrade.SuspendLayout();
+            flowLayoutPanel2.SuspendLayout();
+            flowLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // lbox_Chat
@@ -573,7 +595,7 @@ namespace TeamProject
             // 
             label3.AutoSize = true;
             label3.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label3.Location = new System.Drawing.Point(32, 19);
+            label3.Location = new System.Drawing.Point(81, 15);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(95, 30);
             label3.TabIndex = 0;
@@ -583,7 +605,7 @@ namespace TeamProject
             // 
             lb_Money.AutoSize = true;
             lb_Money.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lb_Money.Location = new System.Drawing.Point(133, 19);
+            lb_Money.Location = new System.Drawing.Point(182, 14);
             lb_Money.Name = "lb_Money";
             lb_Money.Size = new System.Drawing.Size(110, 30);
             lb_Money.TabIndex = 0;
@@ -602,12 +624,16 @@ namespace TeamProject
             // 
             // tabPage1
             // 
+            tabPage1.BackColor = System.Drawing.Color.Silver;
+            tabPage1.Controls.Add(flowLayoutPanel1);
+            tabPage1.Controls.Add(flowLayoutPanel2);
+            tabPage1.Controls.Add(panel_Upgrade);
+            tabPage1.Controls.Add(pictureBox1);
             tabPage1.Controls.Add(btn_ViewUnit);
             tabPage1.Controls.Add(btn_AllChoice);
             tabPage1.Controls.Add(btn_Test2);
             tabPage1.Controls.Add(btn_Test);
             tabPage1.Controls.Add(panel2);
-            tabPage1.Controls.Add(panel_Upgrade);
             tabPage1.Controls.Add(lbox_Chat);
             tabPage1.Controls.Add(panel_Main);
             tabPage1.Controls.Add(lb_Money);
@@ -618,14 +644,26 @@ namespace TeamProject
             tabPage1.Size = new System.Drawing.Size(875, 835);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "강화소";
-            tabPage1.UseVisualStyleBackColor = true;
             tabPage1.Click += tabPage1_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new System.Drawing.Point(44, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(37, 38);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
             // 
             // btn_ViewUnit
             // 
-            btn_ViewUnit.Location = new System.Drawing.Point(399, 10);
+            btn_ViewUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_ViewUnit.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btn_ViewUnit.Location = new System.Drawing.Point(356, 14);
             btn_ViewUnit.Name = "btn_ViewUnit";
-            btn_ViewUnit.Size = new System.Drawing.Size(88, 47);
+            btn_ViewUnit.Size = new System.Drawing.Size(114, 35);
             btn_ViewUnit.TabIndex = 6;
             btn_ViewUnit.Text = "인원 보기";
             btn_ViewUnit.UseVisualStyleBackColor = true;
@@ -633,9 +671,11 @@ namespace TeamProject
             // 
             // btn_AllChoice
             // 
-            btn_AllChoice.Location = new System.Drawing.Point(784, 8);
+            btn_AllChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_AllChoice.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btn_AllChoice.Location = new System.Drawing.Point(740, 14);
             btn_AllChoice.Name = "btn_AllChoice";
-            btn_AllChoice.Size = new System.Drawing.Size(73, 49);
+            btn_AllChoice.Size = new System.Drawing.Size(117, 37);
             btn_AllChoice.TabIndex = 5;
             btn_AllChoice.Text = "전체 선택";
             btn_AllChoice.UseVisualStyleBackColor = true;
@@ -827,26 +867,25 @@ namespace TeamProject
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "MobleTeamProject_Gambling";
             Load += MobleTeamProject_Gambling_Load;
-            panel_Upgrade.ResumeLayout(false);
-            panel_Upgrade.PerformLayout();
-            flowLayoutPanel2.ResumeLayout(false);
-            flowLayoutPanel2.PerformLayout();
-            flowLayoutPanel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            panel_Upgrade.ResumeLayout(false);
+            panel_Upgrade.PerformLayout();
+            flowLayoutPanel2.ResumeLayout(false);
+            flowLayoutPanel2.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private System.Windows.Forms.ListBox lbox_Chat;
-        private System.Windows.Forms.Panel panel_Upgrade;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel_Main;
@@ -863,16 +902,6 @@ namespace TeamProject
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ProgressBar pbBuildHP;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btn_All0;
-        private System.Windows.Forms.Button btn_All1;
-        private System.Windows.Forms.Button btn_All2;
-        private System.Windows.Forms.Button btn_All3;
-        private System.Windows.Forms.Button btn_All4;
-        private System.Windows.Forms.Button btn_All5;
-        private System.Windows.Forms.Button btn_All6;
-        private System.Windows.Forms.Button btn_All7;
-        private System.Windows.Forms.Button btn_All8;
         private System.Windows.Forms.Button btn_AllChoice;
         private System.Windows.Forms.Label lbHP;
         private System.Windows.Forms.Label label5;
@@ -883,24 +912,39 @@ namespace TeamProject
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ImageList characters;
         private System.Windows.Forms.ComboBox cbSelectBuild;
-        private System.Windows.Forms.Panel flowLayoutPanel2;
         private System.Windows.Forms.Button btn_ViewUnit;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btn_All0;
+        private System.Windows.Forms.Button btn_All1;
+        private System.Windows.Forms.Button btn_All2;
+        private System.Windows.Forms.Button btn_All3;
+        private System.Windows.Forms.Button btn_All4;
+        private System.Windows.Forms.Button btn_All5;
+        private System.Windows.Forms.Button btn_All6;
+        private System.Windows.Forms.Button btn_All7;
+        private System.Windows.Forms.Button btn_All8;
+        private System.Windows.Forms.Panel flowLayoutPanel2;
+        private System.Windows.Forms.Label lb_Allview5;
         private System.Windows.Forms.Label lb_Allview8;
         private System.Windows.Forms.Label lb_Allview4;
         private System.Windows.Forms.Label lb_Allview7;
         private System.Windows.Forms.Label lb_Allview3;
         private System.Windows.Forms.Label lb_Allview6;
+        private System.Windows.Forms.Label lb_Allview0;
+        private System.Windows.Forms.Label lb_Allview1;
         private System.Windows.Forms.Label lb_Allview2;
-        private System.Windows.Forms.Label lb_Allview5;
         private System.Windows.Forms.Label Allview5_value;
         private System.Windows.Forms.Label Allview4_value;
         private System.Windows.Forms.Label Allview8_value;
         private System.Windows.Forms.Label Allview3_value;
         private System.Windows.Forms.Label Allview7_value;
         private System.Windows.Forms.Label Allview6_value;
+        private System.Windows.Forms.Label Allview0_value;
         private System.Windows.Forms.Label Allview2_value;
         private System.Windows.Forms.Label Allview1_value;
-        private System.Windows.Forms.Label lb_Allview1;
+        private System.Windows.Forms.Panel panel_Upgrade;
+        private System.Windows.Forms.Label label1;
     }
 }
