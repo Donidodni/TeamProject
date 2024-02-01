@@ -185,14 +185,14 @@ namespace TeamProject
         private void MakeButton(Panel clickedPanel) // 판넬(무기)를 클릭했을때 옆에 버튼생성
         {
             enhanceButton = new Button();
-            enhanceButton.Text = "강화";
+            enhanceButton.Text = "던전";
             enhanceButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 10);
             enhanceButton.Click += (s, ev) => StartMovePanelUp(clickedPanel);
             panel_Main.Controls.Add(enhanceButton);
             enhanceButton.BringToFront();
 
             sendButton = new Button();
-            sendButton.Text = "일터";
+            sendButton.Text = "광산";
             sendButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 40);
             // sendButton 클릭 이벤트 처리
             sendButton.Click += (s, ev) => StartMovePanelRight(clickedPanel);
@@ -211,14 +211,14 @@ namespace TeamProject
         private void MakeButton(Button clickedButton) //버튼(전체선택)을 클릭했을때 버튼생성
         {
             enhanceButton = new Button();
-            enhanceButton.Text = "강화";
+            enhanceButton.Text = "던전";
             enhanceButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 10);
             enhanceButton.Size = new Size(60, 25);
             enhanceButton.Click += (s, ev) => StartMove_FromButton_Up(clickedButton);
             flowLayoutPanel1.Controls.Add(enhanceButton);
 
             sendButton = new Button();
-            sendButton.Text = "일터";
+            sendButton.Text = "광산";
             sendButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 40);
             sendButton.Size = new Size(60, 25);
             // sendButton 클릭 이벤트 처리
@@ -237,7 +237,7 @@ namespace TeamProject
         {
             RemoveButtons();
             Timer moveTimer = timerDictionary[panel];
-            moveTimer.Interval = 20; // 타이머 주기 (20ms로 설정, 조절 가능)
+            moveTimer.Interval = 50; // 타이머 주기 (20ms로 설정, 조절 가능)
             moveTimer.Tick += (s, ev) => MovePanelUp(panel, moveTimer);
             moveTimer.Start(); // 타이머 시작
         }
@@ -246,7 +246,7 @@ namespace TeamProject
         {
             RemoveButtons();
             Timer moveTimer = timerDictionary[panel];
-            moveTimer.Interval = 20; // 타이머 주기 (20ms로 설정, 조절 가능)
+            moveTimer.Interval = 50; // 타이머 주기 (20ms로 설정, 조절 가능)
             moveTimer.Tick += (s, ev) => MovePanelRight(panel, moveTimer);
             moveTimer.Start(); // 타이머 시작
         }
@@ -430,13 +430,13 @@ namespace TeamProject
                 {
                     RemovePanel(clickedPanel);
                     AddPanels(index + 1, 1);
-                    ShowMessage($"강화가 성공하여 +{index + 1} 무기가 제련되었습니다.");
+                    ShowMessage($"던전에서 성공적으로 돌아왔습니다. ({index + 1}강)");
                 }
                 // 강화 실패 시
                 else
                 {
                     RemovePanel(clickedPanel);
-                    ShowMessage($"강화가 실패하여 +{index} 무기가 파괴되었습니다.");
+                    ShowMessage($"던전에서 돌아오지 못했습니다... ({index} 강)");
                 }
 
                 // 최대 채팅 수를 10으로 제한하고 오래된 채팅 삭제
