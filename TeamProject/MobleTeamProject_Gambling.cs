@@ -525,8 +525,8 @@ namespace TeamProject
                                 { 706, 226 }, { 706, 282 }, { 706, 394 }, { 706, 450 }, { 706, 506 } };
         bool[] full = new bool[20];  //array 인덱스 좌표에 패널 할당 여부 초기값 false
         int[] Attack = new int[20];  //좌표마다 유닛의 공격력 값
-        int[] BuildArmor = { 1, 3, 5, 10, 30 };  //단계별 빌딩 방어력
-        int[] BuildReward = { 1, 2, 5, 10, 20 };    //빌딩 단계별 보상
+        int[] BuildArmor = { 1, 100, 400, 1000, 3000 };  //단계별 빌딩 방어력
+        int[] BuildReward = { 50, 200, 900, 2400, 12000 };    //빌딩 단계별 보상
         int TurretAttack = 3;
 
         private void Move(Panel weapon)
