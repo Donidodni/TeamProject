@@ -23,7 +23,6 @@ namespace WinFormsApp2
             Main_Title.Interval = 18;
             Main_Title.Enabled = true;
             pictureBox3.Visible = false;
-            playSimpleSound(1); // 폼 시작과 함께 음악을 재생합니다.
         }
 
 
