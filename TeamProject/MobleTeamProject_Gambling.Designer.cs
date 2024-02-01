@@ -169,6 +169,7 @@ namespace TeamProject
             btn_Test2 = new System.Windows.Forms.Button();
             btn_Test = new System.Windows.Forms.Button();
             tabPage2 = new System.Windows.Forms.TabPage();
+            cbSelectBuild = new System.Windows.Forms.ComboBox();
             lbAttackSum = new System.Windows.Forms.Label();
             lbHP = new System.Windows.Forms.Label();
             label7 = new System.Windows.Forms.Label();
@@ -444,6 +445,7 @@ namespace TeamProject
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(cbSelectBuild);
             tabPage2.Controls.Add(lbAttackSum);
             tabPage2.Controls.Add(lbHP);
             tabPage2.Controls.Add(label7);
@@ -462,6 +464,17 @@ namespace TeamProject
             tabPage2.TabIndex = 1;
             tabPage2.Text = "일터";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // cbSelectBuild
+            // 
+            cbSelectBuild.FormattingEnabled = true;
+            cbSelectBuild.Items.AddRange(new object[] { "1단계 건물", "2단계 건물", "3단계 건물", "4단계 건물", "5단계 건물" });
+            cbSelectBuild.Location = new System.Drawing.Point(706, 66);
+            cbSelectBuild.Name = "cbSelectBuild";
+            cbSelectBuild.Size = new System.Drawing.Size(121, 23);
+            cbSelectBuild.TabIndex = 6;
+            cbSelectBuild.Text = "건물 선택";
+            cbSelectBuild.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // lbAttackSum
             // 
@@ -526,12 +539,10 @@ namespace TeamProject
             // pbBuildHP
             // 
             pbBuildHP.Location = new System.Drawing.Point(200, 576);
-            pbBuildHP.Maximum = 200;
             pbBuildHP.Name = "pbBuildHP";
             pbBuildHP.Size = new System.Drawing.Size(500, 45);
             pbBuildHP.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             pbBuildHP.TabIndex = 4;
-            pbBuildHP.Value = 200;
             // 
             // panel6
             // 
@@ -595,6 +606,7 @@ namespace TeamProject
             ClientSize = new System.Drawing.Size(884, 861);
             Controls.Add(tabControl1);
             Name = "MobleTeamProject_Gambling";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "MobleTeamProject_Gambling";
             Load += MobleTeamProject_Gambling_Load;
             panel_Upgrade.ResumeLayout(false);
@@ -650,5 +662,6 @@ namespace TeamProject
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ImageList characters;
+        private System.Windows.Forms.ComboBox cbSelectBuild;
     }
 }

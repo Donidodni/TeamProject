@@ -430,7 +430,7 @@ namespace TeamProject
             {
                 StartMovePanelUp(panel);
             }
-            
+
         }
 
         private void StartMove_FromButton_Right(Button clickedButton)
@@ -479,8 +479,12 @@ namespace TeamProject
             }
             if (cnt >= 20)
             {
-                MessageBox.Show("20개 이상 추가할 수 없습니다.");
+                //MessageBox.Show("20개 이상 추가할 수 없습니다.");
                 AddPanels(int.Parse(tagParts[0].Trim()), 1);
+
+                lbox_Chat.Items.Add("20개 이상 추가할 수 없습니다.");
+                lbox_Chat.SelectedIndex = lbox_Chat.Items.Count - 1;
+                lbox_Chat.SelectedIndex = -1; // 선택 해제
             }
             else
             {
@@ -506,7 +510,7 @@ namespace TeamProject
             lbox_Chat.Items.Add($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
         }
 
-        private void Panel1_Click(object sender, EventArgs e)    //패널 제거
+        private void Panel1_Click(object sender, EventArgs e)    //패널 제거 -> 강화소 반환으로 수정예정
         {
             Panel clickedPanel = (Panel)sender;
             Controls.Remove(clickedPanel); clickedPanel.Dispose();
@@ -520,24 +524,28 @@ namespace TeamProject
         Panel pnBuilding = new Panel();
         private void AttackBuild()
         {
-            int sum = 0;
-            foreach (int i in Attack)
+            if (cbSelectBuild.SelectedIndex != -1)  //건물을 선택했을 경우
             {
-                sum += i;
-            }
-            if (pbBuildHP.Value > sum) 
-                pbBuildHP.Value -= sum;
-            else
-            {
+                int sum = 0;
+                foreach (int i in Attack)
+                {
+                    sum += i;
+                }
+                if (pbBuildHP.Value > sum)
+                    pbBuildHP.Value -= sum;
                 //건물 파괴 시
-                pbBuildHP.Value = pbBuildHP.Minimum;
-                timer1.Stop();
-                Money += 100;
-                lbox_Chat.Items.Add($"첫번 째 건물을 파괴했습니다.");
-                tabControl1.TabPages[1].Controls.Remove(pnBuilding);
+                else
+                {
+                    pbBuildHP.Value = pbBuildHP.Minimum;    //HP = 0
+                    Money += pbBuildHP.Maximum; //보상
+                    lb_Money.Text = Money.ToString();
+                    lbox_Chat.Items.Add($"{cbSelectBuild.SelectedIndex + 1}단계 건물을 파괴했습니다. (+{pbBuildHP.Maximum}골드)");
+                    tabControl1.TabPages[1].Controls.Remove(pnBuilding);
+                    timer1.Stop();
+                }
+                lbHP.Text = pbBuildHP.Value.ToString();
+                lbAttackSum.Text = sum.ToString();
             }
-            lbHP.Text = pbBuildHP.Value.ToString();
-            lbAttackSum.Text = sum.ToString();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -547,19 +555,71 @@ namespace TeamProject
 
         private void MobleTeamProject_Gambling_Load(object sender, EventArgs e)
         {
-            timer1.Start();
 
-            //프로그레스바 초기값
-            pbBuildHP.Maximum = 200;
-            pbBuildHP.Minimum = 0;
-            pbBuildHP.Value = pbBuildHP.Maximum;
+        }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
             pnBuilding.Location = new Point(200, 170);   //건물 생성 좌표 설정
             pnBuilding.Size = new Size(500, 386); // 패널 크기 설정
-            pnBuilding.BackColor = Color.Black;
-            //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
+            pbBuildHP.Minimum = 0;
+            if (cbSelectBuild.SelectedIndex == 0)    //1단계 건물
+            {
+                //빌딩 생성
+                pnBuilding.BackColor = Color.Black;
+                //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
 
-            tabControl1.TabPages[1].Controls.Add(pnBuilding);    //건물패널 생성
+                //빌딩 HP 초기값
+                pbBuildHP.Maximum = 100;
+                pbBuildHP.Value = pbBuildHP.Maximum;
+
+            }
+            if (cbSelectBuild.SelectedIndex == 1)    //2단계 건물
+            {
+                //빌딩 생성
+                pnBuilding.BackColor = Color.Red;
+                //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
+
+                //빌딩 HP 초기값
+                pbBuildHP.Maximum = 200;
+                pbBuildHP.Value = pbBuildHP.Maximum;
+
+            }
+            if (cbSelectBuild.SelectedIndex == 2)    //3단계 건물
+            {
+                //빌딩 생성
+                pnBuilding.BackColor = Color.Purple;
+                //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
+
+                //빌딩 HP 초기값
+                pbBuildHP.Maximum = 500;
+                pbBuildHP.Value = pbBuildHP.Maximum;
+
+            }
+            if (cbSelectBuild.SelectedIndex == 3)    //4단계 건물
+            {
+                //빌딩 생성
+                pnBuilding.BackColor = Color.Plum;
+                //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
+
+                //빌딩 HP 초기값
+                pbBuildHP.Maximum = 1000;
+                pbBuildHP.Value = pbBuildHP.Maximum;
+
+            }
+            if (cbSelectBuild.SelectedIndex == 4)    //5단계 건물
+            {
+                //빌딩 생성
+                pnBuilding.BackColor = Color.Pink;
+                //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
+
+                //빌딩 HP 초기값
+                pbBuildHP.Maximum = 2000;
+                pbBuildHP.Value = pbBuildHP.Maximum;
+
+            }
+            tabControl1.TabPages[1].Controls.Add(pnBuilding);    //빌딩패널 생성
+            timer1.Start(); //건물 공격 시작
         }
 
 
