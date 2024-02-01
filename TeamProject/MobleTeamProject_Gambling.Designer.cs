@@ -146,8 +146,6 @@ namespace TeamProject
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MobleTeamProject_Gambling));
             lbox_Chat = new System.Windows.Forms.ListBox();
-            panel_Upgrade = new System.Windows.Forms.Panel();
-            label1 = new System.Windows.Forms.Label();
             flowLayoutPanel2 = new System.Windows.Forms.Panel();
             lb_Allview5 = new System.Windows.Forms.Label();
             lb_Allview8 = new System.Windows.Forms.Label();
@@ -206,7 +204,8 @@ namespace TeamProject
             tabPage3 = new System.Windows.Forms.TabPage();
             timer1 = new System.Windows.Forms.Timer(components);
             Allview0_value = new System.Windows.Forms.Label();
-            panel_Upgrade.SuspendLayout();
+            label1 = new System.Windows.Forms.Label();
+            panel_Upgrade = new System.Windows.Forms.Panel();
             flowLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -214,6 +213,7 @@ namespace TeamProject
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage2.SuspendLayout();
+            panel_Upgrade.SuspendLayout();
             SuspendLayout();
             // 
             // lbox_Chat
@@ -225,24 +225,6 @@ namespace TeamProject
             lbox_Chat.Name = "lbox_Chat";
             lbox_Chat.Size = new System.Drawing.Size(379, 116);
             lbox_Chat.TabIndex = 0;
-            // 
-            // panel_Upgrade
-            // 
-            panel_Upgrade.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            panel_Upgrade.Controls.Add(label1);
-            panel_Upgrade.Location = new System.Drawing.Point(44, 61);
-            panel_Upgrade.Name = "panel_Upgrade";
-            panel_Upgrade.Size = new System.Drawing.Size(683, 250);
-            panel_Upgrade.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(395, 112);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(43, 15);
-            label1.TabIndex = 0;
-            label1.Text = "강화소";
             // 
             // flowLayoutPanel2
             // 
@@ -920,6 +902,26 @@ namespace TeamProject
             Allview0_value.Size = new System.Drawing.Size(100, 23);
             Allview0_value.TabIndex = 0;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(395, 112);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(43, 15);
+            label1.TabIndex = 0;
+            label1.Text = "강화소";
+            // 
+            // panel_Upgrade
+            // 
+            panel_Upgrade.BackColor = System.Drawing.Color.Transparent;
+            panel_Upgrade.BackgroundImage = Properties.Resources.dungeon;
+            panel_Upgrade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            panel_Upgrade.Controls.Add(label1);
+            panel_Upgrade.Location = new System.Drawing.Point(44, 83);
+            panel_Upgrade.Name = "panel_Upgrade";
+            panel_Upgrade.Size = new System.Drawing.Size(656, 228);
+            panel_Upgrade.TabIndex = 1;
+            // 
             // MobleTeamProject_Gambling
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -930,8 +932,6 @@ namespace TeamProject
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "MobleTeamProject_Gambling";
             Load += MobleTeamProject_Gambling_Load;
-            panel_Upgrade.ResumeLayout(false);
-            panel_Upgrade.PerformLayout();
             flowLayoutPanel2.ResumeLayout(false);
             flowLayoutPanel2.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
@@ -943,6 +943,8 @@ namespace TeamProject
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            panel_Upgrade.ResumeLayout(false);
+            panel_Upgrade.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1007,9 +1009,9 @@ namespace TeamProject
         private System.Windows.Forms.Label Allview0_value;
         private System.Windows.Forms.Label Allview2_value;
         private System.Windows.Forms.Label Allview1_value;
-        private System.Windows.Forms.Panel panel_Upgrade;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lb_Allview;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Panel panel_Upgrade;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -63,6 +63,16 @@ namespace TeamProject.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap dungeon {
+            get {
+                object obj = ResourceManager.GetObject("dungeon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap knight_low {
             get {
                 object obj = ResourceManager.GetObject("knight_low", resourceCulture);
