@@ -35,7 +35,7 @@ namespace WinFormsApp2
         }
         private void playDingSound(int play)
         {
- 
+
             SoundPlayer DingSound = new SoundPlayer(TeamProject.Properties.Resources.bing_sound);
             if (play == 1) DingSound.Play(); // 매개변수를 사용하여 음악 재생을 컨트롤 합니다. 
             else DingSound.Stop();
@@ -58,13 +58,13 @@ namespace WinFormsApp2
             Point point1 = new Point(pictureBox2.Location.X - (int)gradient1, pictureBox2.Location.Y);
             pictureBox2.Location = point1;
 
-            if (second_count == 30) // 두 사진의 그라데이션 이펙트 부여 길이를 조절합니다. second_count가 40 이면 중지 및 리셋합니다. 
+            if (second_count == 29) // 두 사진의 그라데이션 이펙트 부여 길이를 조절합니다. second_count가 40 이면 중지 및 리셋합니다. 
             {
                 Main_Title.Enabled = false;
                 pictureBox3.Visible = true;
                 playDingSound(1);
                 second_count = 0;
-            }   
+            }
         }
 
 
@@ -89,6 +89,11 @@ namespace WinFormsApp2
                 fade.Stop();
             else
                 Opacity += 0.02;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

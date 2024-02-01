@@ -33,12 +33,11 @@
             Main_Title = new System.Windows.Forms.Timer(components);
             pictureBox2 = new System.Windows.Forms.PictureBox();
             imageList1 = new System.Windows.Forms.ImageList(components);
-            panel1 = new System.Windows.Forms.Panel();
-            panel2 = new System.Windows.Forms.Panel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             button1 = new System.Windows.Forms.Button();
             pictureBox3 = new System.Windows.Forms.PictureBox();
             panel3 = new System.Windows.Forms.Panel();
+            button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -54,7 +53,7 @@
             // 
             pictureBox2.BackColor = System.Drawing.Color.Transparent;
             pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new System.Drawing.Point(402, 5);
+            pictureBox2.Location = new System.Drawing.Point(340, 5);
             pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new System.Drawing.Size(831, 291);
@@ -70,30 +69,11 @@
             imageList1.Images.SetKeyName(0, "opening1.gif");
             imageList1.Images.SetKeyName(1, "opening_sword.png");
             // 
-            // panel1
-            // 
-            panel1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            panel1.Location = new System.Drawing.Point(0, 664);
-            panel1.Margin = new System.Windows.Forms.Padding(4);
-            panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(1008, 84);
-            panel1.TabIndex = 3;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            panel2.Location = new System.Drawing.Point(0, 0);
-            panel2.Margin = new System.Windows.Forms.Padding(4);
-            panel2.Name = "panel2";
-            panel2.Size = new System.Drawing.Size(1008, 80);
-            panel2.TabIndex = 4;
-            // 
             // pictureBox1
             // 
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new System.Drawing.Point(-35, 1);
+            pictureBox1.Location = new System.Drawing.Point(40, 1);
             pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(148, 320);
@@ -103,15 +83,18 @@
             // 
             // button1
             // 
-            button1.BackColor = System.Drawing.Color.IndianRed;
+            button1.BackColor = System.Drawing.Color.Transparent;
+            button1.BackgroundImage = TeamProject.Properties.Resources.message;
+            button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button1.Cursor = System.Windows.Forms.Cursors.Hand;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Font = new System.Drawing.Font("맑은 고딕", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            button1.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             button1.ForeColor = System.Drawing.Color.Transparent;
-            button1.Location = new System.Drawing.Point(288, 557);
+            button1.Location = new System.Drawing.Point(125, 456);
             button1.Margin = new System.Windows.Forms.Padding(4);
             button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(426, 85);
+            button1.Size = new System.Drawing.Size(329, 69);
             button1.TabIndex = 6;
             button1.Text = "시작하기";
             button1.UseVisualStyleBackColor = false;
@@ -119,8 +102,9 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.BackColor = System.Drawing.Color.Transparent;
             pictureBox3.Image = (System.Drawing.Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new System.Drawing.Point(74, 1);
+            pictureBox3.Location = new System.Drawing.Point(149, 1);
             pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new System.Drawing.Size(148, 320);
@@ -134,24 +118,41 @@
             panel3.Controls.Add(pictureBox3);
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(pictureBox2);
-            panel3.Location = new System.Drawing.Point(0, 242);
+            panel3.Location = new System.Drawing.Point(0, 147);
             panel3.Margin = new System.Windows.Forms.Padding(4);
             panel3.Name = "panel3";
             panel3.Size = new System.Drawing.Size(1025, 280);
             panel3.TabIndex = 7;
+            // 
+            // button2
+            // 
+            button2.BackColor = System.Drawing.Color.Transparent;
+            button2.BackgroundImage = TeamProject.Properties.Resources.message;
+            button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            button2.FlatAppearance.BorderSize = 0;
+            button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            button2.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            button2.ForeColor = System.Drawing.Color.Transparent;
+            button2.Location = new System.Drawing.Point(480, 456);
+            button2.Margin = new System.Windows.Forms.Padding(4);
+            button2.Name = "button2";
+            button2.Size = new System.Drawing.Size(329, 69);
+            button2.TabIndex = 6;
+            button2.Text = "게임방법";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // main_screen
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.ControlLight;
-            BackgroundImage = (System.Drawing.Image)resources.GetObject("$this.BackgroundImage");
-            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            ClientSize = new System.Drawing.Size(1008, 748);
+            BackgroundImage = TeamProject.Properties.Resources.mine_map;
+            ClientSize = new System.Drawing.Size(1008, 596);
             Controls.Add(panel3);
+            Controls.Add(button2);
             Controls.Add(button1);
-            Controls.Add(panel2);
-            Controls.Add(panel1);
             DoubleBuffered = true;
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4);
@@ -170,11 +171,10 @@
         private System.Windows.Forms.Timer Main_Title;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ImageList imageList1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Button button2;
     }
 }
