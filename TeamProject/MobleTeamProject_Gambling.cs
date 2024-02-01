@@ -38,7 +38,7 @@ namespace TeamProject
         Dictionary<int, WeaponUpgrade> weaponsDictionary = new Dictionary<int, WeaponUpgrade>(); //키,값 형태로 무기강화별 정보를 저장
         Dictionary<Panel, Timer> timerDictionary = new Dictionary<Panel, Timer>(); //패널마다 타이머를 달아주어 개별 행동 가능
         List<Panel> MainPanelList = new List<Panel>(); // 무기들 랜덤생성시 중복 검사
-        int[] SuccessProbability = { 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 5 }; //강화 확률
+        int[] SuccessProbability = { 95, 85, 75, 60, 40, 30, 25, 15, 10 }; //강화 확률
         int workX = 670; // 패널이 일터로 갈 수 있는 X좌표
         int upgradeY = -90; // 패널이 강화할 수 있는 Y좌표
         public bool EsterEgg = true;
@@ -416,11 +416,15 @@ namespace TeamProject
         private void btn_Test_Click(object sender, EventArgs e)
         {
             AddPanels(0, 10);
+            Money -= 100;
+            lb_Money.Text = Money.ToString();
         }
 
         private void btn_Test2_Click(object sender, EventArgs e)
         {
-            AddPanels(1, 1);
+            AddPanels(3, 10);
+            Money -= 300;
+            lb_Money.Text = Money.ToString();
         }
 
 
