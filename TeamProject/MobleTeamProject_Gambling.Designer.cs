@@ -132,14 +132,46 @@ namespace TeamProject
             weaponsDictionary.Add(10, lv10);
 
         }
+
+        private void InitializeWeaponsList()
+        {
+            for (int i = 0; i < 11; i++)
+            {
+                List<WeaponUpgrade> weaponUpgrades = new List<WeaponUpgrade>();
+                weapons.Add(weaponUpgrades); // 0~10강 무기를 담을 리스트 생성
+            }
+        }
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MobleTeamProject_Gambling));
             lbox_Chat = new System.Windows.Forms.ListBox();
             panel_Upgrade = new System.Windows.Forms.Panel();
+            label1 = new System.Windows.Forms.Label();
+            flowLayoutPanel2 = new System.Windows.Forms.Panel();
+            btn_Refresh = new System.Windows.Forms.Button();
+            lb_Allview5 = new System.Windows.Forms.Label();
+            label9 = new System.Windows.Forms.Label();
+            lb_Allview8 = new System.Windows.Forms.Label();
+            lb_Allview4 = new System.Windows.Forms.Label();
+            lb_Allview7 = new System.Windows.Forms.Label();
+            lb_Allview3 = new System.Windows.Forms.Label();
+            lb_Allview6 = new System.Windows.Forms.Label();
+            lb_Allview = new System.Windows.Forms.Label();
+            lb_Allview1 = new System.Windows.Forms.Label();
+            lb_Allview2 = new System.Windows.Forms.Label();
+            lb_Puls_5_Count = new System.Windows.Forms.Label();
+            lb_Puls_0_Count = new System.Windows.Forms.Label();
+            lb_Puls_4_Count = new System.Windows.Forms.Label();
+            lb_Puls_8_Count = new System.Windows.Forms.Label();
+            lb_Puls_3_Count = new System.Windows.Forms.Label();
+            lb_Puls_7_Count = new System.Windows.Forms.Label();
+            lb_Puls_6_Count = new System.Windows.Forms.Label();
+            lb_Puls_2_Count = new System.Windows.Forms.Label();
+            lb_Puls_1_Count = new System.Windows.Forms.Label();
             flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             btn_All0 = new System.Windows.Forms.Button();
+            characters = new System.Windows.Forms.ImageList(components);
             btn_All1 = new System.Windows.Forms.Button();
             btn_All2 = new System.Windows.Forms.Button();
             btn_All3 = new System.Windows.Forms.Button();
@@ -148,14 +180,15 @@ namespace TeamProject
             btn_All6 = new System.Windows.Forms.Button();
             btn_All7 = new System.Windows.Forms.Button();
             btn_All8 = new System.Windows.Forms.Button();
-            label1 = new System.Windows.Forms.Label();
             panel2 = new System.Windows.Forms.Panel();
             label2 = new System.Windows.Forms.Label();
-            panel_Main = new System.Windows.Forms.Panel();
             label3 = new System.Windows.Forms.Label();
             lb_Money = new System.Windows.Forms.Label();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabPage1 = new System.Windows.Forms.TabPage();
+            panel_Main = new System.Windows.Forms.Panel();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            btn_ViewUnit = new System.Windows.Forms.Button();
             btn_AllChoice = new System.Windows.Forms.Button();
             btn_Test2 = new System.Windows.Forms.Button();
             btn_Test = new System.Windows.Forms.Button();
@@ -175,11 +208,14 @@ namespace TeamProject
             tabPage3 = new System.Windows.Forms.TabPage();
             timer1 = new System.Windows.Forms.Timer(components);
             characters = new System.Windows.Forms.ImageList(components);
+            Allview0_value = new System.Windows.Forms.Label();
             panel_Upgrade.SuspendLayout();
+            flowLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage2.SuspendLayout();
             SuspendLayout();
             // 
@@ -196,129 +232,12 @@ namespace TeamProject
             // panel_Upgrade
             // 
             panel_Upgrade.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            panel_Upgrade.Controls.Add(flowLayoutPanel1);
             panel_Upgrade.Controls.Add(label1);
+            panel_Upgrade.Controls.Add(flowLayoutPanel2);
             panel_Upgrade.Location = new System.Drawing.Point(15, 61);
             panel_Upgrade.Name = "panel_Upgrade";
             panel_Upgrade.Size = new System.Drawing.Size(848, 250);
             panel_Upgrade.TabIndex = 1;
-            // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Highlight;
-            flowLayoutPanel1.Controls.Add(btn_All0);
-            flowLayoutPanel1.Controls.Add(btn_All1);
-            flowLayoutPanel1.Controls.Add(btn_All2);
-            flowLayoutPanel1.Controls.Add(btn_All3);
-            flowLayoutPanel1.Controls.Add(btn_All4);
-            flowLayoutPanel1.Controls.Add(btn_All5);
-            flowLayoutPanel1.Controls.Add(btn_All6);
-            flowLayoutPanel1.Controls.Add(btn_All7);
-            flowLayoutPanel1.Controls.Add(btn_All8);
-            flowLayoutPanel1.Location = new System.Drawing.Point(634, 3);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new System.Drawing.Size(211, 217);
-            flowLayoutPanel1.TabIndex = 1;
-            flowLayoutPanel1.Visible = false;
-            // 
-            // btn_All0
-            // 
-            btn_All0.Location = new System.Drawing.Point(3, 3);
-            btn_All0.Name = "btn_All0";
-            btn_All0.Size = new System.Drawing.Size(64, 64);
-            btn_All0.TabIndex = 0;
-            btn_All0.Tag = "0";
-            btn_All0.Text = "0강";
-            btn_All0.UseVisualStyleBackColor = true;
-            btn_All0.Click += btn_CreateAllButton;
-            // 
-            // btn_All1
-            // 
-            btn_All1.Location = new System.Drawing.Point(73, 3);
-            btn_All1.Name = "btn_All1";
-            btn_All1.Size = new System.Drawing.Size(64, 64);
-            btn_All1.TabIndex = 1;
-            btn_All1.Tag = "1";
-            btn_All1.Text = "1강";
-            btn_All1.UseVisualStyleBackColor = true;
-            btn_All1.Click += btn_CreateAllButton;
-            // 
-            // btn_All2
-            // 
-            btn_All2.Location = new System.Drawing.Point(143, 3);
-            btn_All2.Name = "btn_All2";
-            btn_All2.Size = new System.Drawing.Size(64, 64);
-            btn_All2.TabIndex = 2;
-            btn_All2.Tag = "2";
-            btn_All2.Text = "2강";
-            btn_All2.UseVisualStyleBackColor = true;
-            btn_All2.Click += btn_CreateAllButton;
-            // 
-            // btn_All3
-            // 
-            btn_All3.Location = new System.Drawing.Point(3, 73);
-            btn_All3.Name = "btn_All3";
-            btn_All3.Size = new System.Drawing.Size(64, 64);
-            btn_All3.TabIndex = 3;
-            btn_All3.Tag = "3";
-            btn_All3.Text = "3강";
-            btn_All3.UseVisualStyleBackColor = true;
-            btn_All3.Click += btn_CreateAllButton;
-            // 
-            // btn_All4
-            // 
-            btn_All4.Location = new System.Drawing.Point(73, 73);
-            btn_All4.Name = "btn_All4";
-            btn_All4.Size = new System.Drawing.Size(64, 64);
-            btn_All4.TabIndex = 4;
-            btn_All4.Tag = "4";
-            btn_All4.Text = "4강";
-            btn_All4.UseVisualStyleBackColor = true;
-            btn_All4.Click += btn_CreateAllButton;
-            // 
-            // btn_All5
-            // 
-            btn_All5.Location = new System.Drawing.Point(143, 73);
-            btn_All5.Name = "btn_All5";
-            btn_All5.Size = new System.Drawing.Size(64, 64);
-            btn_All5.TabIndex = 5;
-            btn_All5.Tag = "5";
-            btn_All5.Text = "5강";
-            btn_All5.UseVisualStyleBackColor = true;
-            btn_All5.Click += btn_CreateAllButton;
-            // 
-            // btn_All6
-            // 
-            btn_All6.Location = new System.Drawing.Point(3, 143);
-            btn_All6.Name = "btn_All6";
-            btn_All6.Size = new System.Drawing.Size(64, 64);
-            btn_All6.TabIndex = 6;
-            btn_All6.Tag = "6";
-            btn_All6.Text = "6강";
-            btn_All6.UseVisualStyleBackColor = true;
-            btn_All6.Click += btn_CreateAllButton;
-            // 
-            // btn_All7
-            // 
-            btn_All7.Location = new System.Drawing.Point(73, 143);
-            btn_All7.Name = "btn_All7";
-            btn_All7.Size = new System.Drawing.Size(64, 64);
-            btn_All7.TabIndex = 7;
-            btn_All7.Tag = "7";
-            btn_All7.Text = "7강";
-            btn_All7.UseVisualStyleBackColor = true;
-            btn_All7.Click += btn_CreateAllButton;
-            // 
-            // btn_All8
-            // 
-            btn_All8.Location = new System.Drawing.Point(143, 143);
-            btn_All8.Name = "btn_All8";
-            btn_All8.Size = new System.Drawing.Size(64, 64);
-            btn_All8.TabIndex = 8;
-            btn_All8.Tag = "8";
-            btn_All8.Text = "8강";
-            btn_All8.UseVisualStyleBackColor = true;
-            btn_All8.Click += btn_CreateAllButton;
             // 
             // label1
             // 
@@ -328,6 +247,413 @@ namespace TeamProject
             label1.Size = new System.Drawing.Size(43, 15);
             label1.TabIndex = 0;
             label1.Text = "강화소";
+            // 
+            // flowLayoutPanel2
+            // 
+            flowLayoutPanel2.BackColor = System.Drawing.Color.RosyBrown;
+            flowLayoutPanel2.Controls.Add(btn_Refresh);
+            flowLayoutPanel2.Controls.Add(lb_Allview5);
+            flowLayoutPanel2.Controls.Add(label9);
+            flowLayoutPanel2.Controls.Add(lb_Allview8);
+            flowLayoutPanel2.Controls.Add(lb_Allview4);
+            flowLayoutPanel2.Controls.Add(lb_Allview7);
+            flowLayoutPanel2.Controls.Add(lb_Allview3);
+            flowLayoutPanel2.Controls.Add(lb_Allview6);
+            flowLayoutPanel2.Controls.Add(lb_Allview);
+            flowLayoutPanel2.Controls.Add(lb_Allview1);
+            flowLayoutPanel2.Controls.Add(lb_Allview2);
+            flowLayoutPanel2.Controls.Add(lb_Puls_5_Count);
+            flowLayoutPanel2.Controls.Add(lb_Puls_0_Count);
+            flowLayoutPanel2.Controls.Add(lb_Puls_4_Count);
+            flowLayoutPanel2.Controls.Add(lb_Puls_8_Count);
+            flowLayoutPanel2.Controls.Add(lb_Puls_3_Count);
+            flowLayoutPanel2.Controls.Add(lb_Puls_7_Count);
+            flowLayoutPanel2.Controls.Add(lb_Puls_6_Count);
+            flowLayoutPanel2.Controls.Add(lb_Puls_2_Count);
+            flowLayoutPanel2.Controls.Add(lb_Puls_1_Count);
+            flowLayoutPanel2.Location = new System.Drawing.Point(111, 2);
+            flowLayoutPanel2.Name = "flowLayoutPanel2";
+            flowLayoutPanel2.Size = new System.Drawing.Size(360, 245);
+            flowLayoutPanel2.TabIndex = 1;
+            flowLayoutPanel2.Visible = false;
+            // 
+            // btn_Refresh
+            // 
+            btn_Refresh.Location = new System.Drawing.Point(269, 209);
+            btn_Refresh.Name = "btn_Refresh";
+            btn_Refresh.Size = new System.Drawing.Size(75, 23);
+            btn_Refresh.TabIndex = 1;
+            btn_Refresh.Text = "새로고침";
+            btn_Refresh.UseVisualStyleBackColor = true;
+            btn_Refresh.Click += btn_Refresh_Click;
+            // 
+            // lb_Allview5
+            // 
+            lb_Allview5.AutoSize = true;
+            lb_Allview5.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview5.Location = new System.Drawing.Point(171, 13);
+            lb_Allview5.Name = "lb_Allview5";
+            lb_Allview5.Size = new System.Drawing.Size(43, 28);
+            lb_Allview5.TabIndex = 0;
+            lb_Allview5.Text = "5강";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label9.Location = new System.Drawing.Point(170, 142);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(43, 28);
+            label9.TabIndex = 0;
+            label9.Text = "0강";
+            // 
+            // lb_Allview8
+            // 
+            lb_Allview8.AutoSize = true;
+            lb_Allview8.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview8.Location = new System.Drawing.Point(171, 137);
+            lb_Allview8.Name = "lb_Allview8";
+            lb_Allview8.Size = new System.Drawing.Size(43, 28);
+            lb_Allview8.TabIndex = 0;
+            lb_Allview8.Text = "8강";
+            // 
+            // lb_Allview4
+            // 
+            lb_Allview4.AutoSize = true;
+            lb_Allview4.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview4.Location = new System.Drawing.Point(3, 185);
+            lb_Allview4.Name = "lb_Allview4";
+            lb_Allview4.Size = new System.Drawing.Size(43, 28);
+            lb_Allview4.TabIndex = 0;
+            lb_Allview4.Text = "4강";
+            // 
+            // lb_Allview7
+            // 
+            lb_Allview7.AutoSize = true;
+            lb_Allview7.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview7.Location = new System.Drawing.Point(171, 95);
+            lb_Allview7.Name = "lb_Allview7";
+            lb_Allview7.Size = new System.Drawing.Size(43, 28);
+            lb_Allview7.TabIndex = 0;
+            lb_Allview7.Text = "7강";
+            // 
+            // lb_Allview3
+            // 
+            lb_Allview3.AutoSize = true;
+            lb_Allview3.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview3.Location = new System.Drawing.Point(3, 139);
+            lb_Allview3.Name = "lb_Allview3";
+            lb_Allview3.Size = new System.Drawing.Size(43, 28);
+            lb_Allview3.TabIndex = 0;
+            lb_Allview3.Text = "3강";
+            // 
+            // lb_Allview6
+            // 
+            lb_Allview6.AutoSize = true;
+            lb_Allview6.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview6.Location = new System.Drawing.Point(171, 54);
+            lb_Allview6.Name = "lb_Allview6";
+            lb_Allview6.Size = new System.Drawing.Size(43, 28);
+            lb_Allview6.TabIndex = 0;
+            lb_Allview6.Text = "6강";
+            // 
+            // lb_Allview
+            // 
+            lb_Allview.AutoSize = true;
+            lb_Allview.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview.Location = new System.Drawing.Point(5, 15);
+            lb_Allview.Name = "lb_Allview";
+            lb_Allview.Size = new System.Drawing.Size(43, 28);
+            lb_Allview.TabIndex = 0;
+            lb_Allview.Text = "0강";
+            // 
+            // lb_Allview1
+            // 
+            lb_Allview1.AutoSize = true;
+            lb_Allview1.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview1.Location = new System.Drawing.Point(5, 56);
+            lb_Allview1.Name = "lb_Allview1";
+            lb_Allview1.Size = new System.Drawing.Size(43, 28);
+            lb_Allview1.TabIndex = 0;
+            lb_Allview1.Text = "1강";
+            // 
+            // lb_Allview2
+            // 
+            lb_Allview2.AutoSize = true;
+            lb_Allview2.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview2.Location = new System.Drawing.Point(3, 97);
+            lb_Allview2.Name = "lb_Allview2";
+            lb_Allview2.Size = new System.Drawing.Size(43, 28);
+            lb_Allview2.TabIndex = 0;
+            lb_Allview2.Text = "2강";
+            // 
+            // lb_Puls_5_Count
+            // 
+            lb_Puls_5_Count.AutoSize = true;
+            lb_Puls_5_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_5_Count.Location = new System.Drawing.Point(57, 187);
+            lb_Puls_5_Count.Name = "lb_Puls_5_Count";
+            lb_Puls_5_Count.Size = new System.Drawing.Size(20, 28);
+            lb_Puls_5_Count.TabIndex = 0;
+            lb_Puls_5_Count.Text = "-";
+            // 
+            // lb_Puls_0_Count
+            // 
+            lb_Puls_0_Count.AutoSize = true;
+            lb_Puls_0_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_0_Count.Location = new System.Drawing.Point(226, 145);
+            lb_Puls_0_Count.Name = "lb_Puls_0_Count";
+            lb_Puls_0_Count.Size = new System.Drawing.Size(20, 28);
+            lb_Puls_0_Count.TabIndex = 0;
+            lb_Puls_0_Count.Text = "-";
+            // 
+            // lb_Puls_4_Count
+            // 
+            lb_Puls_4_Count.AutoSize = true;
+            lb_Puls_4_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_4_Count.Location = new System.Drawing.Point(57, 142);
+            lb_Puls_4_Count.Name = "lb_Puls_4_Count";
+            lb_Puls_4_Count.Size = new System.Drawing.Size(20, 28);
+            lb_Puls_4_Count.TabIndex = 0;
+            lb_Puls_4_Count.Text = "-";
+            // 
+            // lb_Puls_8_Count
+            // 
+            lb_Puls_8_Count.AutoSize = true;
+            lb_Puls_8_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_8_Count.Location = new System.Drawing.Point(226, 99);
+            lb_Puls_8_Count.Name = "lb_Puls_8_Count";
+            lb_Puls_8_Count.Size = new System.Drawing.Size(20, 28);
+            lb_Puls_8_Count.TabIndex = 0;
+            lb_Puls_8_Count.Text = "-";
+            // 
+            // lb_Puls_3_Count
+            // 
+            lb_Puls_3_Count.AutoSize = true;
+            lb_Puls_3_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_3_Count.Location = new System.Drawing.Point(57, 99);
+            lb_Puls_3_Count.Name = "lb_Puls_3_Count";
+            lb_Puls_3_Count.Size = new System.Drawing.Size(20, 28);
+            lb_Puls_3_Count.TabIndex = 0;
+            lb_Puls_3_Count.Text = "-";
+            // 
+            // lb_Puls_7_Count
+            // 
+            lb_Puls_7_Count.AutoSize = true;
+            lb_Puls_7_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_7_Count.Location = new System.Drawing.Point(226, 54);
+            lb_Puls_7_Count.Name = "lb_Puls_7_Count";
+            lb_Puls_7_Count.Size = new System.Drawing.Size(20, 28);
+            lb_Puls_7_Count.TabIndex = 0;
+            lb_Puls_7_Count.Text = "-";
+            // 
+            // lb_Puls_6_Count
+            // 
+            lb_Puls_6_Count.AutoSize = true;
+            lb_Puls_6_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_6_Count.Location = new System.Drawing.Point(226, 13);
+            lb_Puls_6_Count.Name = "lb_Puls_6_Count";
+            lb_Puls_6_Count.Size = new System.Drawing.Size(20, 28);
+            lb_Puls_6_Count.TabIndex = 0;
+            lb_Puls_6_Count.Text = "-";
+            // 
+            // lb_Puls_2_Count
+            // 
+            lb_Puls_2_Count.AutoSize = true;
+            lb_Puls_2_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_2_Count.Location = new System.Drawing.Point(57, 54);
+            lb_Puls_2_Count.Name = "lb_Puls_2_Count";
+            lb_Puls_2_Count.Size = new System.Drawing.Size(20, 28);
+            lb_Puls_2_Count.TabIndex = 0;
+            lb_Puls_2_Count.Text = "-";
+            // 
+            // lb_Puls_1_Count
+            // 
+            lb_Puls_1_Count.AutoSize = true;
+            lb_Puls_1_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_1_Count.Location = new System.Drawing.Point(57, 13);
+            lb_Puls_1_Count.Name = "lb_Puls_1_Count";
+            lb_Puls_1_Count.Size = new System.Drawing.Size(20, 28);
+            lb_Puls_1_Count.TabIndex = 0;
+            lb_Puls_1_Count.Text = "-";
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
+            flowLayoutPanel1.Controls.Add(btn_All0);
+            flowLayoutPanel1.Controls.Add(btn_All1);
+            flowLayoutPanel1.Controls.Add(btn_All2);
+            flowLayoutPanel1.Controls.Add(btn_All3);
+            flowLayoutPanel1.Controls.Add(btn_All4);
+            flowLayoutPanel1.Controls.Add(btn_All5);
+            flowLayoutPanel1.Controls.Add(btn_All6);
+            flowLayoutPanel1.Controls.Add(btn_All7);
+            flowLayoutPanel1.Controls.Add(btn_All8);
+            flowLayoutPanel1.Location = new System.Drawing.Point(507, 55);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new System.Drawing.Size(350, 244);
+            flowLayoutPanel1.TabIndex = 1;
+            flowLayoutPanel1.Visible = false;
+            // 
+            // btn_All0
+            // 
+            btn_All0.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btn_All0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_All0.ImageIndex = 0;
+            btn_All0.ImageList = characters;
+            btn_All0.Location = new System.Drawing.Point(3, 3);
+            btn_All0.Name = "btn_All0";
+            btn_All0.Size = new System.Drawing.Size(64, 64);
+            btn_All0.TabIndex = 0;
+            btn_All0.Tag = "0";
+            btn_All0.Text = "0강";
+            btn_All0.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btn_All0.UseVisualStyleBackColor = false;
+            btn_All0.Click += btn_CreateAllButton;
+            // 
+            // characters
+            // 
+            characters.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
+            characters.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("characters.ImageStream");
+            characters.TransparentColor = System.Drawing.Color.Transparent;
+            characters.Images.SetKeyName(0, "peasent_front.gif");
+            characters.Images.SetKeyName(1, "peasent_red_front.gif");
+            characters.Images.SetKeyName(2, "worker_low.png");
+            characters.Images.SetKeyName(3, "worker_high.png");
+            characters.Images.SetKeyName(4, "soldier_low.png");
+            characters.Images.SetKeyName(5, "soldier.png");
+            characters.Images.SetKeyName(6, "knight_low.png");
+            characters.Images.SetKeyName(7, "warrior_low.png");
+            characters.Images.SetKeyName(8, "warrior_high.png");
+            // 
+            // btn_All1
+            // 
+            btn_All1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btn_All1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_All1.ImageIndex = 1;
+            btn_All1.ImageList = characters;
+            btn_All1.Location = new System.Drawing.Point(73, 3);
+            btn_All1.Name = "btn_All1";
+            btn_All1.Size = new System.Drawing.Size(64, 64);
+            btn_All1.TabIndex = 1;
+            btn_All1.Tag = "1";
+            btn_All1.Text = "1강";
+            btn_All1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btn_All1.UseVisualStyleBackColor = false;
+            btn_All1.Click += btn_CreateAllButton;
+            // 
+            // btn_All2
+            // 
+            btn_All2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btn_All2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_All2.ImageIndex = 2;
+            btn_All2.ImageList = characters;
+            btn_All2.Location = new System.Drawing.Point(143, 3);
+            btn_All2.Name = "btn_All2";
+            btn_All2.Size = new System.Drawing.Size(64, 64);
+            btn_All2.TabIndex = 2;
+            btn_All2.Tag = "2";
+            btn_All2.Text = "2강";
+            btn_All2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btn_All2.UseVisualStyleBackColor = false;
+            btn_All2.Click += btn_CreateAllButton;
+            // 
+            // btn_All3
+            // 
+            btn_All3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btn_All3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_All3.ImageIndex = 3;
+            btn_All3.ImageList = characters;
+            btn_All3.Location = new System.Drawing.Point(213, 3);
+            btn_All3.Name = "btn_All3";
+            btn_All3.Size = new System.Drawing.Size(64, 64);
+            btn_All3.TabIndex = 3;
+            btn_All3.Tag = "3";
+            btn_All3.Text = "3강";
+            btn_All3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btn_All3.UseVisualStyleBackColor = false;
+            btn_All3.Click += btn_CreateAllButton;
+            // 
+            // btn_All4
+            // 
+            btn_All4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btn_All4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_All4.ImageIndex = 4;
+            btn_All4.ImageList = characters;
+            btn_All4.Location = new System.Drawing.Point(283, 3);
+            btn_All4.Name = "btn_All4";
+            btn_All4.Size = new System.Drawing.Size(64, 64);
+            btn_All4.TabIndex = 4;
+            btn_All4.Tag = "4";
+            btn_All4.Text = "4강";
+            btn_All4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btn_All4.UseVisualStyleBackColor = false;
+            btn_All4.Click += btn_CreateAllButton;
+            // 
+            // btn_All5
+            // 
+            btn_All5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btn_All5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_All5.ImageIndex = 5;
+            btn_All5.ImageList = characters;
+            btn_All5.Location = new System.Drawing.Point(3, 73);
+            btn_All5.Name = "btn_All5";
+            btn_All5.Size = new System.Drawing.Size(64, 64);
+            btn_All5.TabIndex = 5;
+            btn_All5.Tag = "5";
+            btn_All5.Text = "5강";
+            btn_All5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btn_All5.UseVisualStyleBackColor = false;
+            btn_All5.Click += btn_CreateAllButton;
+            // 
+            // btn_All6
+            // 
+            btn_All6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btn_All6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_All6.ImageIndex = 6;
+            btn_All6.ImageList = characters;
+            btn_All6.Location = new System.Drawing.Point(73, 73);
+            btn_All6.Name = "btn_All6";
+            btn_All6.Size = new System.Drawing.Size(64, 64);
+            btn_All6.TabIndex = 6;
+            btn_All6.Tag = "6";
+            btn_All6.Text = "6강";
+            btn_All6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btn_All6.UseVisualStyleBackColor = false;
+            btn_All6.Click += btn_CreateAllButton;
+            // 
+            // btn_All7
+            // 
+            btn_All7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btn_All7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_All7.ImageIndex = 7;
+            btn_All7.ImageList = characters;
+            btn_All7.Location = new System.Drawing.Point(143, 73);
+            btn_All7.Name = "btn_All7";
+            btn_All7.Size = new System.Drawing.Size(64, 64);
+            btn_All7.TabIndex = 7;
+            btn_All7.Tag = "7";
+            btn_All7.Text = "7강";
+            btn_All7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btn_All7.UseVisualStyleBackColor = false;
+            btn_All7.Click += btn_CreateAllButton;
+            // 
+            // btn_All8
+            // 
+            btn_All8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btn_All8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            btn_All8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_All8.ImageIndex = 8;
+            btn_All8.ImageList = characters;
+            btn_All8.Location = new System.Drawing.Point(213, 73);
+            btn_All8.Name = "btn_All8";
+            btn_All8.Size = new System.Drawing.Size(64, 64);
+            btn_All8.TabIndex = 8;
+            btn_All8.Tag = "8";
+            btn_All8.Text = "8강";
+            btn_All8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btn_All8.UseVisualStyleBackColor = false;
+            btn_All8.Click += btn_CreateAllButton;
             // 
             // panel2
             // 
@@ -347,29 +673,23 @@ namespace TeamProject
             label2.TabIndex = 0;
             label2.Text = "일터";
             // 
-            // panel_Main
-            // 
-            panel_Main.Location = new System.Drawing.Point(51, 250);
-            panel_Main.Name = "panel_Main";
-            panel_Main.Size = new System.Drawing.Size(651, 477);
-            panel_Main.TabIndex = 3;
-            panel_Main.Click += panel_Main_Click_1;
-            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new System.Drawing.Point(517, 28);
+            label3.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label3.Location = new System.Drawing.Point(81, 15);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(54, 15);
+            label3.Size = new System.Drawing.Size(95, 30);
             label3.TabIndex = 0;
             label3.Text = "보유 돈 :";
             // 
             // lb_Money
             // 
             lb_Money.AutoSize = true;
-            lb_Money.Location = new System.Drawing.Point(577, 28);
+            lb_Money.Font = new System.Drawing.Font("맑은 고딕", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lb_Money.Location = new System.Drawing.Point(182, 15);
             lb_Money.Name = "lb_Money";
-            lb_Money.Size = new System.Drawing.Size(59, 15);
+            lb_Money.Size = new System.Drawing.Size(110, 30);
             lb_Money.TabIndex = 0;
             lb_Money.Text = "lb_Money";
             // 
@@ -386,13 +706,15 @@ namespace TeamProject
             // 
             // tabPage1
             // 
+            tabPage1.BackColor = System.Drawing.Color.Honeydew;
+            tabPage1.Controls.Add(flowLayoutPanel1);
+            tabPage1.Controls.Add(pictureBox1);
+            tabPage1.Controls.Add(btn_ViewUnit);
             tabPage1.Controls.Add(btn_AllChoice);
             tabPage1.Controls.Add(btn_Test2);
             tabPage1.Controls.Add(btn_Test);
             tabPage1.Controls.Add(panel2);
-            tabPage1.Controls.Add(panel_Upgrade);
             tabPage1.Controls.Add(lbox_Chat);
-            tabPage1.Controls.Add(panel_Main);
             tabPage1.Controls.Add(lb_Money);
             tabPage1.Controls.Add(label3);
             tabPage1.Location = new System.Drawing.Point(4, 24);
@@ -401,14 +723,46 @@ namespace TeamProject
             tabPage1.Size = new System.Drawing.Size(875, 835);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "강화소";
-            tabPage1.UseVisualStyleBackColor = true;
             tabPage1.Click += tabPage1_Click;
+            // 
+            // panel_Main
+            // 
+            panel_Main.BackColor = System.Drawing.Color.Transparent;
+            panel_Main.Location = new System.Drawing.Point(44, 317);
+            panel_Main.Name = "panel_Main";
+            panel_Main.Size = new System.Drawing.Size(620, 385);
+            panel_Main.TabIndex = 9;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new System.Drawing.Point(44, 12);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(37, 38);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 7;
+            pictureBox1.TabStop = false;
+            // 
+            // btn_ViewUnit
+            // 
+            btn_ViewUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_ViewUnit.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btn_ViewUnit.Location = new System.Drawing.Point(356, 14);
+            btn_ViewUnit.Name = "btn_ViewUnit";
+            btn_ViewUnit.Size = new System.Drawing.Size(114, 35);
+            btn_ViewUnit.TabIndex = 6;
+            btn_ViewUnit.Text = "인원 보기";
+            btn_ViewUnit.UseVisualStyleBackColor = true;
+            btn_ViewUnit.Click += btn_ViewUnit_Click;
             // 
             // btn_AllChoice
             // 
-            btn_AllChoice.Location = new System.Drawing.Point(781, 6);
+            btn_AllChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_AllChoice.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            btn_AllChoice.Location = new System.Drawing.Point(740, 14);
             btn_AllChoice.Name = "btn_AllChoice";
-            btn_AllChoice.Size = new System.Drawing.Size(73, 49);
+            btn_AllChoice.Size = new System.Drawing.Size(117, 37);
             btn_AllChoice.TabIndex = 5;
             btn_AllChoice.Text = "전체 선택";
             btn_AllChoice.UseVisualStyleBackColor = true;
@@ -416,9 +770,9 @@ namespace TeamProject
             // 
             // btn_Test2
             // 
-            btn_Test2.Location = new System.Drawing.Point(487, 762);
+            btn_Test2.Location = new System.Drawing.Point(433, 764);
             btn_Test2.Name = "btn_Test2";
-            btn_Test2.Size = new System.Drawing.Size(119, 23);
+            btn_Test2.Size = new System.Drawing.Size(119, 49);
             btn_Test2.TabIndex = 4;
             btn_Test2.Text = "1강 5개구매";
             btn_Test2.UseVisualStyleBackColor = true;
@@ -426,9 +780,9 @@ namespace TeamProject
             // 
             // btn_Test
             // 
-            btn_Test.Location = new System.Drawing.Point(487, 717);
+            btn_Test.Location = new System.Drawing.Point(433, 708);
             btn_Test.Name = "btn_Test";
-            btn_Test.Size = new System.Drawing.Size(111, 23);
+            btn_Test.Size = new System.Drawing.Size(119, 50);
             btn_Test.TabIndex = 0;
             btn_Test.Text = "0강 5개구매";
             btn_Test.UseVisualStyleBackColor = true;
@@ -582,13 +936,19 @@ namespace TeamProject
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
-            // characters
+            // Allview0_value
             // 
-            characters.ColorDepth = System.Windows.Forms.ColorDepth.Depth24Bit;
-            characters.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("characters.ImageStream");
-            characters.TransparentColor = System.Drawing.Color.Transparent;
-            characters.Images.SetKeyName(0, "peasent_front.gif");
-            characters.Images.SetKeyName(1, "peasent_red_front.gif");
+            Allview0_value.Location = new System.Drawing.Point(0, 0);
+            Allview0_value.Name = "Allview0_value";
+            Allview0_value.Size = new System.Drawing.Size(100, 23);
+            Allview0_value.TabIndex = 0;
+            // 
+            // Allview0_value
+            // 
+            Allview0_value.Location = new System.Drawing.Point(0, 0);
+            Allview0_value.Name = "Allview0_value";
+            Allview0_value.Size = new System.Drawing.Size(100, 23);
+            Allview0_value.TabIndex = 0;
             // 
             // MobleTeamProject_Gambling
             // 
@@ -601,12 +961,15 @@ namespace TeamProject
             Text = "MobleTeamProject_Gambling";
             panel_Upgrade.ResumeLayout(false);
             panel_Upgrade.PerformLayout();
+            flowLayoutPanel2.ResumeLayout(false);
+            flowLayoutPanel2.PerformLayout();
             flowLayoutPanel1.ResumeLayout(false);
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             ResumeLayout(false);
@@ -615,11 +978,8 @@ namespace TeamProject
         #endregion
 
         private System.Windows.Forms.ListBox lbox_Chat;
-        private System.Windows.Forms.Panel panel_Upgrade;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel_Main;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lb_Money;
         private System.Windows.Forms.TabControl tabControl1;
@@ -633,16 +993,6 @@ namespace TeamProject
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ProgressBar pbBuildHP;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.Button btn_All0;
-        private System.Windows.Forms.Button btn_All1;
-        private System.Windows.Forms.Button btn_All2;
-        private System.Windows.Forms.Button btn_All3;
-        private System.Windows.Forms.Button btn_All4;
-        private System.Windows.Forms.Button btn_All5;
-        private System.Windows.Forms.Button btn_All6;
-        private System.Windows.Forms.Button btn_All7;
-        private System.Windows.Forms.Button btn_All8;
         private System.Windows.Forms.Button btn_AllChoice;
         private System.Windows.Forms.Label lbHP;
         private System.Windows.Forms.Label label5;
@@ -653,5 +1003,42 @@ namespace TeamProject
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ImageList characters;
         private System.Windows.Forms.ComboBox cbSelectBuild;
+        private System.Windows.Forms.Button btn_ViewUnit;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Button btn_All0;
+        private System.Windows.Forms.Button btn_All1;
+        private System.Windows.Forms.Button btn_All2;
+        private System.Windows.Forms.Button btn_All3;
+        private System.Windows.Forms.Button btn_All4;
+        private System.Windows.Forms.Button btn_All5;
+        private System.Windows.Forms.Button btn_All6;
+        private System.Windows.Forms.Button btn_All7;
+        private System.Windows.Forms.Button btn_All8;
+        private System.Windows.Forms.Panel flowLayoutPanel2;
+        private System.Windows.Forms.Label lb_Allview5;
+        private System.Windows.Forms.Label lb_Allview8;
+        private System.Windows.Forms.Label lb_Allview4;
+        private System.Windows.Forms.Label lb_Allview7;
+        private System.Windows.Forms.Label lb_Allview3;
+        private System.Windows.Forms.Label lb_Allview6;
+        private System.Windows.Forms.Label lb_Allview0;
+        private System.Windows.Forms.Label lb_Allview1;
+        private System.Windows.Forms.Label lb_Allview2;
+        private System.Windows.Forms.Label lb_Puls_5_Count;
+        private System.Windows.Forms.Label lb_Puls_4_Count;
+        private System.Windows.Forms.Label lb_Puls_8_Count;
+        private System.Windows.Forms.Label lb_Puls_3_Count;
+        private System.Windows.Forms.Label lb_Puls_7_Count;
+        private System.Windows.Forms.Label lb_Puls_6_Count;
+        private System.Windows.Forms.Label Allview0_value;
+        private System.Windows.Forms.Label lb_Puls_2_Count;
+        private System.Windows.Forms.Label lb_Puls_1_Count;
+        private System.Windows.Forms.Panel panel_Upgrade;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lb_Puls_0_Count;
+        private System.Windows.Forms.Button btn_Refresh;
     }
 }
