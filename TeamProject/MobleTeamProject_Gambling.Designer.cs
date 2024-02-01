@@ -236,13 +236,13 @@ namespace TeamProject
             lbBuildInfo = new System.Windows.Forms.Label();
             cbSelectBuild = new System.Windows.Forms.ComboBox();
             pbBuildHP = new System.Windows.Forms.ProgressBar();
-            panel6 = new System.Windows.Forms.Panel();
-            panel5 = new System.Windows.Forms.Panel();
-            panel4 = new System.Windows.Forms.Panel();
             panel3 = new System.Windows.Forms.Panel();
             tabPage3 = new System.Windows.Forms.TabPage();
             timer1 = new System.Windows.Forms.Timer(components);
             Allview0_value = new System.Windows.Forms.Label();
+            pictureBox13 = new System.Windows.Forms.PictureBox();
+            pictureBox14 = new System.Windows.Forms.PictureBox();
+            pictureBox15 = new System.Windows.Forms.PictureBox();
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             panel14.SuspendLayout();
@@ -275,6 +275,9 @@ namespace TeamProject
             panel19.SuspendLayout();
             panel18.SuspendLayout();
             panel17.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox15).BeginInit();
             SuspendLayout();
             // 
             // lbox_Chat
@@ -1268,14 +1271,16 @@ namespace TeamProject
             // 
             // tabPage2
             // 
+            tabPage2.BackgroundImage = Properties.Resources.mine_map;
+            tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            tabPage2.Controls.Add(pictureBox15);
+            tabPage2.Controls.Add(pictureBox14);
+            tabPage2.Controls.Add(pictureBox13);
             tabPage2.Controls.Add(panel19);
             tabPage2.Controls.Add(panel18);
             tabPage2.Controls.Add(panel17);
             tabPage2.Controls.Add(cbSelectBuild);
             tabPage2.Controls.Add(pbBuildHP);
-            tabPage2.Controls.Add(panel6);
-            tabPage2.Controls.Add(panel5);
-            tabPage2.Controls.Add(panel4);
             tabPage2.Controls.Add(panel3);
             tabPage2.Location = new System.Drawing.Point(4, 29);
             tabPage2.Margin = new System.Windows.Forms.Padding(4);
@@ -1431,33 +1436,6 @@ namespace TeamProject
             pbBuildHP.Size = new System.Drawing.Size(643, 60);
             pbBuildHP.TabIndex = 4;
             // 
-            // panel6
-            // 
-            panel6.BackColor = System.Drawing.Color.Gray;
-            panel6.Location = new System.Drawing.Point(908, 451);
-            panel6.Margin = new System.Windows.Forms.Padding(4);
-            panel6.Name = "panel6";
-            panel6.Size = new System.Drawing.Size(64, 67);
-            panel6.TabIndex = 1;
-            // 
-            // panel5
-            // 
-            panel5.BackColor = System.Drawing.Color.Gray;
-            panel5.Location = new System.Drawing.Point(185, 451);
-            panel5.Margin = new System.Windows.Forms.Padding(4);
-            panel5.Name = "panel5";
-            panel5.Size = new System.Drawing.Size(64, 67);
-            panel5.TabIndex = 1;
-            // 
-            // panel4
-            // 
-            panel4.BackColor = System.Drawing.Color.Gray;
-            panel4.Location = new System.Drawing.Point(545, 152);
-            panel4.Margin = new System.Windows.Forms.Padding(4);
-            panel4.Name = "panel4";
-            panel4.Size = new System.Drawing.Size(64, 67);
-            panel4.TabIndex = 1;
-            // 
             // panel3
             // 
             panel3.Location = new System.Drawing.Point(257, 227);
@@ -1489,6 +1467,36 @@ namespace TeamProject
             Allview0_value.Name = "Allview0_value";
             Allview0_value.Size = new System.Drawing.Size(100, 23);
             Allview0_value.TabIndex = 0;
+            // 
+            // pictureBox13
+            // 
+            pictureBox13.Image = Properties.Resources.mine_worker_right;
+            pictureBox13.Location = new System.Drawing.Point(903, 453);
+            pictureBox13.Name = "pictureBox13";
+            pictureBox13.Size = new System.Drawing.Size(65, 65);
+            pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox13.TabIndex = 10;
+            pictureBox13.TabStop = false;
+            // 
+            // pictureBox14
+            // 
+            pictureBox14.Image = Properties.Resources.mine_worker_front;
+            pictureBox14.Location = new System.Drawing.Point(553, 164);
+            pictureBox14.Name = "pictureBox14";
+            pictureBox14.Size = new System.Drawing.Size(65, 65);
+            pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox14.TabIndex = 10;
+            pictureBox14.TabStop = false;
+            // 
+            // pictureBox15
+            // 
+            pictureBox15.Image = Properties.Resources.mine_worker_left;
+            pictureBox15.Location = new System.Drawing.Point(185, 453);
+            pictureBox15.Name = "pictureBox15";
+            pictureBox15.Size = new System.Drawing.Size(65, 65);
+            pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox15.TabIndex = 10;
+            pictureBox15.TabStop = false;
             // 
             // MobleTeamProject_Gambling
             // 
@@ -1549,6 +1557,9 @@ namespace TeamProject
             panel18.PerformLayout();
             panel17.ResumeLayout(false);
             panel17.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
             ResumeLayout(false);
         }
 
@@ -1574,9 +1585,6 @@ namespace TeamProject
         private System.Windows.Forms.Button btn_All7;
         private System.Windows.Forms.Button btn_All8;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ProgressBar pbBuildHP;
         private System.Windows.Forms.Button btn_AllChoice;
         private System.Windows.Forms.Label lbHP;
@@ -1654,5 +1662,8 @@ namespace TeamProject
         private System.Windows.Forms.Panel panel19;
         private System.Windows.Forms.Panel panel18;
         private System.Windows.Forms.Panel panel17;
+        private System.Windows.Forms.PictureBox pictureBox15;
+        private System.Windows.Forms.PictureBox pictureBox14;
+        private System.Windows.Forms.PictureBox pictureBox13;
     }
 }
