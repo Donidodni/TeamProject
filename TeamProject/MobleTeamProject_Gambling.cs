@@ -58,7 +58,14 @@ namespace TeamProject
             Money = 0;
             lb_Money.Text = Money.ToString() + " 골드";
         }
+        
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+   
+       
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -552,8 +559,8 @@ namespace TeamProject
 
                 Panel testPanel = new Panel(); // 패널 객체 생성
                 testPanel.Size = new System.Drawing.Size(50, 50); // 패널 크기 설정
-                testPanel.BackColor = Color.FromName(tagParts[3].Trim());
-                //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
+                //testPanel.BackColor = Color.FromName(tagParts[3].Trim());
+                testPanel.BackgroundImage = characters.Images[newWeapon.Level];   //이미지로 넣을 경우
                 testPanel.Name = "Test";
                 testPanel.Tag = $"{newWeapon.Level},{newWeapon.Attack},{newWeapon.SellPrice},{newWeapon.Name}";
                 for (int i = 0; i < 20; i++)
@@ -662,8 +669,10 @@ namespace TeamProject
             tabControl1.TabPages[1].Controls.Add(pnBuilding);    //빌딩패널 생성
         }
 
+    
+
         private void MobleTeamProject_Gambling_Load(object sender, EventArgs e)
-        {
+        {     
             NewBuilding(0);
             timer1.Start(); //건물 공격 시작
         }
