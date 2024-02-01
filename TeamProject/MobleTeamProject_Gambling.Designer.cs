@@ -819,7 +819,7 @@ namespace TeamProject
             cbSelectBuild.Name = "cbSelectBuild";
             cbSelectBuild.Size = new System.Drawing.Size(121, 23);
             cbSelectBuild.TabIndex = 6;
-            cbSelectBuild.Text = "건물 선택";
+            cbSelectBuild.Text = "1단계 건물";
             cbSelectBuild.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // lbAttackSum
@@ -952,6 +952,7 @@ namespace TeamProject
             Name = "MobleTeamProject_Gambling";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "MobleTeamProject_Gambling";
+            Load += MobleTeamProject_Gambling_Load;
             panel_Upgrade.ResumeLayout(false);
             panel_Upgrade.PerformLayout();
             flowLayoutPanel2.ResumeLayout(false);
