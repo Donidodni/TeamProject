@@ -514,17 +514,16 @@ namespace TeamProject
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-        String Unit_Image1 = "C:\\Users\\user\\Pictures\\Screenshots\\스크린샷 2024-01-05 110728.png";
-
         //유닛 위치 정보 배열
-        public int[,] PntArr = { { 144, 506 }, { 144, 450 }, { 144, 394 }, { 144, 282 }, { 144, 226 },
+        int[,] PntArr = { { 144, 506 }, { 144, 450 }, { 144, 394 }, { 144, 282 }, { 144, 226 },
                                 { 144, 170 }, { 200, 114 }, { 256, 114 }, { 312, 114 }, { 368, 114 },
                                 { 480, 114 }, { 536, 114 }, { 592, 114 }, { 650, 114 }, { 706, 170 },
                                 { 706, 226 }, { 706, 282 }, { 706, 394 }, { 706, 450 }, { 706, 506 } };
-        public bool[] full = new bool[20];  //array 인덱스 좌표에 패널 할당 여부 초기값 false
-        public int[] Attack = new int[20];  //좌표마다 유닛의 공격력 값
-        public int[] BuildArmor = { 1, 3, 5, 10, 30 };  //단계별 빌딩 방어력
+        bool[] full = new bool[20];  //array 인덱스 좌표에 패널 할당 여부 초기값 false
+        int[] Attack = new int[20];  //좌표마다 유닛의 공격력 값
+        int[] BuildArmor = { 1, 3, 5, 10, 30 };  //단계별 빌딩 방어력
+        int[] BuildReward = { 1, 2, 5, 10, 20 };    //빌딩 단계별 보상
+        int TurretAttack = 3;
 
         private void Move(Panel weapon)
         {
@@ -598,7 +597,6 @@ namespace TeamProject
         }
 
         Panel pnBuilding = new Panel();
-        int[] BuildReward = { 1, 2, 5, 10, 20 };
         private void AttackBuild()
         {
             if (cbSelectBuild.SelectedIndex != -1)  //건물을 선택했을 경우
@@ -626,14 +624,14 @@ namespace TeamProject
                     NewBuilding(cbSelectBuild.SelectedIndex);
                 }
                 lbHP.Text = pbBuildHP.Value.ToString();
-                lbAttackSum.Text = Attacksum.ToString();
+                lbAttackSum.Text = $"{Attacksum}  (+{TurretAttack})";
             }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             AttackBuild();
-            Turret(3);
+            Turret(TurretAttack);
         }
 
         //터렛
