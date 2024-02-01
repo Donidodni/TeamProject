@@ -528,7 +528,7 @@ namespace TeamProject
                                 { 706, 226 }, { 706, 282 }, { 706, 394 }, { 706, 450 }, { 706, 506 } };
         public bool[] full = new bool[20];  //array 인덱스 좌표에 패널 할당 여부 초기값 false
         public int[] Attack = new int[20];  //좌표마다 유닛의 공격력 값
-        public int[] BuildArmor = { 1, 3, 5, 10, 30 };  //단계별 빌딩 방어력
+        public int[] BuildArmor = { 1, 100, 400, 1000, 3000 };  //단계별 빌딩 방어력
 
         private void Move(Panel weapon)
         {
@@ -602,7 +602,7 @@ namespace TeamProject
         }
 
         Panel pnBuilding = new Panel();
-        int[] BuildReward = { 1, 2, 5, 10, 20 };
+        int[] BuildReward = { 50, 150, 700, 2000, 10000 };
         private void AttackBuild()
         {
             if (cbSelectBuild.SelectedIndex != -1)  //건물을 선택했을 경우
@@ -661,7 +661,7 @@ namespace TeamProject
             pbBuildHP.Minimum = 0;
 
             Color[] BColor = { Color.Black, Color.Red, Color.Pink, Color.Plum, Color.Gold }; //단계별 빌딩 색상
-            int[] BuildHP = { 100, 200, 500, 1000, 2000 };  //단계별 빌딩 HP
+            int[] BuildHP = { 100, 500, 3000, 10000, 50000 };  //단계별 빌딩 HP
             //빌딩 생성
             pnBuilding.BackColor = BColor[BLevel];
             //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
