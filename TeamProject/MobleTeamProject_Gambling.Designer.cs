@@ -132,6 +132,15 @@ namespace TeamProject
             weaponsDictionary.Add(10, lv10);
 
         }
+
+        private void InitializeWeaponsList()
+        {
+            for (int i = 0; i < 11; i++)
+            {
+                List<WeaponUpgrade> weaponUpgrades = new List<WeaponUpgrade>();
+                weapons.Add(weaponUpgrades); // 0~10강 무기를 담을 리스트 생성
+            }
+        }
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();

@@ -53,11 +53,7 @@ namespace TeamProject
         {
             InitializeComponent();
             InitializeWeapons(); //Dictionary에 무기 정보 추가
-            for (int i = 0; i < 11; i++)
-            {
-                List<WeaponUpgrade> weaponUpgrades = new List<WeaponUpgrade>();
-                weapons.Add(weaponUpgrades); // 0~10강 무기를 담을 리스트 생성
-            }
+            InitializeWeaponsList(); // 0~10강 무기를 담을 리스트 생성
             Money = 0;
             lb_Money.Text = Money.ToString() + " 골드";
         }
@@ -94,15 +90,10 @@ namespace TeamProject
 
                     while (CheckOverlap(testPanel, MainPanelList) && MainPanelList.Count != limit)
                     {
-                        //lbox_Chat.Items.Add($"겹침 x : {x} y : {y}");
                         x = random.Next(0, 10);
                         y = random.Next(2, 8);
                         testPanel.Location = new Point(x * 50, y * 50);
                     }
-
-                    
-                    //lbox_Chat.Items.Add($"x : {x} y : {y}");
-
                     testPanel.Click += Panel_Click;
 
                     // 새로운 무기를 추가하는 대신 이미 있는 무기 속성을 사용
@@ -245,25 +236,38 @@ namespace TeamProject
         private void Sell(Panel clickedPanel)
         {
             string tagString = clickedPanel.Tag?.ToString();
-            string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-            int index = int.Parse(tagParts[0].Trim());
-            string sellPriceString = tagParts[2].Trim();
-            if (int.TryParse(sellPriceString, out int price))
+            if (string.IsNullOrEmpty(tagString))
+                return;
+
+            string[] tagParts = tagString.Split(',');
+            if (tagParts.Length < 3)
+                return;
+
+            if (int.TryParse(tagParts[2].Trim(), out int price))
             {
                 Money += price;
-                lb_Money.Text = Money.ToString() + " 골드";
+                lb_Money.Text = $"{Money} 골드";
                 RemovePanel(clickedPanel);
             }
+
             RemoveButtons();
         }
 
         private void RemovePanel(Panel clickedPanel)
         {
             string tagString = clickedPanel.Tag?.ToString();
-            string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-            int index = int.Parse(tagParts[0].Trim());
-            string sellPriceString = tagParts[2].Trim();
-            weapons[index].RemoveAt(0);
+            if (string.IsNullOrEmpty(tagString))
+                return;
+
+            string[] tagParts = tagString.Split(',');
+            if (tagParts.Length < 1)
+                return;
+
+            if (int.TryParse(tagParts[0].Trim(), out int index) && index >= 0 && index < weapons.Count)
+            {
+                weapons[index].RemoveAt(0);
+            }
+
             timerDictionary.Remove(clickedPanel);
             panel_Main.Controls.Remove(clickedPanel);
             MainPanelList.Remove(clickedPanel);
