@@ -564,7 +564,7 @@ namespace TeamProject
                 testPanel.Click += Panel1_Click;
 
                 tabControl1.TabPages[1].Controls.Add(testPanel);    //유닛패널 생성
-                ShowMessage($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
+                //ShowMessage($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
             }
             int index = int.Parse(tagParts[0].Trim());
             ShowMessage($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
