@@ -326,7 +326,6 @@ namespace TeamProject
             if (selectedPanel.Location.X == workX)
             {
                 MoveWork(selectedPanel);
-
             }
         }
 
@@ -599,7 +598,7 @@ namespace TeamProject
                 if (pbBuildHP.Value > Attacksum)
                 {
                     //공격력이 방어력보다 클 때만 공격
-                    //if (Attacksum >= BuildArmor[cbSelectBuild.SelectedIndex])
+                    if (Attacksum >= BuildArmor[cbSelectBuild.SelectedIndex])
                         pbBuildHP.Value = pbBuildHP.Value - Attacksum + BuildArmor[cbSelectBuild.SelectedIndex];
                 }
 

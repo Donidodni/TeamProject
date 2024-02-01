@@ -879,7 +879,6 @@ namespace TeamProject
             pbBuildHP.Location = new System.Drawing.Point(200, 576);
             pbBuildHP.Name = "pbBuildHP";
             pbBuildHP.Size = new System.Drawing.Size(500, 45);
-            pbBuildHP.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             pbBuildHP.TabIndex = 4;
             // 
             // panel6
@@ -1028,7 +1027,5 @@ namespace TeamProject
         private System.Windows.Forms.Label lb_Puls_0_Count;
         private System.Windows.Forms.Label lb_Allview;
         private System.Windows.Forms.Button btn_Refresh;
-        private System.Windows.Forms.Panel panel_Main;
-        private System.Windows.Forms.Label lb_Allview;
     }
 }
