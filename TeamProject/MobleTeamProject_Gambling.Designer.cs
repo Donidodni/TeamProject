@@ -310,7 +310,7 @@ namespace TeamProject
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(43, 28);
             label9.TabIndex = 0;
-            label9.Text = "0강";
+            label9.Text = "8강";
             // 
             // lb_Allview8
             // 
@@ -690,6 +690,7 @@ namespace TeamProject
             tabControl1.SelectedIndex = 0;
             tabControl1.Size = new System.Drawing.Size(883, 863);
             tabControl1.TabIndex = 4;
+            tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
             // 
             // tabPage1
             // 
@@ -855,7 +856,7 @@ namespace TeamProject
             cbSelectBuild.Name = "cbSelectBuild";
             cbSelectBuild.Size = new System.Drawing.Size(121, 23);
             cbSelectBuild.TabIndex = 6;
-            cbSelectBuild.Text = "건물 선택";
+            cbSelectBuild.Text = "1단계 건물";
             cbSelectBuild.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // lbAttackSum
@@ -1010,6 +1011,7 @@ namespace TeamProject
             Name = "MobleTeamProject_Gambling";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "MobleTeamProject_Gambling";
+            Load += MobleTeamProject_Gambling_Load;
             panel_Upgrade.ResumeLayout(false);
             panel_Upgrade.PerformLayout();
             flowLayoutPanel2.ResumeLayout(false);

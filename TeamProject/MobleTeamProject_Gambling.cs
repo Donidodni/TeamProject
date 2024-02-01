@@ -237,7 +237,7 @@ namespace TeamProject
         {
             RemoveButtons();
             Timer moveTimer = timerDictionary[panel];
-            moveTimer.Interval = 50; // 타이머 주기 (20ms로 설정, 조절 가능)
+            moveTimer.Interval = 20; // 타이머 주기 (20ms로 설정, 조절 가능)
             moveTimer.Tick += (s, ev) => MovePanelUp(panel, moveTimer);
             moveTimer.Start(); // 타이머 시작
         }
@@ -246,7 +246,7 @@ namespace TeamProject
         {
             RemoveButtons();
             Timer moveTimer = timerDictionary[panel];
-            moveTimer.Interval = 50; // 타이머 주기 (20ms로 설정, 조절 가능)
+            moveTimer.Interval = 20; // 타이머 주기 (20ms로 설정, 조절 가능)
             moveTimer.Tick += (s, ev) => MovePanelRight(panel, moveTimer);
             moveTimer.Start(); // 타이머 시작
         }
@@ -510,7 +510,10 @@ namespace TeamProject
         String Unit_Image1 = "C:\\Users\\user\\Pictures\\Screenshots\\스크린샷 2024-01-05 110728.png";
 
         //유닛 위치 정보 배열
-        public int[,] PntArr = { { 144, 506 }, { 144, 450 }, { 144, 394 }, { 144, 282 }, { 144, 226 }, { 144, 170 }, { 200, 114 }, { 256, 114 }, { 312, 114 }, { 368, 114 }, { 480, 114 }, { 536, 114 }, { 592, 114 }, { 650, 114 }, { 706, 170 }, { 706, 226 }, { 706, 282 }, { 706, 394 }, { 706, 450 }, { 706, 506 } };
+        public int[,] PntArr = { { 144, 506 }, { 144, 450 }, { 144, 394 }, { 144, 282 }, { 144, 226 },
+                                { 144, 170 }, { 200, 114 }, { 256, 114 }, { 312, 114 }, { 368, 114 },
+                                { 480, 114 }, { 536, 114 }, { 592, 114 }, { 650, 114 }, { 706, 170 },
+                                { 706, 226 }, { 706, 282 }, { 706, 394 }, { 706, 450 }, { 706, 506 } };
         public bool[] full = new bool[20];  //array 인덱스 좌표에 패널 할당 여부 초기값 false
         public int[] Attack = new int[20];  //좌표마다 유닛의 공격력 값 
 
@@ -529,10 +532,6 @@ namespace TeamProject
             if (cnt >= 20)
             {
                 AddPanels(int.Parse(tagParts[0].Trim()), 1);
-
-                //lbox_Chat.Items.Add("20개 이상 추가할 수 없습니다.");
-                //lbox_Chat.SelectedIndex = lbox_Chat.Items.Count - 1;
-                //lbox_Chat.SelectedIndex = -1; // 선택 해제
             }
             else
             {
@@ -551,6 +550,7 @@ namespace TeamProject
                 testPanel.BackColor = Color.FromName(tagParts[3].Trim());
                 //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
                 testPanel.Name = "Test";
+                testPanel.Tag = $"{newWeapon.Level},{newWeapon.Attack},{newWeapon.SellPrice},{newWeapon.Name}";
                 for (int i = 0; i < 20; i++)
                 {
                     if (!full[i])   //비어있을 경우
@@ -573,9 +573,11 @@ namespace TeamProject
         private void Panel1_Click(object sender, EventArgs e)    //패널 제거 -> 강화소 반환으로 수정예정
         {
             Panel clickedPanel = (Panel)sender;
+
             string tagString = clickedPanel.Tag?.ToString();
             string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
             weapons[int.Parse(tagParts[0].Trim())].RemoveAt(0);
+
             Controls.Remove(clickedPanel); clickedPanel.Dispose();
             for (int i = 0; i < 20; i++)   //패널 좌표와 비교
                 if (clickedPanel.Location.X == PntArr[i, 0] && clickedPanel.Location.Y == PntArr[i, 1])
@@ -590,7 +592,7 @@ namespace TeamProject
             int[] BuildArmor = { 1, 2, 3, 4, 5 };  //단계별 빌딩 방어력
             if (cbSelectBuild.SelectedIndex != -1)  //건물을 선택했을 경우
             {
-                int Attacksum = 0, Demage = 0;
+                int Attacksum = 0;  //현재 유닛 공격력 합계
                 foreach (int i in Attack)
                 {
                     Attacksum += i;
@@ -624,17 +626,16 @@ namespace TeamProject
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pnBuilding.Location = new Point(200, 170);   //건물 생성 좌표 설정
-            pnBuilding.Size = new Size(500, 386); // 패널 크기 설정
-            pbBuildHP.Minimum = 0;
-
             NewBuilding(cbSelectBuild.SelectedIndex);
-            timer1.Start(); //건물 공격 시작
         }
 
         private void NewBuilding(int BLevel)    //BLevel = cbSelectBuild.SelectedIndex
         {
-            Color[] BColor = { Color.Black, Color.Red, Color.Pink, Color.Plum, Color.Gold}; //단계별 빌딩 색상
+            pnBuilding.Location = new Point(200, 170);   //건물 생성 좌표 설정
+            pnBuilding.Size = new Size(500, 386); // 패널 크기 설정
+            pbBuildHP.Minimum = 0;
+
+            Color[] BColor = { Color.Black, Color.Red, Color.Pink, Color.Plum, Color.Gold }; //단계별 빌딩 색상
             int[] BuildHP = { 100, 200, 500, 1000, 2000 };  //단계별 빌딩 HP
             //빌딩 생성
             pnBuilding.BackColor = BColor[BLevel];
@@ -646,12 +647,16 @@ namespace TeamProject
             tabControl1.TabPages[1].Controls.Add(pnBuilding);    //빌딩패널 생성
         }
 
-  
+        private void MobleTeamProject_Gambling_Load(object sender, EventArgs e)
+        {
+            NewBuilding(0);
+            timer1.Start(); //건물 공격 시작
 
-
-
-
-
+            //Panel testPanel = new Panel(); // 패널 객체 생성
+            //testPanel.Size = new System.Drawing.Size(50, 50); // 패널 크기 설정
+            //testPanel.BackColor = Color.FromName(tagParts[3].Trim());
+            //tabControl1.TabPages[1].Controls.Add();    //유닛패널 생성
+        }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
