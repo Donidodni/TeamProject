@@ -154,7 +154,43 @@
   <data name="mine" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\mine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ui_message" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ui_message.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bing_sound" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bing_sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="knight" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\knight.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LongMessage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\LongMessage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="message" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\message.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="money" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\money.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="project_bgm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\project_bgm.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="project_inbgm" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\project_inbgm.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="soldier_high" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soldier_high.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="soldier_low" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soldier_low.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warrior_high1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warrior_high.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="warrior_low1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warrior_low.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="worker_high1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\worker_high.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="worker_low1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\worker_low.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
