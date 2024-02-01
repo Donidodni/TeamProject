@@ -335,7 +335,7 @@ namespace TeamProject
             // 
             lb_Allview.AutoSize = true;
             lb_Allview.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lb_Allview.Location = new System.Drawing.Point(5, 23);
+            lb_Allview.Location = new System.Drawing.Point(5, 15);
             lb_Allview.Name = "lb_Allview";
             lb_Allview.Size = new System.Drawing.Size(43, 28);
             lb_Allview.TabIndex = 0;
@@ -425,7 +425,7 @@ namespace TeamProject
             // 
             label8.AutoSize = true;
             label8.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            label8.Location = new System.Drawing.Point(54, 23);
+            label8.Location = new System.Drawing.Point(54, 15);
             label8.Name = "label8";
             label8.Size = new System.Drawing.Size(20, 28);
             label8.TabIndex = 0;
@@ -494,10 +494,11 @@ namespace TeamProject
             characters.Images.SetKeyName(1, "peasent_red_front.gif");
             characters.Images.SetKeyName(2, "worker_low.png");
             characters.Images.SetKeyName(3, "worker_high.png");
-            characters.Images.SetKeyName(4, "soldier.png");
-            characters.Images.SetKeyName(5, "knight_low.png");
-            characters.Images.SetKeyName(6, "warrior_low.png");
-            characters.Images.SetKeyName(7, "warrior_high.png");
+            characters.Images.SetKeyName(4, "soldier_low.png");
+            characters.Images.SetKeyName(5, "soldier.png");
+            characters.Images.SetKeyName(6, "knight_low.png");
+            characters.Images.SetKeyName(7, "warrior_low.png");
+            characters.Images.SetKeyName(8, "warrior_high.png");
             // 
             // btn_All1
             // 
@@ -613,13 +614,19 @@ namespace TeamProject
             // 
             // btn_All8
             // 
+            btn_All8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            btn_All8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            btn_All8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btn_All8.ImageIndex = 8;
+            btn_All8.ImageList = characters;
             btn_All8.Location = new System.Drawing.Point(213, 73);
             btn_All8.Name = "btn_All8";
             btn_All8.Size = new System.Drawing.Size(64, 64);
             btn_All8.TabIndex = 8;
             btn_All8.Tag = "8";
             btn_All8.Text = "8강";
-            btn_All8.UseVisualStyleBackColor = true;
+            btn_All8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btn_All8.UseVisualStyleBackColor = false;
             btn_All8.Click += btn_CreateAllButton;
             // 
             // panel2
