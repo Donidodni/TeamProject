@@ -35,7 +35,7 @@ namespace TeamProject
             WeaponUpgrade lv0 = new WeaponUpgrade() //0번 무기 속성
             {
                 Level = 0,
-                Name = "Black",
+                Name = "하급 농부",
                 Attack = 0,
                 SellPrice = 0,
             };
@@ -44,7 +44,7 @@ namespace TeamProject
             WeaponUpgrade lv1 = new WeaponUpgrade() //1번 무기 속성
             {
                 Level = 1,
-                Name = "Red",
+                Name = "상급 농부",
                 Attack = 1,
                 SellPrice = 1,
             };
@@ -53,7 +53,7 @@ namespace TeamProject
             WeaponUpgrade lv2 = new WeaponUpgrade() //2번 무기 속성
             {
                 Level = 2,
-                Name = "Blue",
+                Name = "하급 일꾼",
                 Attack = 2,
                 SellPrice = 2,
             };
@@ -62,7 +62,7 @@ namespace TeamProject
             WeaponUpgrade lv3 = new WeaponUpgrade() //3번 무기 속성
             {
                 Level = 3,
-                Name = "Red",
+                Name = "상급 일꾼",
                 Attack = 3,
                 SellPrice = 3,
             };
@@ -71,7 +71,7 @@ namespace TeamProject
             WeaponUpgrade lv4 = new WeaponUpgrade() //4번 무기 속성
             {
                 Level = 4,
-                Name = "Red",
+                Name = "일반 군인",
                 Attack = 4,
                 SellPrice = 4,
             };
@@ -80,7 +80,7 @@ namespace TeamProject
             WeaponUpgrade lv5 = new WeaponUpgrade() //5번 무기 속성
             {
                 Level = 5,
-                Name = "Red",
+                Name = "말단 기사",
                 Attack = 5,
                 SellPrice = 5,
             };
@@ -89,7 +89,7 @@ namespace TeamProject
             WeaponUpgrade lv6 = new WeaponUpgrade() //6번 무기 속성
             {
                 Level = 6,
-                Name = "Red",
+                Name = "측근 기사",
                 Attack = 6,
                 SellPrice = 6,
             };
@@ -98,7 +98,7 @@ namespace TeamProject
             WeaponUpgrade lv7 = new WeaponUpgrade() //7번 무기 속성
             {
                 Level = 7,
-                Name = "Red",
+                Name = "신입 용사",
                 Attack = 7,
                 SellPrice = 7,
             };
@@ -107,7 +107,7 @@ namespace TeamProject
             WeaponUpgrade lv8 = new WeaponUpgrade() //8번 무기 속성
             {
                 Level = 8,
-                Name = "Red",
+                Name = "베테랑 용사",
                 Attack = 8,
                 SellPrice = 8,
             };
@@ -116,7 +116,7 @@ namespace TeamProject
             WeaponUpgrade lv9 = new WeaponUpgrade() //9번 무기 속성
             {
                 Level = 9,
-                Name = "Red",
+                Name = "세계 용사",
                 Attack = 9,
                 SellPrice = 9,
             };
@@ -125,7 +125,7 @@ namespace TeamProject
             WeaponUpgrade lv10 = new WeaponUpgrade() //10번 무기 속성
             {
                 Level = 10,
-                Name = "Red",
+                Name = "전설 용사",
                 Attack = 10,
                 SellPrice = 10,
             };
