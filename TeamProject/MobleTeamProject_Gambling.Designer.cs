@@ -350,7 +350,7 @@ namespace TeamProject
             // 
             panel_Main.Location = new System.Drawing.Point(51, 250);
             panel_Main.Name = "panel_Main";
-            panel_Main.Size = new System.Drawing.Size(651, 422);
+            panel_Main.Size = new System.Drawing.Size(651, 477);
             panel_Main.TabIndex = 3;
             panel_Main.Click += panel_Main_Click_1;
             // 

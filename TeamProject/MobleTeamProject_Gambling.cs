@@ -151,6 +151,7 @@ namespace TeamProject
             enhanceButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 10);
             enhanceButton.Click += (s, ev) => StartMovePanelUp(clickedPanel);
             panel_Main.Controls.Add(enhanceButton);
+            enhanceButton.BringToFront();
 
             sendButton = new Button();
             sendButton.Text = "일터";
@@ -158,6 +159,7 @@ namespace TeamProject
             // sendButton 클릭 이벤트 처리
             sendButton.Click += (s, ev) => StartMovePanelRight(clickedPanel);
             panel_Main.Controls.Add(sendButton);
+            sendButton.BringToFront();
 
             sellButton = new Button();
             sellButton.Text = "판매";
@@ -165,15 +167,16 @@ namespace TeamProject
             // sellButton 클릭 이벤트 처리
             sellButton.Click += (s, ev) => Sell(clickedPanel);
             panel_Main.Controls.Add(sellButton);
+            sellButton.BringToFront();
         }
 
-        private void MakeButton(Button clickedButton, Panel[] panels)
+        private void MakeButton(Button clickedButton)
         {
             enhanceButton = new Button();
             enhanceButton.Text = "강화";
             enhanceButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 10);
             enhanceButton.Size = new Size(60, 25);
-            enhanceButton.Click += (s, ev) => StartMove_FromButton_Up(panels);
+            enhanceButton.Click += (s, ev) => StartMove_FromButton_Up(clickedButton);
             flowLayoutPanel1.Controls.Add(enhanceButton);
 
             sendButton = new Button();
@@ -181,7 +184,7 @@ namespace TeamProject
             sendButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 40);
             sendButton.Size = new Size(60, 25);
             // sendButton 클릭 이벤트 처리
-            sendButton.Click += (s, ev) => StartMove_FromButton_Right(panels);
+            sendButton.Click += (s, ev) => StartMove_FromButton_Right(clickedButton);
             flowLayoutPanel1.Controls.Add(sendButton);
 
             sellButton = new Button();
@@ -189,7 +192,7 @@ namespace TeamProject
             sellButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 70);
             sellButton.Size = new Size(60, 25);
             // sellButton 클릭 이벤트 처리
-            sellButton.Click += (s, ev) => Sell_FromButton(panels);
+            sellButton.Click += (s, ev) => Sell_FromButton(clickedButton);
             flowLayoutPanel1.Controls.Add(sellButton);
         }
         private void StartMovePanelUp(Panel panel)
@@ -217,7 +220,7 @@ namespace TeamProject
                 clickedPanel.Location = new Point(clickedPanel.Location.X, clickedPanel.Location.Y - speed);
                 CheckCollisionWithUpgradePanel(clickedPanel);
 
-                if (clickedPanel.Location.Y <= workY)
+                if (clickedPanel.Location.Y <= workY-1)
                 {
                     moveTimer.Stop();
                 }
@@ -296,7 +299,7 @@ namespace TeamProject
 
         private void CheckCollisionWithUpgradePanel(Panel selectedPanel)
         {
-            if (selectedPanel.Location.Y <= workY)
+            if (selectedPanel.Location.Y <= workY-1)
             {
                 UpgradeWeapon(selectedPanel);
             }
@@ -304,18 +307,20 @@ namespace TeamProject
 
         private void CheckCollisionWithWorkPanel(Panel selectedPanel)
         {
-            if (selectedPanel.Location.Y <= workY + 10 && selectedPanel.Location.X >= upgradeX - 10)
+            if ((selectedPanel.Location.Y <= workY + 10) && (selectedPanel.Location.X >= upgradeX - 20) && EsterEgg)
             {
-                MessageBox.Show("이스터에그 발견! 1000골드가 추가됩니다");
+                ShowMessage("이스터에그 발견! 1000골드가 추가됩니다");
                 Money += 1000;
                 lb_Money.Text = Money.ToString();
                 EsterEgg = false;
+                MoveWork(selectedPanel);
+                RemovePanel(selectedPanel);
+                return;
 
             }
                 
                 if (selectedPanel.Location.X == upgradeX)
-            {
-                
+            {                
                 MoveWork(selectedPanel);
                 RemovePanel(selectedPanel);
             }
@@ -347,23 +352,32 @@ namespace TeamProject
             {
                 RemovePanel(clickedPanel);
                 AddPanels(index + 1, 1);
-                lbox_Chat.Items.Add($"강화가 성공하여 +{index + 1} 무기가 제련되었습니다.");
-                lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
+                //lbox_Chat.Items.Add($"강화가 성공하여 +{index + 1} 무기가 제련되었습니다.");
+                //lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
+                ShowMessage($"강화가 성공하여 +{index + 1} 무기가 제련되었습니다.");
             }
             else //강화 실패시
             {
                 RemovePanel(clickedPanel);
-                lbox_Chat.Items.Add($"강화가 실패하여 +{index} 무기가 파괴되었습니다.");
-                lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
+                ShowMessage($"강화가 실패하여 +{index} 무기가 파괴되었습니다.");
+
             }
             while (lbox_Chat.Items.Count > 10)
             {
                 lbox_Chat.Items.RemoveAt(0);
             }
+            //// 스크롤 아래로 이동
+            //lbox_Chat.SelectedIndex = lbox_Chat.Items.Count - 1;
+            //lbox_Chat.SelectedIndex = -1; // 선택 해제
+
+        }
+        private void ShowMessage(string message)
+        {
+            lbox_Chat.Items.Add(message);
+            lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
             // 스크롤 아래로 이동
             lbox_Chat.SelectedIndex = lbox_Chat.Items.Count - 1;
             lbox_Chat.SelectedIndex = -1; // 선택 해제
-
         }
 
         private void MoveWork(Panel clickedPanel)
@@ -383,8 +397,7 @@ namespace TeamProject
         {
             RemoveButtons();
             Button clickedButton = (Button)sender;
-            Panel[] clickedPanel = FindPanelFromButton(int.Parse(clickedButton.Tag.ToString()));
-            MakeButton(clickedButton, clickedPanel);            
+            MakeButton(clickedButton);            
         }
         private void tabPage1_Click(object sender, EventArgs e)
         {
@@ -406,26 +419,29 @@ namespace TeamProject
             return panels.ToArray();
         }
 
-        private void StartMove_FromButton_Up(Panel[] panels)
+        private void StartMove_FromButton_Up(Button clickedButton)
         {
-            foreach (Panel panel in panels)
+            Panel[] clickedPanel = FindPanelFromButton(int.Parse(clickedButton.Tag.ToString()));
+            foreach (Panel panel in clickedPanel)
             {
                 StartMovePanelUp(panel);
             }
             
         }
 
-        private void StartMove_FromButton_Right(Panel[] panels)
+        private void StartMove_FromButton_Right(Button clickedButton)
         {
-            foreach (Panel panel in panels)
+            Panel[] clickedPanel = FindPanelFromButton(int.Parse(clickedButton.Tag.ToString()));
+            foreach (Panel panel in clickedPanel)
             {
                 StartMovePanelRight(panel);
             }
         }
 
-        private void Sell_FromButton(Panel[] panels)
+        private void Sell_FromButton(Button clickedButton)
         {
-            foreach (Panel panel in panels)
+            Panel[] clickedPanel = FindPanelFromButton(int.Parse(clickedButton.Tag.ToString()));
+            foreach (Panel panel in clickedPanel)
             {
                 Sell(panel);
             }
