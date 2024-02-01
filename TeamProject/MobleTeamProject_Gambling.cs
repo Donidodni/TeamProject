@@ -296,10 +296,10 @@ namespace TeamProject
             RemoveButtons();
         }
 
-       
 
 
-        
+
+
 
         private void CheckCollisionWithUpgradePanel(Panel selectedPanel) //Y축 검사
         {
@@ -346,6 +346,10 @@ namespace TeamProject
         {
             flowLayoutPanel1.Visible = !flowLayoutPanel1.Visible;
         }
+        private void btn_ViewUnit_Click(object sender, EventArgs e) // 김민석 - 유닛 보기 UI
+        {
+            flowLayoutPanel2.Visible = !flowLayoutPanel2.Visible;
+        }
 
         private void btn_CreateAllButton(object sender, EventArgs e) //모두 강화 버튼 선택시 강화/일터/판매 보이게
         {
@@ -363,7 +367,7 @@ namespace TeamProject
             AddPanels(1, 1);
         }
 
-        
+
 
         private void UpgradeWeapon(Panel clickedPanel) //무기 강화
         {
@@ -398,8 +402,8 @@ namespace TeamProject
                 }
             }
 
-        }          
- 
+        }
+
         private Panel[] FindPanelFromButton(int i) //무기 강화 정도를 찾고 모두 선택
         {
             List<Panel> panels = new List<Panel>();
@@ -623,6 +627,8 @@ namespace TeamProject
             tabControl1.TabPages[1].Controls.Add(pnBuilding);    //빌딩패널 생성
             timer1.Start(); //건물 공격 시작
         }
+
+ 
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
