@@ -35,7 +35,7 @@ namespace TeamProject
             WeaponUpgrade lv0 = new WeaponUpgrade() //0번 무기 속성
             {
                 Level = 0,
-                Name = "Black",
+                Name = "하급 농부",
                 Attack = 0,
                 SellPrice = 0,
             };
@@ -44,7 +44,7 @@ namespace TeamProject
             WeaponUpgrade lv1 = new WeaponUpgrade() //1번 무기 속성
             {
                 Level = 1,
-                Name = "Red",
+                Name = "상급 농부",
                 Attack = 1,
                 SellPrice = 1,
             };
@@ -53,7 +53,7 @@ namespace TeamProject
             WeaponUpgrade lv2 = new WeaponUpgrade() //2번 무기 속성
             {
                 Level = 2,
-                Name = "Blue",
+                Name = "하급 일꾼",
                 Attack = 2,
                 SellPrice = 2,
             };
@@ -62,7 +62,7 @@ namespace TeamProject
             WeaponUpgrade lv3 = new WeaponUpgrade() //3번 무기 속성
             {
                 Level = 3,
-                Name = "Red",
+                Name = "상급 일꾼",
                 Attack = 3,
                 SellPrice = 3,
             };
@@ -71,7 +71,7 @@ namespace TeamProject
             WeaponUpgrade lv4 = new WeaponUpgrade() //4번 무기 속성
             {
                 Level = 4,
-                Name = "Red",
+                Name = "일반 군인",
                 Attack = 4,
                 SellPrice = 4,
             };
@@ -80,7 +80,7 @@ namespace TeamProject
             WeaponUpgrade lv5 = new WeaponUpgrade() //5번 무기 속성
             {
                 Level = 5,
-                Name = "Red",
+                Name = "말단 기사",
                 Attack = 5,
                 SellPrice = 5,
             };
@@ -89,7 +89,7 @@ namespace TeamProject
             WeaponUpgrade lv6 = new WeaponUpgrade() //6번 무기 속성
             {
                 Level = 6,
-                Name = "Red",
+                Name = "측근 기사",
                 Attack = 6,
                 SellPrice = 6,
             };
@@ -98,7 +98,7 @@ namespace TeamProject
             WeaponUpgrade lv7 = new WeaponUpgrade() //7번 무기 속성
             {
                 Level = 7,
-                Name = "Red",
+                Name = "신입 용사",
                 Attack = 7,
                 SellPrice = 7,
             };
@@ -107,7 +107,7 @@ namespace TeamProject
             WeaponUpgrade lv8 = new WeaponUpgrade() //8번 무기 속성
             {
                 Level = 8,
-                Name = "Red",
+                Name = "중급 용사",
                 Attack = 8,
                 SellPrice = 8,
             };
@@ -116,7 +116,7 @@ namespace TeamProject
             WeaponUpgrade lv9 = new WeaponUpgrade() //9번 무기 속성
             {
                 Level = 9,
-                Name = "Red",
+                Name = "베테랑 용사",
                 Attack = 9,
                 SellPrice = 9,
             };
@@ -125,7 +125,7 @@ namespace TeamProject
             WeaponUpgrade lv10 = new WeaponUpgrade() //10번 무기 속성
             {
                 Level = 10,
-                Name = "Red",
+                Name = "전설 용사",
                 Attack = 10,
                 SellPrice = 10,
             };
@@ -184,6 +184,8 @@ namespace TeamProject
             lb_Money = new System.Windows.Forms.Label();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabPage1 = new System.Windows.Forms.TabPage();
+            label10 = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
             pictureBox3 = new System.Windows.Forms.PictureBox();
             panel_Main = new System.Windows.Forms.Panel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -201,6 +203,7 @@ namespace TeamProject
             label7 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
             label6 = new System.Windows.Forms.Label();
+            lbBuildInfo = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             pbBuildHP = new System.Windows.Forms.ProgressBar();
             panel6 = new System.Windows.Forms.Panel();
@@ -210,8 +213,6 @@ namespace TeamProject
             tabPage3 = new System.Windows.Forms.TabPage();
             timer1 = new System.Windows.Forms.Timer(components);
             Allview0_value = new System.Windows.Forms.Label();
-            label8 = new System.Windows.Forms.Label();
-            label10 = new System.Windows.Forms.Label();
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -719,6 +720,28 @@ namespace TeamProject
             tabPage1.Text = "강화소";
             tabPage1.Click += tabPage1_Click;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = System.Drawing.Color.FromArgb(128, 64, 64);
+            label10.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label10.ForeColor = System.Drawing.SystemColors.Control;
+            label10.Location = new System.Drawing.Point(740, 439);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(71, 37);
+            label10.TabIndex = 21;
+            label10.Text = "광산";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = System.Drawing.Color.Transparent;
+            label8.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label8.Location = new System.Drawing.Point(756, 348);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(0, 37);
+            label8.TabIndex = 16;
+            // 
             // pictureBox3
             // 
             pictureBox3.BackgroundImage = Properties.Resources.mine;
@@ -834,6 +857,7 @@ namespace TeamProject
             tabPage2.Controls.Add(label7);
             tabPage2.Controls.Add(label5);
             tabPage2.Controls.Add(label6);
+            tabPage2.Controls.Add(lbBuildInfo);
             tabPage2.Controls.Add(label4);
             tabPage2.Controls.Add(pbBuildHP);
             tabPage2.Controls.Add(panel6);
@@ -909,6 +933,16 @@ namespace TeamProject
             label6.TabIndex = 5;
             label6.Text = "현재 공격력";
             // 
+            // lbBuildInfo
+            // 
+            lbBuildInfo.AutoSize = true;
+            lbBuildInfo.Font = new System.Drawing.Font("맑은 고딕", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lbBuildInfo.Location = new System.Drawing.Point(307, 55);
+            lbBuildInfo.Name = "lbBuildInfo";
+            lbBuildInfo.Size = new System.Drawing.Size(248, 32);
+            lbBuildInfo.TabIndex = 5;
+            lbBuildInfo.Text = "1단계 건물 방어력 : 1";
+            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -979,28 +1013,6 @@ namespace TeamProject
             Allview0_value.Name = "Allview0_value";
             Allview0_value.Size = new System.Drawing.Size(100, 23);
             Allview0_value.TabIndex = 0;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = System.Drawing.Color.Transparent;
-            label8.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label8.Location = new System.Drawing.Point(756, 348);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(0, 37);
-            label8.TabIndex = 16;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = System.Drawing.Color.FromArgb(128, 64, 64);
-            label10.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label10.ForeColor = System.Drawing.SystemColors.Control;
-            label10.Location = new System.Drawing.Point(740, 439);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(71, 37);
-            label10.TabIndex = 21;
-            label10.Text = "던전";
             // 
             // MobleTeamProject_Gambling
             // 
@@ -1102,5 +1114,6 @@ namespace TeamProject
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbBuildInfo;
     }
 }
