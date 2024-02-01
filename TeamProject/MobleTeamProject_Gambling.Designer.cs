@@ -107,7 +107,7 @@ namespace TeamProject
             WeaponUpgrade lv8 = new WeaponUpgrade() //8번 무기 속성
             {
                 Level = 8,
-                Name = "베테랑 용사",
+                Name = "중급 용사",
                 Attack = 8,
                 SellPrice = 8,
             };
@@ -116,7 +116,7 @@ namespace TeamProject
             WeaponUpgrade lv9 = new WeaponUpgrade() //9번 무기 속성
             {
                 Level = 9,
-                Name = "세계 용사",
+                Name = "베테랑 용사",
                 Attack = 9,
                 SellPrice = 9,
             };
@@ -184,6 +184,8 @@ namespace TeamProject
             lb_Money = new System.Windows.Forms.Label();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabPage1 = new System.Windows.Forms.TabPage();
+            label10 = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
             pictureBox3 = new System.Windows.Forms.PictureBox();
             panel_Main = new System.Windows.Forms.Panel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -210,8 +212,6 @@ namespace TeamProject
             tabPage3 = new System.Windows.Forms.TabPage();
             timer1 = new System.Windows.Forms.Timer(components);
             Allview0_value = new System.Windows.Forms.Label();
-            label8 = new System.Windows.Forms.Label();
-            label10 = new System.Windows.Forms.Label();
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -719,6 +719,28 @@ namespace TeamProject
             tabPage1.Text = "강화소";
             tabPage1.Click += tabPage1_Click;
             // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = System.Drawing.Color.FromArgb(128, 64, 64);
+            label10.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label10.ForeColor = System.Drawing.SystemColors.Control;
+            label10.Location = new System.Drawing.Point(740, 439);
+            label10.Name = "label10";
+            label10.Size = new System.Drawing.Size(71, 37);
+            label10.TabIndex = 21;
+            label10.Text = "광산";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.BackColor = System.Drawing.Color.Transparent;
+            label8.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label8.Location = new System.Drawing.Point(756, 348);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(0, 37);
+            label8.TabIndex = 16;
+            // 
             // pictureBox3
             // 
             pictureBox3.BackgroundImage = Properties.Resources.mine;
@@ -979,28 +1001,6 @@ namespace TeamProject
             Allview0_value.Name = "Allview0_value";
             Allview0_value.Size = new System.Drawing.Size(100, 23);
             Allview0_value.TabIndex = 0;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = System.Drawing.Color.Transparent;
-            label8.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label8.Location = new System.Drawing.Point(756, 348);
-            label8.Name = "label8";
-            label8.Size = new System.Drawing.Size(0, 37);
-            label8.TabIndex = 16;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.BackColor = System.Drawing.Color.FromArgb(128, 64, 64);
-            label10.Font = new System.Drawing.Font("맑은 고딕", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label10.ForeColor = System.Drawing.SystemColors.Control;
-            label10.Location = new System.Drawing.Point(740, 439);
-            label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(71, 37);
-            label10.TabIndex = 21;
-            label10.Text = "던전";
             // 
             // MobleTeamProject_Gambling
             // 

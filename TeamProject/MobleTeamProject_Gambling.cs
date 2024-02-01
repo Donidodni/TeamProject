@@ -63,6 +63,8 @@ namespace TeamProject
 
         }
 
+   
+       
 
 
         void AddPanels(int type, int count) // type만큼 강화된 무기 count만큼 생성
@@ -652,11 +654,13 @@ namespace TeamProject
             tabControl1.TabPages[1].Controls.Add(pnBuilding);    //빌딩패널 생성
         }
 
+    
+
         private void MobleTeamProject_Gambling_Load(object sender, EventArgs e)
-        {
+        {     
             NewBuilding(0);
             timer1.Start(); //건물 공격 시작
-
+      
             //Panel testPanel = new Panel(); // 패널 객체 생성
             //testPanel.Size = new System.Drawing.Size(50, 50); // 패널 크기 설정
             //testPanel.BackColor = Color.FromName(tagParts[3].Trim());
