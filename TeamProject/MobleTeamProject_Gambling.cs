@@ -237,7 +237,7 @@ namespace TeamProject
         {
             RemoveButtons();
             Timer moveTimer = timerDictionary[panel];
-            moveTimer.Interval = 10; // 타이머 주기 (20ms로 설정, 조절 가능)
+            moveTimer.Interval = 50; // 타이머 주기 (20ms로 설정, 조절 가능)
             moveTimer.Tick += (s, ev) => MovePanelUp(panel, moveTimer);
             moveTimer.Start(); // 타이머 시작
         }
@@ -246,7 +246,7 @@ namespace TeamProject
         {
             RemoveButtons();
             Timer moveTimer = timerDictionary[panel];
-            moveTimer.Interval = 20; // 타이머 주기 (20ms로 설정, 조절 가능)
+            moveTimer.Interval = 50; // 타이머 주기 (20ms로 설정, 조절 가능)
             moveTimer.Tick += (s, ev) => MovePanelRight(panel, moveTimer);
             moveTimer.Start(); // 타이머 시작
         }

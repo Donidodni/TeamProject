@@ -178,13 +178,11 @@ namespace TeamProject
             btn_All8 = new System.Windows.Forms.Button();
             panel2 = new System.Windows.Forms.Panel();
             label2 = new System.Windows.Forms.Label();
-            panel_Main = new System.Windows.Forms.Panel();
             label3 = new System.Windows.Forms.Label();
             lb_Money = new System.Windows.Forms.Label();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabPage1 = new System.Windows.Forms.TabPage();
-            panel_Upgrade = new System.Windows.Forms.Panel();
-            label1 = new System.Windows.Forms.Label();
+            panel_Main = new System.Windows.Forms.Panel();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             btn_ViewUnit = new System.Windows.Forms.Button();
             btn_AllChoice = new System.Windows.Forms.Button();
@@ -211,7 +209,6 @@ namespace TeamProject
             panel2.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            panel_Upgrade.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage2.SuspendLayout();
             SuspendLayout();
@@ -435,7 +432,7 @@ namespace TeamProject
             // 
             // flowLayoutPanel1
             // 
-            flowLayoutPanel1.BackColor = System.Drawing.SystemColors.Highlight;
+            flowLayoutPanel1.BackColor = System.Drawing.Color.Transparent;
             flowLayoutPanel1.Controls.Add(btn_All0);
             flowLayoutPanel1.Controls.Add(btn_All1);
             flowLayoutPanel1.Controls.Add(btn_All2);
@@ -629,15 +626,6 @@ namespace TeamProject
             label2.TabIndex = 0;
             label2.Text = "일터";
             // 
-            // panel_Main
-            // 
-            panel_Main.BackColor = System.Drawing.Color.Transparent;
-            panel_Main.Location = new System.Drawing.Point(44, 317);
-            panel_Main.Name = "panel_Main";
-            panel_Main.Size = new System.Drawing.Size(620, 385);
-            panel_Main.TabIndex = 3;
-            panel_Main.Click += panel_Main_Click_1;
-            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -671,10 +659,10 @@ namespace TeamProject
             // 
             // tabPage1
             // 
-            tabPage1.BackColor = System.Drawing.Color.Silver;
+            tabPage1.BackColor = System.Drawing.Color.Honeydew;
             tabPage1.Controls.Add(flowLayoutPanel1);
+            tabPage1.Controls.Add(panel_Main);
             tabPage1.Controls.Add(flowLayoutPanel2);
-            tabPage1.Controls.Add(panel_Upgrade);
             tabPage1.Controls.Add(pictureBox1);
             tabPage1.Controls.Add(btn_ViewUnit);
             tabPage1.Controls.Add(btn_AllChoice);
@@ -682,7 +670,6 @@ namespace TeamProject
             tabPage1.Controls.Add(btn_Test);
             tabPage1.Controls.Add(panel2);
             tabPage1.Controls.Add(lbox_Chat);
-            tabPage1.Controls.Add(panel_Main);
             tabPage1.Controls.Add(lb_Money);
             tabPage1.Controls.Add(label3);
             tabPage1.Location = new System.Drawing.Point(4, 24);
@@ -693,25 +680,13 @@ namespace TeamProject
             tabPage1.Text = "강화소";
             tabPage1.Click += tabPage1_Click;
             // 
-            // panel_Upgrade
+            // panel_Main
             // 
-            panel_Upgrade.BackColor = System.Drawing.Color.Transparent;
-            panel_Upgrade.BackgroundImage = Properties.Resources.dungeon;
-            panel_Upgrade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            panel_Upgrade.Controls.Add(label1);
-            panel_Upgrade.Location = new System.Drawing.Point(44, 83);
-            panel_Upgrade.Name = "panel_Upgrade";
-            panel_Upgrade.Size = new System.Drawing.Size(656, 228);
-            panel_Upgrade.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(395, 112);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(43, 15);
-            label1.TabIndex = 0;
-            label1.Text = "강화소";
+            panel_Main.BackColor = System.Drawing.Color.Transparent;
+            panel_Main.Location = new System.Drawing.Point(44, 317);
+            panel_Main.Name = "panel_Main";
+            panel_Main.Size = new System.Drawing.Size(620, 385);
+            panel_Main.TabIndex = 9;
             // 
             // pictureBox1
             // 
@@ -941,8 +916,6 @@ namespace TeamProject
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
-            panel_Upgrade.ResumeLayout(false);
-            panel_Upgrade.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
@@ -954,7 +927,6 @@ namespace TeamProject
         private System.Windows.Forms.ListBox lbox_Chat;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel panel_Main;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lb_Money;
         private System.Windows.Forms.TabControl tabControl1;
@@ -1012,7 +984,6 @@ namespace TeamProject
         private System.Windows.Forms.Label Allview1_value;
         private System.Windows.Forms.Label lb_Allview;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Panel panel_Upgrade;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel_Main;
     }
 }
