@@ -326,7 +326,7 @@ namespace TeamProject
             if (selectedPanel.Location.X == workX)
             {
                 MoveWork(selectedPanel);
-                RemovePanel(selectedPanel);
+
             }
         }
 
@@ -340,7 +340,23 @@ namespace TeamProject
         }
         private void MoveWork(Panel clickedPanel) // 일터로 이동
         {
-            Move(clickedPanel);
+            if (!full[19])
+            {
+                Move(clickedPanel);
+                RemovePanel(clickedPanel);
+            }
+            else
+            {
+                ShowMessage("일터에 유닛이 가득 찼습니다.");
+                string tagString = clickedPanel.Tag?.ToString();
+                string[] tagParts = tagString.Split(',');
+                RemovePanel(clickedPanel);
+                AddPanels(int.Parse(tagParts[0]), 1);
+            }
+            while (lbox_Chat.Items.Count > 10)
+            {
+                lbox_Chat.Items.RemoveAt(0);
+            }
         }
         private void btn_AllChoice_Click(object sender, EventArgs e) //모두 강화 버튼 보이게/안보이게
         {
@@ -349,6 +365,34 @@ namespace TeamProject
         private void btn_ViewUnit_Click(object sender, EventArgs e) // 김민석 - 유닛 보기 UI
         {
             flowLayoutPanel2.Visible = !flowLayoutPanel2.Visible;
+
+            UpdateUnitCountLabel(lb_Puls_0_Count, 0);
+            UpdateUnitCountLabel(lb_Puls_1_Count, 1);
+            UpdateUnitCountLabel(lb_Puls_2_Count, 2);
+            UpdateUnitCountLabel(lb_Puls_3_Count, 3);
+            UpdateUnitCountLabel(lb_Puls_4_Count, 4);
+            UpdateUnitCountLabel(lb_Puls_5_Count, 5);
+            UpdateUnitCountLabel(lb_Puls_6_Count, 6);
+            UpdateUnitCountLabel(lb_Puls_7_Count, 7);
+            UpdateUnitCountLabel(lb_Puls_8_Count, 8);
+        }
+        private void btn_Refresh_Click(object sender, EventArgs e)
+        {
+            UpdateUnitCountLabel(lb_Puls_0_Count, 0);
+            UpdateUnitCountLabel(lb_Puls_1_Count, 1);
+            UpdateUnitCountLabel(lb_Puls_2_Count, 2);
+            UpdateUnitCountLabel(lb_Puls_3_Count, 3);
+            UpdateUnitCountLabel(lb_Puls_4_Count, 4);
+            UpdateUnitCountLabel(lb_Puls_5_Count, 5);
+            UpdateUnitCountLabel(lb_Puls_6_Count, 6);
+            UpdateUnitCountLabel(lb_Puls_7_Count, 7);
+            UpdateUnitCountLabel(lb_Puls_8_Count, 8);
+        }
+
+
+        private void UpdateUnitCountLabel(Label label, int weaponIndex)
+        {
+            label.Text = weapons[weaponIndex].Count.ToString() + " 개";
         }
 
         private void btn_CreateAllButton(object sender, EventArgs e) //모두 강화 버튼 선택시 강화/일터/판매 보이게
@@ -488,12 +532,22 @@ namespace TeamProject
                 //MessageBox.Show("20개 이상 추가할 수 없습니다.");
                 AddPanels(int.Parse(tagParts[0].Trim()), 1);
 
-                lbox_Chat.Items.Add("20개 이상 추가할 수 없습니다.");
-                lbox_Chat.SelectedIndex = lbox_Chat.Items.Count - 1;
-                lbox_Chat.SelectedIndex = -1; // 선택 해제
+                //lbox_Chat.Items.Add("20개 이상 추가할 수 없습니다.");
+                //lbox_Chat.SelectedIndex = lbox_Chat.Items.Count - 1;
+                //lbox_Chat.SelectedIndex = -1; // 선택 해제
             }
             else
             {
+                List<WeaponUpgrade> we = weapons[int.Parse(tagParts[0].Trim())]; //weapons에 추가
+                WeaponUpgrade newWeapon = new WeaponUpgrade()
+                {
+                    Level = int.Parse(tagParts[0].Trim()),
+                    Name = tagParts[3],
+                    Attack = int.Parse(tagParts[1].Trim()),
+                    SellPrice = int.Parse(tagParts[2].Trim()),
+                };
+                we.Add(newWeapon);
+
                 Panel testPanel = new Panel(); // 패널 객체 생성
                 testPanel.Size = new System.Drawing.Size(50, 50); // 패널 크기 설정
                 testPanel.BackColor = Color.FromName(tagParts[3].Trim());
@@ -513,12 +567,16 @@ namespace TeamProject
                 tabControl1.TabPages[1].Controls.Add(testPanel);    //유닛패널 생성
             }
             int index = int.Parse(tagParts[0].Trim());
-            lbox_Chat.Items.Add($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
+            ShowMessage($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
+            //lbox_Chat.Items.Add($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
         }
 
         private void Panel1_Click(object sender, EventArgs e)    //패널 제거 -> 강화소 반환으로 수정예정
         {
             Panel clickedPanel = (Panel)sender;
+            string tagString = clickedPanel.Tag?.ToString();
+            string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
+            weapons[int.Parse(tagParts[0].Trim())].RemoveAt(0);
             Controls.Remove(clickedPanel); clickedPanel.Dispose();
             for (int i = 0; i < 20; i++)   //패널 좌표와 비교
                 if (clickedPanel.Location.X == PntArr[i, 0] && clickedPanel.Location.Y == PntArr[i, 1])
@@ -628,7 +686,11 @@ namespace TeamProject
             timer1.Start(); //건물 공격 시작
         }
 
- 
+  
+
+
+
+
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
