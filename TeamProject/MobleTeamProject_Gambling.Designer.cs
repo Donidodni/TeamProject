@@ -183,6 +183,8 @@ namespace TeamProject
             lb_Money = new System.Windows.Forms.Label();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabPage1 = new System.Windows.Forms.TabPage();
+            panel_Upgrade = new System.Windows.Forms.Panel();
+            label1 = new System.Windows.Forms.Label();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             btn_ViewUnit = new System.Windows.Forms.Button();
             btn_AllChoice = new System.Windows.Forms.Button();
@@ -204,16 +206,14 @@ namespace TeamProject
             tabPage3 = new System.Windows.Forms.TabPage();
             timer1 = new System.Windows.Forms.Timer(components);
             Allview0_value = new System.Windows.Forms.Label();
-            label1 = new System.Windows.Forms.Label();
-            panel_Upgrade = new System.Windows.Forms.Panel();
             flowLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
             panel2.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
+            panel_Upgrade.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage2.SuspendLayout();
-            panel_Upgrade.SuspendLayout();
             SuspendLayout();
             // 
             // lbox_Chat
@@ -631,6 +631,7 @@ namespace TeamProject
             // 
             // panel_Main
             // 
+            panel_Main.BackColor = System.Drawing.Color.Transparent;
             panel_Main.Location = new System.Drawing.Point(44, 317);
             panel_Main.Name = "panel_Main";
             panel_Main.Size = new System.Drawing.Size(620, 385);
@@ -691,6 +692,26 @@ namespace TeamProject
             tabPage1.TabIndex = 0;
             tabPage1.Text = "강화소";
             tabPage1.Click += tabPage1_Click;
+            // 
+            // panel_Upgrade
+            // 
+            panel_Upgrade.BackColor = System.Drawing.Color.Transparent;
+            panel_Upgrade.BackgroundImage = Properties.Resources.dungeon;
+            panel_Upgrade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            panel_Upgrade.Controls.Add(label1);
+            panel_Upgrade.Location = new System.Drawing.Point(44, 83);
+            panel_Upgrade.Name = "panel_Upgrade";
+            panel_Upgrade.Size = new System.Drawing.Size(656, 228);
+            panel_Upgrade.TabIndex = 1;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new System.Drawing.Point(395, 112);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(43, 15);
+            label1.TabIndex = 0;
+            label1.Text = "강화소";
             // 
             // pictureBox1
             // 
@@ -902,26 +923,6 @@ namespace TeamProject
             Allview0_value.Size = new System.Drawing.Size(100, 23);
             Allview0_value.TabIndex = 0;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(395, 112);
-            label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(43, 15);
-            label1.TabIndex = 0;
-            label1.Text = "강화소";
-            // 
-            // panel_Upgrade
-            // 
-            panel_Upgrade.BackColor = System.Drawing.Color.Transparent;
-            panel_Upgrade.BackgroundImage = Properties.Resources.dungeon;
-            panel_Upgrade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            panel_Upgrade.Controls.Add(label1);
-            panel_Upgrade.Location = new System.Drawing.Point(44, 83);
-            panel_Upgrade.Name = "panel_Upgrade";
-            panel_Upgrade.Size = new System.Drawing.Size(656, 228);
-            panel_Upgrade.TabIndex = 1;
-            // 
             // MobleTeamProject_Gambling
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -940,11 +941,11 @@ namespace TeamProject
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            panel_Upgrade.ResumeLayout(false);
+            panel_Upgrade.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
-            panel_Upgrade.ResumeLayout(false);
-            panel_Upgrade.PerformLayout();
             ResumeLayout(false);
         }
 
