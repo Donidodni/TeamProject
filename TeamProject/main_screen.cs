@@ -36,7 +36,7 @@ namespace WinFormsApp2
         }
         private void playDingSound(int play)
         {
-            SoundPlayer DingSound = new SoundPlayer(@"C:\c#\WinFormsApp2\Properties\bing_sound.wav");
+            SoundPlayer DingSound = new SoundPlayer(@"C:\c#\WinFormsApp2\Resources\bing_sound.wav");
             if (play == 1) DingSound.Play(); // 매개변수를 사용하여 음악 재생을 컨트롤 합니다. 
             else DingSound.Stop();
             //Media Player 가 동시 재생이 안되는 문제가 있습니다.

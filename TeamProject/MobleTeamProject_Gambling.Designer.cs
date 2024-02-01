@@ -154,6 +154,7 @@ namespace TeamProject
             lb_Allview7 = new System.Windows.Forms.Label();
             lb_Allview3 = new System.Windows.Forms.Label();
             lb_Allview6 = new System.Windows.Forms.Label();
+            lb_Allview1 = new System.Windows.Forms.Label();
             lb_Allview2 = new System.Windows.Forms.Label();
             Allview5_value = new System.Windows.Forms.Label();
             Allview4_value = new System.Windows.Forms.Label();
@@ -201,7 +202,6 @@ namespace TeamProject
             tabPage3 = new System.Windows.Forms.TabPage();
             timer1 = new System.Windows.Forms.Timer(components);
             characters = new System.Windows.Forms.ImageList(components);
-            lb_Allview1 = new System.Windows.Forms.Label();
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             flowLayoutPanel1.SuspendLayout();
@@ -316,6 +316,16 @@ namespace TeamProject
             lb_Allview6.Size = new System.Drawing.Size(43, 28);
             lb_Allview6.TabIndex = 0;
             lb_Allview6.Text = "6강";
+            // 
+            // lb_Allview1
+            // 
+            lb_Allview1.AutoSize = true;
+            lb_Allview1.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview1.Location = new System.Drawing.Point(8, 13);
+            lb_Allview1.Name = "lb_Allview1";
+            lb_Allview1.Size = new System.Drawing.Size(43, 28);
+            lb_Allview1.TabIndex = 0;
+            lb_Allview1.Text = "1강";
             // 
             // lb_Allview2
             // 
@@ -806,16 +816,6 @@ namespace TeamProject
             characters.TransparentColor = System.Drawing.Color.Transparent;
             characters.Images.SetKeyName(0, "peasent_front.gif");
             characters.Images.SetKeyName(1, "peasent_red_front.gif");
-            // 
-            // lb_Allview1
-            // 
-            lb_Allview1.AutoSize = true;
-            lb_Allview1.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lb_Allview1.Location = new System.Drawing.Point(8, 13);
-            lb_Allview1.Name = "lb_Allview1";
-            lb_Allview1.Size = new System.Drawing.Size(43, 28);
-            lb_Allview1.TabIndex = 0;
-            lb_Allview1.Text = "1강";
             // 
             // MobleTeamProject_Gambling
             // 
