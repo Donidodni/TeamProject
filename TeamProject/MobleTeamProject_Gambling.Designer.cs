@@ -207,7 +207,6 @@ namespace TeamProject
             panel3 = new System.Windows.Forms.Panel();
             tabPage3 = new System.Windows.Forms.TabPage();
             timer1 = new System.Windows.Forms.Timer(components);
-            characters = new System.Windows.Forms.ImageList(components);
             Allview0_value = new System.Windows.Forms.Label();
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
@@ -233,7 +232,6 @@ namespace TeamProject
             // 
             panel_Upgrade.BackColor = System.Drawing.SystemColors.ActiveCaption;
             panel_Upgrade.Controls.Add(label1);
-            panel_Upgrade.Controls.Add(flowLayoutPanel2);
             panel_Upgrade.Location = new System.Drawing.Point(15, 61);
             panel_Upgrade.Name = "panel_Upgrade";
             panel_Upgrade.Size = new System.Drawing.Size(848, 250);
@@ -271,7 +269,7 @@ namespace TeamProject
             flowLayoutPanel2.Controls.Add(lb_Puls_6_Count);
             flowLayoutPanel2.Controls.Add(lb_Puls_2_Count);
             flowLayoutPanel2.Controls.Add(lb_Puls_1_Count);
-            flowLayoutPanel2.Location = new System.Drawing.Point(111, 2);
+            flowLayoutPanel2.Location = new System.Drawing.Point(119, 58);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new System.Drawing.Size(360, 245);
             flowLayoutPanel2.TabIndex = 1;
@@ -518,13 +516,6 @@ namespace TeamProject
             characters.TransparentColor = System.Drawing.Color.Transparent;
             characters.Images.SetKeyName(0, "peasent_front.gif");
             characters.Images.SetKeyName(1, "peasent_red_front.gif");
-            characters.Images.SetKeyName(2, "worker_low.png");
-            characters.Images.SetKeyName(3, "worker_high.png");
-            characters.Images.SetKeyName(4, "soldier_low.png");
-            characters.Images.SetKeyName(5, "soldier.png");
-            characters.Images.SetKeyName(6, "knight_low.png");
-            characters.Images.SetKeyName(7, "warrior_low.png");
-            characters.Images.SetKeyName(8, "warrior_high.png");
             // 
             // btn_All1
             // 
@@ -546,7 +537,7 @@ namespace TeamProject
             // 
             btn_All2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             btn_All2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All2.ImageIndex = 2;
+            btn_All2.ImageIndex = 1;
             btn_All2.ImageList = characters;
             btn_All2.Location = new System.Drawing.Point(143, 3);
             btn_All2.Name = "btn_All2";
@@ -562,7 +553,7 @@ namespace TeamProject
             // 
             btn_All3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             btn_All3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All3.ImageIndex = 3;
+            btn_All3.ImageIndex = 1;
             btn_All3.ImageList = characters;
             btn_All3.Location = new System.Drawing.Point(213, 3);
             btn_All3.Name = "btn_All3";
@@ -578,7 +569,7 @@ namespace TeamProject
             // 
             btn_All4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             btn_All4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All4.ImageIndex = 4;
+            btn_All4.ImageIndex = 1;
             btn_All4.ImageList = characters;
             btn_All4.Location = new System.Drawing.Point(283, 3);
             btn_All4.Name = "btn_All4";
@@ -594,7 +585,7 @@ namespace TeamProject
             // 
             btn_All5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             btn_All5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All5.ImageIndex = 5;
+            btn_All5.ImageIndex = 1;
             btn_All5.ImageList = characters;
             btn_All5.Location = new System.Drawing.Point(3, 73);
             btn_All5.Name = "btn_All5";
@@ -610,7 +601,7 @@ namespace TeamProject
             // 
             btn_All6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             btn_All6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All6.ImageIndex = 6;
+            btn_All6.ImageIndex = 1;
             btn_All6.ImageList = characters;
             btn_All6.Location = new System.Drawing.Point(73, 73);
             btn_All6.Name = "btn_All6";
@@ -626,7 +617,7 @@ namespace TeamProject
             // 
             btn_All7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             btn_All7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All7.ImageIndex = 7;
+            btn_All7.ImageIndex = 1;
             btn_All7.ImageList = characters;
             btn_All7.Location = new System.Drawing.Point(143, 73);
             btn_All7.Name = "btn_All7";
@@ -643,7 +634,7 @@ namespace TeamProject
             btn_All8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             btn_All8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             btn_All8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All8.ImageIndex = 8;
+            btn_All8.ImageIndex = 1;
             btn_All8.ImageList = characters;
             btn_All8.Location = new System.Drawing.Point(213, 73);
             btn_All8.Name = "btn_All8";
@@ -708,6 +699,8 @@ namespace TeamProject
             // 
             tabPage1.BackColor = System.Drawing.Color.Honeydew;
             tabPage1.Controls.Add(flowLayoutPanel1);
+            tabPage1.Controls.Add(flowLayoutPanel2);
+            tabPage1.Controls.Add(panel_Main);
             tabPage1.Controls.Add(pictureBox1);
             tabPage1.Controls.Add(btn_ViewUnit);
             tabPage1.Controls.Add(btn_AllChoice);
@@ -943,13 +936,6 @@ namespace TeamProject
             Allview0_value.Size = new System.Drawing.Size(100, 23);
             Allview0_value.TabIndex = 0;
             // 
-            // Allview0_value
-            // 
-            Allview0_value.Location = new System.Drawing.Point(0, 0);
-            Allview0_value.Name = "Allview0_value";
-            Allview0_value.Size = new System.Drawing.Size(100, 23);
-            Allview0_value.TabIndex = 0;
-            // 
             // MobleTeamProject_Gambling
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1041,5 +1027,7 @@ namespace TeamProject
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lb_Puls_0_Count;
         private System.Windows.Forms.Button btn_Refresh;
+        private System.Windows.Forms.Panel panel_Main;
+        private System.Windows.Forms.Label lb_Allview;
     }
 }
