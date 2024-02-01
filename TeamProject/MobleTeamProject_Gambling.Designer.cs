@@ -272,7 +272,7 @@ namespace TeamProject
             flowLayoutPanel2.Location = new System.Drawing.Point(119, 58);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
             flowLayoutPanel2.Size = new System.Drawing.Size(360, 245);
-            flowLayoutPanel2.TabIndex = 1;
+            flowLayoutPanel2.TabIndex = 11;
             flowLayoutPanel2.Visible = false;
             // 
             // btn_Refresh
@@ -389,7 +389,7 @@ namespace TeamProject
             // 
             lb_Puls_5_Count.AutoSize = true;
             lb_Puls_5_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lb_Puls_5_Count.Location = new System.Drawing.Point(57, 187);
+            lb_Puls_5_Count.Location = new System.Drawing.Point(220, 13);
             lb_Puls_5_Count.Name = "lb_Puls_5_Count";
             lb_Puls_5_Count.Size = new System.Drawing.Size(20, 28);
             lb_Puls_5_Count.TabIndex = 0;
@@ -399,7 +399,7 @@ namespace TeamProject
             // 
             lb_Puls_0_Count.AutoSize = true;
             lb_Puls_0_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lb_Puls_0_Count.Location = new System.Drawing.Point(226, 145);
+            lb_Puls_0_Count.Location = new System.Drawing.Point(63, 15);
             lb_Puls_0_Count.Name = "lb_Puls_0_Count";
             lb_Puls_0_Count.Size = new System.Drawing.Size(20, 28);
             lb_Puls_0_Count.TabIndex = 0;
@@ -409,7 +409,7 @@ namespace TeamProject
             // 
             lb_Puls_4_Count.AutoSize = true;
             lb_Puls_4_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lb_Puls_4_Count.Location = new System.Drawing.Point(57, 142);
+            lb_Puls_4_Count.Location = new System.Drawing.Point(63, 185);
             lb_Puls_4_Count.Name = "lb_Puls_4_Count";
             lb_Puls_4_Count.Size = new System.Drawing.Size(20, 28);
             lb_Puls_4_Count.TabIndex = 0;
@@ -419,7 +419,7 @@ namespace TeamProject
             // 
             lb_Puls_8_Count.AutoSize = true;
             lb_Puls_8_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lb_Puls_8_Count.Location = new System.Drawing.Point(226, 99);
+            lb_Puls_8_Count.Location = new System.Drawing.Point(220, 140);
             lb_Puls_8_Count.Name = "lb_Puls_8_Count";
             lb_Puls_8_Count.Size = new System.Drawing.Size(20, 28);
             lb_Puls_8_Count.TabIndex = 0;
@@ -429,7 +429,7 @@ namespace TeamProject
             // 
             lb_Puls_3_Count.AutoSize = true;
             lb_Puls_3_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lb_Puls_3_Count.Location = new System.Drawing.Point(57, 99);
+            lb_Puls_3_Count.Location = new System.Drawing.Point(63, 142);
             lb_Puls_3_Count.Name = "lb_Puls_3_Count";
             lb_Puls_3_Count.Size = new System.Drawing.Size(20, 28);
             lb_Puls_3_Count.TabIndex = 0;
@@ -439,7 +439,7 @@ namespace TeamProject
             // 
             lb_Puls_7_Count.AutoSize = true;
             lb_Puls_7_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lb_Puls_7_Count.Location = new System.Drawing.Point(226, 54);
+            lb_Puls_7_Count.Location = new System.Drawing.Point(220, 95);
             lb_Puls_7_Count.Name = "lb_Puls_7_Count";
             lb_Puls_7_Count.Size = new System.Drawing.Size(20, 28);
             lb_Puls_7_Count.TabIndex = 0;
@@ -449,7 +449,7 @@ namespace TeamProject
             // 
             lb_Puls_6_Count.AutoSize = true;
             lb_Puls_6_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lb_Puls_6_Count.Location = new System.Drawing.Point(226, 13);
+            lb_Puls_6_Count.Location = new System.Drawing.Point(220, 54);
             lb_Puls_6_Count.Name = "lb_Puls_6_Count";
             lb_Puls_6_Count.Size = new System.Drawing.Size(20, 28);
             lb_Puls_6_Count.TabIndex = 0;
@@ -459,7 +459,7 @@ namespace TeamProject
             // 
             lb_Puls_2_Count.AutoSize = true;
             lb_Puls_2_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lb_Puls_2_Count.Location = new System.Drawing.Point(57, 54);
+            lb_Puls_2_Count.Location = new System.Drawing.Point(63, 97);
             lb_Puls_2_Count.Name = "lb_Puls_2_Count";
             lb_Puls_2_Count.Size = new System.Drawing.Size(20, 28);
             lb_Puls_2_Count.TabIndex = 0;
@@ -469,7 +469,7 @@ namespace TeamProject
             // 
             lb_Puls_1_Count.AutoSize = true;
             lb_Puls_1_Count.Font = new System.Drawing.Font("맑은 고딕", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lb_Puls_1_Count.Location = new System.Drawing.Point(57, 13);
+            lb_Puls_1_Count.Location = new System.Drawing.Point(63, 56);
             lb_Puls_1_Count.Name = "lb_Puls_1_Count";
             lb_Puls_1_Count.Size = new System.Drawing.Size(20, 28);
             lb_Puls_1_Count.TabIndex = 0;
@@ -516,6 +516,13 @@ namespace TeamProject
             characters.TransparentColor = System.Drawing.Color.Transparent;
             characters.Images.SetKeyName(0, "peasent_front.gif");
             characters.Images.SetKeyName(1, "peasent_red_front.gif");
+            characters.Images.SetKeyName(2, "worker_low.png");
+            characters.Images.SetKeyName(3, "worker_high.png");
+            characters.Images.SetKeyName(4, "soldier.png");
+            characters.Images.SetKeyName(5, "soldier_low.png");
+            characters.Images.SetKeyName(6, "knight_low.png");
+            characters.Images.SetKeyName(7, "warrior_low.png");
+            characters.Images.SetKeyName(8, "warrior_high.png");
             // 
             // btn_All1
             // 
@@ -537,7 +544,7 @@ namespace TeamProject
             // 
             btn_All2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             btn_All2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All2.ImageIndex = 1;
+            btn_All2.ImageIndex = 2;
             btn_All2.ImageList = characters;
             btn_All2.Location = new System.Drawing.Point(143, 3);
             btn_All2.Name = "btn_All2";
@@ -553,7 +560,7 @@ namespace TeamProject
             // 
             btn_All3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             btn_All3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All3.ImageIndex = 1;
+            btn_All3.ImageIndex = 3;
             btn_All3.ImageList = characters;
             btn_All3.Location = new System.Drawing.Point(213, 3);
             btn_All3.Name = "btn_All3";
@@ -569,7 +576,7 @@ namespace TeamProject
             // 
             btn_All4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             btn_All4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All4.ImageIndex = 1;
+            btn_All4.ImageIndex = 4;
             btn_All4.ImageList = characters;
             btn_All4.Location = new System.Drawing.Point(283, 3);
             btn_All4.Name = "btn_All4";
@@ -585,7 +592,7 @@ namespace TeamProject
             // 
             btn_All5.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             btn_All5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All5.ImageIndex = 1;
+            btn_All5.ImageIndex = 5;
             btn_All5.ImageList = characters;
             btn_All5.Location = new System.Drawing.Point(3, 73);
             btn_All5.Name = "btn_All5";
@@ -601,7 +608,7 @@ namespace TeamProject
             // 
             btn_All6.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             btn_All6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All6.ImageIndex = 1;
+            btn_All6.ImageIndex = 6;
             btn_All6.ImageList = characters;
             btn_All6.Location = new System.Drawing.Point(73, 73);
             btn_All6.Name = "btn_All6";
@@ -617,7 +624,7 @@ namespace TeamProject
             // 
             btn_All7.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             btn_All7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All7.ImageIndex = 1;
+            btn_All7.ImageIndex = 7;
             btn_All7.ImageList = characters;
             btn_All7.Location = new System.Drawing.Point(143, 73);
             btn_All7.Name = "btn_All7";
@@ -634,7 +641,7 @@ namespace TeamProject
             btn_All8.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             btn_All8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             btn_All8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All8.ImageIndex = 1;
+            btn_All8.ImageIndex = 8;
             btn_All8.ImageList = characters;
             btn_All8.Location = new System.Drawing.Point(213, 73);
             btn_All8.Name = "btn_All8";
@@ -990,9 +997,6 @@ namespace TeamProject
         private System.Windows.Forms.ImageList characters;
         private System.Windows.Forms.ComboBox cbSelectBuild;
         private System.Windows.Forms.Button btn_ViewUnit;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.Button btn_All0;
         private System.Windows.Forms.Button btn_All1;
         private System.Windows.Forms.Button btn_All2;
@@ -1002,6 +1006,12 @@ namespace TeamProject
         private System.Windows.Forms.Button btn_All6;
         private System.Windows.Forms.Button btn_All7;
         private System.Windows.Forms.Button btn_All8;
+        private System.Windows.Forms.Button btn_All9;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lb_Allview0;
+        private System.Windows.Forms.Label Allview0_value;
+        //private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel flowLayoutPanel2;
         private System.Windows.Forms.Label lb_Allview5;
         private System.Windows.Forms.Label lb_Allview8;
@@ -1009,7 +1019,7 @@ namespace TeamProject
         private System.Windows.Forms.Label lb_Allview7;
         private System.Windows.Forms.Label lb_Allview3;
         private System.Windows.Forms.Label lb_Allview6;
-        private System.Windows.Forms.Label lb_Allview0;
+        private System.Windows.Forms.Label lb_Allview;
         private System.Windows.Forms.Label lb_Allview1;
         private System.Windows.Forms.Label lb_Allview2;
         private System.Windows.Forms.Label lb_Puls_5_Count;
@@ -1018,14 +1028,13 @@ namespace TeamProject
         private System.Windows.Forms.Label lb_Puls_3_Count;
         private System.Windows.Forms.Label lb_Puls_7_Count;
         private System.Windows.Forms.Label lb_Puls_6_Count;
-        private System.Windows.Forms.Label Allview0_value;
         private System.Windows.Forms.Label lb_Puls_2_Count;
         private System.Windows.Forms.Label lb_Puls_1_Count;
         private System.Windows.Forms.Panel panel_Upgrade;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lb_Puls_0_Count;
-        private System.Windows.Forms.Label lb_Allview;
         private System.Windows.Forms.Button btn_Refresh;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
