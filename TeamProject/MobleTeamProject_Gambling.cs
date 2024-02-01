@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 
@@ -49,6 +50,7 @@ namespace TeamProject
         private Panel clickedPanel;
 
         private int speed = 10; // 이동 속도 조절 가능
+        SoundPlayer ingame_bgm = new SoundPlayer(TeamProject.Properties.Resources.project_inbgm);
 
         public MobleTeamProject_Gambling()
         {
@@ -56,6 +58,7 @@ namespace TeamProject
             InitializeWeapons(); //Dictionary에 무기 정보 추가
             InitializeWeaponsList(); // 0~10강 무기를 담을 리스트 생성
             Money = 0;
+            ingame_bgm.Play(); // 김민석 - 해당 코드를 지움으로써 디버깅시 음악을 제거할 수 있습니다.
             lb_Money.Text = Money.ToString() + " 골드";
         }
 
