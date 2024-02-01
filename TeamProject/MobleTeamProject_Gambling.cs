@@ -610,7 +610,7 @@ namespace TeamProject
                 {
                     Attacksum += i;
                 }
-                if (pbBuildHP.Value > Attacksum)
+                if (pbBuildHP.Value > Attacksum + BuildArmor[cbSelectBuild.SelectedIndex])
                 {
                     //공격력이 방어력보다 클 때만 공격
                     if (Attacksum >= BuildArmor[cbSelectBuild.SelectedIndex])
