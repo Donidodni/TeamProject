@@ -978,6 +978,7 @@ namespace TeamProject
         #endregion
 
         private System.Windows.Forms.ListBox lbox_Chat;
+        private System.Windows.Forms.Panel panel_Main;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -1039,6 +1040,7 @@ namespace TeamProject
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lb_Puls_0_Count;
+        private System.Windows.Forms.Label lb_Allview;
         private System.Windows.Forms.Button btn_Refresh;
     }
 }
