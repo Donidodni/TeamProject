@@ -37,7 +37,7 @@ namespace TeamProject
                 Level = 0,
                 Name = "하급 농부",
                 Attack = 0,
-                SellPrice = 0,
+                SellPrice = 10,
             };
             weaponsDictionary.Add(0, lv0);
 
@@ -46,7 +46,7 @@ namespace TeamProject
                 Level = 1,
                 Name = "상급 농부",
                 Attack = 1,
-                SellPrice = 1,
+                SellPrice = 12,
             };
             weaponsDictionary.Add(1, lv1);
 
@@ -55,7 +55,7 @@ namespace TeamProject
                 Level = 2,
                 Name = "하급 일꾼",
                 Attack = 2,
-                SellPrice = 2,
+                SellPrice = 20,
             };
             weaponsDictionary.Add(2, lv2);
 
@@ -63,8 +63,8 @@ namespace TeamProject
             {
                 Level = 3,
                 Name = "상급 일꾼",
-                Attack = 3,
-                SellPrice = 3,
+                Attack = 6,
+                SellPrice = 30,
             };
             weaponsDictionary.Add(3, lv3);
 
@@ -72,8 +72,8 @@ namespace TeamProject
             {
                 Level = 4,
                 Name = "일반 군인",
-                Attack = 4,
-                SellPrice = 4,
+                Attack = 15,
+                SellPrice = 50,
             };
             weaponsDictionary.Add(4, lv4);
 
@@ -81,8 +81,8 @@ namespace TeamProject
             {
                 Level = 5,
                 Name = "말단 기사",
-                Attack = 5,
-                SellPrice = 5,
+                Attack = 40,
+                SellPrice = 300,
             };
             weaponsDictionary.Add(5, lv5);
 
@@ -90,8 +90,8 @@ namespace TeamProject
             {
                 Level = 6,
                 Name = "측근 기사",
-                Attack = 6,
-                SellPrice = 6,
+                Attack = 200,
+                SellPrice = 700,
             };
             weaponsDictionary.Add(6, lv6);
 
@@ -99,8 +99,8 @@ namespace TeamProject
             {
                 Level = 7,
                 Name = "신입 용사",
-                Attack = 7,
-                SellPrice = 7,
+                Attack = 1000,
+                SellPrice = 2000,
             };
             weaponsDictionary.Add(7, lv7);
 
@@ -108,8 +108,8 @@ namespace TeamProject
             {
                 Level = 8,
                 Name = "중급 용사",
-                Attack = 8,
-                SellPrice = 8,
+                Attack = 10000,
+                SellPrice = 5000,
             };
             weaponsDictionary.Add(8, lv8);
 
@@ -117,8 +117,8 @@ namespace TeamProject
             {
                 Level = 9,
                 Name = "베테랑 용사",
-                Attack = 9,
-                SellPrice = 9,
+                Attack = 99999,
+                SellPrice = 100000,
             };
             weaponsDictionary.Add(9, lv9);
 
@@ -803,7 +803,7 @@ namespace TeamProject
             btn_Test2.Name = "btn_Test2";
             btn_Test2.Size = new System.Drawing.Size(187, 49);
             btn_Test2.TabIndex = 4;
-            btn_Test2.Text = "고급 농부 (1강) 5명 구매";
+            btn_Test2.Text = "고급 농부 (3강) 10명 구매";
             btn_Test2.UseVisualStyleBackColor = true;
             btn_Test2.Click += btn_Test2_Click;
             // 
@@ -815,7 +815,7 @@ namespace TeamProject
             btn_Test.Name = "btn_Test";
             btn_Test.Size = new System.Drawing.Size(187, 50);
             btn_Test.TabIndex = 0;
-            btn_Test.Text = "하급 농부 (0강) 5명 구매";
+            btn_Test.Text = "하급 농부 (0강) 10명 구매";
             btn_Test.UseVisualStyleBackColor = true;
             btn_Test.Click += btn_Test_Click;
             // 
