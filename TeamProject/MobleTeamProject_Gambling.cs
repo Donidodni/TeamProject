@@ -58,14 +58,6 @@ namespace TeamProject
             Money = 0;
             lb_Money.Text = Money.ToString() + " 골드";
         }
-        
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-   
-       
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -307,11 +299,6 @@ namespace TeamProject
             RemoveButtons();
         }
 
-
-
-
-
-
         private void CheckCollisionWithUpgradePanel(Panel selectedPanel) //Y축 검사
         {
             if (selectedPanel.Location.Y <= upgradeY - 1)
@@ -526,7 +513,7 @@ namespace TeamProject
                                 { 480, 114 }, { 536, 114 }, { 592, 114 }, { 650, 114 }, { 706, 170 },
                                 { 706, 226 }, { 706, 282 }, { 706, 394 }, { 706, 450 }, { 706, 506 } };
         public bool[] full = new bool[20];  //array 인덱스 좌표에 패널 할당 여부 초기값 false
-        public int[] Attack = new int[20];  //좌표마다 유닛의 공격력 값 
+        public int[] Attack = new int[20];  //좌표마다 유닛의 공격력 값
         public int[] BuildArmor = { 1, 3, 5, 10, 30 };  //단계별 빌딩 방어력
 
         private void Move(Panel weapon)
@@ -595,8 +582,9 @@ namespace TeamProject
             string tagString = clickedPanel.Tag?.ToString();
             string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
             weapons[int.Parse(tagParts[0].Trim())].RemoveAt(0);
-            //AddPanels(int.Parse(tagParts[0].Trim()), 1);
-            //ShowMessage($"던전으로 +{tagParts[3]} 무기가 이동하였습니다.");
+
+            AddPanels(int.Parse(tagParts[0].Trim()), 1);
+            ShowMessage($"던전으로 +{tagParts[3]} 무기가 이동하였습니다.");
         }
 
         Panel pnBuilding = new Panel();
