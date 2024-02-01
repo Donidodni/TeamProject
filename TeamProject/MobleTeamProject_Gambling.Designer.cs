@@ -215,9 +215,9 @@ namespace TeamProject
             flowLayoutPanel1.Controls.Add(btn_All6);
             flowLayoutPanel1.Controls.Add(btn_All7);
             flowLayoutPanel1.Controls.Add(btn_All8);
-            flowLayoutPanel1.Location = new System.Drawing.Point(632, 3);
+            flowLayoutPanel1.Location = new System.Drawing.Point(634, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new System.Drawing.Size(213, 535);
+            flowLayoutPanel1.Size = new System.Drawing.Size(211, 217);
             flowLayoutPanel1.TabIndex = 1;
             flowLayoutPanel1.Visible = false;
             // 
@@ -351,7 +351,7 @@ namespace TeamProject
             // 
             panel_Main.Location = new System.Drawing.Point(51, 250);
             panel_Main.Name = "panel_Main";
-            panel_Main.Size = new System.Drawing.Size(651, 422);
+            panel_Main.Size = new System.Drawing.Size(651, 477);
             panel_Main.TabIndex = 3;
             panel_Main.Click += panel_Main_Click_1;
             // 
@@ -453,7 +453,7 @@ namespace TeamProject
             tabPage2.Padding = new System.Windows.Forms.Padding(3);
             tabPage2.Size = new System.Drawing.Size(875, 835);
             tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
+            tabPage2.Text = "일터";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // cbSelectBuild
@@ -574,7 +574,7 @@ namespace TeamProject
             tabPage3.Padding = new System.Windows.Forms.Padding(3);
             tabPage3.Size = new System.Drawing.Size(875, 835);
             tabPage3.TabIndex = 2;
-            tabPage3.Text = "tabPage3";
+            tabPage3.Text = "상점";
             tabPage3.UseVisualStyleBackColor = true;
             // 
             // timer1
