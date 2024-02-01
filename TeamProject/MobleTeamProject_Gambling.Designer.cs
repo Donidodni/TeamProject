@@ -230,9 +230,9 @@ namespace TeamProject
             // 
             panel_Upgrade.BackColor = System.Drawing.SystemColors.ActiveCaption;
             panel_Upgrade.Controls.Add(label1);
-            panel_Upgrade.Location = new System.Drawing.Point(15, 61);
+            panel_Upgrade.Location = new System.Drawing.Point(44, 61);
             panel_Upgrade.Name = "panel_Upgrade";
-            panel_Upgrade.Size = new System.Drawing.Size(848, 250);
+            panel_Upgrade.Size = new System.Drawing.Size(683, 250);
             panel_Upgrade.TabIndex = 1;
             // 
             // label1
@@ -463,7 +463,7 @@ namespace TeamProject
             flowLayoutPanel1.Controls.Add(btn_All6);
             flowLayoutPanel1.Controls.Add(btn_All7);
             flowLayoutPanel1.Controls.Add(btn_All8);
-            flowLayoutPanel1.Location = new System.Drawing.Point(511, 55);
+            flowLayoutPanel1.Location = new System.Drawing.Point(507, 55);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
             flowLayoutPanel1.Size = new System.Drawing.Size(350, 244);
             flowLayoutPanel1.TabIndex = 1;
@@ -649,9 +649,9 @@ namespace TeamProject
             // 
             // panel_Main
             // 
-            panel_Main.Location = new System.Drawing.Point(51, 250);
+            panel_Main.Location = new System.Drawing.Point(44, 317);
             panel_Main.Name = "panel_Main";
-            panel_Main.Size = new System.Drawing.Size(651, 477);
+            panel_Main.Size = new System.Drawing.Size(620, 385);
             panel_Main.TabIndex = 3;
             panel_Main.Click += panel_Main_Click_1;
             // 
