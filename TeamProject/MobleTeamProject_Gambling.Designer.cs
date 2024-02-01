@@ -214,9 +214,6 @@ namespace TeamProject
             panel2.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            flowLayoutPanel1.SuspendLayout();
-            flowLayoutPanel2.SuspendLayout();
-            //((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tabPage2.SuspendLayout();
             SuspendLayout();
@@ -821,7 +818,7 @@ namespace TeamProject
             cbSelectBuild.Name = "cbSelectBuild";
             cbSelectBuild.Size = new System.Drawing.Size(121, 23);
             cbSelectBuild.TabIndex = 6;
-            cbSelectBuild.Text = "건물 선택";
+            cbSelectBuild.Text = "1단계 건물";
             cbSelectBuild.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // lbAttackSum
@@ -954,6 +951,7 @@ namespace TeamProject
             Name = "MobleTeamProject_Gambling";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "MobleTeamProject_Gambling";
+            Load += MobleTeamProject_Gambling_Load;
             panel_Upgrade.ResumeLayout(false);
             panel_Upgrade.PerformLayout();
             flowLayoutPanel2.ResumeLayout(false);
@@ -964,10 +962,6 @@ namespace TeamProject
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
-            flowLayoutPanel1.ResumeLayout(false);
-            flowLayoutPanel2.ResumeLayout(false);
-            flowLayoutPanel2.PerformLayout();
-           // ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
@@ -1019,7 +1013,6 @@ namespace TeamProject
         private System.Windows.Forms.Label Allview0_value;
        // private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel flowLayoutPanel2;
-        private System.Windows.Forms.Panel flowLayoutPanel1;
         private System.Windows.Forms.Label lb_Allview5;
         private System.Windows.Forms.Label lb_Allview8;
         private System.Windows.Forms.Label lb_Allview4;
@@ -1042,5 +1035,6 @@ namespace TeamProject
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lb_Puls_0_Count;
         private System.Windows.Forms.Button btn_Refresh;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }
