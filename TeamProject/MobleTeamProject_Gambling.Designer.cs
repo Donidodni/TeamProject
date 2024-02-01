@@ -224,9 +224,9 @@ namespace TeamProject
             flowLayoutPanel1.Controls.Add(btn_All6);
             flowLayoutPanel1.Controls.Add(btn_All7);
             flowLayoutPanel1.Controls.Add(btn_All8);
-            flowLayoutPanel1.Location = new System.Drawing.Point(634, 3);
+            flowLayoutPanel1.Location = new System.Drawing.Point(492, 3);
             flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new System.Drawing.Size(211, 217);
+            flowLayoutPanel1.Size = new System.Drawing.Size(353, 217);
             flowLayoutPanel1.TabIndex = 1;
             flowLayoutPanel1.Visible = false;
             // 
@@ -265,7 +265,7 @@ namespace TeamProject
             // 
             // btn_All3
             // 
-            btn_All3.Location = new System.Drawing.Point(3, 73);
+            btn_All3.Location = new System.Drawing.Point(213, 3);
             btn_All3.Name = "btn_All3";
             btn_All3.Size = new System.Drawing.Size(64, 64);
             btn_All3.TabIndex = 3;
@@ -276,7 +276,7 @@ namespace TeamProject
             // 
             // btn_All4
             // 
-            btn_All4.Location = new System.Drawing.Point(73, 73);
+            btn_All4.Location = new System.Drawing.Point(283, 3);
             btn_All4.Name = "btn_All4";
             btn_All4.Size = new System.Drawing.Size(64, 64);
             btn_All4.TabIndex = 4;
@@ -287,7 +287,7 @@ namespace TeamProject
             // 
             // btn_All5
             // 
-            btn_All5.Location = new System.Drawing.Point(143, 73);
+            btn_All5.Location = new System.Drawing.Point(3, 73);
             btn_All5.Name = "btn_All5";
             btn_All5.Size = new System.Drawing.Size(64, 64);
             btn_All5.TabIndex = 5;
@@ -298,7 +298,7 @@ namespace TeamProject
             // 
             // btn_All6
             // 
-            btn_All6.Location = new System.Drawing.Point(3, 143);
+            btn_All6.Location = new System.Drawing.Point(73, 73);
             btn_All6.Name = "btn_All6";
             btn_All6.Size = new System.Drawing.Size(64, 64);
             btn_All6.TabIndex = 6;
@@ -309,7 +309,7 @@ namespace TeamProject
             // 
             // btn_All7
             // 
-            btn_All7.Location = new System.Drawing.Point(73, 143);
+            btn_All7.Location = new System.Drawing.Point(143, 73);
             btn_All7.Name = "btn_All7";
             btn_All7.Size = new System.Drawing.Size(64, 64);
             btn_All7.TabIndex = 7;
@@ -320,7 +320,7 @@ namespace TeamProject
             // 
             // btn_All8
             // 
-            btn_All8.Location = new System.Drawing.Point(143, 143);
+            btn_All8.Location = new System.Drawing.Point(213, 73);
             btn_All8.Name = "btn_All8";
             btn_All8.Size = new System.Drawing.Size(64, 64);
             btn_All8.TabIndex = 8;

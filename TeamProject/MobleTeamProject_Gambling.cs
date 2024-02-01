@@ -32,14 +32,14 @@ namespace TeamProject
             public int SellPrice { get; set; }
         }
 
-        public int Money;
+        public int Money; // 보유 돈
         List<List<WeaponUpgrade>> weapons = new List<List<WeaponUpgrade>>(); // 무기의 숫자를 나타냄. weapons[0]에는 0강 무기 n개 존재
         Dictionary<int, WeaponUpgrade> weaponsDictionary = new Dictionary<int, WeaponUpgrade>(); //키,값 형태로 무기강화별 정보를 저장
         Dictionary<Panel, Timer> timerDictionary = new Dictionary<Panel, Timer>(); //패널마다 타이머를 달아주어 개별 행동 가능
         List<Panel> MainPanelList = new List<Panel>(); // 무기들 랜덤생성시 중복 검사
-        int[] SuccessProbability = { 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 5 };
-        int upgradeX = 670;
-        int workY = -90;
+        int[] SuccessProbability = { 100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 5 }; //강화 확률
+        int workX = 670; // 패널이 일터로 갈 수 있는 X좌표
+        int upgradeY = -90; // 패널이 강화할 수 있는 Y좌표
         public bool EsterEgg = true;
 
         private Button enhanceButton;
@@ -68,11 +68,11 @@ namespace TeamProject
                 for (int i = 0; i < count; i++)
                 {
                     Random random = new Random();
-                    int x = random.Next(0, 10);
-                    int y = random.Next(2, 8);
-                    int limit = 10 * 6;
+                    int x = random.Next(0, 10); // 메인 패널 생성숫자 조절가능
+                    int y = random.Next(2, 8);  // 메인 패널 생성숫자 조절가능
+                    int limit = 10 * 6;  // x의 경우의 수 * y의 경우의 수
 
-                    WeaponUpgrade existingWeapon = weaponsDictionary[type];
+                    WeaponUpgrade existingWeapon = weaponsDictionary[type]; // Dictionary로 type강의 무기 정보를 가져옴
 
                     Panel testPanel = new Panel(); // 패널 객체 생성
                     testPanel.Size = new System.Drawing.Size(50, 50); // 패널 크기 설정
@@ -88,7 +88,7 @@ namespace TeamProject
                         break;
                     }
 
-                    while (CheckOverlap(testPanel, MainPanelList) && MainPanelList.Count != limit)
+                    while (CheckOverlap(testPanel, MainPanelList) && MainPanelList.Count != limit) // 이미 그 자리에 생성되있는지 체크
                     {
                         x = random.Next(0, 10);
                         y = random.Next(2, 8);
@@ -126,134 +126,7 @@ namespace TeamProject
             MainPanelList.Add(panel);
             return false; // 겹치지않음
         }
-
-        private void Panel_Click(object sender, EventArgs e)
-        {
-            RemoveButtons();
-
-            Panel clickedPanel = (Panel)sender;
-            MakeButton(clickedPanel);
-        }
-
-        private void MakeButton(Panel clickedPanel)
-        {
-            enhanceButton = new Button();
-            enhanceButton.Text = "강화";
-            enhanceButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 10);
-            enhanceButton.Click += (s, ev) => StartMovePanelUp(clickedPanel);
-            panel_Main.Controls.Add(enhanceButton);
-            enhanceButton.BringToFront();
-
-            sendButton = new Button();
-            sendButton.Text = "일터";
-            sendButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 40);
-            // sendButton 클릭 이벤트 처리
-            sendButton.Click += (s, ev) => StartMovePanelRight(clickedPanel);
-            panel_Main.Controls.Add(sendButton);
-            sendButton.BringToFront();
-
-            sellButton = new Button();
-            sellButton.Text = "판매";
-            sellButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 70);
-            // sellButton 클릭 이벤트 처리
-            sellButton.Click += (s, ev) => Sell(clickedPanel);
-            panel_Main.Controls.Add(sellButton);
-            sellButton.BringToFront();
-        }
-
-        private void MakeButton(Button clickedButton)
-        {
-            enhanceButton = new Button();
-            enhanceButton.Text = "강화";
-            enhanceButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 10);
-            enhanceButton.Size = new Size(60, 25);
-            enhanceButton.Click += (s, ev) => StartMove_FromButton_Up(clickedButton);
-            flowLayoutPanel1.Controls.Add(enhanceButton);
-
-            sendButton = new Button();
-            sendButton.Text = "일터";
-            sendButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 40);
-            sendButton.Size = new Size(60, 25);
-            // sendButton 클릭 이벤트 처리
-            sendButton.Click += (s, ev) => StartMove_FromButton_Right(clickedButton);
-            flowLayoutPanel1.Controls.Add(sendButton);
-
-            sellButton = new Button();
-            sellButton.Text = "판매";
-            sellButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 70);
-            sellButton.Size = new Size(60, 25);
-            // sellButton 클릭 이벤트 처리
-            sellButton.Click += (s, ev) => Sell_FromButton(clickedButton);
-            flowLayoutPanel1.Controls.Add(sellButton);
-        }
-        private void StartMovePanelUp(Panel panel)
-        {
-            RemoveButtons();
-            Timer moveTimer = timerDictionary[panel];
-            moveTimer.Interval = 20; // 타이머 주기 (20ms로 설정, 조절 가능)
-            moveTimer.Tick += (s, ev) => MovePanelUp(panel, moveTimer);
-            moveTimer.Start(); // 타이머 시작
-        }
-
-        private void StartMovePanelRight(Panel panel)
-        {
-            RemoveButtons();
-            Timer moveTimer = timerDictionary[panel];
-            moveTimer.Interval = 20; // 타이머 주기 (20ms로 설정, 조절 가능)
-            moveTimer.Tick += (s, ev) => MovePanelRight(panel, moveTimer);
-            moveTimer.Start(); // 타이머 시작
-        }
-
-        private void MovePanelUp(Panel clickedPanel, Timer moveTimer)
-        {
-            if (moveTimer != null)
-            {
-                clickedPanel.Location = new Point(clickedPanel.Location.X, clickedPanel.Location.Y - speed);
-                CheckCollisionWithUpgradePanel(clickedPanel);
-
-                if (clickedPanel.Location.Y <= workY-1)
-                {
-                    moveTimer.Stop();
-                }
-
-
-            }
-
-        }
-
-        private void MovePanelRight(Panel clickedPanel, Timer moveTimer)
-        {
-            clickedPanel.Location = new Point(clickedPanel.Location.X + speed, clickedPanel.Location.Y);
-            CheckCollisionWithWorkPanel(clickedPanel);
-
-            if (clickedPanel.Location.X == upgradeX)
-            {
-                moveTimer.Stop();
-            }
-
-        }
-
-        private void Sell(Panel clickedPanel)
-        {
-            string tagString = clickedPanel.Tag?.ToString();
-            if (string.IsNullOrEmpty(tagString))
-                return;
-
-            string[] tagParts = tagString.Split(',');
-            if (tagParts.Length < 3)
-                return;
-
-            if (int.TryParse(tagParts[2].Trim(), out int price))
-            {
-                Money += price;
-                lb_Money.Text = $"{Money} 골드";
-                RemovePanel(clickedPanel);
-            }
-
-            RemoveButtons();
-        }
-
-        private void RemovePanel(Panel clickedPanel)
+        private void RemovePanel(Panel clickedPanel) // 선택된 판넬 삭제
         {
             string tagString = clickedPanel.Tag?.ToString();
             if (string.IsNullOrEmpty(tagString))
@@ -273,8 +146,7 @@ namespace TeamProject
             MainPanelList.Remove(clickedPanel);
         }
 
-
-        private void RemoveButtons()
+        private void RemoveButtons() // 강화,일터,판매 버튼 삭제
         {
             if (enhanceButton != null)
             {
@@ -301,17 +173,145 @@ namespace TeamProject
             }
         }
 
-        private void CheckCollisionWithUpgradePanel(Panel selectedPanel)
+
+        private void Panel_Click(object sender, EventArgs e) // 판넬(무기) 클릭 이벤트
         {
-            if (selectedPanel.Location.Y <= workY-1)
+            RemoveButtons();
+
+            Panel clickedPanel = (Panel)sender;
+            MakeButton(clickedPanel);
+        }
+
+        private void MakeButton(Panel clickedPanel) // 판넬(무기)를 클릭했을때 옆에 버튼생성
+        {
+            enhanceButton = new Button();
+            enhanceButton.Text = "강화";
+            enhanceButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 10);
+            enhanceButton.Click += (s, ev) => StartMovePanelUp(clickedPanel);
+            panel_Main.Controls.Add(enhanceButton);
+            enhanceButton.BringToFront();
+
+            sendButton = new Button();
+            sendButton.Text = "일터";
+            sendButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 40);
+            // sendButton 클릭 이벤트 처리
+            sendButton.Click += (s, ev) => StartMovePanelRight(clickedPanel);
+            panel_Main.Controls.Add(sendButton);
+            sendButton.BringToFront();
+
+            sellButton = new Button();
+            sellButton.Text = "판매";
+            sellButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 70);
+            // sellButton 클릭 이벤트 처리
+            sellButton.Click += (s, ev) => Sell(clickedPanel);
+            panel_Main.Controls.Add(sellButton);
+            sellButton.BringToFront();
+        }
+
+        private void MakeButton(Button clickedButton) //버튼(전체선택)을 클릭했을때 버튼생성
+        {
+            enhanceButton = new Button();
+            enhanceButton.Text = "강화";
+            enhanceButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 10);
+            enhanceButton.Size = new Size(60, 25);
+            enhanceButton.Click += (s, ev) => StartMove_FromButton_Up(clickedButton);
+            flowLayoutPanel1.Controls.Add(enhanceButton);
+
+            sendButton = new Button();
+            sendButton.Text = "일터";
+            sendButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 40);
+            sendButton.Size = new Size(60, 25);
+            // sendButton 클릭 이벤트 처리
+            sendButton.Click += (s, ev) => StartMove_FromButton_Right(clickedButton);
+            flowLayoutPanel1.Controls.Add(sendButton);
+
+            sellButton = new Button();
+            sellButton.Text = "판매";
+            sellButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 70);
+            sellButton.Size = new Size(60, 25);
+            // sellButton 클릭 이벤트 처리
+            sellButton.Click += (s, ev) => Sell_FromButton(clickedButton);
+            flowLayoutPanel1.Controls.Add(sellButton);
+        }
+        private void StartMovePanelUp(Panel panel) // 판넬(무기)를 위로 보냄
+        {
+            RemoveButtons();
+            Timer moveTimer = timerDictionary[panel];
+            moveTimer.Interval = 20; // 타이머 주기 (20ms로 설정, 조절 가능)
+            moveTimer.Tick += (s, ev) => MovePanelUp(panel, moveTimer);
+            moveTimer.Start(); // 타이머 시작
+        }
+
+        private void StartMovePanelRight(Panel panel) // 판넬(무기)를 오른쪽으로 보냄
+        {
+            RemoveButtons();
+            Timer moveTimer = timerDictionary[panel];
+            moveTimer.Interval = 20; // 타이머 주기 (20ms로 설정, 조절 가능)
+            moveTimer.Tick += (s, ev) => MovePanelRight(panel, moveTimer);
+            moveTimer.Start(); // 타이머 시작
+        }
+
+        private void MovePanelUp(Panel clickedPanel, Timer moveTimer) // 위로 가다가 upgradeY를 만나면 강화
+        {
+            if (moveTimer != null)
+            {
+                clickedPanel.Location = new Point(clickedPanel.Location.X, clickedPanel.Location.Y - speed);
+                CheckCollisionWithUpgradePanel(clickedPanel);
+
+                if (clickedPanel.Location.Y <= upgradeY - 1)
+                {
+                    moveTimer.Stop();
+                }
+            }
+        }
+
+        private void MovePanelRight(Panel clickedPanel, Timer moveTimer) // 오른쪽으로 가다가 workX를 만나면 일터
+        {
+            clickedPanel.Location = new Point(clickedPanel.Location.X + speed, clickedPanel.Location.Y);
+            CheckCollisionWithWorkPanel(clickedPanel);
+
+            if (clickedPanel.Location.X == workX)
+            {
+                moveTimer.Stop();
+            }
+        }
+
+        private void Sell(Panel clickedPanel) // 선택된 판넬(무기) 판매
+        {
+            string tagString = clickedPanel.Tag?.ToString();
+            if (string.IsNullOrEmpty(tagString))
+                return;
+
+            string[] tagParts = tagString.Split(',');
+            if (tagParts.Length < 3)
+                return;
+
+            if (int.TryParse(tagParts[2].Trim(), out int price))
+            {
+                Money += price;
+                lb_Money.Text = $"{Money} 골드";
+                RemovePanel(clickedPanel);
+            }
+
+            RemoveButtons();
+        }
+
+       
+
+
+        
+
+        private void CheckCollisionWithUpgradePanel(Panel selectedPanel) //Y축 검사
+        {
+            if (selectedPanel.Location.Y <= upgradeY - 1)
             {
                 UpgradeWeapon(selectedPanel);
             }
         }
 
-        private void CheckCollisionWithWorkPanel(Panel selectedPanel)
+        private void CheckCollisionWithWorkPanel(Panel selectedPanel) //X축 검사
         {
-            if ((selectedPanel.Location.Y <= workY + 10) && (selectedPanel.Location.X >= upgradeX - 20) && EsterEgg)
+            if ((selectedPanel.Location.Y <= upgradeY + 10) && (selectedPanel.Location.X >= workX - 20) && EsterEgg)
             {
                 ShowMessage("이스터에그 발견! 1000골드가 추가됩니다");
                 Money += 1000;
@@ -322,12 +322,35 @@ namespace TeamProject
                 return;
 
             }
-                
-                if (selectedPanel.Location.X == upgradeX)
-            {                
+
+            if (selectedPanel.Location.X == workX)
+            {
                 MoveWork(selectedPanel);
                 RemovePanel(selectedPanel);
             }
+        }
+
+        private void ShowMessage(string message) //아래 ListBox에 메세지 추가
+        {
+            lbox_Chat.Items.Add(message);
+            lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
+            // 스크롤 아래로 이동
+            lbox_Chat.SelectedIndex = lbox_Chat.Items.Count - 1;
+            lbox_Chat.SelectedIndex = -1; // 선택 해제
+        }
+        private void MoveWork(Panel clickedPanel) // 일터로 이동
+        {
+            Move(clickedPanel);
+        }
+        private void btn_AllChoice_Click(object sender, EventArgs e) //모두 강화 버튼 보이게/안보이게
+        {
+            flowLayoutPanel1.Visible = !flowLayoutPanel1.Visible;
+        }
+
+        private void btn_CreateAllButton(object sender, EventArgs e) //모두 강화 버튼 선택시 강화/일터/판매 보이게
+        {
+            RemoveButtons();
+            MakeButton((Button)sender);
         }
 
         private void btn_Test_Click(object sender, EventArgs e)
@@ -340,74 +363,44 @@ namespace TeamProject
             AddPanels(1, 1);
         }
 
-        private void panel_Main_Click_1(object sender, EventArgs e)
-        {
-            RemoveButtons();
-        }
+        
 
-        private void UpgradeWeapon(Panel clickedPanel)
+        private void UpgradeWeapon(Panel clickedPanel) //무기 강화
         {
             string tagString = clickedPanel.Tag?.ToString();
-            string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
-            int index = int.Parse(tagParts[0].Trim());
-            Random random = new Random();
-            int randomValue = random.Next(1, 101);
-            if (randomValue <= SuccessProbability[index]) //강화 성공시
+            string[] tagParts = tagString.Split(',');
+            if (tagParts.Length < 1)
+                return;
+
+            if (int.TryParse(tagParts[0].Trim(), out int index) && index >= 0 && index < SuccessProbability.Length)
             {
-                RemovePanel(clickedPanel);
-                AddPanels(index + 1, 1);
-                //lbox_Chat.Items.Add($"강화가 성공하여 +{index + 1} 무기가 제련되었습니다.");
-                //lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
-                ShowMessage($"강화가 성공하여 +{index + 1} 무기가 제련되었습니다.");
+                Random random = new Random();
+                int randomValue = random.Next(1, 101);
+
+                // 강화 성공 시
+                if (randomValue <= SuccessProbability[index])
+                {
+                    RemovePanel(clickedPanel);
+                    AddPanels(index + 1, 1);
+                    ShowMessage($"강화가 성공하여 +{index + 1} 무기가 제련되었습니다.");
+                }
+                // 강화 실패 시
+                else
+                {
+                    RemovePanel(clickedPanel);
+                    ShowMessage($"강화가 실패하여 +{index} 무기가 파괴되었습니다.");
+                }
+
+                // 최대 채팅 수를 10으로 제한하고 오래된 채팅 삭제
+                while (lbox_Chat.Items.Count > 10)
+                {
+                    lbox_Chat.Items.RemoveAt(0);
+                }
             }
-            else //강화 실패시
-            {
-                RemovePanel(clickedPanel);
-                ShowMessage($"강화가 실패하여 +{index} 무기가 파괴되었습니다.");
 
-            }
-            while (lbox_Chat.Items.Count > 10)
-            {
-                lbox_Chat.Items.RemoveAt(0);
-            }
-            //// 스크롤 아래로 이동
-            //lbox_Chat.SelectedIndex = lbox_Chat.Items.Count - 1;
-            //lbox_Chat.SelectedIndex = -1; // 선택 해제
-
-        }
-        private void ShowMessage(string message)
-        {
-            lbox_Chat.Items.Add(message);
-            lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
-            // 스크롤 아래로 이동
-            lbox_Chat.SelectedIndex = lbox_Chat.Items.Count - 1;
-            lbox_Chat.SelectedIndex = -1; // 선택 해제
-        }
-
-        private void MoveWork(Panel clickedPanel)
-        {
-            Move(clickedPanel);
-        }
-
-        private void btn_AllChoice_Click(object sender, EventArgs e)
-        {
-            if (flowLayoutPanel1.Visible)
-                flowLayoutPanel1.Visible = false;
-            else
-                flowLayoutPanel1.Visible = true;
-        }
-
-        private void btn_CreateAllButton(object sender, EventArgs e)
-        {
-            RemoveButtons();
-            Button clickedButton = (Button)sender;
-            MakeButton(clickedButton);            
-        }
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-            RemoveButtons();
-        }
-        private Panel[] FindPanelFromButton(int i)
+        }          
+ 
+        private Panel[] FindPanelFromButton(int i) //무기 강화 정도를 찾고 모두 선택
         {
             List<Panel> panels = new List<Panel>();
             foreach (Control control in panel_Main.Controls)
@@ -423,7 +416,7 @@ namespace TeamProject
             return panels.ToArray();
         }
 
-        private void StartMove_FromButton_Up(Button clickedButton)
+        private void StartMove_FromButton_Up(Button clickedButton) // 모두 선택후 강화
         {
             Panel[] clickedPanel = FindPanelFromButton(int.Parse(clickedButton.Tag.ToString()));
             foreach (Panel panel in clickedPanel)
@@ -433,7 +426,7 @@ namespace TeamProject
 
         }
 
-        private void StartMove_FromButton_Right(Button clickedButton)
+        private void StartMove_FromButton_Right(Button clickedButton) // 모두 선택후 일터
         {
             Panel[] clickedPanel = FindPanelFromButton(int.Parse(clickedButton.Tag.ToString()));
             foreach (Panel panel in clickedPanel)
@@ -442,13 +435,22 @@ namespace TeamProject
             }
         }
 
-        private void Sell_FromButton(Button clickedButton)
+        private void Sell_FromButton(Button clickedButton) // 모두 선택후 판매
         {
             Panel[] clickedPanel = FindPanelFromButton(int.Parse(clickedButton.Tag.ToString()));
             foreach (Panel panel in clickedPanel)
             {
                 Sell(panel);
             }
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+            RemoveButtons();
+        }
+        private void panel_Main_Click_1(object sender, EventArgs e) //다른곳 클릭시 이미 생성된 강화/일터/판매 삭제
+        {
+            RemoveButtons();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

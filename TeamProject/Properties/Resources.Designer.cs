@@ -39,8 +39,8 @@ namespace TeamProject.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("TeamProject.Properties.Resources", typeof(Resources).Assembly);
-                    resourceMan = temp;
+                    global::System.Resources.ResourceManager workX = new global::System.Resources.ResourceManager("TeamProject.Properties.Resources", typeof(Resources).Assembly);
+                    resourceMan = workX;
                 }
                 return resourceMan;
             }
