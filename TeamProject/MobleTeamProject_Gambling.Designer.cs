@@ -243,20 +243,26 @@ namespace TeamProject
             panel3 = new System.Windows.Forms.Panel();
             tabPage3 = new System.Windows.Forms.TabPage();
             lb_Money_tab3 = new System.Windows.Forms.Label();
-            pstor6 = new System.Windows.Forms.Panel();
-            pstor7 = new System.Windows.Forms.Panel();
-            pstor8 = new System.Windows.Forms.Panel();
-            pstor5 = new System.Windows.Forms.Panel();
-            pstor4 = new System.Windows.Forms.Panel();
-            pstor3 = new System.Windows.Forms.Panel();
-            pstor1 = new System.Windows.Forms.Panel();
+            pn_Store_6 = new System.Windows.Forms.Panel();
+            pn_Store_7 = new System.Windows.Forms.Panel();
+            pn_Store_8 = new System.Windows.Forms.Panel();
+            pn_Store_5 = new System.Windows.Forms.Panel();
+            pn_Store_4 = new System.Windows.Forms.Panel();
+            pn_Store_3 = new System.Windows.Forms.Panel();
+            pn_Store_2 = new System.Windows.Forms.Panel();
+            pn_Store_1 = new System.Windows.Forms.Panel();
             pictstore = new System.Windows.Forms.PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
             Allview0_value = new System.Windows.Forms.Label();
             timerstore = new System.Windows.Forms.Timer(components);
             timerstorebay = new System.Windows.Forms.Timer(components);
             building = new System.Windows.Forms.ImageList(components);
-            pstor2 = new System.Windows.Forms.Panel();
+            label9 = new System.Windows.Forms.Label();
+            label19 = new System.Windows.Forms.Label();
+            label20 = new System.Windows.Forms.Label();
+            pictureBox16 = new System.Windows.Forms.PictureBox();
+            pictureBox17 = new System.Windows.Forms.PictureBox();
+            pictureBox18 = new System.Windows.Forms.PictureBox();
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             panel14.SuspendLayout();
@@ -294,6 +300,9 @@ namespace TeamProject
             panel17.SuspendLayout();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictstore).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox17).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox18).BeginInit();
             SuspendLayout();
             // 
             // lbox_Chat
@@ -1298,9 +1307,9 @@ namespace TeamProject
             lb_Money_tab2.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Money_tab2.Location = new System.Drawing.Point(692, 55);
             lb_Money_tab2.Name = "lb_Money_tab2";
-            lb_Money_tab2.Size = new System.Drawing.Size(60, 25);
+            lb_Money_tab2.Size = new System.Drawing.Size(92, 25);
             lb_Money_tab2.TabIndex = 11;
-            lb_Money_tab2.Text = "label9";
+            lb_Money_tab2.Text = "lb_Money";
             // 
             // pictureBox15
             // 
@@ -1487,15 +1496,21 @@ namespace TeamProject
             // tabPage3
             // 
             tabPage3.BackColor = System.Drawing.Color.White;
+            tabPage3.Controls.Add(pictureBox18);
+            tabPage3.Controls.Add(pictureBox17);
+            tabPage3.Controls.Add(pictureBox16);
+            tabPage3.Controls.Add(label20);
+            tabPage3.Controls.Add(label19);
+            tabPage3.Controls.Add(label9);
             tabPage3.Controls.Add(lb_Money_tab3);
-            tabPage3.Controls.Add(pstor6);
-            tabPage3.Controls.Add(pstor7);
-            tabPage3.Controls.Add(pstor8);
-            tabPage3.Controls.Add(pstor5);
-            tabPage3.Controls.Add(pstor4);
-            tabPage3.Controls.Add(pstor3);
-            tabPage3.Controls.Add(pstor2);
-            tabPage3.Controls.Add(pstor1);
+            tabPage3.Controls.Add(pn_Store_6);
+            tabPage3.Controls.Add(pn_Store_7);
+            tabPage3.Controls.Add(pn_Store_8);
+            tabPage3.Controls.Add(pn_Store_5);
+            tabPage3.Controls.Add(pn_Store_4);
+            tabPage3.Controls.Add(pn_Store_3);
+            tabPage3.Controls.Add(pn_Store_2);
+            tabPage3.Controls.Add(pn_Store_1);
             tabPage3.Controls.Add(pictstore);
             tabPage3.Location = new System.Drawing.Point(4, 24);
             tabPage3.Name = "tabPage3";
@@ -1510,65 +1525,73 @@ namespace TeamProject
             lb_Money_tab3.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Money_tab3.Location = new System.Drawing.Point(683, 35);
             lb_Money_tab3.Name = "lb_Money_tab3";
-            lb_Money_tab3.Size = new System.Drawing.Size(60, 25);
+            lb_Money_tab3.Size = new System.Drawing.Size(92, 25);
             lb_Money_tab3.TabIndex = 2;
-            lb_Money_tab3.Text = "label9";
+            lb_Money_tab3.Text = "lb_Money";
             // 
-            // pstor6
+            // pn_Store_6
             // 
-            pstor6.BackColor = System.Drawing.Color.Blue;
-            pstor6.Location = new System.Drawing.Point(660, 632);
-            pstor6.Name = "pstor6";
-            pstor6.Size = new System.Drawing.Size(83, 73);
-            pstor6.TabIndex = 1;
+            pn_Store_6.BackColor = System.Drawing.Color.Blue;
+            pn_Store_6.Location = new System.Drawing.Point(660, 632);
+            pn_Store_6.Name = "pn_Store_6";
+            pn_Store_6.Size = new System.Drawing.Size(83, 73);
+            pn_Store_6.TabIndex = 1;
             // 
-            // pstor7
+            // pn_Store_7
             // 
-            pstor7.BackColor = System.Drawing.Color.Blue;
-            pstor7.Location = new System.Drawing.Point(374, 632);
-            pstor7.Name = "pstor7";
-            pstor7.Size = new System.Drawing.Size(83, 73);
-            pstor7.TabIndex = 1;
+            pn_Store_7.BackColor = System.Drawing.Color.Blue;
+            pn_Store_7.Location = new System.Drawing.Point(374, 632);
+            pn_Store_7.Name = "pn_Store_7";
+            pn_Store_7.Size = new System.Drawing.Size(83, 73);
+            pn_Store_7.TabIndex = 1;
             // 
-            // pstor8
+            // pn_Store_8
             // 
-            pstor8.BackColor = System.Drawing.Color.Blue;
-            pstor8.Location = new System.Drawing.Point(184, 632);
-            pstor8.Name = "pstor8";
-            pstor8.Size = new System.Drawing.Size(83, 73);
-            pstor8.TabIndex = 1;
+            pn_Store_8.BackColor = System.Drawing.Color.Blue;
+            pn_Store_8.Location = new System.Drawing.Point(184, 632);
+            pn_Store_8.Name = "pn_Store_8";
+            pn_Store_8.Size = new System.Drawing.Size(83, 73);
+            pn_Store_8.TabIndex = 1;
             // 
-            // pstor5
+            // pn_Store_5
             // 
-            pstor5.BackColor = System.Drawing.Color.Red;
-            pstor5.Location = new System.Drawing.Point(115, 128);
-            pstor5.Name = "pstor5";
-            pstor5.Size = new System.Drawing.Size(83, 73);
-            pstor5.TabIndex = 1;
+            pn_Store_5.BackColor = System.Drawing.Color.Red;
+            pn_Store_5.Location = new System.Drawing.Point(642, 400);
+            pn_Store_5.Name = "pn_Store_5";
+            pn_Store_5.Size = new System.Drawing.Size(83, 73);
+            pn_Store_5.TabIndex = 1;
             // 
-            // pstor4
+            // pn_Store_4
             // 
-            pstor4.BackColor = System.Drawing.Color.Red;
-            pstor4.Location = new System.Drawing.Point(374, 128);
-            pstor4.Name = "pstor4";
-            pstor4.Size = new System.Drawing.Size(83, 73);
-            pstor4.TabIndex = 1;
+            pn_Store_4.BackColor = System.Drawing.Color.Red;
+            pn_Store_4.Location = new System.Drawing.Point(642, 290);
+            pn_Store_4.Name = "pn_Store_4";
+            pn_Store_4.Size = new System.Drawing.Size(83, 73);
+            pn_Store_4.TabIndex = 1;
             // 
-            // pstor3
+            // pn_Store_3
             // 
-            pstor3.BackColor = System.Drawing.Color.Red;
-            pstor3.Location = new System.Drawing.Point(636, 128);
-            pstor3.Name = "pstor3";
-            pstor3.Size = new System.Drawing.Size(83, 73);
-            pstor3.TabIndex = 1;
+            pn_Store_3.BackColor = System.Drawing.Color.Red;
+            pn_Store_3.Location = new System.Drawing.Point(594, 151);
+            pn_Store_3.Name = "pn_Store_3";
+            pn_Store_3.Size = new System.Drawing.Size(83, 73);
+            pn_Store_3.TabIndex = 1;
             // 
-            // pstor1
+            // pn_Store_2
             // 
-            pstor1.BackColor = System.Drawing.Color.Red;
-            pstor1.Location = new System.Drawing.Point(69, 632);
-            pstor1.Name = "pstor1";
-            pstor1.Size = new System.Drawing.Size(83, 73);
-            pstor1.TabIndex = 1;
+            pn_Store_2.BackColor = System.Drawing.Color.Red;
+            pn_Store_2.Location = new System.Drawing.Point(374, 151);
+            pn_Store_2.Name = "pn_Store_2";
+            pn_Store_2.Size = new System.Drawing.Size(83, 73);
+            pn_Store_2.TabIndex = 1;
+            // 
+            // pn_Store_1
+            // 
+            pn_Store_1.BackColor = System.Drawing.Color.Red;
+            pn_Store_1.Location = new System.Drawing.Point(158, 151);
+            pn_Store_1.Name = "pn_Store_1";
+            pn_Store_1.Size = new System.Drawing.Size(83, 73);
+            pn_Store_1.TabIndex = 1;
             // 
             // pictstore
             // 
@@ -1606,13 +1629,62 @@ namespace TeamProject
             building.Images.SetKeyName(2, "build_3.png");
             building.Images.SetKeyName(3, "build_4.png");
             // 
-            // pstor2
+            // label9
             // 
-            pstor2.BackColor = System.Drawing.Color.Red;
-            pstor2.Location = new System.Drawing.Point(636, 357);
-            pstor2.Name = "pstor2";
-            pstor2.Size = new System.Drawing.Size(83, 73);
-            pstor2.TabIndex = 1;
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(143, 103);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(67, 45);
+            label9.TabIndex = 3;
+            label9.Text = "하급농부\r\n가격:110원\r\n+10개";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new System.Drawing.Point(358, 103);
+            label19.Name = "label19";
+            label19.Size = new System.Drawing.Size(67, 45);
+            label19.TabIndex = 3;
+            label19.Text = "상급일꾼\r\n가격:330원\r\n+10개";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new System.Drawing.Point(576, 103);
+            label20.Name = "label20";
+            label20.Size = new System.Drawing.Size(74, 45);
+            label20.TabIndex = 3;
+            label20.Text = "기사\n가격:7700원\r\n+10개";
+            // 
+            // pictureBox16
+            // 
+            pictureBox16.Image = Properties.Resources.worker_high;
+            pictureBox16.Location = new System.Drawing.Point(431, 103);
+            pictureBox16.Name = "pictureBox16";
+            pictureBox16.Size = new System.Drawing.Size(50, 50);
+            pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox16.TabIndex = 4;
+            pictureBox16.TabStop = false;
+            // 
+            // pictureBox17
+            // 
+            pictureBox17.Image = Properties.Resources.peasent;
+            pictureBox17.Location = new System.Drawing.Point(216, 103);
+            pictureBox17.Name = "pictureBox17";
+            pictureBox17.Size = new System.Drawing.Size(50, 50);
+            pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox17.TabIndex = 4;
+            pictureBox17.TabStop = false;
+            // 
+            // pictureBox18
+            // 
+            pictureBox18.Image = Properties.Resources.knight;
+            pictureBox18.Location = new System.Drawing.Point(656, 103);
+            pictureBox18.Name = "pictureBox18";
+            pictureBox18.Size = new System.Drawing.Size(50, 50);
+            pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox18.TabIndex = 4;
+            pictureBox18.TabStop = false;
             // 
             // MobleTeamProject_Gambling
             // 
@@ -1680,6 +1752,9 @@ namespace TeamProject
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictstore).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox17).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox18).EndInit();
             ResumeLayout(false);
         }
 
@@ -1786,19 +1861,25 @@ namespace TeamProject
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.Panel pstor6;
-        private System.Windows.Forms.Panel pstor7;
-        private System.Windows.Forms.Panel pstor8;
-        private System.Windows.Forms.Panel pstor5;
-        private System.Windows.Forms.Panel pstor4;
-        private System.Windows.Forms.Panel pstor3;
-        private System.Windows.Forms.Panel pstor1;
+        private System.Windows.Forms.Panel pn_Store_6;
+        private System.Windows.Forms.Panel pn_Store_7;
+        private System.Windows.Forms.Panel pn_Store_8;
+        private System.Windows.Forms.Panel pn_Store_5;
+        private System.Windows.Forms.Panel pn_Store_4;
+        private System.Windows.Forms.Panel pn_Store_3;
+        private System.Windows.Forms.Panel pn_Store_1;
         private System.Windows.Forms.PictureBox pictstore;
         private System.Windows.Forms.Timer timerstore;
         private System.Windows.Forms.Timer timerstorebay;
         private System.Windows.Forms.ImageList building;
         private System.Windows.Forms.Label lb_Money_tab2;
         private System.Windows.Forms.Label lb_Money_tab3;
-        private System.Windows.Forms.Panel pstor2;
+        private System.Windows.Forms.Panel pn_Store_2;
+        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox18;
+        private System.Windows.Forms.PictureBox pictureBox17;
     }
 }
