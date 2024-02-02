@@ -96,11 +96,28 @@ namespace WinFormsApp2
             info.Show();
         }
 
+        private void button2_MouseHover(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.Transparent;
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Transparent;
+        }
+
+        private void button1_MouseMove(object sender, MouseEventArgs e)
+        {
+            button1.BackColor = Color.Transparent;
+        }
+
         private void game_exit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-     
     }
 }
