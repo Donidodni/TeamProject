@@ -1633,13 +1633,13 @@ namespace TeamProject
             // 
             // building
             // 
-            building.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            building.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("building.ImageStream");
-            building.TransparentColor = System.Drawing.Color.Transparent;
-            building.Images.SetKeyName(0, "build_1.png");
-            building.Images.SetKeyName(1, "build_2.png");
-            building.Images.SetKeyName(2, "build_3.png");
-            building.Images.SetKeyName(3, "build_4.png");
+            //building.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            //building.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("building.ImageStream");
+            //building.TransparentColor = System.Drawing.Color.Transparent;
+            //building.Images.SetKeyName(0, "build_1.png");
+            //building.Images.SetKeyName(1, "build_2.png");
+            //building.Images.SetKeyName(2, "build_3.png");
+            //building.Images.SetKeyName(3, "build_4.png");
             // 
             // label9
             // 

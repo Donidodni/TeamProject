@@ -752,7 +752,7 @@ namespace TeamProject
             int[] BuildHP = { 100, 500, 5000, 15000, 100000 };  //단계별 빌딩 HP
             //빌딩 생성
             // pnBuilding.BackColor = BColor[BLevel];
-            pnBuilding.BackgroundImage = building.Images[BLevel];   //이미지로 넣을 경우
+            //pnBuilding.BackgroundImage = building.Images[BLevel];   //이미지로 넣을 경우
             pnBuilding.BackgroundImageLayout = ImageLayout.Center;
             //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
 
