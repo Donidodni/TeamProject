@@ -535,10 +535,10 @@ namespace TeamProject
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         //유닛 위치 정보 배열
-        int[,] PntArr = { { 144, 506 }, { 144, 450 }, { 144, 394 }, { 144, 282 }, { 144, 226 },
-                                { 144, 170 }, { 200, 114 }, { 256, 114 }, { 312, 114 }, { 368, 114 },
-                                { 480, 114 }, { 536, 114 }, { 592, 114 }, { 650, 114 }, { 706, 170 },
-                                { 706, 226 }, { 706, 282 }, { 706, 394 }, { 706, 450 }, { 706, 506 } };
+        int[,] PntArr = { { 144, 506 }, { 144, 450 }, { 144, 394 }, { 144, 282 }, { 144, 226 }, { 144, 170 },                               //좌
+                          { 200, 114 }, { 256, 114 }, { 312, 114 }, { 368, 114 }, { 480, 114 }, { 536, 114 }, { 592, 114 }, { 650, 114 },   //상
+                          { 706, 170 }, { 706, 226 }, { 706, 282 }, { 706, 394 }, { 706, 450 }, { 706, 506 } };                             //우
+
         bool[] full = new bool[20];  //array 인덱스 좌표에 패널 할당 여부 초기값 false
         int[] Attack = new int[20];  //좌표마다 유닛의 공격력 값
         int[] BuildArmor = { 1, 100, 400, 1000, 3000 };  //단계별 빌딩 방어력
@@ -624,6 +624,7 @@ namespace TeamProject
             GoStrengStationAll.Text = "해당 레벨 모두 강화소 보내기";
             GoStrengStationAll.Click += (s, e) =>
             {
+                int cnt = 0;
                 Panel[] SameLevetlUnit = Mine(int.Parse(tagParts[0].Trim()));    //모두 선택
                 foreach (Panel panel in SameLevetlUnit)
                 {
@@ -673,6 +674,7 @@ namespace TeamProject
                 if (pbBuildHP.Value > Attacksum - BuildArmor[cbSelectBuild.SelectedIndex] && pbBuildHP.Value > 0)
                 {
                     //공격력이 방어력보다 클 때만 공격
+                    if(Attacksum > BuildArmor[cbSelectBuild.SelectedIndex])
                     pbBuildHP.Value -= Attacksum - BuildArmor[cbSelectBuild.SelectedIndex];
                 }
                 //건물 파괴 시
@@ -680,7 +682,8 @@ namespace TeamProject
                 {
                     pbBuildHP.Value = pbBuildHP.Minimum;    //HP = 0
                     Money += BuildReward[cbSelectBuild.SelectedIndex];             //건물 파괴 보상
-                    lb_Money_tab1.Text = Money.ToString();
+                    MoneyResult();
+                    
                     ShowMessage($"{cbSelectBuild.SelectedIndex + 1}단계 건물을 파괴했습니다. (+{BuildReward[cbSelectBuild.SelectedIndex]}골드)");
                     tabControl1.TabPages[1].Controls.Remove(pnBuilding);
                     NewBuilding(cbSelectBuild.SelectedIndex);
