@@ -257,6 +257,12 @@ namespace TeamProject
             timerstore = new System.Windows.Forms.Timer(components);
             timerstorebay = new System.Windows.Forms.Timer(components);
             building = new System.Windows.Forms.ImageList(components);
+            label9 = new System.Windows.Forms.Label();
+            label19 = new System.Windows.Forms.Label();
+            label20 = new System.Windows.Forms.Label();
+            pictureBox16 = new System.Windows.Forms.PictureBox();
+            pictureBox17 = new System.Windows.Forms.PictureBox();
+            pictureBox18 = new System.Windows.Forms.PictureBox();
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             panel14.SuspendLayout();
@@ -294,6 +300,9 @@ namespace TeamProject
             panel17.SuspendLayout();
             tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictstore).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox17).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox18).BeginInit();
             SuspendLayout();
             // 
             // lbox_Chat
@@ -1487,6 +1496,12 @@ namespace TeamProject
             // tabPage3
             // 
             tabPage3.BackColor = System.Drawing.Color.White;
+            tabPage3.Controls.Add(pictureBox18);
+            tabPage3.Controls.Add(pictureBox17);
+            tabPage3.Controls.Add(pictureBox16);
+            tabPage3.Controls.Add(label20);
+            tabPage3.Controls.Add(label19);
+            tabPage3.Controls.Add(label9);
             tabPage3.Controls.Add(lb_Money_tab3);
             tabPage3.Controls.Add(pn_Store_6);
             tabPage3.Controls.Add(pn_Store_7);
@@ -1614,6 +1629,63 @@ namespace TeamProject
             building.Images.SetKeyName(2, "build_3.png");
             building.Images.SetKeyName(3, "build_4.png");
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(143, 103);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(67, 45);
+            label9.TabIndex = 3;
+            label9.Text = "하급농부\r\n가격:110원\r\n+10개";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new System.Drawing.Point(358, 103);
+            label19.Name = "label19";
+            label19.Size = new System.Drawing.Size(67, 45);
+            label19.TabIndex = 3;
+            label19.Text = "상급일꾼\r\n가격:330원\r\n+10개";
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new System.Drawing.Point(576, 103);
+            label20.Name = "label20";
+            label20.Size = new System.Drawing.Size(74, 45);
+            label20.TabIndex = 3;
+            label20.Text = "기사\n가격:7700원\r\n+10개";
+            // 
+            // pictureBox16
+            // 
+            pictureBox16.Image = Properties.Resources.worker_high;
+            pictureBox16.Location = new System.Drawing.Point(431, 103);
+            pictureBox16.Name = "pictureBox16";
+            pictureBox16.Size = new System.Drawing.Size(50, 50);
+            pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox16.TabIndex = 4;
+            pictureBox16.TabStop = false;
+            // 
+            // pictureBox17
+            // 
+            pictureBox17.Image = Properties.Resources.peasent;
+            pictureBox17.Location = new System.Drawing.Point(216, 103);
+            pictureBox17.Name = "pictureBox17";
+            pictureBox17.Size = new System.Drawing.Size(50, 50);
+            pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox17.TabIndex = 4;
+            pictureBox17.TabStop = false;
+            // 
+            // pictureBox18
+            // 
+            pictureBox18.Image = Properties.Resources.knight;
+            pictureBox18.Location = new System.Drawing.Point(656, 103);
+            pictureBox18.Name = "pictureBox18";
+            pictureBox18.Size = new System.Drawing.Size(50, 50);
+            pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox18.TabIndex = 4;
+            pictureBox18.TabStop = false;
+            // 
             // MobleTeamProject_Gambling
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1680,6 +1752,9 @@ namespace TeamProject
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictstore).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox17).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox18).EndInit();
             ResumeLayout(false);
         }
 
@@ -1800,5 +1875,11 @@ namespace TeamProject
         private System.Windows.Forms.Label lb_Money_tab2;
         private System.Windows.Forms.Label lb_Money_tab3;
         private System.Windows.Forms.Panel pn_Store_2;
+        private System.Windows.Forms.PictureBox pictureBox16;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox pictureBox18;
+        private System.Windows.Forms.PictureBox pictureBox17;
     }
 }
