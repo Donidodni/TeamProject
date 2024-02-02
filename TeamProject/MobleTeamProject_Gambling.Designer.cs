@@ -107,7 +107,7 @@ namespace TeamProject
             {
                 Level = 8,
                 Name = "중급 용사",
-                Attack = 6000,
+                Attack = 5000,
                 SellPrice = 5000,
             };
             weaponsDictionary.Add(8, lv8);

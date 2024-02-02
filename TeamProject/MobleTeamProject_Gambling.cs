@@ -283,7 +283,7 @@ namespace TeamProject
             string[] tagParts = tagString.Split(',');
             if (tagParts.Length < 3)
                 return;
-            if (int.Parse(tagParts[0]) == 8)
+            if (int.Parse(tagParts[0]) == 9)
             {
                 EndGame();
             }
@@ -553,8 +553,8 @@ namespace TeamProject
 
         bool[] full = new bool[20];  //array 인덱스 좌표에 패널 할당 여부 초기값 false
         int[] Attack = new int[20];  //좌표마다 유닛의 공격력 값
-        int[] BuildArmor = { 1, 100, 400, 2000, 3000 };  //단계별 빌딩 방어력
-        int[] BuildReward = { 30, 100, 400, 3000, 3000 };    //빌딩 단계별 보상
+        int[] BuildArmor = { 1, 100, 400, 5000, 50000 };  //단계별 빌딩 방어력
+        int[] BuildReward = { 30, 100, 400, 3000, 10000 };    //빌딩 단계별 보상
         int TurretAttack = 3;
 
         private void Move(Panel weapon)
