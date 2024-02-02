@@ -614,11 +614,10 @@ namespace TeamProject
                 {
                     Attacksum += i;
                 }
-                if (pbBuildHP.Value > Attacksum + BuildArmor[cbSelectBuild.SelectedIndex])
+                if (pbBuildHP.Value > Attacksum - BuildArmor[cbSelectBuild.SelectedIndex] && Attacksum >= BuildArmor[cbSelectBuild.SelectedIndex])
                 {
                     //공격력이 방어력보다 클 때만 공격
-                    if (Attacksum >= BuildArmor[cbSelectBuild.SelectedIndex])
-                        pbBuildHP.Value = pbBuildHP.Value - Attacksum + BuildArmor[cbSelectBuild.SelectedIndex];
+                    pbBuildHP.Value -= Attacksum - BuildArmor[cbSelectBuild.SelectedIndex];
                 }
 
                 //건물 파괴 시
