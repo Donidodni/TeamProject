@@ -51,11 +51,15 @@ namespace TeamProject
             Money = 0;
             ingame_bgm.Play(); // 김민석 - 해당 코드를 지움으로써 디버깅시 음악을 제거할 수 있습니다.
             lb_Money.Text = Money.ToString() + " 골드";
+            InitializePanelMovement();//상점 캐릭터 이동
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (tabControl1.SelectedTab == tabPage3)
+            {
+                tabPage3.Focus();
+            }
         }
 
         void AddPanels(int type, int count) // type만큼 강화된 무기 count만큼 생성
@@ -663,10 +667,10 @@ namespace TeamProject
             tabControl1.TabPages[1].Controls.Add(pnBuilding);    //빌딩패널 생성
         }
 
-    
+
 
         private void MobleTeamProject_Gambling_Load(object sender, EventArgs e)
-        {     
+        {
             NewBuilding(0);
             timer1.Start(); //건물 공격 시작
         }
@@ -678,7 +682,146 @@ namespace TeamProject
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         /*상점 코드*/
+        
+        private Panel Panel2;
+        private PictureBox curr;
+        // 이동 거리
+        private bool movingUp, movingDown, movingLeft, movingRight;
+        private void InitializePanelMovement()
+        {
+            Timer timerstorebay = new Timer();
+            timerstorebay.Interval = 100;
+            timerstorebay.Tick += timerstorebay_Tick;
+            timerstorebay.Start();
+            curr = pictstore;
+            curr.Focus();
+            this.KeyDown += tabControl1_KeyDown;
+            this.KeyUp += tabControl1_KeyUp;
+            Timer moveTimer = new Timer();
+            timerstore.Interval = 10; // 타이머 간격 (10ms로 설정)
+            timerstore.Tick += (sender, e) => MovePanel();
+            timerstore.Start();
+        }
 
+        private void tabControl1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (tabControl1.SelectedTab == tabPage3)
+            {
+
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        movingUp = true;
+                        break;
+                    case Keys.Left:
+                        movingLeft = true;
+                        break;
+                    case Keys.Down:
+                        movingDown = true;
+                        break;
+                    case Keys.Right:
+                        movingRight = true;
+                        break;
+                }
+            }
+        }
+
+        private void tabControl1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (tabControl1.SelectedTab == tabPage3)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.Up:
+                        movingUp = false;
+                        break;
+                    case Keys.Left:
+                        movingLeft = false;
+                        break;
+                    case Keys.Down:
+                        movingDown = false;
+                        break;
+                    case Keys.Right:
+                        movingRight = false;
+                        break;
+                }
+
+            }
+        }
+        private void MovePanel()
+        {
+            // 현재 설정된 이동 플래그에 따라 판넬을 이동
+
+            if (movingUp)
+            {
+                curr.Top -= 5;
+            }
+            if (movingDown)
+            {
+                curr.Top += 5;
+            }
+            if (movingLeft)
+            {
+                curr.Left -= 5;
+            }
+            if (movingRight)
+            {
+                curr.Left += 5;
+            }
+        }
+        private void timerstorebay_Tick(object sender, EventArgs e)
+        {
+            Rectangle b0 = curr.Bounds;
+            Rectangle b1 = pstor1.Bounds;
+            Rectangle b2 = pstor2.Bounds;
+            Rectangle b3 = pstor3.Bounds;
+            Rectangle b4 = pstor4.Bounds;
+            Rectangle b5 = pstor5.Bounds;
+            Rectangle b6 = pstor6.Bounds;
+            Rectangle b7 = pstor7.Bounds;
+            Rectangle b8 = pstor8.Bounds;
+            if (b1.IntersectsWith(b0))
+            {
+
+                timerstorebay.Stop();
+                curr.Location = new Point(400, 400);
+            }
+            else if (b2.IntersectsWith(b0))
+            {
+                timerstorebay.Stop();
+                curr.Location = new Point(400, 400);
+            }
+            else if (b3.IntersectsWith(b0))
+            {
+                timerstorebay.Stop();
+                curr.Location = new Point(400, 400);
+            }
+            else if (b4.IntersectsWith(b0))
+            {
+                timerstorebay.Stop();
+                curr.Location = new Point(400, 400);
+            }
+            else if (b5.IntersectsWith(b0))
+            {
+                timerstorebay.Stop();
+                curr.Location = new Point(400, 400);
+            }
+            else if (b6.IntersectsWith(b0))
+            {
+                timerstorebay.Stop();
+                curr.Location = new Point(400, 400);
+            }
+            else if (b7.IntersectsWith(b0))
+            {
+                timerstorebay.Stop();
+                curr.Location = new Point(400, 400);
+            }
+            else if (b8.IntersectsWith(b0))
+            {
+                timerstorebay.Stop();
+                curr.Location = new Point(400, 400);
+            }
+        }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////상점/////////////////////////////////////////////////////////
