@@ -205,7 +205,7 @@ namespace TeamProject
             btn_All7 = new System.Windows.Forms.Button();
             btn_All8 = new System.Windows.Forms.Button();
             label3 = new System.Windows.Forms.Label();
-            lb_Money = new System.Windows.Forms.Label();
+            lb_Money_tab1 = new System.Windows.Forms.Label();
             tabControl1 = new System.Windows.Forms.TabControl();
             tabPage1 = new System.Windows.Forms.TabPage();
             button1 = new System.Windows.Forms.Button();
@@ -255,6 +255,8 @@ namespace TeamProject
             timerstore = new System.Windows.Forms.Timer(components);
             timerstorebay = new System.Windows.Forms.Timer(components);
             building = new System.Windows.Forms.ImageList(components);
+            lb_Money_tab2 = new System.Windows.Forms.Label();
+            lb_Money_tab3 = new System.Windows.Forms.Label();
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             panel14.SuspendLayout();
@@ -290,14 +292,14 @@ namespace TeamProject
             panel19.SuspendLayout();
             panel18.SuspendLayout();
             panel17.SuspendLayout();
+            tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictstore).BeginInit();
             SuspendLayout();
             // 
             // lbox_Chat
             // 
             lbox_Chat.Font = new System.Drawing.Font("바탕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             lbox_Chat.FormattingEnabled = true;
-            lbox_Chat.ItemHeight = 16;
-            lbox_Chat.Location = new System.Drawing.Point(39, 713);
             lbox_Chat.ItemHeight = 16;
             lbox_Chat.Location = new System.Drawing.Point(39, 708);
             lbox_Chat.Name = "lbox_Chat";
@@ -1026,25 +1028,23 @@ namespace TeamProject
             label3.BackColor = System.Drawing.Color.Transparent;
             label3.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             label3.ForeColor = System.Drawing.Color.White;
-            label3.Location = new System.Drawing.Point(75, 14);
             label3.Location = new System.Drawing.Point(77, 11);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(101, 25);
             label3.TabIndex = 0;
             label3.Text = "보유 골드 :";
             // 
-            // lb_Money
+            // lb_Money_tab1
             // 
-            lb_Money.AutoSize = true;
-            lb_Money.BackColor = System.Drawing.Color.Transparent;
-            lb_Money.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lb_Money.ForeColor = System.Drawing.Color.White;
-            lb_Money.Location = new System.Drawing.Point(208, 13);
-            lb_Money.Location = new System.Drawing.Point(195, 10);
-            lb_Money.Name = "lb_Money";
-            lb_Money.Size = new System.Drawing.Size(95, 25);
-            lb_Money.TabIndex = 0;
-            lb_Money.Text = "lb_Money";
+            lb_Money_tab1.AutoSize = true;
+            lb_Money_tab1.BackColor = System.Drawing.Color.Transparent;
+            lb_Money_tab1.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lb_Money_tab1.ForeColor = System.Drawing.Color.White;
+            lb_Money_tab1.Location = new System.Drawing.Point(195, 10);
+            lb_Money_tab1.Name = "lb_Money_tab1";
+            lb_Money_tab1.Size = new System.Drawing.Size(95, 25);
+            lb_Money_tab1.TabIndex = 0;
+            lb_Money_tab1.Text = "lb_Money";
             // 
             // tabControl1
             // 
@@ -1178,11 +1178,9 @@ namespace TeamProject
             btn_Test2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             btn_Test2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn_Test2.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            btn_Test2.Location = new System.Drawing.Point(430, 769);
             btn_Test2.ForeColor = System.Drawing.Color.White;
             btn_Test2.Location = new System.Drawing.Point(430, 769);
             btn_Test2.Name = "btn_Test2";
-            btn_Test2.Size = new System.Drawing.Size(187, 49);
             btn_Test2.Size = new System.Drawing.Size(283, 39);
             btn_Test2.TabIndex = 4;
             btn_Test2.Text = "고급 농부 (3강) 10명 구매";
@@ -1197,10 +1195,8 @@ namespace TeamProject
             btn_Test.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn_Test.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btn_Test.ForeColor = System.Drawing.Color.White;
-            btn_Test.Location = new System.Drawing.Point(430, 705);
             btn_Test.Location = new System.Drawing.Point(430, 722);
             btn_Test.Name = "btn_Test";
-            btn_Test.Size = new System.Drawing.Size(283, 58);
             btn_Test.Size = new System.Drawing.Size(283, 39);
             btn_Test.TabIndex = 0;
             btn_Test.Text = "하급 농부 (0강) 10명 구매";
@@ -1246,7 +1242,7 @@ namespace TeamProject
             panel15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             panel15.Controls.Add(pictureBox1);
             panel15.Controls.Add(label3);
-            panel15.Controls.Add(lb_Money);
+            panel15.Controls.Add(lb_Money_tab1);
             panel15.Location = new System.Drawing.Point(23, 5);
             panel15.Margin = new System.Windows.Forms.Padding(2);
             panel15.Name = "panel15";
@@ -1257,12 +1253,9 @@ namespace TeamProject
             // 
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.Image = Properties.Resources.money;
-            pictureBox1.Location = new System.Drawing.Point(18, 7);
-            pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             pictureBox1.Location = new System.Drawing.Point(18, 1);
             pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(41, 44);
             pictureBox1.Size = new System.Drawing.Size(52, 45);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
@@ -1281,6 +1274,7 @@ namespace TeamProject
             // 
             tabPage2.BackgroundImage = Properties.Resources.mine_map;
             tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            tabPage2.Controls.Add(lb_Money_tab2);
             tabPage2.Controls.Add(pictureBox15);
             tabPage2.Controls.Add(pictureBox14);
             tabPage2.Controls.Add(pictureBox13);
@@ -1465,21 +1459,17 @@ namespace TeamProject
             // 
             // pbBuildHP
             // 
-            pbBuildHP.Location = new System.Drawing.Point(200, 576);
             pbBuildHP.Location = new System.Drawing.Point(200, 574);
             pbBuildHP.Name = "pbBuildHP";
-            pbBuildHP.Size = new System.Drawing.Size(500, 45);
             pbBuildHP.Size = new System.Drawing.Size(500, 45);
             pbBuildHP.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             pbBuildHP.TabIndex = 4;
             // 
             // panel3
             // 
-            panel3.Location = new System.Drawing.Point(200, 170);
             panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             panel3.Location = new System.Drawing.Point(304, 224);
             panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(500, 386);
             panel3.Size = new System.Drawing.Size(295, 281);
             panel3.TabIndex = 0;
             panel3.Visible = false;
@@ -1487,6 +1477,7 @@ namespace TeamProject
             // tabPage3
             // 
             tabPage3.BackColor = System.Drawing.Color.White;
+            tabPage3.Controls.Add(lb_Money_tab3);
             tabPage3.Controls.Add(pstor6);
             tabPage3.Controls.Add(pstor7);
             tabPage3.Controls.Add(pstor8);
@@ -1496,7 +1487,6 @@ namespace TeamProject
             tabPage3.Controls.Add(pstor2);
             tabPage3.Controls.Add(pstor1);
             tabPage3.Controls.Add(pictstore);
-            tabPage3.Location = new System.Drawing.Point(4, 24);
             tabPage3.Location = new System.Drawing.Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -1531,7 +1521,7 @@ namespace TeamProject
             // pstor5
             // 
             pstor5.BackColor = System.Drawing.Color.Red;
-            pstor5.Location = new System.Drawing.Point(51, 40);
+            pstor5.Location = new System.Drawing.Point(51, 128);
             pstor5.Name = "pstor5";
             pstor5.Size = new System.Drawing.Size(83, 73);
             pstor5.TabIndex = 1;
@@ -1539,7 +1529,7 @@ namespace TeamProject
             // pstor4
             // 
             pstor4.BackColor = System.Drawing.Color.Red;
-            pstor4.Location = new System.Drawing.Point(215, 40);
+            pstor4.Location = new System.Drawing.Point(215, 128);
             pstor4.Name = "pstor4";
             pstor4.Size = new System.Drawing.Size(83, 73);
             pstor4.TabIndex = 1;
@@ -1547,7 +1537,7 @@ namespace TeamProject
             // pstor3
             // 
             pstor3.BackColor = System.Drawing.Color.Red;
-            pstor3.Location = new System.Drawing.Point(374, 40);
+            pstor3.Location = new System.Drawing.Point(374, 128);
             pstor3.Name = "pstor3";
             pstor3.Size = new System.Drawing.Size(83, 73);
             pstor3.TabIndex = 1;
@@ -1555,7 +1545,7 @@ namespace TeamProject
             // pstor2
             // 
             pstor2.BackColor = System.Drawing.Color.Red;
-            pstor2.Location = new System.Drawing.Point(538, 40);
+            pstor2.Location = new System.Drawing.Point(538, 128);
             pstor2.Name = "pstor2";
             pstor2.Size = new System.Drawing.Size(83, 73);
             pstor2.TabIndex = 1;
@@ -1563,7 +1553,7 @@ namespace TeamProject
             // pstor1
             // 
             pstor1.BackColor = System.Drawing.Color.Red;
-            pstor1.Location = new System.Drawing.Point(729, 40);
+            pstor1.Location = new System.Drawing.Point(729, 128);
             pstor1.Name = "pstor1";
             pstor1.Size = new System.Drawing.Size(83, 73);
             pstor1.TabIndex = 1;
@@ -1591,9 +1581,11 @@ namespace TeamProject
             Allview0_value.TabIndex = 0;
             // 
             // timerstorebay
-            // building
             // 
             timerstorebay.Tick += timerstorebay_Tick;
+            // 
+            // building
+            // 
             building.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             building.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("building.ImageStream");
             building.TransparentColor = System.Drawing.Color.Transparent;
@@ -1602,11 +1594,30 @@ namespace TeamProject
             building.Images.SetKeyName(2, "build_3.png");
             building.Images.SetKeyName(3, "build_4.png");
             // 
+            // lb_Money_tab2
+            // 
+            lb_Money_tab2.AutoSize = true;
+            lb_Money_tab2.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Money_tab2.Location = new System.Drawing.Point(692, 55);
+            lb_Money_tab2.Name = "lb_Money_tab2";
+            lb_Money_tab2.Size = new System.Drawing.Size(60, 25);
+            lb_Money_tab2.TabIndex = 11;
+            lb_Money_tab2.Text = "label9";
+            // 
+            // lb_Money_tab3
+            // 
+            lb_Money_tab3.AutoSize = true;
+            lb_Money_tab3.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Money_tab3.Location = new System.Drawing.Point(683, 35);
+            lb_Money_tab3.Name = "lb_Money_tab3";
+            lb_Money_tab3.Size = new System.Drawing.Size(60, 25);
+            lb_Money_tab3.TabIndex = 2;
+            lb_Money_tab3.Text = "label9";
+            // 
             // MobleTeamProject_Gambling
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(884, 791);
             ClientSize = new System.Drawing.Size(884, 861);
             Controls.Add(tabControl1);
             Name = "MobleTeamProject_Gambling";
@@ -1656,6 +1667,7 @@ namespace TeamProject
             panel15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox15).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox14).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox13).EndInit();
@@ -1665,6 +1677,9 @@ namespace TeamProject
             panel18.PerformLayout();
             panel17.ResumeLayout(false);
             panel17.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictstore).EndInit();
             ResumeLayout(false);
         }
 
@@ -1673,13 +1688,14 @@ namespace TeamProject
         private System.Windows.Forms.ListBox lbox_Chat;
         private System.Windows.Forms.Panel panel_Main;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lb_Money;
+        private System.Windows.Forms.Label lb_Money_tab1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button btn_Test;
         private System.Windows.Forms.Button btn_Test2;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btn_All0;
         private System.Windows.Forms.Button btn_All1;
         private System.Windows.Forms.Button btn_All2;
@@ -1782,5 +1798,7 @@ namespace TeamProject
         private System.Windows.Forms.Timer timerstore;
         private System.Windows.Forms.Timer timerstorebay;
         private System.Windows.Forms.ImageList building;
+        private System.Windows.Forms.Label lb_Money_tab2;
+        private System.Windows.Forms.Label lb_Money_tab3;
     }
 }

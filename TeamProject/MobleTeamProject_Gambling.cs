@@ -50,7 +50,7 @@ namespace TeamProject
             InitializeWeaponsList(); // 0~10강 무기를 담을 리스트 생성
             Money = 0;
             ingame_bgm.Play(); // 김민석 - 해당 코드를 지움으로써 디버깅시 음악을 제거할 수 있습니다.
-            lb_Money.Text = Money.ToString() + " 골드";
+            lb_Money_tab1.Text = Money.ToString() + " 골드";
             InitializePanelMovement();//상점 캐릭터 이동
         }
 
@@ -288,7 +288,7 @@ namespace TeamProject
             if (int.TryParse(tagParts[2].Trim(), out int price))
             {
                 Money += price;
-                lb_Money.Text = $"{Money}";
+                lb_Money_tab1.Text = $"{Money}";
                 ShowMessage($"{tagParts[3]}를 {price}원에 판매하였습니다.");
                 RemovePanel(clickedPanel);
             }
@@ -310,7 +310,7 @@ namespace TeamProject
             {
                 ShowMessage("이스터에그 발견! 1000골드가 추가됩니다");
                 Money += 1000;
-                lb_Money.Text = Money.ToString();
+                lb_Money_tab1.Text = Money.ToString();
                 EsterEgg = false;
                 MoveWork(selectedPanel);
                 RemovePanel(selectedPanel);
@@ -408,14 +408,14 @@ namespace TeamProject
         {
             AddPanels(0, 10);
             Money -= 110;
-            lb_Money.Text = Money.ToString();
+            lb_Money_tab1.Text = Money.ToString();
         }
 
         private void btn_Test2_Click(object sender, EventArgs e)
         {
             AddPanels(3, 10);
             Money -= 330;
-            lb_Money.Text = Money.ToString();
+            lb_Money_tab1.Text = Money.ToString();
         }
 
 
@@ -423,7 +423,7 @@ namespace TeamProject
         {
             AddPanels(6, 10);
             Money -= 7700;
-            lb_Money.Text = Money.ToString();
+            lb_Money_tab1.Text = Money.ToString();
         }
 
 
@@ -520,6 +520,7 @@ namespace TeamProject
         {
             MessageBox.Show("우승!");
         }   
+
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -631,7 +632,7 @@ namespace TeamProject
                 {
                     pbBuildHP.Value = pbBuildHP.Minimum;    //HP = 0
                     Money += BuildReward[cbSelectBuild.SelectedIndex];             //건물 파괴 보상
-                    lb_Money.Text = Money.ToString();
+                    lb_Money_tab1.Text = Money.ToString();
                     ShowMessage($"{cbSelectBuild.SelectedIndex + 1}단계 건물을 파괴했습니다. (+{BuildReward[cbSelectBuild.SelectedIndex]}골드)");
                     tabControl1.TabPages[1].Controls.Remove(pnBuilding);
                     NewBuilding(cbSelectBuild.SelectedIndex);
@@ -808,7 +809,6 @@ namespace TeamProject
             Rectangle b8 = pstor8.Bounds;
             if (b1.IntersectsWith(b0))
             {
-
                 timerstorebay.Stop();
                 curr.Location = new Point(400, 400);
             }
