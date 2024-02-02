@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             pnBuild = new System.Windows.Forms.Panel();
             pbBuildHP = new System.Windows.Forms.ProgressBar();
             UnitPosition7 = new System.Windows.Forms.Panel();
@@ -54,7 +53,6 @@
             UnitPosition22 = new System.Windows.Forms.Panel();
             UnitPosition23 = new System.Windows.Forms.Panel();
             UnitPosition1 = new System.Windows.Forms.Panel();
-            contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(components);
             SuspendLayout();
             // 
             // pnBuild
@@ -256,11 +254,6 @@
             UnitPosition1.TabIndex = 4;
             UnitPosition1.Visible = false;
             // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new System.Drawing.Size(181, 26);
-            // 
             // form2
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -322,6 +315,5 @@
         private System.Windows.Forms.Panel UnitPosition22;
         private System.Windows.Forms.Panel UnitPosition23;
         private System.Windows.Forms.Panel UnitPosition1;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

@@ -144,7 +144,8 @@ namespace TeamProject
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MobleTeamProject_Gambling));
-            lbox_Chat_tab1 = new System.Windows.Forms.ListBox();
+            lbox_Chat_tab1 = new System.Windows.Forms.ListBox(); 
+            lbox_Chat_tab3 = new System.Windows.Forms.ListBox(); 
             panel_Upgrade = new System.Windows.Forms.Panel();
             label1 = new System.Windows.Forms.Label();
             flowLayoutPanel2 = new System.Windows.Forms.Panel();
@@ -242,7 +243,12 @@ namespace TeamProject
             pbBuildHP = new System.Windows.Forms.ProgressBar();
             panel3 = new System.Windows.Forms.Panel();
             tabPage3 = new System.Windows.Forms.TabPage();
-            lbox_Chat_tab3 = new System.Windows.Forms.ListBox();
+            pictureBox18 = new System.Windows.Forms.PictureBox();
+            pictureBox17 = new System.Windows.Forms.PictureBox();
+            pictureBox16 = new System.Windows.Forms.PictureBox();
+            label20 = new System.Windows.Forms.Label();
+            label19 = new System.Windows.Forms.Label();
+            label9 = new System.Windows.Forms.Label();
             lb_Money_tab3 = new System.Windows.Forms.Label();
             pn_Store_6 = new System.Windows.Forms.Panel();
             pn_Store_7 = new System.Windows.Forms.Panel();
@@ -257,6 +263,7 @@ namespace TeamProject
             Allview0_value = new System.Windows.Forms.Label();
             timerstore = new System.Windows.Forms.Timer(components);
             timerstorebay = new System.Windows.Forms.Timer(components);
+            building = new System.Windows.Forms.ImageList(components);
             //building = new System.Windows.Forms.ImageList(components);
             label9 = new System.Windows.Forms.Label();
             label19 = new System.Windows.Forms.Label();
@@ -300,10 +307,10 @@ namespace TeamProject
             panel18.SuspendLayout();
             panel17.SuspendLayout();
             tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictstore).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox17).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox18).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox17).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictstore).BeginInit();
             SuspendLayout();
             // 
             // lbox_Chat_tab1
@@ -315,6 +322,16 @@ namespace TeamProject
             lbox_Chat_tab1.Name = "lbox_Chat_tab1";
             lbox_Chat_tab1.Size = new System.Drawing.Size(379, 100);
             lbox_Chat_tab1.TabIndex = 0;
+            // 
+            // lbox_Chat_tab3
+            // 
+            lbox_Chat_tab3.Font = new System.Drawing.Font("바탕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lbox_Chat_tab3.FormattingEnabled = true;
+            lbox_Chat_tab3.ItemHeight = 16;
+            lbox_Chat_tab3.Location = new System.Drawing.Point(39, 708);
+            lbox_Chat_tab3.Name = "lbox_Chat_tab3";
+            lbox_Chat_tab3.Size = new System.Drawing.Size(379, 100);
+            lbox_Chat_tab3.TabIndex = 0;
             // 
             // panel_Upgrade
             // 
@@ -1085,6 +1102,7 @@ namespace TeamProject
             tabPage1.Controls.Add(btn_Test2);
             tabPage1.Controls.Add(btn_Test);
             tabPage1.Controls.Add(lbox_Chat_tab1);
+            tabPage1.Controls.Add(lbox_Chat_tab3);
             tabPage1.Controls.Add(pictureBox2);
             tabPage1.Controls.Add(panel1);
             tabPage1.Controls.Add(panel15);
@@ -1497,7 +1515,8 @@ namespace TeamProject
             // tabPage3
             // 
             tabPage3.BackColor = System.Drawing.Color.White;
-            tabPage3.Controls.Add(lbox_Chat_tab3);
+            tabPage3.BackgroundImage = Properties.Resources.mine_map;
+            tabPage3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             tabPage3.Controls.Add(pictureBox18);
             tabPage3.Controls.Add(pictureBox17);
             tabPage3.Controls.Add(pictureBox16);
@@ -1521,15 +1540,63 @@ namespace TeamProject
             tabPage3.TabIndex = 2;
             tabPage3.Text = "상점";
             // 
-            // lbox_Chat_tab3
+            // pictureBox18
             // 
-            lbox_Chat_tab3.Font = new System.Drawing.Font("바탕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lbox_Chat_tab3.FormattingEnabled = true;
-            lbox_Chat_tab3.ItemHeight = 16;
-            lbox_Chat_tab3.Location = new System.Drawing.Point(39, 708);
-            lbox_Chat_tab3.Name = "lbox_Chat_tab3";
-            lbox_Chat_tab3.Size = new System.Drawing.Size(379, 100);
-            lbox_Chat_tab3.TabIndex = 3;
+            pictureBox18.Image = Properties.Resources.knight;
+            pictureBox18.Location = new System.Drawing.Point(656, 103);
+            pictureBox18.Name = "pictureBox18";
+            pictureBox18.Size = new System.Drawing.Size(50, 50);
+            pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox18.TabIndex = 4;
+            pictureBox18.TabStop = false;
+            // 
+            // pictureBox17
+            // 
+            pictureBox17.Image = Properties.Resources.peasent;
+            pictureBox17.Location = new System.Drawing.Point(216, 103);
+            pictureBox17.Name = "pictureBox17";
+            pictureBox17.Size = new System.Drawing.Size(50, 50);
+            pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox17.TabIndex = 4;
+            pictureBox17.TabStop = false;
+            pictureBox17.Click += pictureBox17_Click;
+            // 
+            // pictureBox16
+            // 
+            pictureBox16.Image = Properties.Resources.worker_high;
+            pictureBox16.Location = new System.Drawing.Point(431, 98);
+            pictureBox16.Name = "pictureBox16";
+            pictureBox16.Size = new System.Drawing.Size(50, 50);
+            pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox16.TabIndex = 4;
+            pictureBox16.TabStop = false;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new System.Drawing.Point(576, 103);
+            label20.Name = "label20";
+            label20.Size = new System.Drawing.Size(74, 45);
+            label20.TabIndex = 3;
+            label20.Text = "기사\n가격:7700원\r\n+10개";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new System.Drawing.Point(358, 103);
+            label19.Name = "label19";
+            label19.Size = new System.Drawing.Size(67, 45);
+            label19.TabIndex = 3;
+            label19.Text = "상급일꾼\r\n가격:330원\r\n+10개";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(143, 103);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(67, 45);
+            label9.TabIndex = 3;
+            label9.Text = "하급농부\r\n가격:110원\r\n+10개";
             // 
             // lb_Money_tab3
             // 
@@ -1544,7 +1611,7 @@ namespace TeamProject
             // pn_Store_6
             // 
             pn_Store_6.BackColor = System.Drawing.Color.Blue;
-            pn_Store_6.Location = new System.Drawing.Point(660, 549);
+            pn_Store_6.Location = new System.Drawing.Point(660, 632);
             pn_Store_6.Name = "pn_Store_6";
             pn_Store_6.Size = new System.Drawing.Size(83, 73);
             pn_Store_6.TabIndex = 1;
@@ -1552,7 +1619,7 @@ namespace TeamProject
             // pn_Store_7
             // 
             pn_Store_7.BackColor = System.Drawing.Color.Blue;
-            pn_Store_7.Location = new System.Drawing.Point(374, 549);
+            pn_Store_7.Location = new System.Drawing.Point(374, 632);
             pn_Store_7.Name = "pn_Store_7";
             pn_Store_7.Size = new System.Drawing.Size(83, 73);
             pn_Store_7.TabIndex = 1;
@@ -1560,7 +1627,7 @@ namespace TeamProject
             // pn_Store_8
             // 
             pn_Store_8.BackColor = System.Drawing.Color.Blue;
-            pn_Store_8.Location = new System.Drawing.Point(184, 549);
+            pn_Store_8.Location = new System.Drawing.Point(184, 632);
             pn_Store_8.Name = "pn_Store_8";
             pn_Store_8.Size = new System.Drawing.Size(83, 73);
             pn_Store_8.TabIndex = 1;
@@ -1584,25 +1651,31 @@ namespace TeamProject
             // pn_Store_3
             // 
             pn_Store_3.BackColor = System.Drawing.Color.Red;
-            pn_Store_3.Location = new System.Drawing.Point(594, 151);
+            //pn_Store_3.BackgroundImage = Properties.Resources.house3;
+            pn_Store_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pn_Store_3.Location = new System.Drawing.Point(600, 151);
             pn_Store_3.Name = "pn_Store_3";
-            pn_Store_3.Size = new System.Drawing.Size(83, 73);
+            pn_Store_3.Size = new System.Drawing.Size(97, 89);
             pn_Store_3.TabIndex = 1;
             // 
             // pn_Store_2
             // 
             pn_Store_2.BackColor = System.Drawing.Color.Red;
+            //pn_Store_2.BackgroundImage = Properties.Resources.house2;
+            pn_Store_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             pn_Store_2.Location = new System.Drawing.Point(374, 151);
             pn_Store_2.Name = "pn_Store_2";
-            pn_Store_2.Size = new System.Drawing.Size(83, 73);
+            pn_Store_2.Size = new System.Drawing.Size(98, 89);
             pn_Store_2.TabIndex = 1;
             // 
             // pn_Store_1
             // 
             pn_Store_1.BackColor = System.Drawing.Color.Red;
+            //pn_Store_1.BackgroundImage = Properties.Resources.house1;
+            pn_Store_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             pn_Store_1.Location = new System.Drawing.Point(158, 151);
             pn_Store_1.Name = "pn_Store_1";
-            pn_Store_1.Size = new System.Drawing.Size(83, 73);
+            pn_Store_1.Size = new System.Drawing.Size(91, 89);
             pn_Store_1.TabIndex = 1;
             // 
             // pictstore
@@ -1633,13 +1706,13 @@ namespace TeamProject
             // 
             // building
             // 
-            //building.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            //building.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("building.ImageStream");
-            //building.TransparentColor = System.Drawing.Color.Transparent;
-            //building.Images.SetKeyName(0, "build_1.png");
-            //building.Images.SetKeyName(1, "build_2.png");
-            //building.Images.SetKeyName(2, "build_3.png");
-            //building.Images.SetKeyName(3, "build_4.png");
+            building.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            building.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("building.ImageStream");
+            building.TransparentColor = System.Drawing.Color.Transparent;
+            building.Images.SetKeyName(0, "build_1.png");
+            building.Images.SetKeyName(1, "build_2.png");
+            building.Images.SetKeyName(2, "build_3.png");
+            building.Images.SetKeyName(3, "build_4.png");
             // 
             // label9
             // 
@@ -1763,16 +1836,17 @@ namespace TeamProject
             panel17.PerformLayout();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictstore).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox17).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox18).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox17).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictstore).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private System.Windows.Forms.ListBox lbox_Chat_tab1;
+        private System.Windows.Forms.ListBox lbox_Chat_tab3;
         private System.Windows.Forms.Panel panel_Main;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lb_Money_tab1;
@@ -1887,7 +1961,6 @@ namespace TeamProject
         private System.Windows.Forms.Label lb_Money_tab2;
         private System.Windows.Forms.Label lb_Money_tab3;
         private System.Windows.Forms.Panel pn_Store_2;
-        private System.Windows.Forms.ListBox lbox_Chat_tab3;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
