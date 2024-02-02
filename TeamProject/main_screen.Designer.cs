@@ -97,7 +97,6 @@
             button1.Text = "시작하기";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
-            button1.MouseMove += button1_MouseMove;
             // 
             // pictureBox3
             // 
@@ -138,7 +137,6 @@
             button2.Text = "게임방법";
             button2.UseVisualStyleBackColor = false;
             button2.Click += button2_Click;
-            button2.MouseHover += button2_MouseHover;
             // 
             // game_exit
             // 
