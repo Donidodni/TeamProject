@@ -54,13 +54,7 @@ namespace TeamProject
             InitializePanelMovement();//상점 캐릭터 이동
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (tabControl1.SelectedTab == tabPage3)
-            {
-                tabPage3.Focus();
-            }
-        }
+        
 
         void AddPanels(int type, int count) // type만큼 강화된 무기 count만큼 생성
         {
@@ -688,7 +682,14 @@ namespace TeamProject
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
         /*상점 코드*/
-        
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab == tabPage3)
+            {
+                tabPage3.Focus();
+            }
+        }
+
         private Panel Panel2;
         private PictureBox curr;
         // 이동 거리
