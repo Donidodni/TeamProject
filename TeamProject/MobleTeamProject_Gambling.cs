@@ -31,7 +31,7 @@ namespace TeamProject
         Dictionary<int, WeaponUpgrade> weaponsDictionary = new Dictionary<int, WeaponUpgrade>(); //키,값 형태로 무기강화별 정보를 저장
         Dictionary<Panel, Timer> timerDictionary = new Dictionary<Panel, Timer>(); //패널마다 타이머를 달아주어 개별 행동 가능
         List<Panel> MainPanelList = new List<Panel>(); // 무기들 랜덤생성시 중복 검사
-        int[] SuccessProbability = { 95, 85, 75, 60, 40, 30, 25, 15, 10 }; //강화 확률
+        int[] SuccessProbability = { 90, 80, 70, 60, 40, 25, 15, 10, 5 }; //강화 확률
         int workX = 670; // 패널이 일터로 갈 수 있는 X좌표
         int upgradeY = -90; // 패널이 강화할 수 있는 Y좌표
         public bool EsterEgg = true;
@@ -51,7 +51,7 @@ namespace TeamProject
             InitializeWeaponsList(); // 0~10강 무기를 담을 리스트 생성
             Money = 0;
             ingame_bgm.Play(); // 김민석 - 해당 코드를 지움으로써 디버깅시 음악을 제거할 수 있습니다.
-            lb_Money.Text = Money.ToString() + " 골드";
+            MoneyResult();
             InitializePanelMovement();//상점 캐릭터 이동
         }
 
@@ -66,7 +66,7 @@ namespace TeamProject
                 {
                     Random random = new Random();
                     int x = random.Next(0, 10); // 메인 패널 생성숫자 조절가능
-                    int y = random.Next(2, 8);  // 메인 패널 생성숫자 조절가능
+                    int y = random.Next(0, 6);  // 메인 패널 생성숫자 조절가능
                     int limit = 10 * 6;  // x의 경우의 수 * y의 경우의 수
 
                     WeaponUpgrade existingWeapon = weaponsDictionary[type]; // Dictionary로 type강의 무기 정보를 가져옴
@@ -87,7 +87,7 @@ namespace TeamProject
                     while (CheckOverlap(testPanel, MainPanelList) && MainPanelList.Count != limit) // 이미 그 자리에 생성되있는지 체크
                     {
                         x = random.Next(0, 10);
-                        y = random.Next(2, 8);
+                        y = random.Next(0, 6);
                         testPanel.Location = new Point(x * 50, y * 50);
                     }
                     testPanel.Click += Panel_Click;
@@ -281,11 +281,16 @@ namespace TeamProject
             string[] tagParts = tagString.Split(',');
             if (tagParts.Length < 3)
                 return;
+            if (int.Parse(tagParts[0]) == 8)
+            {
+                EndGame();
+            }
 
             if (int.TryParse(tagParts[2].Trim(), out int price))
             {
                 Money += price;
-                lb_Money.Text = $"{Money} 골드";
+                MoneyResult();
+                ShowMessage($"{tagParts[3]}를 {price}원에 판매하였습니다.");
                 RemovePanel(clickedPanel);
             }
 
@@ -306,7 +311,7 @@ namespace TeamProject
             {
                 ShowMessage("이스터에그 발견! 1000골드가 추가됩니다");
                 Money += 1000;
-                lb_Money.Text = Money.ToString();
+                MoneyResult();  
                 EsterEgg = false;
                 MoveWork(selectedPanel);
                 RemovePanel(selectedPanel);
@@ -403,15 +408,23 @@ namespace TeamProject
         private void btn_Test_Click(object sender, EventArgs e)
         {
             AddPanels(0, 10);
-            Money -= 100;
-            lb_Money.Text = Money.ToString();
+            Money -= 110;
+            MoneyResult();  
         }
 
         private void btn_Test2_Click(object sender, EventArgs e)
         {
             AddPanels(3, 10);
-            Money -= 300;
-            lb_Money.Text = Money.ToString();
+            Money -= 330;
+            MoneyResult();
+        }
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            AddPanels(6, 10);
+            Money -= 7700;
+            MoneyResult();
         }
 
 
@@ -502,6 +515,19 @@ namespace TeamProject
             RemoveButtons();
         }
 
+        private void EndGame()
+        {
+            MessageBox.Show("우승!");
+        }   
+
+        private void MoneyResult()
+        {
+            lb_Money_tab1.Text = $"{Money}";
+            lb_Money_tab2.Text = $"{Money}";
+            lb_Money_tab3.Text = $"{Money}";
+        }
+
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////강화소///////////////////////////////////////////////////////
@@ -516,7 +542,7 @@ namespace TeamProject
         bool[] full = new bool[20];  //array 인덱스 좌표에 패널 할당 여부 초기값 false
         int[] Attack = new int[20];  //좌표마다 유닛의 공격력 값
         int[] BuildArmor = { 1, 100, 400, 1000, 3000 };  //단계별 빌딩 방어력
-        int[] BuildReward = { 50, 200, 900, 2400, 12000 };    //빌딩 단계별 보상
+        int[] BuildReward = { 30, 100, 400, 1000, 3000 };    //빌딩 단계별 보상
         int TurretAttack = 3;
 
         private void Move(Panel weapon)
@@ -647,15 +673,14 @@ namespace TeamProject
                 if (pbBuildHP.Value > Attacksum - BuildArmor[cbSelectBuild.SelectedIndex] && pbBuildHP.Value > 0)
                 {
                     //공격력이 방어력보다 클 때만 공격
-                    if (Attacksum >= BuildArmor[cbSelectBuild.SelectedIndex])
-                        pbBuildHP.Value -= Attacksum - BuildArmor[cbSelectBuild.SelectedIndex];
+                    pbBuildHP.Value -= Attacksum - BuildArmor[cbSelectBuild.SelectedIndex];
                 }
                 //건물 파괴 시
                 else
                 {
                     pbBuildHP.Value = pbBuildHP.Minimum;    //HP = 0
                     Money += BuildReward[cbSelectBuild.SelectedIndex];             //건물 파괴 보상
-                    lb_Money.Text = Money.ToString();
+                    lb_Money_tab1.Text = Money.ToString();
                     ShowMessage($"{cbSelectBuild.SelectedIndex + 1}단계 건물을 파괴했습니다. (+{BuildReward[cbSelectBuild.SelectedIndex]}골드)");
                     tabControl1.TabPages[1].Controls.Remove(pnBuilding);
                     NewBuilding(cbSelectBuild.SelectedIndex);
@@ -692,7 +717,7 @@ namespace TeamProject
             pbBuildHP.Minimum = 0;
 
             Color[] BColor = { Color.Black, Color.Red, Color.Pink, Color.Plum, Color.Gold }; //단계별 빌딩 색상
-            int[] BuildHP = { 100, 500, 3000, 10000, 50000 };  //단계별 빌딩 HP
+            int[] BuildHP = { 100, 500, 5000, 15000, 100000 };  //단계별 빌딩 HP
             //빌딩 생성
             // pnBuilding.BackColor = BColor[BLevel];
             pnBuilding.BackgroundImage = building.Images[BLevel];   //이미지로 넣을 경우
@@ -861,7 +886,6 @@ namespace TeamProject
             
             if (b1.IntersectsWith(b0))
             {
-
                 timerstorebay.Stop();
                 curr.Location = new Point(400, 400);
             }
