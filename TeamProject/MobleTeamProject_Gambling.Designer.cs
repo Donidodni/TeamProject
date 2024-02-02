@@ -246,6 +246,10 @@ namespace TeamProject
             pbBuildHP = new System.Windows.Forms.ProgressBar();
             panel3 = new System.Windows.Forms.Panel();
             tabPage3 = new System.Windows.Forms.TabPage();
+            panel5 = new System.Windows.Forms.Panel();
+            pictureBox20 = new System.Windows.Forms.PictureBox();
+            label27 = new System.Windows.Forms.Label();
+            lb_Money_tab3_1 = new System.Windows.Forms.Label();
             pictureBox18 = new System.Windows.Forms.PictureBox();
             pictureBox17 = new System.Windows.Forms.PictureBox();
             pictureBox16 = new System.Windows.Forms.PictureBox();
@@ -271,10 +275,7 @@ namespace TeamProject
             timerstore = new System.Windows.Forms.Timer(components);
             timerstorebay = new System.Windows.Forms.Timer(components);
             building = new System.Windows.Forms.ImageList(components);
-            panel5 = new System.Windows.Forms.Panel();
-            pictureBox20 = new System.Windows.Forms.PictureBox();
-            label27 = new System.Windows.Forms.Label();
-            lb_Money_tab3_1 = new System.Windows.Forms.Label();
+            build = new System.Windows.Forms.ImageList(components);
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             panel14.SuspendLayout();
@@ -313,6 +314,8 @@ namespace TeamProject
             panel18.SuspendLayout();
             panel17.SuspendLayout();
             tabPage3.SuspendLayout();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox20).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox18).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox17).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
@@ -325,8 +328,6 @@ namespace TeamProject
             pn_Store_2.SuspendLayout();
             pn_Store_1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictstore).BeginInit();
-            panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox20).BeginInit();
             SuspendLayout();
             // 
             // lbox_Chat_tab1
@@ -925,8 +926,10 @@ namespace TeamProject
             characters.Images.SetKeyName(4, "soldier.png");
             characters.Images.SetKeyName(5, "soldier_low.png");
             characters.Images.SetKeyName(6, "knight_low.png");
-            characters.Images.SetKeyName(7, "warrior_low.png");
-            characters.Images.SetKeyName(8, "warrior_high.png");
+            characters.Images.SetKeyName(7, "knight_high.png");
+            characters.Images.SetKeyName(8, "warrior_low.png");
+            characters.Images.SetKeyName(9, "warrior_high.png");
+            characters.Images.SetKeyName(10, "gold_soldier.png");
             // 
             // btn_All1
             // 
@@ -1337,7 +1340,7 @@ namespace TeamProject
             // 
             // panel4
             // 
-            panel4.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            panel4.BackColor = System.Drawing.Color.Transparent;
             panel4.BackgroundImage = Properties.Resources.LongMessage;
             panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             panel4.Controls.Add(pictureBox19);
@@ -1592,6 +1595,55 @@ namespace TeamProject
             tabPage3.TabIndex = 2;
             tabPage3.Text = "상점";
             // 
+            // panel5
+            // 
+            panel5.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            panel5.BackgroundImage = Properties.Resources.LongMessage;
+            panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            panel5.Controls.Add(pictureBox20);
+            panel5.Controls.Add(label27);
+            panel5.Controls.Add(lb_Money_tab3_1);
+            panel5.Location = new System.Drawing.Point(23, 5);
+            panel5.Margin = new System.Windows.Forms.Padding(2);
+            panel5.Name = "panel5";
+            panel5.Size = new System.Drawing.Size(375, 50);
+            panel5.TabIndex = 24;
+            // 
+            // pictureBox20
+            // 
+            pictureBox20.BackColor = System.Drawing.Color.Transparent;
+            pictureBox20.Image = Properties.Resources.money;
+            pictureBox20.Location = new System.Drawing.Point(18, 1);
+            pictureBox20.Margin = new System.Windows.Forms.Padding(2);
+            pictureBox20.Name = "pictureBox20";
+            pictureBox20.Size = new System.Drawing.Size(52, 45);
+            pictureBox20.TabIndex = 1;
+            pictureBox20.TabStop = false;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.BackColor = System.Drawing.Color.Transparent;
+            label27.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label27.ForeColor = System.Drawing.Color.White;
+            label27.Location = new System.Drawing.Point(77, 11);
+            label27.Name = "label27";
+            label27.Size = new System.Drawing.Size(101, 25);
+            label27.TabIndex = 0;
+            label27.Text = "보유 골드 :";
+            // 
+            // lb_Money_tab3_1
+            // 
+            lb_Money_tab3_1.AutoSize = true;
+            lb_Money_tab3_1.BackColor = System.Drawing.Color.Transparent;
+            lb_Money_tab3_1.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lb_Money_tab3_1.ForeColor = System.Drawing.Color.White;
+            lb_Money_tab3_1.Location = new System.Drawing.Point(195, 10);
+            lb_Money_tab3_1.Name = "lb_Money_tab3_1";
+            lb_Money_tab3_1.Size = new System.Drawing.Size(95, 25);
+            lb_Money_tab3_1.TabIndex = 0;
+            lb_Money_tab3_1.Text = "lb_Money";
+            // 
             // pictureBox18
             // 
             pictureBox18.Image = Properties.Resources.knight;
@@ -1805,54 +1857,16 @@ namespace TeamProject
             building.Images.SetKeyName(2, "build_3.png");
             building.Images.SetKeyName(3, "build_4.png");
             // 
-            // panel5
+            // build
             // 
-            panel5.BackColor = System.Drawing.SystemColors.ActiveBorder;
-            panel5.BackgroundImage = Properties.Resources.LongMessage;
-            panel5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            panel5.Controls.Add(pictureBox20);
-            panel5.Controls.Add(label27);
-            panel5.Controls.Add(lb_Money_tab3_1);
-            panel5.Location = new System.Drawing.Point(23, 5);
-            panel5.Margin = new System.Windows.Forms.Padding(2);
-            panel5.Name = "panel5";
-            panel5.Size = new System.Drawing.Size(375, 50);
-            panel5.TabIndex = 24;
-            // 
-            // pictureBox20
-            // 
-            pictureBox20.BackColor = System.Drawing.Color.Transparent;
-            pictureBox20.Image = Properties.Resources.money;
-            pictureBox20.Location = new System.Drawing.Point(18, 1);
-            pictureBox20.Margin = new System.Windows.Forms.Padding(2);
-            pictureBox20.Name = "pictureBox20";
-            pictureBox20.Size = new System.Drawing.Size(52, 45);
-            pictureBox20.TabIndex = 1;
-            pictureBox20.TabStop = false;
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.BackColor = System.Drawing.Color.Transparent;
-            label27.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label27.ForeColor = System.Drawing.Color.White;
-            label27.Location = new System.Drawing.Point(77, 11);
-            label27.Name = "label27";
-            label27.Size = new System.Drawing.Size(101, 25);
-            label27.TabIndex = 0;
-            label27.Text = "보유 골드 :";
-            // 
-            // lb_Money_tab3_1
-            // 
-            lb_Money_tab3_1.AutoSize = true;
-            lb_Money_tab3_1.BackColor = System.Drawing.Color.Transparent;
-            lb_Money_tab3_1.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lb_Money_tab3_1.ForeColor = System.Drawing.Color.White;
-            lb_Money_tab3_1.Location = new System.Drawing.Point(195, 10);
-            lb_Money_tab3_1.Name = "lb_Money_tab3_1";
-            lb_Money_tab3_1.Size = new System.Drawing.Size(95, 25);
-            lb_Money_tab3_1.TabIndex = 0;
-            lb_Money_tab3_1.Text = "lb_Money";
+            build.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            build.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("build.ImageStream");
+            build.TransparentColor = System.Drawing.Color.Transparent;
+            build.Images.SetKeyName(0, "build_1.png");
+            build.Images.SetKeyName(1, "build_2.png");
+            build.Images.SetKeyName(2, "build_3.png");
+            build.Images.SetKeyName(3, "build_4.png");
+            build.Images.SetKeyName(4, "build_5.png");
             // 
             // MobleTeamProject_Gambling
             // 
@@ -1920,6 +1934,9 @@ namespace TeamProject
             panel17.ResumeLayout(false);
             panel17.PerformLayout();
             tabPage3.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox20).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox18).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox17).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
@@ -1940,9 +1957,6 @@ namespace TeamProject
             pn_Store_1.ResumeLayout(false);
             pn_Store_1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictstore).EndInit();
-            panel5.ResumeLayout(false);
-            panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox20).EndInit();
             ResumeLayout(false);
         }
 
@@ -2081,5 +2095,6 @@ namespace TeamProject
         private System.Windows.Forms.PictureBox pictureBox20;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label lb_Money_tab3_1;
+        private System.Windows.Forms.ImageList build;
     }
 }

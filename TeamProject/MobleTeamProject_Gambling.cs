@@ -734,7 +734,8 @@ namespace TeamProject
 
         private void NewBuilding(int BLevel)    //BLevel = cbSelectBuild.SelectedIndex
         {
-            pnBuilding.Location = new Point(200, 170);   //건물 생성 좌표 설정
+            pnBuilding.Location = new Point(200, 170);
+            pnBuilding.BackgroundImage = build.Images[BLevel];//건물 생성 좌표 설정
             pnBuilding.Size = new Size(500, 386); // 패널 크기 설정
             pbBuildHP.Minimum = 0;
 
