@@ -264,6 +264,11 @@ namespace TeamProject
             timerstore = new System.Windows.Forms.Timer(components);
             timerstorebay = new System.Windows.Forms.Timer(components);
             building = new System.Windows.Forms.ImageList(components);
+            label21 = new System.Windows.Forms.Label();
+            label22 = new System.Windows.Forms.Label();
+            label24 = new System.Windows.Forms.Label();
+            label25 = new System.Windows.Forms.Label();
+            label26 = new System.Windows.Forms.Label();
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             panel14.SuspendLayout();
@@ -303,6 +308,14 @@ namespace TeamProject
             ((System.ComponentModel.ISupportInitialize)pictureBox18).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox17).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox16).BeginInit();
+            pn_Store_6.SuspendLayout();
+            pn_Store_7.SuspendLayout();
+            pn_Store_8.SuspendLayout();
+            pn_Store_5.SuspendLayout();
+            pn_Store_4.SuspendLayout();
+            pn_Store_3.SuspendLayout();
+            pn_Store_2.SuspendLayout();
+            pn_Store_1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictstore).BeginInit();
             SuspendLayout();
             // 
@@ -1512,9 +1525,6 @@ namespace TeamProject
             tabPage3.Controls.Add(pictureBox18);
             tabPage3.Controls.Add(pictureBox17);
             tabPage3.Controls.Add(pictureBox16);
-            tabPage3.Controls.Add(label20);
-            tabPage3.Controls.Add(label19);
-            tabPage3.Controls.Add(label9);
             tabPage3.Controls.Add(lb_Money_tab3);
             tabPage3.Controls.Add(pn_Store_6);
             tabPage3.Controls.Add(pn_Store_7);
@@ -1526,6 +1536,7 @@ namespace TeamProject
             tabPage3.Controls.Add(pn_Store_1);
             tabPage3.Controls.Add(lbox_Chat_tab3);
             tabPage3.Controls.Add(pictstore);
+            tabPage3.Controls.Add(lbox_Chat_tab3);
             tabPage3.Location = new System.Drawing.Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -1556,7 +1567,7 @@ namespace TeamProject
             // pictureBox16
             // 
             pictureBox16.Image = Properties.Resources.worker_high;
-            pictureBox16.Location = new System.Drawing.Point(431, 98);
+            pictureBox16.Location = new System.Drawing.Point(431, 103);
             pictureBox16.Name = "pictureBox16";
             pictureBox16.Size = new System.Drawing.Size(50, 50);
             pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1566,7 +1577,7 @@ namespace TeamProject
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new System.Drawing.Point(576, 103);
+            label20.Location = new System.Drawing.Point(3, 25);
             label20.Name = "label20";
             label20.Size = new System.Drawing.Size(74, 45);
             label20.TabIndex = 3;
@@ -1575,7 +1586,7 @@ namespace TeamProject
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new System.Drawing.Point(358, 103);
+            label19.Location = new System.Drawing.Point(16, 14);
             label19.Name = "label19";
             label19.Size = new System.Drawing.Size(67, 45);
             label19.TabIndex = 3;
@@ -1584,7 +1595,7 @@ namespace TeamProject
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(143, 103);
+            label9.Location = new System.Drawing.Point(21, 25);
             label9.Name = "label9";
             label9.Size = new System.Drawing.Size(67, 45);
             label9.TabIndex = 3;
@@ -1603,7 +1614,8 @@ namespace TeamProject
             // pn_Store_6
             // 
             pn_Store_6.BackColor = System.Drawing.Color.Blue;
-            pn_Store_6.Location = new System.Drawing.Point(660, 632);
+            pn_Store_6.Controls.Add(label26);
+            pn_Store_6.Location = new System.Drawing.Point(636, 554);
             pn_Store_6.Name = "pn_Store_6";
             pn_Store_6.Size = new System.Drawing.Size(83, 73);
             pn_Store_6.TabIndex = 1;
@@ -1611,22 +1623,25 @@ namespace TeamProject
             // pn_Store_7
             // 
             pn_Store_7.BackColor = System.Drawing.Color.Blue;
+            pn_Store_7.Controls.Add(label24);
             pn_Store_7.Location = new System.Drawing.Point(374, 632);
             pn_Store_7.Name = "pn_Store_7";
-            pn_Store_7.Size = new System.Drawing.Size(83, 73);
+            pn_Store_7.Size = new System.Drawing.Size(116, 73);
             pn_Store_7.TabIndex = 1;
             // 
             // pn_Store_8
             // 
             pn_Store_8.BackColor = System.Drawing.Color.Blue;
-            pn_Store_8.Location = new System.Drawing.Point(184, 632);
+            pn_Store_8.Controls.Add(label25);
+            pn_Store_8.Location = new System.Drawing.Point(156, 632);
             pn_Store_8.Name = "pn_Store_8";
-            pn_Store_8.Size = new System.Drawing.Size(83, 73);
+            pn_Store_8.Size = new System.Drawing.Size(111, 73);
             pn_Store_8.TabIndex = 1;
             // 
             // pn_Store_5
             // 
             pn_Store_5.BackColor = System.Drawing.Color.Red;
+            pn_Store_5.Controls.Add(label22);
             pn_Store_5.Location = new System.Drawing.Point(642, 400);
             pn_Store_5.Name = "pn_Store_5";
             pn_Store_5.Size = new System.Drawing.Size(83, 73);
@@ -1635,6 +1650,7 @@ namespace TeamProject
             // pn_Store_4
             // 
             pn_Store_4.BackColor = System.Drawing.Color.Red;
+            pn_Store_4.Controls.Add(label21);
             pn_Store_4.Location = new System.Drawing.Point(642, 290);
             pn_Store_4.Name = "pn_Store_4";
             pn_Store_4.Size = new System.Drawing.Size(83, 73);
@@ -1644,6 +1660,7 @@ namespace TeamProject
             // 
             pn_Store_3.BackColor = System.Drawing.Color.Red;
             pn_Store_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pn_Store_3.Controls.Add(label20);
             pn_Store_3.Location = new System.Drawing.Point(600, 151);
             pn_Store_3.Name = "pn_Store_3";
             pn_Store_3.Size = new System.Drawing.Size(97, 89);
@@ -1653,6 +1670,7 @@ namespace TeamProject
             // 
             pn_Store_2.BackColor = System.Drawing.Color.Red;
             pn_Store_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pn_Store_2.Controls.Add(label19);
             pn_Store_2.Location = new System.Drawing.Point(374, 151);
             pn_Store_2.Name = "pn_Store_2";
             pn_Store_2.Size = new System.Drawing.Size(98, 89);
@@ -1662,7 +1680,8 @@ namespace TeamProject
             // 
             pn_Store_1.BackColor = System.Drawing.Color.Red;
             pn_Store_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pn_Store_1.Location = new System.Drawing.Point(158, 151);
+            pn_Store_1.Controls.Add(label9);
+            pn_Store_1.Location = new System.Drawing.Point(156, 151);
             pn_Store_1.Name = "pn_Store_1";
             pn_Store_1.Size = new System.Drawing.Size(91, 89);
             pn_Store_1.TabIndex = 1;
@@ -1695,9 +1714,58 @@ namespace TeamProject
             // 
             // building
             // 
-            building.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
-            building.ImageSize = new System.Drawing.Size(16, 16);
+            building.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            building.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("building.ImageStream");
             building.TransparentColor = System.Drawing.Color.Transparent;
+            building.Images.SetKeyName(0, "build_1.png");
+            building.Images.SetKeyName(1, "build_2.png");
+            building.Images.SetKeyName(2, "build_3.png");
+            building.Images.SetKeyName(3, "build_4.png");
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new System.Drawing.Point(6, 19);
+            label21.Name = "label21";
+            label21.Size = new System.Drawing.Size(67, 30);
+            label21.TabIndex = 3;
+            label21.Text = "로또(하급)\r\n가격:300원\r\n";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new System.Drawing.Point(3, 23);
+            label22.Name = "label22";
+            label22.Size = new System.Drawing.Size(74, 30);
+            label22.TabIndex = 3;
+            label22.Text = "로또(중급)\r\n가격:3000원";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new System.Drawing.Point(9, 20);
+            label24.Name = "label24";
+            label24.Size = new System.Drawing.Size(107, 30);
+            label24.TabIndex = 3;
+            label24.Text = "강화 확률 증가(소)\r\n가격:1000원\r\n";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new System.Drawing.Point(1, 20);
+            label25.Name = "label25";
+            label25.Size = new System.Drawing.Size(107, 30);
+            label25.TabIndex = 3;
+            label25.Text = "강화 확률 증가(대)\r\n가격:20000원";
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new System.Drawing.Point(3, 23);
+            label26.Name = "label26";
+            label26.Size = new System.Drawing.Size(81, 30);
+            label26.TabIndex = 3;
+            label26.Text = "로또(상급)\r\n가격:50000원";
             // 
             // MobleTeamProject_Gambling
             // 
@@ -1767,6 +1835,22 @@ namespace TeamProject
             ((System.ComponentModel.ISupportInitialize)pictureBox18).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox17).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox16).EndInit();
+            pn_Store_6.ResumeLayout(false);
+            pn_Store_6.PerformLayout();
+            pn_Store_7.ResumeLayout(false);
+            pn_Store_7.PerformLayout();
+            pn_Store_8.ResumeLayout(false);
+            pn_Store_8.PerformLayout();
+            pn_Store_5.ResumeLayout(false);
+            pn_Store_5.PerformLayout();
+            pn_Store_4.ResumeLayout(false);
+            pn_Store_4.PerformLayout();
+            pn_Store_3.ResumeLayout(false);
+            pn_Store_3.PerformLayout();
+            pn_Store_2.ResumeLayout(false);
+            pn_Store_2.PerformLayout();
+            pn_Store_1.ResumeLayout(false);
+            pn_Store_1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictstore).EndInit();
             ResumeLayout(false);
         }
@@ -1895,5 +1979,10 @@ namespace TeamProject
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pictureBox18;
         private System.Windows.Forms.PictureBox pictureBox17;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label26;
     }
 }
