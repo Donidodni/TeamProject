@@ -19,7 +19,7 @@ namespace TeamProject
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MobleTeamProject_Gambling());
+            Application.Run(new main_screen());
         }
     }
 }
