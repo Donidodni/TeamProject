@@ -51,7 +51,7 @@ namespace TeamProject
             InitializeComponent();
             InitializeWeapons(); //Dictionary에 무기 정보 추가
             InitializeWeaponsList(); // 0~10강 무기를 담을 리스트 생성
-            Money = 0;
+            Money = 100000;
             limit = 10 * 6;  // x의 경우의 수 * y의 경우의 수
             boost = 0;
             ingame_bgm.Play(); // 김민석 - 해당 코드를 지움으로써 디버깅시 음악을 제거할 수 있습니다.
@@ -340,6 +340,15 @@ namespace TeamProject
             // 스크롤 아래로 이동
             lbox_Chat_tab3.SelectedIndex = lbox_Chat_tab3.Items.Count - 1;
             lbox_Chat_tab3.SelectedIndex = -1; // 선택 해제
+
+            while (lbox_Chat_tab1.Items.Count > 10)
+            {
+                lbox_Chat_tab1.Items.RemoveAt(0);
+            }
+            while (lbox_Chat_tab3.Items.Count > 10)
+            {
+                lbox_Chat_tab3.Items.RemoveAt(0);
+            }
         }
         private void MoveWork(Panel clickedPanel) // 일터로 이동
         {
@@ -365,14 +374,7 @@ namespace TeamProject
                 RemovePanel(clickedPanel);
                 AddPanels(int.Parse(tagParts[0]), 1);
             }
-            while (lbox_Chat_tab1.Items.Count > 10)
-            {
-                lbox_Chat_tab1.Items.RemoveAt(0);
-            }
-            while (lbox_Chat_tab3.Items.Count > 10)
-            {
-                lbox_Chat_tab3.Items.RemoveAt(0);
-            }
+            
         }
         private void btn_AllChoice_Click(object sender, EventArgs e) //모두 강화 버튼 보이게/안보이게
         {
@@ -468,16 +470,6 @@ namespace TeamProject
                 }
 
                 boost = 0;
-                // 최대 채팅 수를 10으로 제한하고 오래된 채팅 삭제
-                while (lbox_Chat_tab1.Items.Count > 10)
-                {
-                    lbox_Chat_tab1.Items.RemoveAt(0);
-                }
-
-                while (lbox_Chat_tab3.Items.Count > 10)
-                {
-                    lbox_Chat_tab3.Items.RemoveAt(0);
-                }
             }
 
         }
@@ -981,7 +973,7 @@ namespace TeamProject
             }
             else if (b8.IntersectsWith(b0)) // 확률 강화 상급. 20000원
             {
-                SellBoostItem_1(20000);
+                SellBoostItem_2(20000);
             }
         }
         private void Buyweapons(int type, int price)
@@ -1018,10 +1010,10 @@ namespace TeamProject
             Random random = new Random();
             int x = random.Next(1, 101);
             // 확률에 따른 결과 배열
-            string[] results = { "꽝", "중박", "대박", "초대박" };
+            string[] results = { "꽝", "대박", "초대박" };
 
             // 확률에 따라 결과 선택
-            int resultIndex = x <= 40 ? 0 : x <= 90 ? 1 : x <= 99 ? 2 : 3;
+            int resultIndex = x <= 55 ? 0 : x <= 95 ? 1 : 2;
             string result = results[resultIndex];
 
             if (Money < price)
@@ -1043,10 +1035,6 @@ namespace TeamProject
                     case "꽝":
                         ShowMessage("꽝!");
                         break;
-                    case "중박":
-                        ShowMessage("휴! 겨우 원금은 회수했습니다..");
-                        Money += price;
-                        break;
                     case "대박":
                         ShowMessage("대박! 2배를 얻었습니다");
                         Money += price * 2;
@@ -1066,17 +1054,25 @@ namespace TeamProject
         {
             timerstorebay.Stop();
             curr.Location = new Point(400, 400);
-            if(Money < price)
+            if (boost == 5)
             {
-                ShowMessage("돈이 부족하여 구매에 실패하였습니다.");
+                ShowMessage("이미 적용되었습니다.");
             }
             else
             {
-                ShowMessage("다음 던전이 조금 안전해진 느낌이 듭니다..");
-                boost = 5;
-                Money -= price;
-                MoneyResult();
+                if (Money < price)
+                {
+                    ShowMessage("돈이 부족하여 구매에 실패하였습니다.");
+                }
+                else
+                {
+                    ShowMessage("다음 던전이 조금 안전해진 느낌이 듭니다..");
+                    boost = 5;
+                    Money -= price;
+                    MoneyResult();
+                }
             }
+
             
         }
 
@@ -1084,17 +1080,25 @@ namespace TeamProject
         {
             timerstorebay.Stop();
             curr.Location = new Point(400, 400);
-            if(Money < price)
+            if (boost == 10)
             {
-                ShowMessage("돈이 부족하여 구매에 실패하였습니다.");
+                ShowMessage("이미 적용되었습니다.");
             }
             else
             {
-                ShowMessage("다음 던전이 많이 안전해진 느낌이 듭니다..");
-                boost = 10;
-                Money -= price;
-                MoneyResult();
+                if (Money < price)
+                {
+                    ShowMessage("돈이 부족하여 구매에 실패하였습니다.");
+                }
+                else
+                {
+                    ShowMessage("다음 던전이 많이 안전해진 느낌이 듭니다..");
+                    boost = 10;
+                    Money -= price;
+                    MoneyResult();
+                }
             }
+            
             
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
