@@ -102,9 +102,19 @@ namespace TeamProject.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
-        internal static System.Drawing.Bitmap build4 {
+        internal static System.Drawing.Bitmap build_4 {
             get {
-                object obj = ResourceManager.GetObject("build4", resourceCulture);
+                object obj = ResourceManager.GetObject("build_4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap build_5 {
+            get {
+                object obj = ResourceManager.GetObject("build_5", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -125,6 +135,16 @@ namespace TeamProject.Properties {
         internal static System.Drawing.Bitmap exit {
             get {
                 object obj = ResourceManager.GetObject("exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap gold_soldier {
+            get {
+                object obj = ResourceManager.GetObject("gold_soldier", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -165,6 +185,16 @@ namespace TeamProject.Properties {
         internal static System.Drawing.Bitmap knight {
             get {
                 object obj = ResourceManager.GetObject("knight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap knight_high {
+            get {
+                object obj = ResourceManager.GetObject("knight_high", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
