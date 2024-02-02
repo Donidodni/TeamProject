@@ -8,8 +8,10 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using WinFormsApp2;
 
 
 //const int one_to_two = 90;
@@ -49,6 +51,7 @@ namespace TeamProject
         private Panel clickedPanel;
 
         private int speed = 10; // 이동 속도 조절 가능
+        SoundPlayer ingame_bgm = new SoundPlayer(TeamProject.Properties.Resources.project_inbgm);
 
         public MobleTeamProject_Gambling()
         {
@@ -56,6 +59,7 @@ namespace TeamProject
             InitializeWeapons(); //Dictionary에 무기 정보 추가
             InitializeWeaponsList(); // 0~10강 무기를 담을 리스트 생성
             Money = 0;
+            ingame_bgm.Play(); // 김민석 - 해당 코드를 지움으로써 디버깅시 음악을 제거할 수 있습니다.
             lb_Money.Text = Money.ToString() + " 골드";
         }
 
@@ -190,14 +194,14 @@ namespace TeamProject
         {
             enhanceButton = new Button();
             enhanceButton.Text = "던전";
-            enhanceButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 10);
+            enhanceButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width + 20, clickedPanel.Location.Y + 10);
             enhanceButton.Click += (s, ev) => StartMovePanelUp(clickedPanel);
             panel_Main.Controls.Add(enhanceButton);
             enhanceButton.BringToFront();
 
             sendButton = new Button();
             sendButton.Text = "광산";
-            sendButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 40);
+            sendButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width + 20, clickedPanel.Location.Y + 40);
             // sendButton 클릭 이벤트 처리
             sendButton.Click += (s, ev) => StartMovePanelRight(clickedPanel);
             panel_Main.Controls.Add(sendButton);
@@ -205,7 +209,7 @@ namespace TeamProject
 
             sellButton = new Button();
             sellButton.Text = "판매";
-            sellButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width, clickedPanel.Location.Y + 70);
+            sellButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width + 20, clickedPanel.Location.Y + 70);
             // sellButton 클릭 이벤트 처리
             sellButton.Click += (s, ev) => Sell(clickedPanel);
             panel_Main.Controls.Add(sellButton);
@@ -216,14 +220,14 @@ namespace TeamProject
         {
             enhanceButton = new Button();
             enhanceButton.Text = "던전";
-            enhanceButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 10);
+            enhanceButton.Location = new Point(clickedButton.Location.X + clickedButton.Width + 20, clickedButton.Location.Y + 10);
             enhanceButton.Size = new Size(60, 25);
             enhanceButton.Click += (s, ev) => StartMove_FromButton_Up(clickedButton);
             flowLayoutPanel1.Controls.Add(enhanceButton);
 
             sendButton = new Button();
             sendButton.Text = "광산";
-            sendButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 40);
+            sendButton.Location = new Point(clickedButton.Location.X + clickedButton.Width + 20, clickedButton.Location.Y + 40);
             sendButton.Size = new Size(60, 25);
             // sendButton 클릭 이벤트 처리
             sendButton.Click += (s, ev) => StartMove_FromButton_Right(clickedButton);
@@ -231,7 +235,7 @@ namespace TeamProject
 
             sellButton = new Button();
             sellButton.Text = "판매";
-            sellButton.Location = new Point(clickedButton.Location.X + clickedButton.Width, clickedButton.Location.Y + 70);
+            sellButton.Location = new Point(clickedButton.Location.X + clickedButton.Width + 20, clickedButton.Location.Y + 70);
             sellButton.Size = new Size(60, 25);
             // sellButton 클릭 이벤트 처리
             sellButton.Click += (s, ev) => Sell_FromButton(clickedButton);
@@ -399,7 +403,7 @@ namespace TeamProject
 
         private void UpdateUnitCountLabel(Label label, int weaponIndex)
         {
-            label.Text = weapons[weaponIndex].Count.ToString() + " 개";
+            label.Text = weapons[weaponIndex].Count.ToString() + " 명";
         }
 
         private void btn_CreateAllButton(object sender, EventArgs e) //모두 강화 버튼 선택시 강화/일터/판매 보이게
@@ -610,7 +614,7 @@ namespace TeamProject
                 {
                     Attacksum += i;
                 }
-                if (pbBuildHP.Value > Attacksum)
+                if (pbBuildHP.Value > Attacksum + BuildArmor[cbSelectBuild.SelectedIndex])
                 {
                     //공격력이 방어력보다 클 때만 공격
                     if (Attacksum >= BuildArmor[cbSelectBuild.SelectedIndex])

@@ -29,14 +29,14 @@ namespace WinFormsApp2
 
         private void playSimpleSound(int play) // 매개변수 있는 음악 재생 메서드 입니다. 
         {
-  
-            SoundPlayer simpleSound = new SoundPlayer(@"C:\c#\WinFormsApp2\Properties\project_bgm.wav");// 배경 음악 경로(주의 : wav 파일만 인식하며, mp3 사용시 인식 불가 에러 뜸)          
+            SoundPlayer simpleSound = new SoundPlayer(TeamProject.Properties.Resources.project_bgm);// 배경 음악 경로(주의 : wav 파일만 인식하며, mp3 사용시 인식 불가 에러 뜸)          
             if (play == 1) simpleSound.Play(); // 매개변수를 사용하여 음악 재생을 컨트롤 합니다. 
             else simpleSound.Stop();
         }
         private void playDingSound(int play)
         {
-            SoundPlayer DingSound = new SoundPlayer(@"C:\c#\WinFormsApp2\Resources\bing_sound.wav");
+
+            SoundPlayer DingSound = new SoundPlayer(TeamProject.Properties.Resources.bing_sound);
             if (play == 1) DingSound.Play(); // 매개변수를 사용하여 음악 재생을 컨트롤 합니다. 
             else DingSound.Stop();
             //Media Player 가 동시 재생이 안되는 문제가 있습니다.
@@ -49,7 +49,7 @@ namespace WinFormsApp2
         {
             second_count++; // 그라데이션 전용 카운트 변수입니다.
 
-            double gradient = 10 * Math.Pow(0.9, second_count); // 용사 사진에 그라데이션 이펙트를 부여합니다
+            double gradient = 15 * Math.Pow(0.9, second_count); // 용사 사진에 그라데이션 이펙트를 부여합니다
             Point point = new Point(pictureBox1.Location.X + (int)gradient, pictureBox1.Location.Y);
             pictureBox1.Location = point;
 
@@ -58,13 +58,13 @@ namespace WinFormsApp2
             Point point1 = new Point(pictureBox2.Location.X - (int)gradient1, pictureBox2.Location.Y);
             pictureBox2.Location = point1;
 
-            if (second_count == 40) // 두 사진의 그라데이션 이펙트 부여 길이를 조절합니다. second_count가 40 이면 중지 및 리셋합니다. 
+            if (second_count == 29) // 두 사진의 그라데이션 이펙트 부여 길이를 조절합니다. second_count가 40 이면 중지 및 리셋합니다. 
             {
                 Main_Title.Enabled = false;
                 pictureBox3.Visible = true;
                 playDingSound(1);
                 second_count = 0;
-            }   
+            }
         }
 
 
@@ -72,6 +72,7 @@ namespace WinFormsApp2
         private void button1_Click(object sender, EventArgs e)
         {
             playSimpleSound(0); // 음악을 종료합니다.
+
             this.Close();
         }
 
@@ -88,6 +89,11 @@ namespace WinFormsApp2
                 fade.Stop();
             else
                 Opacity += 0.02;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
