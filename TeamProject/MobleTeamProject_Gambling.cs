@@ -13,16 +13,6 @@ using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using WinFormsApp2;
 
-
-//const int one_to_two = 90;
-//const int zero_to_one = 90;
-//const int zero_to_one = 90;
-//const int zero_to_one = 90;
-//const int zero_to_one = 90;
-//const int zero_to_one = 90;
-//const int zero_to_one = 90;
-//const int zero_to_one = 90;
-
 namespace TeamProject
 {
     public partial class MobleTeamProject_Gambling : Form
