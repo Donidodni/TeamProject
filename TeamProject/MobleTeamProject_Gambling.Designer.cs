@@ -1102,7 +1102,6 @@ namespace TeamProject
             tabPage1.Controls.Add(btn_Test2);
             tabPage1.Controls.Add(btn_Test);
             tabPage1.Controls.Add(lbox_Chat_tab1);
-            tabPage1.Controls.Add(lbox_Chat_tab3);
             tabPage1.Controls.Add(pictureBox2);
             tabPage1.Controls.Add(panel1);
             tabPage1.Controls.Add(panel15);
@@ -1533,6 +1532,7 @@ namespace TeamProject
             tabPage3.Controls.Add(pn_Store_2);
             tabPage3.Controls.Add(pn_Store_1);
             tabPage3.Controls.Add(pictstore);
+            tabPage3.Controls.Add(lbox_Chat_tab3);
             tabPage3.Location = new System.Drawing.Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -1957,7 +1957,7 @@ namespace TeamProject
         private System.Windows.Forms.PictureBox pictstore;
         private System.Windows.Forms.Timer timerstore;
         private System.Windows.Forms.Timer timerstorebay;
-        //private System.Windows.Forms.ImageList building;
+        private System.Windows.Forms.ImageList building;
         private System.Windows.Forms.Label lb_Money_tab2;
         private System.Windows.Forms.Label lb_Money_tab3;
         private System.Windows.Forms.Panel pn_Store_2;
