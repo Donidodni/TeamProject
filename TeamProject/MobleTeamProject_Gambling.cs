@@ -535,8 +535,8 @@ namespace TeamProject
         private void MoneyResult()
         {
             lb_Money_tab1.Text = $"{Money}";
-            lb_Money_tab2.Text = $"{Money}";
-            lb_Money_tab3.Text = $"{Money}";
+            lb_Money_tab2_1.Text = $"{Money}";
+            lb_Money_tab3_1.Text = $"{Money}";
         }
 
 
