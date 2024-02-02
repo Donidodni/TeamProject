@@ -761,19 +761,47 @@ namespace TeamProject
 
             if (movingUp)
             {
-                curr.Top -= 5;
+                if(curr.Location.Y <= 0)
+                {
+                    curr.Top -= 0;
+                }
+                else
+                {
+                    curr.Top -= 5;
+                }
+                
+                
             }
             if (movingDown)
             {
-                curr.Top += 5;
+                if (curr.Location.Y >= 800)
+                {
+                    curr.Top -= 0;
+                }
+                else
+                {
+                    curr.Top += 5;
+                }
             }
             if (movingLeft)
             {
-                curr.Left -= 5;
+                if (curr.Location.X <= 0)
+                {
+                    curr.Left -= 0;
+                }
+                else
+                {
+                    curr.Left -= 5;
+                }
             }
             if (movingRight)
             {
-                curr.Left += 5;
+                if (curr.Location.X >= 820)
+                {
+                    curr.Left += 0;
+                }
+                else 
+                    curr.Left += 5;
             }
         }
         private void timerstorebay_Tick(object sender, EventArgs e)
@@ -787,6 +815,7 @@ namespace TeamProject
             Rectangle b6 = pstor6.Bounds;
             Rectangle b7 = pstor7.Bounds;
             Rectangle b8 = pstor8.Bounds;
+            
             if (b1.IntersectsWith(b0))
             {
 
