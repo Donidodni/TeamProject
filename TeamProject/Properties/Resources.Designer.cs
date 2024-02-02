@@ -132,6 +132,36 @@ namespace TeamProject.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap house1 {
+            get {
+                object obj = ResourceManager.GetObject("house1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap house2 {
+            get {
+                object obj = ResourceManager.GetObject("house2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap house3 {
+            get {
+                object obj = ResourceManager.GetObject("house3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap knight {
             get {
                 object obj = ResourceManager.GetObject("knight", resourceCulture);
@@ -350,6 +380,16 @@ namespace TeamProject.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap store_1 {
+            get {
+                object obj = ResourceManager.GetObject("store_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap warrior_high {
             get {
                 object obj = ResourceManager.GetObject("warrior_high", resourceCulture);
@@ -433,6 +473,46 @@ namespace TeamProject.Properties {
         internal static System.Drawing.Bitmap 스크린샷_2024_01_05_110728 {
             get {
                 object obj = ResourceManager.GetObject("스크린샷 2024-01-05 110728", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 스크린샷_2024_02_02_145239 {
+            get {
+                object obj = ResourceManager.GetObject("스크린샷 2024-02-02 145239", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 스크린샷_2024_02_02_1452391 {
+            get {
+                object obj = ResourceManager.GetObject("스크린샷 2024-02-02 1452391", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 하우스1 {
+            get {
+                object obj = ResourceManager.GetObject("하우스1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap 하우스2 {
+            get {
+                object obj = ResourceManager.GetObject("하우스2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
