@@ -144,8 +144,8 @@ namespace TeamProject
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MobleTeamProject_Gambling));
-            lbox_Chat_tab1 = new System.Windows.Forms.ListBox(); 
-            lbox_Chat_tab3 = new System.Windows.Forms.ListBox(); 
+            lbox_Chat_tab1 = new System.Windows.Forms.ListBox();
+            lbox_Chat_tab3 = new System.Windows.Forms.ListBox();
             panel_Upgrade = new System.Windows.Forms.Panel();
             label1 = new System.Windows.Forms.Label();
             flowLayoutPanel2 = new System.Windows.Forms.Panel();
@@ -1095,7 +1095,6 @@ namespace TeamProject
             tabPage1.Controls.Add(btn_Test2);
             tabPage1.Controls.Add(btn_Test);
             tabPage1.Controls.Add(lbox_Chat_tab1);
-            tabPage1.Controls.Add(lbox_Chat_tab3);
             tabPage1.Controls.Add(pictureBox2);
             tabPage1.Controls.Add(panel1);
             tabPage1.Controls.Add(panel15);
@@ -1493,7 +1492,7 @@ namespace TeamProject
             pbBuildHP.Location = new System.Drawing.Point(200, 574);
             pbBuildHP.Name = "pbBuildHP";
             pbBuildHP.Size = new System.Drawing.Size(500, 45);
-            pbBuildHP.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            pbBuildHP.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             pbBuildHP.TabIndex = 4;
             // 
             // panel3
@@ -1525,6 +1524,7 @@ namespace TeamProject
             tabPage3.Controls.Add(pn_Store_3);
             tabPage3.Controls.Add(pn_Store_2);
             tabPage3.Controls.Add(pn_Store_1);
+            tabPage3.Controls.Add(lbox_Chat_tab3);
             tabPage3.Controls.Add(pictstore);
             tabPage3.Location = new System.Drawing.Point(4, 24);
             tabPage3.Name = "tabPage3";
@@ -1552,7 +1552,6 @@ namespace TeamProject
             pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox17.TabIndex = 4;
             pictureBox17.TabStop = false;
-            pictureBox17.Click += pictureBox17_Click;
             // 
             // pictureBox16
             // 
@@ -1644,7 +1643,6 @@ namespace TeamProject
             // pn_Store_3
             // 
             pn_Store_3.BackColor = System.Drawing.Color.Red;
-            //pn_Store_3.BackgroundImage = Properties.Resources.house3;
             pn_Store_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             pn_Store_3.Location = new System.Drawing.Point(600, 151);
             pn_Store_3.Name = "pn_Store_3";
@@ -1654,7 +1652,6 @@ namespace TeamProject
             // pn_Store_2
             // 
             pn_Store_2.BackColor = System.Drawing.Color.Red;
-            //pn_Store_2.BackgroundImage = Properties.Resources.house2;
             pn_Store_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             pn_Store_2.Location = new System.Drawing.Point(374, 151);
             pn_Store_2.Name = "pn_Store_2";
@@ -1664,7 +1661,6 @@ namespace TeamProject
             // pn_Store_1
             // 
             pn_Store_1.BackColor = System.Drawing.Color.Red;
-            //pn_Store_1.BackgroundImage = Properties.Resources.house1;
             pn_Store_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             pn_Store_1.Location = new System.Drawing.Point(158, 151);
             pn_Store_1.Name = "pn_Store_1";
@@ -1699,13 +1695,9 @@ namespace TeamProject
             // 
             // building
             // 
-            //building.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            //building.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("building.ImageStream");
-            //building.TransparentColor = System.Drawing.Color.Transparent;
-            //building.Images.SetKeyName(0, "build_1.png");
-            //building.Images.SetKeyName(1, "build_2.png");
-            //building.Images.SetKeyName(2, "build_3.png");
-            //building.Images.SetKeyName(3, "build_4.png");
+            building.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            building.ImageSize = new System.Drawing.Size(16, 16);
+            building.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // MobleTeamProject_Gambling
             // 
