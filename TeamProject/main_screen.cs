@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Media;  //배경 음악 사용을 위해 필요하며, 프로젝트 - 프로젝트 참조 추가 - COM - Media.player 를 선택하여 활성화 합니다.
+using System.Media;
+using TeamProject;  //배경 음악 사용을 위해 필요하며, 프로젝트 - 프로젝트 참조 추가 - COM - Media.player 를 선택하여 활성화 합니다.
 
 namespace WinFormsApp2
 {
     public partial class main_screen : Form
     {
+
 
         static int second_count = 0; // 그라데이션 전용 카운트 변수입니다.
         Timer fade = new Timer();
@@ -49,7 +51,7 @@ namespace WinFormsApp2
         {
             second_count++; // 그라데이션 전용 카운트 변수입니다.
 
-            double gradient = 15 * Math.Pow(0.9, second_count); // 용사 사진에 그라데이션 이펙트를 부여합니다
+            double gradient = 10 * Math.Pow(0.9, second_count); // 용사 사진에 그라데이션 이펙트를 부여합니다
             Point point = new Point(pictureBox1.Location.X + (int)gradient, pictureBox1.Location.Y);
             pictureBox1.Location = point;
 
@@ -68,14 +70,6 @@ namespace WinFormsApp2
         }
 
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            playSimpleSound(0); // 음악을 종료합니다.
-
-            this.Close();
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
             Opacity = 0;
@@ -90,10 +84,40 @@ namespace WinFormsApp2
             else
                 Opacity += 0.02;
         }
-
+        private void button1_Click(object sender, EventArgs e)
+        {
+            playSimpleSound(0); // 음악을 종료합니다.
+            MobleTeamProject_Gambling game_start = new MobleTeamProject_Gambling();
+            game_start.Show();
+        }
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            main_screen_info info = new main_screen_info();
+            info.Show();
+        }
+
+        private void button2_MouseHover(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.Transparent;
+        }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+        }
+
+        private void button1_MouseEnter(object sender, EventArgs e)
+        {
+            button1.BackColor = Color.Transparent;
+        }
+
+        private void button1_MouseMove(object sender, MouseEventArgs e)
+        {
+            button1.BackColor = Color.Transparent;
+        }
+
+        private void game_exit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -16,5 +16,15 @@ namespace TeamProject
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void main_screen_info_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

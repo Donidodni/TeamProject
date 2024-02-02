@@ -79,7 +79,6 @@ namespace TeamProject
                     Panel testPanel = new Panel(); // 패널 객체 생성
                     testPanel.Size = new System.Drawing.Size(50, 50); // 패널 크기 설정
                     testPanel.BackgroundImage = characters.Images[type]; // 색깔 설정(없어도 됨)
-                    // 현재 characters 이미지 리스트에 2강 밖에 없어서 그 이상 강화시 인덱스 오류
 
                     testPanel.Name = existingWeapon.Name; // 이부분에서 기사,농부등 무기별 이미지 설정
                     testPanel.Location = new Point(x * 50, y * 50);
@@ -658,7 +657,9 @@ namespace TeamProject
             Color[] BColor = { Color.Black, Color.Red, Color.Pink, Color.Plum, Color.Gold }; //단계별 빌딩 색상
             int[] BuildHP = { 100, 500, 3000, 10000, 50000 };  //단계별 빌딩 HP
             //빌딩 생성
-            pnBuilding.BackColor = BColor[BLevel];
+            // pnBuilding.BackColor = BColor[BLevel];
+            pnBuilding.BackgroundImage = building.Images[BLevel];   //이미지로 넣을 경우
+            pnBuilding.BackgroundImageLayout = ImageLayout.Center;
             //testPanel.BackgroundImage = System.Drawing.Image.FromFile(Unit_Image1);   //이미지로 넣을 경우
 
             //빌딩 HP 초기값
