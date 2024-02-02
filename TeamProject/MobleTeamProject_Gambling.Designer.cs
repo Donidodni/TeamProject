@@ -1413,9 +1413,9 @@ namespace TeamProject
             lbAttackSum.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             lbAttackSum.Location = new System.Drawing.Point(204, 9);
             lbAttackSum.Name = "lbAttackSum";
-            lbAttackSum.Size = new System.Drawing.Size(22, 30);
+            lbAttackSum.Size = new System.Drawing.Size(79, 30);
             lbAttackSum.TabIndex = 5;
-            lbAttackSum.Text = "-";
+            lbAttackSum.Text = "0 (+3)";
             // 
             // panel18
             // 
