@@ -224,6 +224,7 @@ namespace TeamProject
             pictureBox1 = new System.Windows.Forms.PictureBox();
             panel16 = new System.Windows.Forms.Panel();
             tabPage2 = new System.Windows.Forms.TabPage();
+            lb_Money_tab2 = new System.Windows.Forms.Label();
             pictureBox15 = new System.Windows.Forms.PictureBox();
             pictureBox14 = new System.Windows.Forms.PictureBox();
             pictureBox13 = new System.Windows.Forms.PictureBox();
@@ -241,13 +242,13 @@ namespace TeamProject
             pbBuildHP = new System.Windows.Forms.ProgressBar();
             panel3 = new System.Windows.Forms.Panel();
             tabPage3 = new System.Windows.Forms.TabPage();
+            lb_Money_tab3 = new System.Windows.Forms.Label();
             pstor6 = new System.Windows.Forms.Panel();
             pstor7 = new System.Windows.Forms.Panel();
             pstor8 = new System.Windows.Forms.Panel();
             pstor5 = new System.Windows.Forms.Panel();
             pstor4 = new System.Windows.Forms.Panel();
             pstor3 = new System.Windows.Forms.Panel();
-            pstor2 = new System.Windows.Forms.Panel();
             pstor1 = new System.Windows.Forms.Panel();
             pictstore = new System.Windows.Forms.PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
@@ -255,8 +256,7 @@ namespace TeamProject
             timerstore = new System.Windows.Forms.Timer(components);
             timerstorebay = new System.Windows.Forms.Timer(components);
             building = new System.Windows.Forms.ImageList(components);
-            lb_Money_tab2 = new System.Windows.Forms.Label();
-            lb_Money_tab3 = new System.Windows.Forms.Label();
+            pstor2 = new System.Windows.Forms.Panel();
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             panel14.SuspendLayout();
@@ -1292,6 +1292,16 @@ namespace TeamProject
             tabPage2.Text = "일터";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // lb_Money_tab2
+            // 
+            lb_Money_tab2.AutoSize = true;
+            lb_Money_tab2.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Money_tab2.Location = new System.Drawing.Point(692, 55);
+            lb_Money_tab2.Name = "lb_Money_tab2";
+            lb_Money_tab2.Size = new System.Drawing.Size(60, 25);
+            lb_Money_tab2.TabIndex = 11;
+            lb_Money_tab2.Text = "label9";
+            // 
             // pictureBox15
             // 
             pictureBox15.Image = Properties.Resources.mine_worker_left;
@@ -1494,6 +1504,16 @@ namespace TeamProject
             tabPage3.TabIndex = 2;
             tabPage3.Text = "상점";
             // 
+            // lb_Money_tab3
+            // 
+            lb_Money_tab3.AutoSize = true;
+            lb_Money_tab3.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Money_tab3.Location = new System.Drawing.Point(683, 35);
+            lb_Money_tab3.Name = "lb_Money_tab3";
+            lb_Money_tab3.Size = new System.Drawing.Size(60, 25);
+            lb_Money_tab3.TabIndex = 2;
+            lb_Money_tab3.Text = "label9";
+            // 
             // pstor6
             // 
             pstor6.BackColor = System.Drawing.Color.Blue;
@@ -1513,7 +1533,7 @@ namespace TeamProject
             // pstor8
             // 
             pstor8.BackColor = System.Drawing.Color.Blue;
-            pstor8.Location = new System.Drawing.Point(105, 632);
+            pstor8.Location = new System.Drawing.Point(184, 632);
             pstor8.Name = "pstor8";
             pstor8.Size = new System.Drawing.Size(83, 73);
             pstor8.TabIndex = 1;
@@ -1521,7 +1541,7 @@ namespace TeamProject
             // pstor5
             // 
             pstor5.BackColor = System.Drawing.Color.Red;
-            pstor5.Location = new System.Drawing.Point(51, 128);
+            pstor5.Location = new System.Drawing.Point(115, 128);
             pstor5.Name = "pstor5";
             pstor5.Size = new System.Drawing.Size(83, 73);
             pstor5.TabIndex = 1;
@@ -1529,7 +1549,7 @@ namespace TeamProject
             // pstor4
             // 
             pstor4.BackColor = System.Drawing.Color.Red;
-            pstor4.Location = new System.Drawing.Point(215, 128);
+            pstor4.Location = new System.Drawing.Point(374, 128);
             pstor4.Name = "pstor4";
             pstor4.Size = new System.Drawing.Size(83, 73);
             pstor4.TabIndex = 1;
@@ -1537,23 +1557,15 @@ namespace TeamProject
             // pstor3
             // 
             pstor3.BackColor = System.Drawing.Color.Red;
-            pstor3.Location = new System.Drawing.Point(374, 128);
+            pstor3.Location = new System.Drawing.Point(636, 128);
             pstor3.Name = "pstor3";
             pstor3.Size = new System.Drawing.Size(83, 73);
             pstor3.TabIndex = 1;
             // 
-            // pstor2
-            // 
-            pstor2.BackColor = System.Drawing.Color.Red;
-            pstor2.Location = new System.Drawing.Point(538, 128);
-            pstor2.Name = "pstor2";
-            pstor2.Size = new System.Drawing.Size(83, 73);
-            pstor2.TabIndex = 1;
-            // 
             // pstor1
             // 
             pstor1.BackColor = System.Drawing.Color.Red;
-            pstor1.Location = new System.Drawing.Point(729, 128);
+            pstor1.Location = new System.Drawing.Point(69, 632);
             pstor1.Name = "pstor1";
             pstor1.Size = new System.Drawing.Size(83, 73);
             pstor1.TabIndex = 1;
@@ -1594,25 +1606,13 @@ namespace TeamProject
             building.Images.SetKeyName(2, "build_3.png");
             building.Images.SetKeyName(3, "build_4.png");
             // 
-            // lb_Money_tab2
+            // pstor2
             // 
-            lb_Money_tab2.AutoSize = true;
-            lb_Money_tab2.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lb_Money_tab2.Location = new System.Drawing.Point(692, 55);
-            lb_Money_tab2.Name = "lb_Money_tab2";
-            lb_Money_tab2.Size = new System.Drawing.Size(60, 25);
-            lb_Money_tab2.TabIndex = 11;
-            lb_Money_tab2.Text = "label9";
-            // 
-            // lb_Money_tab3
-            // 
-            lb_Money_tab3.AutoSize = true;
-            lb_Money_tab3.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            lb_Money_tab3.Location = new System.Drawing.Point(683, 35);
-            lb_Money_tab3.Name = "lb_Money_tab3";
-            lb_Money_tab3.Size = new System.Drawing.Size(60, 25);
-            lb_Money_tab3.TabIndex = 2;
-            lb_Money_tab3.Text = "label9";
+            pstor2.BackColor = System.Drawing.Color.Red;
+            pstor2.Location = new System.Drawing.Point(636, 357);
+            pstor2.Name = "pstor2";
+            pstor2.Size = new System.Drawing.Size(83, 73);
+            pstor2.TabIndex = 1;
             // 
             // MobleTeamProject_Gambling
             // 
@@ -1792,7 +1792,6 @@ namespace TeamProject
         private System.Windows.Forms.Panel pstor5;
         private System.Windows.Forms.Panel pstor4;
         private System.Windows.Forms.Panel pstor3;
-        private System.Windows.Forms.Panel pstor2;
         private System.Windows.Forms.Panel pstor1;
         private System.Windows.Forms.PictureBox pictstore;
         private System.Windows.Forms.Timer timerstore;
@@ -1800,5 +1799,6 @@ namespace TeamProject
         private System.Windows.Forms.ImageList building;
         private System.Windows.Forms.Label lb_Money_tab2;
         private System.Windows.Forms.Label lb_Money_tab3;
+        private System.Windows.Forms.Panel pstor2;
     }
 }
