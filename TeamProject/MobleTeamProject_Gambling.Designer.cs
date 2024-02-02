@@ -31,7 +31,6 @@ namespace TeamProject
         /// 
         private void InitializeWeapons()
         {
-
             WeaponUpgrade lv0 = new WeaponUpgrade() //0번 무기 속성
             {
                 Level = 0,
@@ -1083,7 +1082,7 @@ namespace TeamProject
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lb_Allview0;
         private System.Windows.Forms.Label Allview0_value;
-       // private System.Windows.Forms.PictureBox pictureBox2;
+        // private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Panel flowLayoutPanel2;
         private System.Windows.Forms.Label lb_Allview5;
         private System.Windows.Forms.Label lb_Allview8;
