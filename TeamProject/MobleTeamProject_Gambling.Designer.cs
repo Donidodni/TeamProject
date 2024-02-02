@@ -241,8 +241,20 @@ namespace TeamProject
             pbBuildHP = new System.Windows.Forms.ProgressBar();
             panel3 = new System.Windows.Forms.Panel();
             tabPage3 = new System.Windows.Forms.TabPage();
+            pstor6 = new System.Windows.Forms.Panel();
+            pstor7 = new System.Windows.Forms.Panel();
+            pstor8 = new System.Windows.Forms.Panel();
+            pstor5 = new System.Windows.Forms.Panel();
+            pstor4 = new System.Windows.Forms.Panel();
+            pstor3 = new System.Windows.Forms.Panel();
+            pstor2 = new System.Windows.Forms.Panel();
+            pstor1 = new System.Windows.Forms.Panel();
+            pictstore = new System.Windows.Forms.PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
             Allview0_value = new System.Windows.Forms.Label();
+            timerstore = new System.Windows.Forms.Timer(components);
+            timerstorebay = new System.Windows.Forms.Timer(components);
+            building = new System.Windows.Forms.ImageList(components);
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             panel14.SuspendLayout();
@@ -284,6 +296,8 @@ namespace TeamProject
             // 
             lbox_Chat.Font = new System.Drawing.Font("바탕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             lbox_Chat.FormattingEnabled = true;
+            lbox_Chat.ItemHeight = 16;
+            lbox_Chat.Location = new System.Drawing.Point(39, 713);
             lbox_Chat.ItemHeight = 16;
             lbox_Chat.Location = new System.Drawing.Point(39, 708);
             lbox_Chat.Name = "lbox_Chat";
@@ -1013,6 +1027,7 @@ namespace TeamProject
             label3.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             label3.ForeColor = System.Drawing.Color.White;
             label3.Location = new System.Drawing.Point(75, 14);
+            label3.Location = new System.Drawing.Point(77, 11);
             label3.Name = "label3";
             label3.Size = new System.Drawing.Size(101, 25);
             label3.TabIndex = 0;
@@ -1025,6 +1040,7 @@ namespace TeamProject
             lb_Money.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             lb_Money.ForeColor = System.Drawing.Color.White;
             lb_Money.Location = new System.Drawing.Point(208, 13);
+            lb_Money.Location = new System.Drawing.Point(195, 10);
             lb_Money.Name = "lb_Money";
             lb_Money.Size = new System.Drawing.Size(95, 25);
             lb_Money.TabIndex = 0;
@@ -1041,6 +1057,8 @@ namespace TeamProject
             tabControl1.Size = new System.Drawing.Size(883, 863);
             tabControl1.TabIndex = 4;
             tabControl1.SelectedIndexChanged += tabControl1_SelectedIndexChanged;
+            tabControl1.KeyDown += tabControl1_KeyDown;
+            tabControl1.KeyUp += tabControl1_KeyUp;
             // 
             // tabPage1
             // 
@@ -1155,29 +1173,38 @@ namespace TeamProject
             // 
             // btn_Test2
             // 
+            btn_Test2.BackColor = System.Drawing.Color.Transparent;
+            btn_Test2.BackgroundImage = Properties.Resources.LongMessage;
+            btn_Test2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             btn_Test2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn_Test2.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btn_Test2.Location = new System.Drawing.Point(430, 769);
+            btn_Test2.ForeColor = System.Drawing.Color.White;
+            btn_Test2.Location = new System.Drawing.Point(430, 769);
             btn_Test2.Name = "btn_Test2";
-            btn_Test2.Size = new System.Drawing.Size(283, 49);
+            btn_Test2.Size = new System.Drawing.Size(187, 49);
+            btn_Test2.Size = new System.Drawing.Size(283, 39);
             btn_Test2.TabIndex = 4;
-            btn_Test2.Text = "고급 농부 (3강) 10명 구매 - 330원";
-            btn_Test2.UseVisualStyleBackColor = true;
+            btn_Test2.Text = "고급 농부 (3강) 10명 구매";
+            btn_Test2.UseVisualStyleBackColor = false;
             btn_Test2.Click += btn_Test2_Click;
             // 
             // btn_Test
             // 
+            btn_Test.BackColor = System.Drawing.Color.Transparent;
             btn_Test.BackgroundImage = Properties.Resources.LongMessage;
             btn_Test.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             btn_Test.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn_Test.Font = new System.Drawing.Font("맑은 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             btn_Test.ForeColor = System.Drawing.Color.White;
             btn_Test.Location = new System.Drawing.Point(430, 705);
+            btn_Test.Location = new System.Drawing.Point(430, 722);
             btn_Test.Name = "btn_Test";
             btn_Test.Size = new System.Drawing.Size(283, 58);
+            btn_Test.Size = new System.Drawing.Size(283, 39);
             btn_Test.TabIndex = 0;
-            btn_Test.Text = "하급 농부 (0강) 10명 구매 - 110원";
-            btn_Test.UseVisualStyleBackColor = true;
+            btn_Test.Text = "하급 농부 (0강) 10명 구매";
+            btn_Test.UseVisualStyleBackColor = false;
             btn_Test.Click += btn_Test_Click;
             // 
             // pictureBox2
@@ -1232,8 +1259,11 @@ namespace TeamProject
             pictureBox1.Image = Properties.Resources.money;
             pictureBox1.Location = new System.Drawing.Point(18, 7);
             pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            pictureBox1.Location = new System.Drawing.Point(18, 1);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new System.Drawing.Size(41, 44);
+            pictureBox1.Size = new System.Drawing.Size(52, 45);
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
@@ -1250,7 +1280,7 @@ namespace TeamProject
             // tabPage2
             // 
             tabPage2.BackgroundImage = Properties.Resources.mine_map;
-            tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            tabPage2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             tabPage2.Controls.Add(pictureBox15);
             tabPage2.Controls.Add(pictureBox14);
             tabPage2.Controls.Add(pictureBox13);
@@ -1436,27 +1466,117 @@ namespace TeamProject
             // pbBuildHP
             // 
             pbBuildHP.Location = new System.Drawing.Point(200, 576);
+            pbBuildHP.Location = new System.Drawing.Point(200, 574);
             pbBuildHP.Name = "pbBuildHP";
             pbBuildHP.Size = new System.Drawing.Size(500, 45);
+            pbBuildHP.Size = new System.Drawing.Size(500, 45);
+            pbBuildHP.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             pbBuildHP.TabIndex = 4;
             // 
             // panel3
             // 
             panel3.Location = new System.Drawing.Point(200, 170);
+            panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            panel3.Location = new System.Drawing.Point(304, 224);
             panel3.Name = "panel3";
             panel3.Size = new System.Drawing.Size(500, 386);
+            panel3.Size = new System.Drawing.Size(295, 281);
             panel3.TabIndex = 0;
             panel3.Visible = false;
             // 
             // tabPage3
             // 
+            tabPage3.BackColor = System.Drawing.Color.White;
+            tabPage3.Controls.Add(pstor6);
+            tabPage3.Controls.Add(pstor7);
+            tabPage3.Controls.Add(pstor8);
+            tabPage3.Controls.Add(pstor5);
+            tabPage3.Controls.Add(pstor4);
+            tabPage3.Controls.Add(pstor3);
+            tabPage3.Controls.Add(pstor2);
+            tabPage3.Controls.Add(pstor1);
+            tabPage3.Controls.Add(pictstore);
+            tabPage3.Location = new System.Drawing.Point(4, 24);
             tabPage3.Location = new System.Drawing.Point(4, 24);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new System.Windows.Forms.Padding(3);
             tabPage3.Size = new System.Drawing.Size(875, 835);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "상점";
-            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // pstor6
+            // 
+            pstor6.BackColor = System.Drawing.Color.Blue;
+            pstor6.Location = new System.Drawing.Point(660, 632);
+            pstor6.Name = "pstor6";
+            pstor6.Size = new System.Drawing.Size(83, 73);
+            pstor6.TabIndex = 1;
+            // 
+            // pstor7
+            // 
+            pstor7.BackColor = System.Drawing.Color.Blue;
+            pstor7.Location = new System.Drawing.Point(374, 632);
+            pstor7.Name = "pstor7";
+            pstor7.Size = new System.Drawing.Size(83, 73);
+            pstor7.TabIndex = 1;
+            // 
+            // pstor8
+            // 
+            pstor8.BackColor = System.Drawing.Color.Blue;
+            pstor8.Location = new System.Drawing.Point(105, 632);
+            pstor8.Name = "pstor8";
+            pstor8.Size = new System.Drawing.Size(83, 73);
+            pstor8.TabIndex = 1;
+            // 
+            // pstor5
+            // 
+            pstor5.BackColor = System.Drawing.Color.Red;
+            pstor5.Location = new System.Drawing.Point(51, 40);
+            pstor5.Name = "pstor5";
+            pstor5.Size = new System.Drawing.Size(83, 73);
+            pstor5.TabIndex = 1;
+            // 
+            // pstor4
+            // 
+            pstor4.BackColor = System.Drawing.Color.Red;
+            pstor4.Location = new System.Drawing.Point(215, 40);
+            pstor4.Name = "pstor4";
+            pstor4.Size = new System.Drawing.Size(83, 73);
+            pstor4.TabIndex = 1;
+            // 
+            // pstor3
+            // 
+            pstor3.BackColor = System.Drawing.Color.Red;
+            pstor3.Location = new System.Drawing.Point(374, 40);
+            pstor3.Name = "pstor3";
+            pstor3.Size = new System.Drawing.Size(83, 73);
+            pstor3.TabIndex = 1;
+            // 
+            // pstor2
+            // 
+            pstor2.BackColor = System.Drawing.Color.Red;
+            pstor2.Location = new System.Drawing.Point(538, 40);
+            pstor2.Name = "pstor2";
+            pstor2.Size = new System.Drawing.Size(83, 73);
+            pstor2.TabIndex = 1;
+            // 
+            // pstor1
+            // 
+            pstor1.BackColor = System.Drawing.Color.Red;
+            pstor1.Location = new System.Drawing.Point(729, 40);
+            pstor1.Name = "pstor1";
+            pstor1.Size = new System.Drawing.Size(83, 73);
+            pstor1.TabIndex = 1;
+            // 
+            // pictstore
+            // 
+            pictstore.Image = Properties.Resources.worker_low;
+            pictstore.Location = new System.Drawing.Point(400, 400);
+            pictstore.Name = "pictstore";
+            pictstore.Size = new System.Drawing.Size(37, 39);
+            pictstore.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictstore.TabIndex = 0;
+            pictstore.TabStop = false;
             // 
             // timer1
             // 
@@ -1470,15 +1590,29 @@ namespace TeamProject
             Allview0_value.Size = new System.Drawing.Size(100, 23);
             Allview0_value.TabIndex = 0;
             // 
+            // timerstorebay
+            // building
+            // 
+            timerstorebay.Tick += timerstorebay_Tick;
+            building.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            building.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("building.ImageStream");
+            building.TransparentColor = System.Drawing.Color.Transparent;
+            building.Images.SetKeyName(0, "build_1.png");
+            building.Images.SetKeyName(1, "build_2.png");
+            building.Images.SetKeyName(2, "build_3.png");
+            building.Images.SetKeyName(3, "build_4.png");
+            // 
             // MobleTeamProject_Gambling
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(884, 791);
             ClientSize = new System.Drawing.Size(884, 861);
             Controls.Add(tabControl1);
             Name = "MobleTeamProject_Gambling";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "MobleTeamProject_Gambling";
+            FormClosed += MobleTeamProject_Gambling_FormClosed;
             Load += MobleTeamProject_Gambling_Load;
             panel_Upgrade.ResumeLayout(false);
             panel_Upgrade.PerformLayout();
@@ -1636,6 +1770,17 @@ namespace TeamProject
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.PictureBox pictureBox13;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Panel pstor6;
+        private System.Windows.Forms.Panel pstor7;
+        private System.Windows.Forms.Panel pstor8;
+        private System.Windows.Forms.Panel pstor5;
+        private System.Windows.Forms.Panel pstor4;
+        private System.Windows.Forms.Panel pstor3;
+        private System.Windows.Forms.Panel pstor2;
+        private System.Windows.Forms.Panel pstor1;
+        private System.Windows.Forms.PictureBox pictstore;
+        private System.Windows.Forms.Timer timerstore;
+        private System.Windows.Forms.Timer timerstorebay;
+        private System.Windows.Forms.ImageList building;
     }
 }
