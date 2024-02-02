@@ -13,16 +13,6 @@ using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using WinFormsApp2;
 
-
-//const int one_to_two = 90;
-//const int zero_to_one = 90;
-//const int zero_to_one = 90;
-//const int zero_to_one = 90;
-//const int zero_to_one = 90;
-//const int zero_to_one = 90;
-//const int zero_to_one = 90;
-//const int zero_to_one = 90;
-
 namespace TeamProject
 {
     public partial class MobleTeamProject_Gambling : Form
@@ -613,11 +603,10 @@ namespace TeamProject
                 {
                     Attacksum += i;
                 }
-                if (pbBuildHP.Value > Attacksum + BuildArmor[cbSelectBuild.SelectedIndex])
+                if (pbBuildHP.Value > Attacksum - BuildArmor[cbSelectBuild.SelectedIndex] && Attacksum >= BuildArmor[cbSelectBuild.SelectedIndex])
                 {
                     //공격력이 방어력보다 클 때만 공격
-                    if (Attacksum >= BuildArmor[cbSelectBuild.SelectedIndex])
-                        pbBuildHP.Value = pbBuildHP.Value - Attacksum + BuildArmor[cbSelectBuild.SelectedIndex];
+                    pbBuildHP.Value -= Attacksum - BuildArmor[cbSelectBuild.SelectedIndex];
                 }
 
                 //건물 파괴 시
