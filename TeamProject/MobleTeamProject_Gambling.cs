@@ -720,7 +720,7 @@ namespace TeamProject
                 {
                     pbBuildHP.Value = pbBuildHP.Minimum;    //HP = 0
                     Money += BuildReward[cbSelectBuild.SelectedIndex];             //건물 파괴 보상
-                    lb_Money_tab1.Text = Money.ToString();
+                    MoneyResult();
                     ShowMessage($"{cbSelectBuild.SelectedIndex + 1}단계 건물을 파괴했습니다. (+{BuildReward[cbSelectBuild.SelectedIndex]}골드)");
                     tabControl1.TabPages[1].Controls.Remove(pnBuilding);
                     NewBuilding(cbSelectBuild.SelectedIndex);
