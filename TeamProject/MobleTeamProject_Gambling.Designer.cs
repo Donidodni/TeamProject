@@ -257,7 +257,7 @@ namespace TeamProject
             Allview0_value = new System.Windows.Forms.Label();
             timerstore = new System.Windows.Forms.Timer(components);
             timerstorebay = new System.Windows.Forms.Timer(components);
-            building = new System.Windows.Forms.ImageList(components);
+            //building = new System.Windows.Forms.ImageList(components);
             label9 = new System.Windows.Forms.Label();
             label19 = new System.Windows.Forms.Label();
             label20 = new System.Windows.Forms.Label();
@@ -1633,13 +1633,13 @@ namespace TeamProject
             // 
             // building
             // 
-            building.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            building.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("building.ImageStream");
-            building.TransparentColor = System.Drawing.Color.Transparent;
-            building.Images.SetKeyName(0, "build_1.png");
-            building.Images.SetKeyName(1, "build_2.png");
-            building.Images.SetKeyName(2, "build_3.png");
-            building.Images.SetKeyName(3, "build_4.png");
+            //building.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            //building.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("building.ImageStream");
+            //building.TransparentColor = System.Drawing.Color.Transparent;
+            //building.Images.SetKeyName(0, "build_1.png");
+            //building.Images.SetKeyName(1, "build_2.png");
+            //building.Images.SetKeyName(2, "build_3.png");
+            //building.Images.SetKeyName(3, "build_4.png");
             // 
             // label9
             // 
@@ -1883,7 +1883,7 @@ namespace TeamProject
         private System.Windows.Forms.PictureBox pictstore;
         private System.Windows.Forms.Timer timerstore;
         private System.Windows.Forms.Timer timerstorebay;
-        private System.Windows.Forms.ImageList building;
+        //private System.Windows.Forms.ImageList building;
         private System.Windows.Forms.Label lb_Money_tab2;
         private System.Windows.Forms.Label lb_Money_tab3;
         private System.Windows.Forms.Panel pn_Store_2;
