@@ -83,7 +83,6 @@ namespace TeamProject
 
                     if (MainPanelList.Count == limit)
                     {
-                        MessageBox.Show("강화 공간 부족");
                         break;
                     }
 
