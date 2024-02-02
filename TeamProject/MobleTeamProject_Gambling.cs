@@ -51,7 +51,7 @@ namespace TeamProject
             InitializeComponent();
             InitializeWeapons(); //Dictionary에 무기 정보 추가
             InitializeWeaponsList(); // 0~10강 무기를 담을 리스트 생성
-            Money = 100000;
+            Money = 110;
             limit = 10 * 6;  // x의 경우의 수 * y의 경우의 수
             boost = 0;
             ingame_bgm.Play(); // 김민석 - 해당 코드를 지움으로써 디버깅시 음악을 제거할 수 있습니다.
