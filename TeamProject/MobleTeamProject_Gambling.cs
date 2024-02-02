@@ -51,7 +51,7 @@ namespace TeamProject
             InitializeWeapons(); //Dictionary에 무기 정보 추가
             InitializeWeaponsList(); // 0~10강 무기를 담을 리스트 생성
             Money = 0;
-            limit = 0;
+            limit = 10 * 6;  // x의 경우의 수 * y의 경우의 수
             ingame_bgm.Play(); // 김민석 - 해당 코드를 지움으로써 디버깅시 음악을 제거할 수 있습니다.
             MoneyResult();
             InitializePanelMovement();//상점 캐릭터 이동
@@ -549,6 +549,10 @@ namespace TeamProject
 
         private void Move(Panel weapon)
         {
+            ContextMenuStrip SelectUnit = new ContextMenuStrip();
+            ToolStripMenuItem GoStrengStation = new ToolStripMenuItem();
+            ToolStripMenuItem GoStrengStationAll = new ToolStripMenuItem();
+
             string tagString = weapon.Tag?.ToString();
             string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
             int cnt = 0;
@@ -577,7 +581,7 @@ namespace TeamProject
                 we.Add(newWeapon);
 
                 Panel testPanel = new Panel(); // 패널 객체 생성
-                testPanel.Size = new System.Drawing.Size(50, 50); // 패널 크기 설정
+                testPanel.Size = new Size(50, 50); // 패널 크기 설정
                 //testPanel.BackColor = Color.FromName(tagParts[3].Trim());
                 testPanel.BackgroundImage = characters.Images[newWeapon.Level];   //이미지로 넣을 경우
                 testPanel.Name = "Test";
@@ -593,12 +597,49 @@ namespace TeamProject
                 }
                 testPanel.Click += Panel1_Click;
 
+                //유닛의 컨텍스트 박스 생성
+                //GoStrengStation.Text = "강화소 보내기";
+                //GoStrengStation.Click += (s, e) =>
+                //{
+                //    Controls.Remove(testPanel); testPanel.Dispose();
+                //    for (int i = 0; i < 20; i++)   //패널 좌표와 비교
+                //        if (testPanel.Location.X == PntArr[i, 0] && testPanel.Location.Y == PntArr[i, 1])
+                //        {
+                //            full[i] = false; Attack[i] = 0; break;
+                //        }
+                //    weapons[int.Parse(tagParts[0].Trim())].RemoveAt(0);
+
+                //    AddPanels(int.Parse(tagParts[0].Trim()), 1);
+                //    ShowMessage($"던전으로 +{tagParts[3]} 무기가 이동하였습니다.");
+                //};
+                GoStrengStationAll.Text = "해당 레벨 모두 강화소 보내기";
+                GoStrengStationAll.Click += (s, e) =>
+                {
+                    Panel[] SameLevetlUnit = Mine(int.Parse(tagParts[0].Trim()));    //모두 선택
+                    foreach (Panel panel in SameLevetlUnit)
+                    {
+                        Controls.Remove(panel); panel.Dispose();
+                        for (int i = 0; i < 20; i++)   //패널 좌표와 비교
+                            if (panel.Location.X == PntArr[i, 0] && panel.Location.Y == PntArr[i, 1])
+                            {
+                                full[i] = false; Attack[i] = 0; break;
+                            }
+                        weapons[int.Parse(tagParts[0].Trim())].RemoveAt(0);
+
+                        AddPanels(int.Parse(tagParts[0].Trim()), 1);
+                        ShowMessage($"던전으로 +{tagParts[3]} 무기가 이동하였습니다.");
+                    }
+                };
+
+                //SelectUnit.Items.Add(GoStrengStation);
+                SelectUnit.Items.Add(GoStrengStationAll);
+                testPanel.ContextMenuStrip = SelectUnit;
+
                 tabControl1.TabPages[1].Controls.Add(testPanel);    //유닛패널 생성
                 //ShowMessage($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
             }
             int index = int.Parse(tagParts[0].Trim());
             ShowMessage($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
-            //lbox_Chat.Items.Add($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
         }
         private void Panel1_Click(object sender, EventArgs e)    //패널 제거 -> 강화소 반환으로 수정예정
         {
@@ -606,12 +647,6 @@ namespace TeamProject
             string tagString = clickedPanel.Tag?.ToString();
             string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
 
-            ContextMenuStrip SelectUnit = new ContextMenuStrip();
-            ToolStripMenuItem GoStrengStation = new ToolStripMenuItem();
-            ToolStripMenuItem GoStrengStationAll = new ToolStripMenuItem();
-            GoStrengStation.Text = "강화소 보내기";
-            GoStrengStation.Click += (s, e) =>
-            {
                 Controls.Remove(clickedPanel); clickedPanel.Dispose();
                 for (int i = 0; i < 20; i++)   //패널 좌표와 비교
                     if (clickedPanel.Location.X == PntArr[i, 0] && clickedPanel.Location.Y == PntArr[i, 1])
@@ -622,29 +657,6 @@ namespace TeamProject
 
                 AddPanels(int.Parse(tagParts[0].Trim()), 1);
                 ShowMessage($"던전으로 +{tagParts[3]} 무기가 이동하였습니다.");
-            };
-            GoStrengStationAll.Text = "해당 레벨 모두 강화소 보내기";
-            GoStrengStationAll.Click += (s, e) =>
-            {
-                int cnt = 0;
-                Panel[] SameLevetlUnit = Mine(int.Parse(tagParts[0].Trim()));    //모두 선택
-                foreach (Panel panel in SameLevetlUnit)
-                {
-                    Controls.Remove(panel); panel.Dispose();
-                    for (int i = 0; i < 20; i++)   //패널 좌표와 비교
-                        if (panel.Location.X == PntArr[i, 0] && panel.Location.Y == PntArr[i, 1])
-                        {
-                            full[i] = false; Attack[i] = 0; break;
-                        }
-                    weapons[int.Parse(tagParts[0].Trim())].RemoveAt(0);
-
-                    AddPanels(int.Parse(tagParts[0].Trim()), 1);
-                    ShowMessage($"던전으로 +{tagParts[3]} 무기가 이동하였습니다.");
-                }
-            };
-            SelectUnit.Items.Add( GoStrengStation );
-            SelectUnit.Items.Add(GoStrengStationAll);
-            clickedPanel.ContextMenuStrip = SelectUnit;
         }
 
         private Panel[] Mine(int i) //무기 강화 정도를 찾고 모두 선택
@@ -683,7 +695,7 @@ namespace TeamProject
                 else
                 {
                     pbBuildHP.Value = pbBuildHP.Minimum;    //HP = 0
-                    Money += BuildReward[cbSelectBuild.SelectedIndex];             //건물 파괴 보상
+                    Money += BuildReward[cbSelectBuild.SelectedIndex];  //건물 파괴 보상
                     MoneyResult();
                     
                     ShowMessage($"{cbSelectBuild.SelectedIndex + 1}단계 건물을 파괴했습니다. (+{BuildReward[cbSelectBuild.SelectedIndex]}골드)");
