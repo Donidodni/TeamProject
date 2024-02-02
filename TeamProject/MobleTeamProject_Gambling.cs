@@ -659,6 +659,8 @@ namespace TeamProject
         private void Panel1_Click(object sender, EventArgs e)    //패널 제거 -> 강화소 반환으로 수정예정
         {
             Panel clickedPanel = (Panel)sender;
+            string tagString = clickedPanel.Tag?.ToString();
+            string[] tagParts = tagString.Split(new string[] { "," }, StringSplitOptions.RemoveEmptyEntries);
 
             ContextMenuStrip SelectUnit = new ContextMenuStrip();
             ToolStripMenuItem GoStrengStation = new ToolStripMenuItem();
@@ -700,6 +702,21 @@ namespace TeamProject
             SelectUnit.Items.Add(GoStrengStationAll);
             clickedPanel.ContextMenuStrip = SelectUnit;
         }
+        private Panel[] Mine(int i) //무기 강화 정도를 찾고 모두 선택
+        {
+            List<Panel> panels = new List<Panel>();
+            foreach (Control control in tabControl1.TabPages[1].Controls)
+            {
+                if (control is Panel panel && control.Tag != null)
+                {
+                    string[] tagParts = control.Tag.ToString().Split(',');
+                    if (tagParts[0] == i.ToString())
+                        panels.Add(panel);
+                }
+            }
+            return panels.ToArray();
+        }
+
 
         Panel pnBuilding = new Panel();
         private void AttackBuild()
@@ -786,6 +803,10 @@ namespace TeamProject
             ingame_bgm.Stop();
         }
 
+        private void pictureBox17_Click(object sender, EventArgs e)
+        {
+
+        }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////일터/////////////////////////////////////////////////////////

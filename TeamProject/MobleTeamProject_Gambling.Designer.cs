@@ -144,7 +144,8 @@ namespace TeamProject
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MobleTeamProject_Gambling));
-            lbox_Chat = new System.Windows.Forms.ListBox();
+            lbox_Chat_tab1 = new System.Windows.Forms.ListBox(); 
+            lbox_Chat_tab3 = new System.Windows.Forms.ListBox(); 
             panel_Upgrade = new System.Windows.Forms.Panel();
             label1 = new System.Windows.Forms.Label();
             flowLayoutPanel2 = new System.Windows.Forms.Panel();
@@ -305,15 +306,25 @@ namespace TeamProject
             ((System.ComponentModel.ISupportInitialize)pictstore).BeginInit();
             SuspendLayout();
             // 
-            // lbox_Chat
+            // lbox_Chat_tab1
             // 
-            lbox_Chat.Font = new System.Drawing.Font("바탕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lbox_Chat.FormattingEnabled = true;
-            lbox_Chat.ItemHeight = 16;
-            lbox_Chat.Location = new System.Drawing.Point(39, 708);
-            lbox_Chat.Name = "lbox_Chat";
-            lbox_Chat.Size = new System.Drawing.Size(379, 100);
-            lbox_Chat.TabIndex = 0;
+            lbox_Chat_tab1.Font = new System.Drawing.Font("바탕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lbox_Chat_tab1.FormattingEnabled = true;
+            lbox_Chat_tab1.ItemHeight = 16;
+            lbox_Chat_tab1.Location = new System.Drawing.Point(39, 708);
+            lbox_Chat_tab1.Name = "lbox_Chat_tab1";
+            lbox_Chat_tab1.Size = new System.Drawing.Size(379, 100);
+            lbox_Chat_tab1.TabIndex = 0;
+            // 
+            // lbox_Chat_tab3
+            // 
+            lbox_Chat_tab3.Font = new System.Drawing.Font("바탕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lbox_Chat_tab3.FormattingEnabled = true;
+            lbox_Chat_tab3.ItemHeight = 16;
+            lbox_Chat_tab3.Location = new System.Drawing.Point(39, 708);
+            lbox_Chat_tab3.Name = "lbox_Chat_tab3";
+            lbox_Chat_tab3.Size = new System.Drawing.Size(379, 100);
+            lbox_Chat_tab3.TabIndex = 0;
             // 
             // panel_Upgrade
             // 
@@ -1083,7 +1094,8 @@ namespace TeamProject
             tabPage1.Controls.Add(btn_AllChoice);
             tabPage1.Controls.Add(btn_Test2);
             tabPage1.Controls.Add(btn_Test);
-            tabPage1.Controls.Add(lbox_Chat);
+            tabPage1.Controls.Add(lbox_Chat_tab1);
+            tabPage1.Controls.Add(lbox_Chat_tab3);
             tabPage1.Controls.Add(pictureBox2);
             tabPage1.Controls.Add(panel1);
             tabPage1.Controls.Add(panel15);
@@ -1632,7 +1644,7 @@ namespace TeamProject
             // pn_Store_3
             // 
             pn_Store_3.BackColor = System.Drawing.Color.Red;
-            pn_Store_3.BackgroundImage = Properties.Resources.house3;
+            //pn_Store_3.BackgroundImage = Properties.Resources.house3;
             pn_Store_3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             pn_Store_3.Location = new System.Drawing.Point(600, 151);
             pn_Store_3.Name = "pn_Store_3";
@@ -1642,7 +1654,7 @@ namespace TeamProject
             // pn_Store_2
             // 
             pn_Store_2.BackColor = System.Drawing.Color.Red;
-            pn_Store_2.BackgroundImage = Properties.Resources.house2;
+            //pn_Store_2.BackgroundImage = Properties.Resources.house2;
             pn_Store_2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             pn_Store_2.Location = new System.Drawing.Point(374, 151);
             pn_Store_2.Name = "pn_Store_2";
@@ -1652,7 +1664,7 @@ namespace TeamProject
             // pn_Store_1
             // 
             pn_Store_1.BackColor = System.Drawing.Color.Red;
-            pn_Store_1.BackgroundImage = Properties.Resources.house1;
+            //pn_Store_1.BackgroundImage = Properties.Resources.house1;
             pn_Store_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             pn_Store_1.Location = new System.Drawing.Point(158, 151);
             pn_Store_1.Name = "pn_Store_1";
@@ -1769,7 +1781,8 @@ namespace TeamProject
 
         #endregion
 
-        private System.Windows.Forms.ListBox lbox_Chat;
+        private System.Windows.Forms.ListBox lbox_Chat_tab1;
+        private System.Windows.Forms.ListBox lbox_Chat_tab3;
         private System.Windows.Forms.Panel panel_Main;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lb_Money_tab1;
