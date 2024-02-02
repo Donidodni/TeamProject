@@ -33,8 +33,8 @@
             Main_info_panel = new System.Windows.Forms.Panel();
             lb_info2 = new System.Windows.Forms.Label();
             lb_info1 = new System.Windows.Forms.Label();
-            lb_info4 = new System.Windows.Forms.Label();
             lb_info3 = new System.Windows.Forms.Label();
+            lb_info4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             Main_info_panel.SuspendLayout();
             SuspendLayout();
@@ -104,18 +104,6 @@
             lb_info1.TabIndex = 4;
             lb_info1.Text = "당신은 한 마을의 촌장이며, 마을에 전설의 용사가 있었으면 합니다.";
             // 
-            // lb_info4
-            // 
-            lb_info4.AutoSize = true;
-            lb_info4.BackColor = System.Drawing.Color.Transparent;
-            lb_info4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            lb_info4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            lb_info4.Location = new System.Drawing.Point(20, 145);
-            lb_info4.Name = "lb_info4";
-            lb_info4.Size = new System.Drawing.Size(263, 21);
-            lb_info4.TabIndex = 5;
-            lb_info4.Text = "광산으로 보내 필요한 돈을 버세요!";
-            // 
             // lb_info3
             // 
             lb_info3.AutoSize = true;
@@ -127,6 +115,18 @@
             lb_info3.Size = new System.Drawing.Size(236, 21);
             lb_info3.TabIndex = 6;
             lb_info3.Text = "던전을 보내 기사로 강화시키고";
+            // 
+            // lb_info4
+            // 
+            lb_info4.AutoSize = true;
+            lb_info4.BackColor = System.Drawing.Color.Transparent;
+            lb_info4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lb_info4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            lb_info4.Location = new System.Drawing.Point(20, 145);
+            lb_info4.Name = "lb_info4";
+            lb_info4.Size = new System.Drawing.Size(263, 21);
+            lb_info4.TabIndex = 5;
+            lb_info4.Text = "광산으로 보내 필요한 돈을 버세요!";
             // 
             // main_screen_info
             // 
