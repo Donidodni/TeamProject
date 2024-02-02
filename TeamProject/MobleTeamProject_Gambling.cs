@@ -30,6 +30,7 @@ namespace TeamProject
         Dictionary<int, WeaponUpgrade> weaponsDictionary = new Dictionary<int, WeaponUpgrade>(); //키,값 형태로 무기강화별 정보를 저장
         Dictionary<Panel, Timer> timerDictionary = new Dictionary<Panel, Timer>(); //패널마다 타이머를 달아주어 개별 행동 가능
         List<Panel> MainPanelList = new List<Panel>(); // 무기들 랜덤생성시 중복 검사
+        public int limit;
         int[] SuccessProbability = { 90, 80, 70, 60, 40, 25, 15, 10, 5 }; //강화 확률
         int workX = 670; // 패널이 일터로 갈 수 있는 X좌표
         int upgradeY = -90; // 패널이 강화할 수 있는 Y좌표
@@ -49,12 +50,13 @@ namespace TeamProject
             InitializeWeapons(); //Dictionary에 무기 정보 추가
             InitializeWeaponsList(); // 0~10강 무기를 담을 리스트 생성
             Money = 0;
+            limit = 0;
             ingame_bgm.Play(); // 김민석 - 해당 코드를 지움으로써 디버깅시 음악을 제거할 수 있습니다.
             MoneyResult();
             InitializePanelMovement();//상점 캐릭터 이동
         }
 
-        
+
 
         void AddPanels(int type, int count) // type만큼 강화된 무기 count만큼 생성
         {
@@ -66,7 +68,7 @@ namespace TeamProject
                     Random random = new Random();
                     int x = random.Next(0, 10); // 메인 패널 생성숫자 조절가능
                     int y = random.Next(0, 6);  // 메인 패널 생성숫자 조절가능
-                    int limit = 10 * 6;  // x의 경우의 수 * y의 경우의 수
+                    limit = 10 * 6;  // x의 경우의 수 * y의 경우의 수
 
                     WeaponUpgrade existingWeapon = weaponsDictionary[type]; // Dictionary로 type강의 무기 정보를 가져옴
 
@@ -310,7 +312,7 @@ namespace TeamProject
             {
                 ShowMessage("이스터에그 발견! 1000골드가 추가됩니다");
                 Money += 1000;
-                MoneyResult();  
+                MoneyResult();
                 EsterEgg = false;
                 MoveWork(selectedPanel);
                 RemovePanel(selectedPanel);
@@ -408,7 +410,7 @@ namespace TeamProject
         {
             AddPanels(0, 10);
             Money -= 110;
-            MoneyResult();  
+            MoneyResult();
         }
 
         private void btn_Test2_Click(object sender, EventArgs e)
@@ -519,7 +521,7 @@ namespace TeamProject
         private void EndGame()
         {
             MessageBox.Show("우승!");
-        }   
+        }
 
         private void MoneyResult()
         {
@@ -788,7 +790,7 @@ namespace TeamProject
 
             if (movingUp)
             {
-                if(curr.Location.Y <= 0)
+                if (curr.Location.Y <= 0)
                 {
                     curr.Top -= 0;
                 }
@@ -796,8 +798,8 @@ namespace TeamProject
                 {
                     curr.Top -= 5;
                 }
-                
-                
+
+
             }
             if (movingDown)
             {
@@ -827,26 +829,44 @@ namespace TeamProject
                 {
                     curr.Left += 0;
                 }
-                else 
+                else
                     curr.Left += 5;
             }
         }
         private void timerstorebay_Tick(object sender, EventArgs e)
         {
             Rectangle b0 = curr.Bounds;
-            Rectangle b1 = pstor1.Bounds;
-            Rectangle b2 = pstor2.Bounds;
-            Rectangle b3 = pstor3.Bounds;
-            Rectangle b4 = pstor4.Bounds;
-            Rectangle b5 = pstor5.Bounds;
-            Rectangle b6 = pstor6.Bounds;
-            Rectangle b7 = pstor7.Bounds;
-            Rectangle b8 = pstor8.Bounds;
-            
-            if (b1.IntersectsWith(b0))
+            Rectangle b1 = pn_Store_1.Bounds;
+            Rectangle b2 = pn_Store_2.Bounds;
+            Rectangle b3 = pn_Store_3.Bounds;
+            Rectangle b4 = pn_Store_4.Bounds;
+            Rectangle b5 = pn_Store_5.Bounds;
+            Rectangle b6 = pn_Store_6.Bounds;
+            Rectangle b7 = pn_Store_7.Bounds;
+            Rectangle b8 = pn_Store_8.Bounds;
+
+            if (b1.IntersectsWith(b0))  // 첫번째 비콘. 0강 10개 구매. 330원
             {
                 timerstorebay.Stop();
                 curr.Location = new Point(400, 400);
+                if (Money < 330)
+                {
+                    ShowMessage("돈이 부족하여 구매에 실패하였습니다.");
+                }
+                else
+                {
+
+                    if (MainPanelList.Count + 10 >= limit)
+                    {
+                        ShowMessage("공간이 부족하여 구매에 실패하였습니다.");                        
+                    }
+                    else
+                    {
+                        Money -= 330;
+                        MoneyResult();
+                        AddPanels(0, 10);
+                    }
+                }
             }
             else if (b2.IntersectsWith(b0))
             {
