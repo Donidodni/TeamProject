@@ -1505,7 +1505,7 @@ namespace TeamProject
             pbBuildHP.Location = new System.Drawing.Point(200, 574);
             pbBuildHP.Name = "pbBuildHP";
             pbBuildHP.Size = new System.Drawing.Size(500, 45);
-            pbBuildHP.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
+            pbBuildHP.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             pbBuildHP.TabIndex = 4;
             // 
             // panel3
@@ -1534,6 +1534,7 @@ namespace TeamProject
             tabPage3.Controls.Add(pn_Store_3);
             tabPage3.Controls.Add(pn_Store_2);
             tabPage3.Controls.Add(pn_Store_1);
+            tabPage3.Controls.Add(lbox_Chat_tab3);
             tabPage3.Controls.Add(pictstore);
             tabPage3.Controls.Add(lbox_Chat_tab3);
             tabPage3.Location = new System.Drawing.Point(4, 24);
@@ -1562,7 +1563,6 @@ namespace TeamProject
             pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox17.TabIndex = 4;
             pictureBox17.TabStop = false;
-            pictureBox17.Click += pictureBox17_Click;
             // 
             // pictureBox16
             // 
