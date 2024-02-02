@@ -12,6 +12,7 @@ using System.Media;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
 using WinFormsApp2;
+using System.Diagnostics;
 
 namespace TeamProject
 {
@@ -49,8 +50,8 @@ namespace TeamProject
             InitializeComponent();
             InitializeWeapons(); //Dictionary에 무기 정보 추가
             InitializeWeaponsList(); // 0~10강 무기를 담을 리스트 생성
-            Money = 0;
-            limit = 0;
+            Money = 110;
+            limit = 10 * 6;  // x의 경우의 수 * y의 경우의 수
             ingame_bgm.Play(); // 김민석 - 해당 코드를 지움으로써 디버깅시 음악을 제거할 수 있습니다.
             MoneyResult();
             InitializePanelMovement();//상점 캐릭터 이동
@@ -68,7 +69,6 @@ namespace TeamProject
                     Random random = new Random();
                     int x = random.Next(0, 10); // 메인 패널 생성숫자 조절가능
                     int y = random.Next(0, 6);  // 메인 패널 생성숫자 조절가능
-                    limit = 10 * 6;  // x의 경우의 수 * y의 경우의 수
 
                     WeaponUpgrade existingWeapon = weaponsDictionary[type]; // Dictionary로 type강의 무기 정보를 가져옴
 
@@ -328,11 +328,17 @@ namespace TeamProject
 
         private void ShowMessage(string message) //아래 ListBox에 메세지 추가
         {
-            lbox_Chat.Items.Add(message);
-            lbox_Chat.TopIndex = lbox_Chat.Items.Count - 1;
+            lbox_Chat_tab1.Items.Add(message);
+            lbox_Chat_tab1.TopIndex = lbox_Chat_tab1.Items.Count - 1;
             // 스크롤 아래로 이동
-            lbox_Chat.SelectedIndex = lbox_Chat.Items.Count - 1;
-            lbox_Chat.SelectedIndex = -1; // 선택 해제
+            lbox_Chat_tab1.SelectedIndex = lbox_Chat_tab1.Items.Count - 1;
+            lbox_Chat_tab1.SelectedIndex = -1; // 선택 해제
+
+            lbox_Chat_tab3.Items.Add(message);
+            lbox_Chat_tab3.TopIndex = lbox_Chat_tab3.Items.Count - 1;
+            // 스크롤 아래로 이동
+            lbox_Chat_tab3.SelectedIndex = lbox_Chat_tab3.Items.Count - 1;
+            lbox_Chat_tab3.SelectedIndex = -1; // 선택 해제
         }
         private void MoveWork(Panel clickedPanel) // 일터로 이동
         {
@@ -358,9 +364,13 @@ namespace TeamProject
                 RemovePanel(clickedPanel);
                 AddPanels(int.Parse(tagParts[0]), 1);
             }
-            while (lbox_Chat.Items.Count > 10)
+            while (lbox_Chat_tab1.Items.Count > 10)
             {
-                lbox_Chat.Items.RemoveAt(0);
+                lbox_Chat_tab1.Items.RemoveAt(0);
+            }
+            while (lbox_Chat_tab3.Items.Count > 10)
+            {
+                lbox_Chat_tab3.Items.RemoveAt(0);
             }
         }
         private void btn_AllChoice_Click(object sender, EventArgs e) //모두 강화 버튼 보이게/안보이게
@@ -457,9 +467,14 @@ namespace TeamProject
                 }
 
                 // 최대 채팅 수를 10으로 제한하고 오래된 채팅 삭제
-                while (lbox_Chat.Items.Count > 10)
+                while (lbox_Chat_tab1.Items.Count > 10)
                 {
-                    lbox_Chat.Items.RemoveAt(0);
+                    lbox_Chat_tab1.Items.RemoveAt(0);
+                }
+
+                while (lbox_Chat_tab3.Items.Count > 10)
+                {
+                    lbox_Chat_tab3.Items.RemoveAt(0);
                 }
             }
 
@@ -833,6 +848,7 @@ namespace TeamProject
                     curr.Left += 5;
             }
         }
+        
         private void timerstorebay_Tick(object sender, EventArgs e)
         {
             Rectangle b0 = curr.Bounds;
@@ -845,38 +861,17 @@ namespace TeamProject
             Rectangle b7 = pn_Store_7.Bounds;
             Rectangle b8 = pn_Store_8.Bounds;
 
-            if (b1.IntersectsWith(b0))  // 첫번째 비콘. 0강 10개 구매. 330원
+            if (b1.IntersectsWith(b0))  // 첫번째 비콘. 0강 10개 구매. 110원
             {
-                timerstorebay.Stop();
-                curr.Location = new Point(400, 400);
-                if (Money < 330)
-                {
-                    ShowMessage("돈이 부족하여 구매에 실패하였습니다.");
-                }
-                else
-                {
-
-                    if (MainPanelList.Count + 10 >= limit)
-                    {
-                        ShowMessage("공간이 부족하여 구매에 실패하였습니다.");                        
-                    }
-                    else
-                    {
-                        Money -= 330;
-                        MoneyResult();
-                        AddPanels(0, 10);
-                    }
-                }
+                Buyweapons(0, 110); // 강화단계,구매가격
             }
-            else if (b2.IntersectsWith(b0))
+            else if (b2.IntersectsWith(b0))  // 두번째 비콘. 3강 10개 구매. 330원
             {
-                timerstorebay.Stop();
-                curr.Location = new Point(400, 400);
+                Buyweapons(3, 330);
             }
-            else if (b3.IntersectsWith(b0))
+            else if (b3.IntersectsWith(b0))  // 두번째 비콘. 3강 10개 구매. 330원
             {
-                timerstorebay.Stop();
-                curr.Location = new Point(400, 400);
+                Buyweapons(6, 7700);
             }
             else if (b4.IntersectsWith(b0))
             {
@@ -902,6 +897,32 @@ namespace TeamProject
             {
                 timerstorebay.Stop();
                 curr.Location = new Point(400, 400);
+            }
+        }
+        private void Buyweapons(int type, int price)
+        {
+            timerstorebay.Stop();
+            curr.Location = new Point(400, 400);
+            WeaponUpgrade existingWeapon = weaponsDictionary[type]; // Dictionary로 type강의 무기 정보를 가져옴
+
+            if (Money < price)
+            {
+                ShowMessage("돈이 부족하여 구매에 실패하였습니다.");
+            }
+            else
+            {
+
+                if (MainPanelList.Count + 10 >= limit)
+                {
+                    ShowMessage("공간이 부족하여 구매에 실패하였습니다.");
+                }
+                else
+                {
+                    Money -= price;
+                    MoneyResult();
+                    AddPanels(type, 10);
+                    ShowMessage($"{existingWeapon.Name} 10명을 {price}에 구매하였습니다.");
+                }
             }
         }
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
