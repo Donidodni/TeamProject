@@ -664,12 +664,17 @@ namespace TeamProject
             tabControl1.TabPages[1].Controls.Add(pnBuilding);    //빌딩패널 생성
         }
 
-    
+
 
         private void MobleTeamProject_Gambling_Load(object sender, EventArgs e)
-        {     
+        {
             NewBuilding(0);
             timer1.Start(); //건물 공격 시작
+        }
+
+        private void MobleTeamProject_Gambling_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ingame_bgm.Stop();
         }
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

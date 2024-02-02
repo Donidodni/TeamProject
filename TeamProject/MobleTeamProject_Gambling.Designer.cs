@@ -1471,8 +1471,10 @@ namespace TeamProject
             building.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
             building.ImageStream = (System.Windows.Forms.ImageListStreamer)resources.GetObject("building.ImageStream");
             building.TransparentColor = System.Drawing.Color.Transparent;
-            building.Images.SetKeyName(0, "vecteezy_an-8-bit-retro-styled-pixel-art-illustration-of-an-orange_26547540.png");
-            building.Images.SetKeyName(1, "cor5od4d5bs9cj2m656bbeimk1-525b3457358cc29eb89c4c082686d870.png");
+            building.Images.SetKeyName(0, "build_1.png");
+            building.Images.SetKeyName(1, "build_2.png");
+            building.Images.SetKeyName(2, "build_3.png");
+            building.Images.SetKeyName(3, "build_4.png");
             // 
             // MobleTeamProject_Gambling
             // 
@@ -1483,6 +1485,7 @@ namespace TeamProject
             Name = "MobleTeamProject_Gambling";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "MobleTeamProject_Gambling";
+            FormClosed += MobleTeamProject_Gambling_FormClosed;
             Load += MobleTeamProject_Gambling_Load;
             panel_Upgrade.ResumeLayout(false);
             panel_Upgrade.PerformLayout();
