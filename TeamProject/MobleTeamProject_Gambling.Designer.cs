@@ -246,29 +246,29 @@ namespace TeamProject
             pictureBox18 = new System.Windows.Forms.PictureBox();
             pictureBox17 = new System.Windows.Forms.PictureBox();
             pictureBox16 = new System.Windows.Forms.PictureBox();
-            label20 = new System.Windows.Forms.Label();
-            label19 = new System.Windows.Forms.Label();
-            label9 = new System.Windows.Forms.Label();
             lb_Money_tab3 = new System.Windows.Forms.Label();
             pn_Store_6 = new System.Windows.Forms.Panel();
+            label26 = new System.Windows.Forms.Label();
             pn_Store_7 = new System.Windows.Forms.Panel();
+            label24 = new System.Windows.Forms.Label();
             pn_Store_8 = new System.Windows.Forms.Panel();
+            label25 = new System.Windows.Forms.Label();
             pn_Store_5 = new System.Windows.Forms.Panel();
+            label22 = new System.Windows.Forms.Label();
             pn_Store_4 = new System.Windows.Forms.Panel();
+            label21 = new System.Windows.Forms.Label();
             pn_Store_3 = new System.Windows.Forms.Panel();
+            label20 = new System.Windows.Forms.Label();
             pn_Store_2 = new System.Windows.Forms.Panel();
+            label19 = new System.Windows.Forms.Label();
             pn_Store_1 = new System.Windows.Forms.Panel();
+            label9 = new System.Windows.Forms.Label();
             pictstore = new System.Windows.Forms.PictureBox();
             timer1 = new System.Windows.Forms.Timer(components);
             Allview0_value = new System.Windows.Forms.Label();
             timerstore = new System.Windows.Forms.Timer(components);
             timerstorebay = new System.Windows.Forms.Timer(components);
             building = new System.Windows.Forms.ImageList(components);
-            label21 = new System.Windows.Forms.Label();
-            label22 = new System.Windows.Forms.Label();
-            label24 = new System.Windows.Forms.Label();
-            label25 = new System.Windows.Forms.Label();
-            label26 = new System.Windows.Forms.Label();
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             panel14.SuspendLayout();
@@ -1534,7 +1534,6 @@ namespace TeamProject
             tabPage3.Controls.Add(pn_Store_3);
             tabPage3.Controls.Add(pn_Store_2);
             tabPage3.Controls.Add(pn_Store_1);
-            tabPage3.Controls.Add(lbox_Chat_tab3);
             tabPage3.Controls.Add(pictstore);
             tabPage3.Controls.Add(lbox_Chat_tab3);
             tabPage3.Location = new System.Drawing.Point(4, 24);
@@ -1574,33 +1573,6 @@ namespace TeamProject
             pictureBox16.TabIndex = 4;
             pictureBox16.TabStop = false;
             // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new System.Drawing.Point(3, 25);
-            label20.Name = "label20";
-            label20.Size = new System.Drawing.Size(74, 45);
-            label20.TabIndex = 3;
-            label20.Text = "기사\n가격:7700원\r\n+10개";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new System.Drawing.Point(16, 14);
-            label19.Name = "label19";
-            label19.Size = new System.Drawing.Size(67, 45);
-            label19.TabIndex = 3;
-            label19.Text = "상급일꾼\r\n가격:330원\r\n+10개";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new System.Drawing.Point(21, 25);
-            label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(67, 45);
-            label9.TabIndex = 3;
-            label9.Text = "하급농부\r\n가격:110원\r\n+10개";
-            // 
             // lb_Money_tab3
             // 
             lb_Money_tab3.AutoSize = true;
@@ -1620,6 +1592,15 @@ namespace TeamProject
             pn_Store_6.Size = new System.Drawing.Size(83, 73);
             pn_Store_6.TabIndex = 1;
             // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new System.Drawing.Point(3, 23);
+            label26.Name = "label26";
+            label26.Size = new System.Drawing.Size(81, 30);
+            label26.TabIndex = 3;
+            label26.Text = "로또(상급)\r\n가격:50000원";
+            // 
             // pn_Store_7
             // 
             pn_Store_7.BackColor = System.Drawing.Color.Blue;
@@ -1628,6 +1609,15 @@ namespace TeamProject
             pn_Store_7.Name = "pn_Store_7";
             pn_Store_7.Size = new System.Drawing.Size(116, 73);
             pn_Store_7.TabIndex = 1;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new System.Drawing.Point(9, 20);
+            label24.Name = "label24";
+            label24.Size = new System.Drawing.Size(107, 30);
+            label24.TabIndex = 3;
+            label24.Text = "강화 확률 증가(소)\r\n가격:1000원\r\n";
             // 
             // pn_Store_8
             // 
@@ -1638,6 +1628,15 @@ namespace TeamProject
             pn_Store_8.Size = new System.Drawing.Size(111, 73);
             pn_Store_8.TabIndex = 1;
             // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new System.Drawing.Point(1, 20);
+            label25.Name = "label25";
+            label25.Size = new System.Drawing.Size(107, 30);
+            label25.TabIndex = 3;
+            label25.Text = "강화 확률 증가(대)\r\n가격:50000원";
+            // 
             // pn_Store_5
             // 
             pn_Store_5.BackColor = System.Drawing.Color.Red;
@@ -1647,6 +1646,15 @@ namespace TeamProject
             pn_Store_5.Size = new System.Drawing.Size(83, 73);
             pn_Store_5.TabIndex = 1;
             // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new System.Drawing.Point(3, 23);
+            label22.Name = "label22";
+            label22.Size = new System.Drawing.Size(74, 30);
+            label22.TabIndex = 3;
+            label22.Text = "로또(중급)\r\n가격:3000원";
+            // 
             // pn_Store_4
             // 
             pn_Store_4.BackColor = System.Drawing.Color.Red;
@@ -1655,6 +1663,15 @@ namespace TeamProject
             pn_Store_4.Name = "pn_Store_4";
             pn_Store_4.Size = new System.Drawing.Size(83, 73);
             pn_Store_4.TabIndex = 1;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new System.Drawing.Point(6, 19);
+            label21.Name = "label21";
+            label21.Size = new System.Drawing.Size(67, 30);
+            label21.TabIndex = 3;
+            label21.Text = "로또(하급)\r\n가격:300원\r\n";
             // 
             // pn_Store_3
             // 
@@ -1666,6 +1683,15 @@ namespace TeamProject
             pn_Store_3.Size = new System.Drawing.Size(97, 89);
             pn_Store_3.TabIndex = 1;
             // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new System.Drawing.Point(3, 25);
+            label20.Name = "label20";
+            label20.Size = new System.Drawing.Size(74, 45);
+            label20.TabIndex = 3;
+            label20.Text = "기사\n가격:7700원\r\n+10개";
+            // 
             // pn_Store_2
             // 
             pn_Store_2.BackColor = System.Drawing.Color.Red;
@@ -1676,6 +1702,15 @@ namespace TeamProject
             pn_Store_2.Size = new System.Drawing.Size(98, 89);
             pn_Store_2.TabIndex = 1;
             // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new System.Drawing.Point(16, 14);
+            label19.Name = "label19";
+            label19.Size = new System.Drawing.Size(67, 45);
+            label19.TabIndex = 3;
+            label19.Text = "상급일꾼\r\n가격:330원\r\n+10개";
+            // 
             // pn_Store_1
             // 
             pn_Store_1.BackColor = System.Drawing.Color.Red;
@@ -1685,6 +1720,15 @@ namespace TeamProject
             pn_Store_1.Name = "pn_Store_1";
             pn_Store_1.Size = new System.Drawing.Size(91, 89);
             pn_Store_1.TabIndex = 1;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new System.Drawing.Point(21, 25);
+            label9.Name = "label9";
+            label9.Size = new System.Drawing.Size(67, 45);
+            label9.TabIndex = 3;
+            label9.Text = "하급농부\r\n가격:110원\r\n+10개";
             // 
             // pictstore
             // 
@@ -1721,51 +1765,6 @@ namespace TeamProject
             building.Images.SetKeyName(1, "build_2.png");
             building.Images.SetKeyName(2, "build_3.png");
             building.Images.SetKeyName(3, "build_4.png");
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new System.Drawing.Point(6, 19);
-            label21.Name = "label21";
-            label21.Size = new System.Drawing.Size(67, 30);
-            label21.TabIndex = 3;
-            label21.Text = "로또(하급)\r\n가격:300원\r\n";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new System.Drawing.Point(3, 23);
-            label22.Name = "label22";
-            label22.Size = new System.Drawing.Size(74, 30);
-            label22.TabIndex = 3;
-            label22.Text = "로또(중급)\r\n가격:3000원";
-            // 
-            // label24
-            // 
-            label24.AutoSize = true;
-            label24.Location = new System.Drawing.Point(9, 20);
-            label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(107, 30);
-            label24.TabIndex = 3;
-            label24.Text = "강화 확률 증가(소)\r\n가격:1000원\r\n";
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Location = new System.Drawing.Point(1, 20);
-            label25.Name = "label25";
-            label25.Size = new System.Drawing.Size(107, 30);
-            label25.TabIndex = 3;
-            label25.Text = "강화 확률 증가(대)\r\n가격:20000원";
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Location = new System.Drawing.Point(3, 23);
-            label26.Name = "label26";
-            label26.Size = new System.Drawing.Size(81, 30);
-            label26.TabIndex = 3;
-            label26.Text = "로또(상급)\r\n가격:50000원";
             // 
             // MobleTeamProject_Gambling
             // 

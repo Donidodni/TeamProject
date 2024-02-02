@@ -210,14 +210,14 @@ namespace TeamProject
         {
             enhanceButton = new Button();
             enhanceButton.Text = "던전";
-            enhanceButton.Location = new Point(clickedButton.Location.X + clickedButton.Width + 20, clickedButton.Location.Y + 10);
+            //enhanceButton.Location = new Point(clickedButton.Location.X + clickedButton.Width + 20, clickedButton.Location.Y + 10);
             enhanceButton.Size = new Size(60, 25);
             enhanceButton.Click += (s, ev) => StartMove_FromButton_Up(clickedButton);
             flowLayoutPanel1.Controls.Add(enhanceButton);
 
             sendButton = new Button();
             sendButton.Text = "광산";
-            sendButton.Location = new Point(clickedButton.Location.X + clickedButton.Width + 20, clickedButton.Location.Y + 40);
+            //sendButton.Location = new Point(clickedButton.Location.X + clickedButton.Width + 20, clickedButton.Location.Y + 40);
             sendButton.Size = new Size(60, 25);
             // sendButton 클릭 이벤트 처리
             sendButton.Click += (s, ev) => StartMove_FromButton_Right(clickedButton);
@@ -225,7 +225,7 @@ namespace TeamProject
 
             sellButton = new Button();
             sellButton.Text = "판매";
-            sellButton.Location = new Point(clickedButton.Location.X + clickedButton.Width + 20, clickedButton.Location.Y + 70);
+            //sellButton.Location = new Point(clickedButton.Location.X + clickedButton.Width + 20, clickedButton.Location.Y + 70);
             sellButton.Size = new Size(60, 25);
             // sellButton 클릭 이벤트 처리
             sellButton.Click += (s, ev) => Sell_FromButton(clickedButton);
@@ -553,8 +553,8 @@ namespace TeamProject
 
         bool[] full = new bool[20];  //array 인덱스 좌표에 패널 할당 여부 초기값 false
         int[] Attack = new int[20];  //좌표마다 유닛의 공격력 값
-        int[] BuildArmor = { 1, 100, 400, 1000, 3000 };  //단계별 빌딩 방어력
-        int[] BuildReward = { 30, 100, 400, 1000, 3000 };    //빌딩 단계별 보상
+        int[] BuildArmor = { 1, 100, 400, 2000, 3000 };  //단계별 빌딩 방어력
+        int[] BuildReward = { 30, 100, 400, 3000, 3000 };    //빌딩 단계별 보상
         int TurretAttack = 3;
 
         private void Move(Panel weapon)
@@ -712,7 +712,7 @@ namespace TeamProject
                 {
                     pbBuildHP.Value = pbBuildHP.Minimum;    //HP = 0
                     Money += BuildReward[cbSelectBuild.SelectedIndex];             //건물 파괴 보상
-                    lb_Money_tab1.Text = Money.ToString();
+                    MoneyResult();
                     ShowMessage($"{cbSelectBuild.SelectedIndex + 1}단계 건물을 파괴했습니다. (+{BuildReward[cbSelectBuild.SelectedIndex]}골드)");
                     tabControl1.TabPages[1].Controls.Remove(pnBuilding);
                     NewBuilding(cbSelectBuild.SelectedIndex);
@@ -739,7 +739,7 @@ namespace TeamProject
             pbBuildHP.Minimum = 0;
 
             Color[] BColor = { Color.Black, Color.Red, Color.Pink, Color.Plum, Color.Gold }; //단계별 빌딩 색상
-            int[] BuildHP = { 100, 500, 5000, 15000, 100000 };  //단계별 빌딩 HP
+            int[] BuildHP = { 100, 500, 5000, 30000, 100000 };  //단계별 빌딩 HP
             //빌딩 생성
             // pnBuilding.BackColor = BColor[BLevel];
             //pnBuilding.BackgroundImage = building.Images[BLevel];   //이미지로 넣을 경우
@@ -933,9 +933,9 @@ namespace TeamProject
             {
                 SellBoostItem_1(1000);
             }
-            else if (b8.IntersectsWith(b0)) // 확률 강화 상급. 20000원
+            else if (b8.IntersectsWith(b0)) // 확률 강화 상급. 50000원
             {
-                SellBoostItem_2(20000);
+                SellBoostItem_2(50000);
             }
         }
         private void Buyweapons(int type, int price)
@@ -951,7 +951,7 @@ namespace TeamProject
             else
             {
 
-                if (MainPanelList.Count + 10 >= limit)
+                if (MainPanelList.Count + 10 > limit)
                 {
                     ShowMessage("공간이 부족하여 구매에 실패하였습니다.");
                 }
