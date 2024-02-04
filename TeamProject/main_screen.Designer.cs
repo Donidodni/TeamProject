@@ -91,7 +91,7 @@
             button1.Cursor = System.Windows.Forms.Cursors.Hand;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            button1.Font = new System.Drawing.Font("Galmuri11 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             button1.ForeColor = System.Drawing.Color.Transparent;
             button1.Location = new System.Drawing.Point(269, 445);
             button1.Margin = new System.Windows.Forms.Padding(4);
@@ -136,7 +136,7 @@
             button2.Cursor = System.Windows.Forms.Cursors.Hand;
             button2.FlatAppearance.BorderSize = 0;
             button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            button2.Font = new System.Drawing.Font("Galmuri11 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             button2.ForeColor = System.Drawing.Color.Transparent;
             button2.Location = new System.Drawing.Point(624, 445);
             button2.Margin = new System.Windows.Forms.Padding(4);

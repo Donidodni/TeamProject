@@ -32,7 +32,7 @@ namespace TeamProject
         Dictionary<int, WeaponUpgrade> weaponsDictionary = new Dictionary<int, WeaponUpgrade>(); //키,값 형태로 무기강화별 정보를 저장
         Dictionary<Panel, Timer> timerDictionary = new Dictionary<Panel, Timer>(); //패널마다 타이머를 달아주어 개별 행동 가능
         List<Panel> MainPanelList = new List<Panel>(); // 무기들 랜덤생성시 중복 검사
-        
+
         int[] SuccessProbability = { 90, 80, 70, 60, 40, 25, 15, 10, 5 }; //강화 확률
         int workX = 670; // 패널이 일터로 갈 수 있는 X좌표
         int upgradeY = -90; // 패널이 강화할 수 있는 Y좌표
@@ -58,7 +58,10 @@ namespace TeamProject
             MoneyResult();
             InitializePanelMovement();//상점 캐릭터 이동
         }
-
+        private void game_main_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
 
         void AddPanels(int type, int count) // type만큼 강화된 무기 count만큼 생성
@@ -374,7 +377,7 @@ namespace TeamProject
                 RemovePanel(clickedPanel);
                 AddPanels(int.Parse(tagParts[0]), 1);
             }
-            
+
         }
         private void btn_AllChoice_Click(object sender, EventArgs e) //모두 강화 버튼 보이게/안보이게
         {
@@ -456,7 +459,7 @@ namespace TeamProject
                 int randomValue = random.Next(1, 101);
 
                 // 강화 성공 시
-                if (randomValue <= (SuccessProbability[index] + boost)) 
+                if (randomValue <= (SuccessProbability[index] + boost))
                 {
                     RemovePanel(clickedPanel);
                     AddPanels(index + 1, 1);
@@ -609,7 +612,7 @@ namespace TeamProject
                 GoStrengStationAll.Click += (s, e) =>
                 {
                     if (MainPanelList.Count < limit)
-                    { 
+                    {
                         Panel[] SameLevetlUnit = Mine(int.Parse(tagParts[0].Trim()));    //모두 선택
                         foreach (Panel panel in SameLevetlUnit)
                         {
@@ -982,7 +985,7 @@ namespace TeamProject
             if (Money < price)
             {
                 ShowMessage("돈이 부족하여 구매에 실패하였습니다.");
-                if (x <= 30 && Money != 0) 
+                if (x <= 30 && Money != 0)
                 {
                     ShowMessage("돈이 없으면 몸으로 갚아야지.");
                     ShowMessage("이런! 당신은 혹사당한 나머지");
@@ -1010,7 +1013,7 @@ namespace TeamProject
                 }
                 Money -= price;
                 MoneyResult();
-            }            
+            }
         }
 
         private void SellBoostItem_1(int price)
@@ -1036,7 +1039,7 @@ namespace TeamProject
                 }
             }
 
-            
+
         }
 
         private void SellBoostItem_2(int price)
@@ -1061,9 +1064,11 @@ namespace TeamProject
                     MoneyResult();
                 }
             }
-            
-            
+
+
         }
+
+
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////////////////////////상점/////////////////////////////////////////////////////////

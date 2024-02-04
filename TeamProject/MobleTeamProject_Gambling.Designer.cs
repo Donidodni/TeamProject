@@ -276,6 +276,8 @@ namespace TeamProject
             timerstorebay = new System.Windows.Forms.Timer(components);
             building = new System.Windows.Forms.ImageList(components);
             build = new System.Windows.Forms.ImageList(components);
+            game_main_exit = new System.Windows.Forms.Button();
+            panel6 = new System.Windows.Forms.Panel();
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             panel14.SuspendLayout();
@@ -328,6 +330,7 @@ namespace TeamProject
             pn_Store_2.SuspendLayout();
             pn_Store_1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictstore).BeginInit();
+            panel6.SuspendLayout();
             SuspendLayout();
             // 
             // lbox_Chat_tab1
@@ -1121,7 +1124,8 @@ namespace TeamProject
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
-            tabControl1.Location = new System.Drawing.Point(1, 1);
+            tabControl1.Font = new System.Drawing.Font("Galmuri11 Regular", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tabControl1.Location = new System.Drawing.Point(1, 66);
             tabControl1.Margin = new System.Windows.Forms.Padding(4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -1150,11 +1154,11 @@ namespace TeamProject
             tabPage1.Controls.Add(panel1);
             tabPage1.Controls.Add(panel15);
             tabPage1.Controls.Add(panel16);
-            tabPage1.Location = new System.Drawing.Point(4, 29);
+            tabPage1.Location = new System.Drawing.Point(4, 32);
             tabPage1.Margin = new System.Windows.Forms.Padding(4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            tabPage1.Size = new System.Drawing.Size(1127, 1118);
+            tabPage1.Size = new System.Drawing.Size(1127, 1115);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "강화소";
             tabPage1.Click += tabPage1_Click;
@@ -1365,11 +1369,11 @@ namespace TeamProject
             tabPage2.Controls.Add(cbSelectBuild);
             tabPage2.Controls.Add(pbBuildHP);
             tabPage2.Controls.Add(panel3);
-            tabPage2.Location = new System.Drawing.Point(4, 29);
+            tabPage2.Location = new System.Drawing.Point(4, 32);
             tabPage2.Margin = new System.Windows.Forms.Padding(4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            tabPage2.Size = new System.Drawing.Size(1127, 1118);
+            tabPage2.Size = new System.Drawing.Size(1127, 1115);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "일터";
             tabPage2.UseVisualStyleBackColor = true;
@@ -1416,7 +1420,7 @@ namespace TeamProject
             lb_Money_tab2_1.BackColor = System.Drawing.Color.Transparent;
             lb_Money_tab2_1.Font = new System.Drawing.Font("Galmuri11 Regular", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Money_tab2_1.ForeColor = System.Drawing.Color.White;
-            lb_Money_tab2_1.Location = new System.Drawing.Point(251, 13);
+            lb_Money_tab2_1.Location = new System.Drawing.Point(235, 15);
             lb_Money_tab2_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lb_Money_tab2_1.Name = "lb_Money_tab2_1";
             lb_Money_tab2_1.Size = new System.Drawing.Size(125, 31);
@@ -1628,11 +1632,11 @@ namespace TeamProject
             tabPage3.Controls.Add(pn_Store_1);
             tabPage3.Controls.Add(pictstore);
             tabPage3.Controls.Add(lbox_Chat_tab3);
-            tabPage3.Location = new System.Drawing.Point(4, 29);
+            tabPage3.Location = new System.Drawing.Point(4, 32);
             tabPage3.Margin = new System.Windows.Forms.Padding(4);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            tabPage3.Size = new System.Drawing.Size(1127, 1118);
+            tabPage3.Size = new System.Drawing.Size(1127, 1115);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "상점";
             // 
@@ -1663,12 +1667,12 @@ namespace TeamProject
             // 
             label27.AutoSize = true;
             label27.BackColor = System.Drawing.Color.Transparent;
-            label27.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label27.Font = new System.Drawing.Font("Galmuri11 Regular", 13.2000008F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label27.ForeColor = System.Drawing.Color.White;
             label27.Location = new System.Drawing.Point(99, 15);
             label27.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label27.Name = "label27";
-            label27.Size = new System.Drawing.Size(123, 30);
+            label27.Size = new System.Drawing.Size(134, 31);
             label27.TabIndex = 0;
             label27.Text = "보유 골드 :";
             // 
@@ -1676,12 +1680,12 @@ namespace TeamProject
             // 
             lb_Money_tab3_1.AutoSize = true;
             lb_Money_tab3_1.BackColor = System.Drawing.Color.Transparent;
-            lb_Money_tab3_1.Font = new System.Drawing.Font("맑은 고딕", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            lb_Money_tab3_1.Font = new System.Drawing.Font("Galmuri11 Regular", 13.2000008F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Money_tab3_1.ForeColor = System.Drawing.Color.White;
-            lb_Money_tab3_1.Location = new System.Drawing.Point(251, 13);
+            lb_Money_tab3_1.Location = new System.Drawing.Point(241, 14);
             lb_Money_tab3_1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lb_Money_tab3_1.Name = "lb_Money_tab3_1";
-            lb_Money_tab3_1.Size = new System.Drawing.Size(114, 30);
+            lb_Money_tab3_1.Size = new System.Drawing.Size(125, 31);
             lb_Money_tab3_1.TabIndex = 0;
             lb_Money_tab3_1.Text = "lb_Money";
             // 
@@ -1734,7 +1738,7 @@ namespace TeamProject
             label26.Location = new System.Drawing.Point(4, 31);
             label26.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label26.Name = "label26";
-            label26.Size = new System.Drawing.Size(97, 40);
+            label26.Size = new System.Drawing.Size(122, 46);
             label26.TabIndex = 3;
             label26.Text = "로또(상급)\r\n가격:50000원";
             // 
@@ -1754,7 +1758,7 @@ namespace TeamProject
             label24.Location = new System.Drawing.Point(12, 27);
             label24.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(134, 40);
+            label24.Size = new System.Drawing.Size(155, 46);
             label24.TabIndex = 3;
             label24.Text = "강화 확률 증가(소)\r\n가격:1000원\r\n";
             // 
@@ -1774,7 +1778,7 @@ namespace TeamProject
             label25.Location = new System.Drawing.Point(1, 27);
             label25.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label25.Name = "label25";
-            label25.Size = new System.Drawing.Size(134, 40);
+            label25.Size = new System.Drawing.Size(155, 46);
             label25.TabIndex = 3;
             label25.Text = "강화 확률 증가(대)\r\n가격:50000원";
             // 
@@ -1794,7 +1798,7 @@ namespace TeamProject
             label22.Location = new System.Drawing.Point(4, 31);
             label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label22.Name = "label22";
-            label22.Size = new System.Drawing.Size(89, 40);
+            label22.Size = new System.Drawing.Size(111, 46);
             label22.TabIndex = 3;
             label22.Text = "로또(중급)\r\n가격:3000원";
             // 
@@ -1814,7 +1818,7 @@ namespace TeamProject
             label21.Location = new System.Drawing.Point(8, 25);
             label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label21.Name = "label21";
-            label21.Size = new System.Drawing.Size(81, 40);
+            label21.Size = new System.Drawing.Size(100, 46);
             label21.TabIndex = 3;
             label21.Text = "로또(하급)\r\n가격:300원\r\n";
             // 
@@ -1835,7 +1839,7 @@ namespace TeamProject
             label20.Location = new System.Drawing.Point(4, 33);
             label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label20.Name = "label20";
-            label20.Size = new System.Drawing.Size(89, 60);
+            label20.Size = new System.Drawing.Size(111, 69);
             label20.TabIndex = 3;
             label20.Text = "기사\n가격:7700원\r\n+10개";
             // 
@@ -1856,7 +1860,7 @@ namespace TeamProject
             label19.Location = new System.Drawing.Point(21, 19);
             label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label19.Name = "label19";
-            label19.Size = new System.Drawing.Size(81, 60);
+            label19.Size = new System.Drawing.Size(100, 69);
             label19.TabIndex = 3;
             label19.Text = "상급일꾼\r\n가격:330원\r\n+10개";
             // 
@@ -1877,7 +1881,7 @@ namespace TeamProject
             label9.Location = new System.Drawing.Point(27, 33);
             label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(81, 60);
+            label9.Size = new System.Drawing.Size(94, 69);
             label9.TabIndex = 3;
             label9.Text = "하급농부\r\n가격:110원\r\n+10개";
             // 
@@ -1931,12 +1935,39 @@ namespace TeamProject
             build.Images.SetKeyName(3, "build_4.png");
             build.Images.SetKeyName(4, "build_5.png");
             // 
+            // game_main_exit
+            // 
+            game_main_exit.BackColor = System.Drawing.Color.Transparent;
+            game_main_exit.BackgroundImage = Properties.Resources.exit;
+            game_main_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            game_main_exit.FlatAppearance.BorderSize = 0;
+            game_main_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            game_main_exit.Location = new System.Drawing.Point(1059, 5);
+            game_main_exit.Margin = new System.Windows.Forms.Padding(4);
+            game_main_exit.Name = "game_main_exit";
+            game_main_exit.Size = new System.Drawing.Size(76, 47);
+            game_main_exit.TabIndex = 10;
+            game_main_exit.UseVisualStyleBackColor = false;
+            game_main_exit.Click += game_main_exit_Click;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = System.Drawing.Color.Sienna;
+            panel6.Controls.Add(game_main_exit);
+            panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            panel6.Location = new System.Drawing.Point(0, 0);
+            panel6.Name = "panel6";
+            panel6.Size = new System.Drawing.Size(1137, 60);
+            panel6.TabIndex = 11;
+            // 
             // MobleTeamProject_Gambling
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             ClientSize = new System.Drawing.Size(1137, 1055);
             Controls.Add(tabControl1);
+            Controls.Add(panel6);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             Margin = new System.Windows.Forms.Padding(4);
             Name = "MobleTeamProject_Gambling";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -2021,6 +2052,7 @@ namespace TeamProject
             pn_Store_1.ResumeLayout(false);
             pn_Store_1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictstore).EndInit();
+            panel6.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -2160,5 +2192,7 @@ namespace TeamProject
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label lb_Money_tab3_1;
         private System.Windows.Forms.ImageList build;
+        private System.Windows.Forms.Button game_main_exit;
+        private System.Windows.Forms.Panel panel6;
     }
 }
