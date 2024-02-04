@@ -31,36 +31,26 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main_screen));
             Main_Title = new System.Windows.Forms.Timer(components);
-            pictureBox2 = new System.Windows.Forms.PictureBox();
             imageList1 = new System.Windows.Forms.ImageList(components);
             pictureBox1 = new System.Windows.Forms.PictureBox();
             button1 = new System.Windows.Forms.Button();
             pictureBox3 = new System.Windows.Forms.PictureBox();
             panel3 = new System.Windows.Forms.Panel();
+            main_panel = new System.Windows.Forms.Panel();
+            label2 = new System.Windows.Forms.Label();
+            label1 = new System.Windows.Forms.Label();
             button2 = new System.Windows.Forms.Button();
             game_exit = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             panel3.SuspendLayout();
+            main_panel.SuspendLayout();
             SuspendLayout();
             // 
             // Main_Title
             // 
             Main_Title.Interval = 18;
             Main_Title.Tick += Main_Title_Tick;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new System.Drawing.Point(478, -118);
-            pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(808, 548);
-            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
             // 
             // imageList1
             // 
@@ -119,14 +109,45 @@
             // 
             // panel3
             // 
+            panel3.Controls.Add(main_panel);
             panel3.Controls.Add(pictureBox3);
             panel3.Controls.Add(pictureBox1);
-            panel3.Controls.Add(pictureBox2);
             panel3.Location = new System.Drawing.Point(0, 147);
             panel3.Margin = new System.Windows.Forms.Padding(4);
             panel3.Name = "panel3";
             panel3.Size = new System.Drawing.Size(1161, 280);
             panel3.TabIndex = 7;
+            // 
+            // main_panel
+            // 
+            main_panel.Controls.Add(label2);
+            main_panel.Controls.Add(label1);
+            main_panel.Location = new System.Drawing.Point(479, 23);
+            main_panel.Name = "main_panel";
+            main_panel.Size = new System.Drawing.Size(865, 238);
+            main_panel.TabIndex = 7;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = System.Drawing.Color.Transparent;
+            label2.Font = new System.Drawing.Font("Galmuri11 Bold", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(60, 0);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(717, 160);
+            label2.TabIndex = 6;
+            label2.Text = "용사 키우기";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = System.Drawing.Color.Transparent;
+            label1.Font = new System.Drawing.Font("Galmuri11 Regular", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(95, 147);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(609, 80);
+            label1.TabIndex = 6;
+            label1.Text = ": 황금 용사가 필요해";
             // 
             // button2
             // 
@@ -181,16 +202,16 @@
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel3.ResumeLayout(false);
+            main_panel.ResumeLayout(false);
+            main_panel.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
         private System.Windows.Forms.Timer Main_Title;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
@@ -198,5 +219,8 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button game_exit;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel main_panel;
     }
 }

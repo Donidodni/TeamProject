@@ -57,10 +57,10 @@
             button1.Cursor = System.Windows.Forms.Cursors.Hand;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            button1.Font = new System.Drawing.Font("Galmuri11 Regular", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             button1.ForeColor = System.Drawing.Color.White;
-            button1.Location = new System.Drawing.Point(645, 228);
-            button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            button1.Location = new System.Drawing.Point(674, 224);
+            button1.Margin = new System.Windows.Forms.Padding(4);
             button1.Name = "button1";
             button1.Size = new System.Drawing.Size(240, 53);
             button1.TabIndex = 1;
@@ -70,17 +70,17 @@
             // 
             // Main_info_panel
             // 
-            Main_info_panel.BackgroundImage = Properties.Resources.message_memo;
+            Main_info_panel.BackgroundImage = Properties.Resources.info_page;
             Main_info_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             Main_info_panel.Controls.Add(lb_info2);
             Main_info_panel.Controls.Add(button1);
             Main_info_panel.Controls.Add(lb_info1);
             Main_info_panel.Controls.Add(lb_info3);
             Main_info_panel.Controls.Add(lb_info4);
-            Main_info_panel.Location = new System.Drawing.Point(101, 315);
-            Main_info_panel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            Main_info_panel.Location = new System.Drawing.Point(60, 291);
+            Main_info_panel.Margin = new System.Windows.Forms.Padding(4);
             Main_info_panel.Name = "Main_info_panel";
-            Main_info_panel.Size = new System.Drawing.Size(917, 307);
+            Main_info_panel.Size = new System.Drawing.Size(981, 337);
             Main_info_panel.TabIndex = 2;
             // 
             // lb_info2
@@ -89,7 +89,7 @@
             lb_info2.BackColor = System.Drawing.Color.Transparent;
             lb_info2.Font = new System.Drawing.Font("Galmuri11 Regular", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_info2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            lb_info2.Location = new System.Drawing.Point(26, 104);
+            lb_info2.Location = new System.Drawing.Point(56, 110);
             lb_info2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lb_info2.Name = "lb_info2";
             lb_info2.Size = new System.Drawing.Size(705, 38);
@@ -102,7 +102,7 @@
             lb_info1.BackColor = System.Drawing.Color.Transparent;
             lb_info1.Font = new System.Drawing.Font("Galmuri11 Regular", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_info1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            lb_info1.Location = new System.Drawing.Point(26, 44);
+            lb_info1.Location = new System.Drawing.Point(56, 61);
             lb_info1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lb_info1.Name = "lb_info1";
             lb_info1.Size = new System.Drawing.Size(887, 38);
@@ -115,7 +115,7 @@
             lb_info3.BackColor = System.Drawing.Color.Transparent;
             lb_info3.Font = new System.Drawing.Font("Galmuri11 Regular", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_info3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            lb_info3.Location = new System.Drawing.Point(26, 164);
+            lb_info3.Location = new System.Drawing.Point(56, 162);
             lb_info3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lb_info3.Name = "lb_info3";
             lb_info3.Size = new System.Drawing.Size(417, 38);
@@ -128,7 +128,7 @@
             lb_info4.BackColor = System.Drawing.Color.Transparent;
             lb_info4.Font = new System.Drawing.Font("Galmuri11 Regular", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_info4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            lb_info4.Location = new System.Drawing.Point(26, 224);
+            lb_info4.Location = new System.Drawing.Point(56, 214);
             lb_info4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lb_info4.Name = "lb_info4";
             lb_info4.Size = new System.Drawing.Size(466, 38);

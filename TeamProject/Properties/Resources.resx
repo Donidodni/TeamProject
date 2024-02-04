@@ -268,4 +268,37 @@
   <data name="shop_map" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shop_map.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gold" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gold.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="info_page" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\info_page.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main_all_select_export" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\main_all_select-export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main_view" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\main_view.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main_view_btn_export" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\main_view_btn-export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main_view_export" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\main_view-export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="main_view_panel_export" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\main_view_panel-export.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shop_character" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shop_character.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="soldier_high_stand" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\soldier_high_stand.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="title_shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\title_shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ui_main" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ui_main.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

@@ -56,9 +56,11 @@ namespace WinFormsApp2
             pictureBox1.Location = point;
 
 
-            double gradient1 = 22 * Math.Pow(0.9, second_count); // 제목 사진에 그라데이션 이펙트를 부여합니다.
-            Point point1 = new Point(pictureBox2.Location.X - (int)gradient1, pictureBox2.Location.Y);
-            pictureBox2.Location = point1;
+            double gradient1 = 22 * Math.Pow(0.9, second_count); // 제목 글귀에 그라데이션 이펙트를 부여합니다.
+            Point point1 = new Point(main_panel.Location.X - (int)gradient1, main_panel.Location.Y);
+            main_panel.Location = point1;
+
+
 
             if (second_count == 29) // 두 사진의 그라데이션 이펙트 부여 길이를 조절합니다. second_count가 40 이면 중지 및 리셋합니다. 
             {
