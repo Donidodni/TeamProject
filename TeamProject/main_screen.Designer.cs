@@ -54,10 +54,11 @@
             // 
             pictureBox2.BackColor = System.Drawing.Color.Transparent;
             pictureBox2.Image = (System.Drawing.Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new System.Drawing.Point(345, 0);
+            pictureBox2.Location = new System.Drawing.Point(478, -118);
+            pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new System.Drawing.Size(646, 218);
-            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBox2.Size = new System.Drawing.Size(808, 548);
+            pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
@@ -72,10 +73,12 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new System.Drawing.Point(24, 1);
+            pictureBox1.Location = new System.Drawing.Point(31, -36);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(115, 240);
+            pictureBox1.Size = new System.Drawing.Size(187, 357);
             pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
@@ -90,9 +93,10 @@
             button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             button1.ForeColor = System.Drawing.Color.Transparent;
-            button1.Location = new System.Drawing.Point(209, 334);
+            button1.Location = new System.Drawing.Point(269, 445);
+            button1.Margin = new System.Windows.Forms.Padding(4);
             button1.Name = "button1";
-            button1.Size = new System.Drawing.Size(209, 56);
+            button1.Size = new System.Drawing.Size(269, 75);
             button1.TabIndex = 6;
             button1.Text = "시작하기";
             button1.UseVisualStyleBackColor = false;
@@ -102,10 +106,12 @@
             // pictureBox3
             // 
             pictureBox3.BackColor = System.Drawing.Color.Transparent;
+            pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             pictureBox3.Image = (System.Drawing.Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new System.Drawing.Point(88, 1);
+            pictureBox3.Location = new System.Drawing.Point(113, -36);
+            pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new System.Drawing.Size(115, 240);
+            pictureBox3.Size = new System.Drawing.Size(187, 357);
             pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             pictureBox3.TabIndex = 5;
             pictureBox3.TabStop = false;
@@ -116,9 +122,10 @@
             panel3.Controls.Add(pictureBox3);
             panel3.Controls.Add(pictureBox1);
             panel3.Controls.Add(pictureBox2);
-            panel3.Location = new System.Drawing.Point(0, 110);
+            panel3.Location = new System.Drawing.Point(0, 147);
+            panel3.Margin = new System.Windows.Forms.Padding(4);
             panel3.Name = "panel3";
-            panel3.Size = new System.Drawing.Size(903, 210);
+            panel3.Size = new System.Drawing.Size(1161, 280);
             panel3.TabIndex = 7;
             // 
             // button2
@@ -131,9 +138,10 @@
             button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             button2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             button2.ForeColor = System.Drawing.Color.Transparent;
-            button2.Location = new System.Drawing.Point(485, 334);
+            button2.Location = new System.Drawing.Point(624, 445);
+            button2.Margin = new System.Windows.Forms.Padding(4);
             button2.Name = "button2";
-            button2.Size = new System.Drawing.Size(209, 56);
+            button2.Size = new System.Drawing.Size(269, 75);
             button2.TabIndex = 6;
             button2.Text = "게임방법";
             button2.UseVisualStyleBackColor = false;
@@ -147,26 +155,28 @@
             game_exit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             game_exit.FlatAppearance.BorderSize = 0;
             game_exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            game_exit.Location = new System.Drawing.Point(823, 12);
+            game_exit.Location = new System.Drawing.Point(1058, 16);
+            game_exit.Margin = new System.Windows.Forms.Padding(4);
             game_exit.Name = "game_exit";
-            game_exit.Size = new System.Drawing.Size(65, 60);
+            game_exit.Size = new System.Drawing.Size(84, 80);
             game_exit.TabIndex = 9;
             game_exit.UseVisualStyleBackColor = false;
             game_exit.Click += game_exit_Click;
             // 
             // main_screen
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.ControlLight;
             BackgroundImage = TeamProject.Properties.Resources.mine_map;
-            ClientSize = new System.Drawing.Size(900, 500);
+            ClientSize = new System.Drawing.Size(1157, 667);
             Controls.Add(game_exit);
             Controls.Add(panel3);
             Controls.Add(button2);
             Controls.Add(button1);
             DoubleBuffered = true;
             FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            Margin = new System.Windows.Forms.Padding(4);
             Name = "main_screen";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "Form1";
