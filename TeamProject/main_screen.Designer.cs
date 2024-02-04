@@ -65,11 +65,11 @@
             pictureBox1.BackColor = System.Drawing.Color.Transparent;
             pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             pictureBox1.Image = (System.Drawing.Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new System.Drawing.Point(31, -36);
+            pictureBox1.Location = new System.Drawing.Point(-33, -10);
             pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(187, 357);
-            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBox1.Size = new System.Drawing.Size(340, 357);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
             // 
@@ -98,11 +98,11 @@
             pictureBox3.BackColor = System.Drawing.Color.Transparent;
             pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             pictureBox3.Image = (System.Drawing.Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new System.Drawing.Point(113, -36);
+            pictureBox3.Location = new System.Drawing.Point(51, -10);
             pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new System.Drawing.Size(187, 357);
-            pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            pictureBox3.Size = new System.Drawing.Size(340, 357);
+            pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 5;
             pictureBox3.TabStop = false;
             pictureBox3.Visible = false;
