@@ -1,4 +1,4 @@
-<h1>MOBLE WINFORM PROJECT</h1>
+<h1>MOBLE WINFORM PROJECT 용사키우기 : 황금용사가 필요해 (Raising a Hero )</h1>
 
 모블교육센터에서 진행한 개인팀 프로젝트 입니다. 팀원 : 김민석, 이우열, 정호균, 김정수<br>
 본 프로젝트는 이율을 추구하지 않는 순수 공부 프로젝트이며,<br>
