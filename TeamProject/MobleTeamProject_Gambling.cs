@@ -33,7 +33,7 @@ namespace TeamProject
         Dictionary<Panel, Timer> timerDictionary = new Dictionary<Panel, Timer>(); //패널마다 타이머를 달아주어 개별 행동 가능
         List<Panel> MainPanelList = new List<Panel>(); // 무기들 랜덤생성시 중복 검사
 
-        int[] SuccessProbability = { 90, 80, 70, 60, 40, 25, 15, 10, 5 }; //강화 확률
+        int[] SuccessProbability = { 90, 80, 70, 60, 40, 25, 15, 10, 5, 2 }; //강화 확률
         int workX = 670; // 패널이 일터로 갈 수 있는 X좌표
         int upgradeY = -90; // 패널이 강화할 수 있는 Y좌표
         public bool EsterEgg = true;
