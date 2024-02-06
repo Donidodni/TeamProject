@@ -371,7 +371,7 @@ namespace TeamProject
             }
             else
             {
-                ShowMessage("일터에 유닛이 가득 찼습니다.");
+                ShowMessage("광산에 유닛이 가득 찼습니다.");
                 string tagString = clickedPanel.Tag?.ToString();
                 string[] tagParts = tagString.Split(',');
                 RemovePanel(clickedPanel);
@@ -421,30 +421,6 @@ namespace TeamProject
             RemoveButtons();
             MakeButton((Button)sender);
         }
-
-        private void btn_Test_Click(object sender, EventArgs e)
-        {
-            AddPanels(0, 10);
-            Money -= 110;
-            MoneyResult();
-        }
-
-        private void btn_Test2_Click(object sender, EventArgs e)
-        {
-            AddPanels(3, 10);
-            Money -= 330;
-            MoneyResult();
-        }
-
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            AddPanels(6, 10);
-            Money -= 7700;
-            MoneyResult();
-        }
-
-
 
         private void UpgradeWeapon(Panel clickedPanel) //무기 강화
         {
@@ -642,7 +618,7 @@ namespace TeamProject
                 AttackSum();
             }
             int index = int.Parse(tagParts[0].Trim());
-            ShowMessage($"일터로 +{tagParts[3]} 무기가 이동하였습니다.");
+            ShowMessage($"광산으로 {tagParts[3]}이(가) 이동하였습니다.");
         }
         private void AttackSum()
         {
@@ -945,7 +921,7 @@ namespace TeamProject
         private void Buyweapons(int type, int price)
         {
             timerstorebay.Stop();
-            curr.Location = new Point(400, 400);
+            curr.Location = new Point(361, 345);
             WeaponUpgrade existingWeapon = weaponsDictionary[type]; // Dictionary로 type강의 무기 정보를 가져옴
 
             if (Money < price)
@@ -972,7 +948,7 @@ namespace TeamProject
         private void BuyLotto(int price)
         {
             timerstorebay.Stop();
-            curr.Location = new Point(400, 400);
+            curr.Location = new Point(361, 345);
             Random random = new Random();
             int x = random.Next(1, 101);
             // 확률에 따른 결과 배열
@@ -1019,7 +995,7 @@ namespace TeamProject
         private void SellBoostItem_1(int price)
         {
             timerstorebay.Stop();
-            curr.Location = new Point(400, 400);
+            curr.Location = new Point(361, 345);
             if (boost == 5)
             {
                 ShowMessage("이미 적용되었습니다.");
@@ -1045,7 +1021,7 @@ namespace TeamProject
         private void SellBoostItem_2(int price)
         {
             timerstorebay.Stop();
-            curr.Location = new Point(400, 400);
+            curr.Location = new Point(361, 345);
             if (boost == 10)
             {
                 ShowMessage("이미 적용되었습니다.");
