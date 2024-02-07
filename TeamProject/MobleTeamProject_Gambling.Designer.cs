@@ -356,22 +356,22 @@ namespace TeamProject
             // 
             // lbox_Chat_tab1
             // 
-            lbox_Chat_tab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lbox_Chat_tab1.Font = new System.Drawing.Font("Galmuri11 Regular", 11.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lbox_Chat_tab1.FormattingEnabled = true;
-            lbox_Chat_tab1.ItemHeight = 20;
+            lbox_Chat_tab1.ItemHeight = 22;
             lbox_Chat_tab1.Location = new System.Drawing.Point(39, 708);
             lbox_Chat_tab1.Name = "lbox_Chat_tab1";
-            lbox_Chat_tab1.Size = new System.Drawing.Size(379, 64);
+            lbox_Chat_tab1.Size = new System.Drawing.Size(379, 70);
             lbox_Chat_tab1.TabIndex = 0;
             // 
             // lbox_Chat_tab3
             // 
-            lbox_Chat_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lbox_Chat_tab3.Font = new System.Drawing.Font("Galmuri11 Regular", 14.2499981F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lbox_Chat_tab3.FormattingEnabled = true;
-            lbox_Chat_tab3.ItemHeight = 22;
+            lbox_Chat_tab3.ItemHeight = 25;
             lbox_Chat_tab3.Location = new System.Drawing.Point(39, 708);
             lbox_Chat_tab3.Name = "lbox_Chat_tab3";
-            lbox_Chat_tab3.Size = new System.Drawing.Size(379, 70);
+            lbox_Chat_tab3.Size = new System.Drawing.Size(379, 79);
             lbox_Chat_tab3.TabIndex = 0;
             // 
             // panel_Upgrade
@@ -456,10 +456,10 @@ namespace TeamProject
             // 
             label35.AutoSize = true;
             label35.BackColor = System.Drawing.Color.Transparent;
-            label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label35.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label35.Location = new System.Drawing.Point(95, 27);
             label35.Name = "label35";
-            label35.Size = new System.Drawing.Size(13, 17);
+            label35.Size = new System.Drawing.Size(13, 16);
             label35.TabIndex = 0;
             label35.Text = "-";
             // 
@@ -467,10 +467,10 @@ namespace TeamProject
             // 
             label36.AutoSize = true;
             label36.BackColor = System.Drawing.Color.Transparent;
-            label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label36.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label36.Location = new System.Drawing.Point(54, 9);
             label36.Name = "label36";
-            label36.Size = new System.Drawing.Size(102, 17);
+            label36.Size = new System.Drawing.Size(99, 16);
             label36.TabIndex = 0;
             label36.Text = "전설 용사 (10강)";
             // 
@@ -514,10 +514,10 @@ namespace TeamProject
             // 
             label32.AutoSize = true;
             label32.BackColor = System.Drawing.Color.Transparent;
-            label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label32.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label32.Location = new System.Drawing.Point(95, 27);
             label32.Name = "label32";
-            label32.Size = new System.Drawing.Size(13, 17);
+            label32.Size = new System.Drawing.Size(13, 16);
             label32.TabIndex = 0;
             label32.Text = "-";
             // 
@@ -525,10 +525,10 @@ namespace TeamProject
             // 
             label33.AutoSize = true;
             label33.BackColor = System.Drawing.Color.Transparent;
-            label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label33.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label33.Location = new System.Drawing.Point(54, 9);
             label33.Name = "label33";
-            label33.Size = new System.Drawing.Size(106, 17);
+            label33.Size = new System.Drawing.Size(105, 16);
             label33.TabIndex = 0;
             label33.Text = "베테랑 용사 (9강)";
             // 
@@ -572,10 +572,10 @@ namespace TeamProject
             // 
             lb_Puls_8_Count.AutoSize = true;
             lb_Puls_8_Count.BackColor = System.Drawing.Color.Transparent;
-            lb_Puls_8_Count.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_8_Count.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Puls_8_Count.Location = new System.Drawing.Point(95, 31);
             lb_Puls_8_Count.Name = "lb_Puls_8_Count";
-            lb_Puls_8_Count.Size = new System.Drawing.Size(13, 17);
+            lb_Puls_8_Count.Size = new System.Drawing.Size(13, 16);
             lb_Puls_8_Count.TabIndex = 0;
             lb_Puls_8_Count.Text = "-";
             // 
@@ -583,10 +583,10 @@ namespace TeamProject
             // 
             lb_Allview8.AutoSize = true;
             lb_Allview8.BackColor = System.Drawing.Color.Transparent;
-            lb_Allview8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview8.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Allview8.Location = new System.Drawing.Point(54, 9);
             lb_Allview8.Name = "lb_Allview8";
-            lb_Allview8.Size = new System.Drawing.Size(94, 17);
+            lb_Allview8.Size = new System.Drawing.Size(93, 16);
             lb_Allview8.TabIndex = 0;
             lb_Allview8.Text = "신입 용사 (8강)";
             // 
@@ -630,10 +630,10 @@ namespace TeamProject
             // 
             lb_Allview7.AutoSize = true;
             lb_Allview7.BackColor = System.Drawing.Color.Transparent;
-            lb_Allview7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview7.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Allview7.Location = new System.Drawing.Point(54, 9);
             lb_Allview7.Name = "lb_Allview7";
-            lb_Allview7.Size = new System.Drawing.Size(94, 17);
+            lb_Allview7.Size = new System.Drawing.Size(93, 16);
             lb_Allview7.TabIndex = 0;
             lb_Allview7.Text = "고참 기사 (7강)";
             // 
@@ -641,10 +641,10 @@ namespace TeamProject
             // 
             lb_Puls_7_Count.AutoSize = true;
             lb_Puls_7_Count.BackColor = System.Drawing.Color.Transparent;
-            lb_Puls_7_Count.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_7_Count.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Puls_7_Count.Location = new System.Drawing.Point(95, 27);
             lb_Puls_7_Count.Name = "lb_Puls_7_Count";
-            lb_Puls_7_Count.Size = new System.Drawing.Size(13, 17);
+            lb_Puls_7_Count.Size = new System.Drawing.Size(13, 16);
             lb_Puls_7_Count.TabIndex = 0;
             lb_Puls_7_Count.Text = "-";
             // 
@@ -688,10 +688,10 @@ namespace TeamProject
             // 
             lb_Allview6.AutoSize = true;
             lb_Allview6.BackColor = System.Drawing.Color.Transparent;
-            lb_Allview6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview6.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Allview6.Location = new System.Drawing.Point(70, 9);
             lb_Allview6.Name = "lb_Allview6";
-            lb_Allview6.Size = new System.Drawing.Size(66, 17);
+            lb_Allview6.Size = new System.Drawing.Size(64, 16);
             lb_Allview6.TabIndex = 0;
             lb_Allview6.Text = "기사 (6강)";
             // 
@@ -699,10 +699,10 @@ namespace TeamProject
             // 
             lb_Puls_6_Count.AutoSize = true;
             lb_Puls_6_Count.BackColor = System.Drawing.Color.Transparent;
-            lb_Puls_6_Count.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_6_Count.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Puls_6_Count.Location = new System.Drawing.Point(95, 27);
             lb_Puls_6_Count.Name = "lb_Puls_6_Count";
-            lb_Puls_6_Count.Size = new System.Drawing.Size(13, 17);
+            lb_Puls_6_Count.Size = new System.Drawing.Size(13, 16);
             lb_Puls_6_Count.TabIndex = 0;
             lb_Puls_6_Count.Text = "-";
             // 
@@ -746,10 +746,10 @@ namespace TeamProject
             // 
             lb_Allview5.AutoSize = true;
             lb_Allview5.BackColor = System.Drawing.Color.Transparent;
-            lb_Allview5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview5.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Allview5.Location = new System.Drawing.Point(54, 9);
             lb_Allview5.Name = "lb_Allview5";
-            lb_Allview5.Size = new System.Drawing.Size(94, 17);
+            lb_Allview5.Size = new System.Drawing.Size(93, 16);
             lb_Allview5.TabIndex = 0;
             lb_Allview5.Text = "측근 군인 (5강)";
             // 
@@ -757,10 +757,10 @@ namespace TeamProject
             // 
             lb_Puls_5_Count.AutoSize = true;
             lb_Puls_5_Count.BackColor = System.Drawing.Color.Transparent;
-            lb_Puls_5_Count.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_5_Count.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Puls_5_Count.Location = new System.Drawing.Point(95, 26);
             lb_Puls_5_Count.Name = "lb_Puls_5_Count";
-            lb_Puls_5_Count.Size = new System.Drawing.Size(13, 17);
+            lb_Puls_5_Count.Size = new System.Drawing.Size(13, 16);
             lb_Puls_5_Count.TabIndex = 0;
             lb_Puls_5_Count.Text = "-";
             // 
@@ -804,10 +804,10 @@ namespace TeamProject
             // 
             lb_Allview4.AutoSize = true;
             lb_Allview4.BackColor = System.Drawing.Color.Transparent;
-            lb_Allview4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview4.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Allview4.Location = new System.Drawing.Point(54, 9);
             lb_Allview4.Name = "lb_Allview4";
-            lb_Allview4.Size = new System.Drawing.Size(99, 18);
+            lb_Allview4.Size = new System.Drawing.Size(93, 16);
             lb_Allview4.TabIndex = 0;
             lb_Allview4.Text = "일반 군인 (4강)";
             // 
@@ -815,10 +815,10 @@ namespace TeamProject
             // 
             lb_Puls_4_Count.AutoSize = true;
             lb_Puls_4_Count.BackColor = System.Drawing.Color.Transparent;
-            lb_Puls_4_Count.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_4_Count.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Puls_4_Count.Location = new System.Drawing.Point(95, 26);
             lb_Puls_4_Count.Name = "lb_Puls_4_Count";
-            lb_Puls_4_Count.Size = new System.Drawing.Size(13, 17);
+            lb_Puls_4_Count.Size = new System.Drawing.Size(13, 16);
             lb_Puls_4_Count.TabIndex = 0;
             lb_Puls_4_Count.Text = "-";
             // 
@@ -862,10 +862,10 @@ namespace TeamProject
             // 
             lb_Allview3.AutoSize = true;
             lb_Allview3.BackColor = System.Drawing.Color.Transparent;
-            lb_Allview3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview3.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Allview3.Location = new System.Drawing.Point(57, 9);
             lb_Allview3.Name = "lb_Allview3";
-            lb_Allview3.Size = new System.Drawing.Size(94, 17);
+            lb_Allview3.Size = new System.Drawing.Size(93, 16);
             lb_Allview3.TabIndex = 0;
             lb_Allview3.Text = "상급 일꾼 (3강)";
             // 
@@ -873,10 +873,10 @@ namespace TeamProject
             // 
             lb_Puls_3_Count.AutoSize = true;
             lb_Puls_3_Count.BackColor = System.Drawing.Color.Transparent;
-            lb_Puls_3_Count.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_3_Count.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Puls_3_Count.Location = new System.Drawing.Point(95, 26);
             lb_Puls_3_Count.Name = "lb_Puls_3_Count";
-            lb_Puls_3_Count.Size = new System.Drawing.Size(13, 17);
+            lb_Puls_3_Count.Size = new System.Drawing.Size(13, 16);
             lb_Puls_3_Count.TabIndex = 0;
             lb_Puls_3_Count.Text = "-";
             // 
@@ -920,10 +920,10 @@ namespace TeamProject
             // 
             lb_Allview2.AutoSize = true;
             lb_Allview2.BackColor = System.Drawing.Color.Transparent;
-            lb_Allview2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview2.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Allview2.Location = new System.Drawing.Point(57, 9);
             lb_Allview2.Name = "lb_Allview2";
-            lb_Allview2.Size = new System.Drawing.Size(94, 17);
+            lb_Allview2.Size = new System.Drawing.Size(93, 16);
             lb_Allview2.TabIndex = 0;
             lb_Allview2.Text = "하급 일꾼 (2강)";
             // 
@@ -931,10 +931,10 @@ namespace TeamProject
             // 
             lb_Puls_2_Count.AutoSize = true;
             lb_Puls_2_Count.BackColor = System.Drawing.Color.Transparent;
-            lb_Puls_2_Count.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_2_Count.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Puls_2_Count.Location = new System.Drawing.Point(95, 26);
             lb_Puls_2_Count.Name = "lb_Puls_2_Count";
-            lb_Puls_2_Count.Size = new System.Drawing.Size(13, 17);
+            lb_Puls_2_Count.Size = new System.Drawing.Size(13, 16);
             lb_Puls_2_Count.TabIndex = 0;
             lb_Puls_2_Count.Text = "-";
             // 
@@ -978,10 +978,10 @@ namespace TeamProject
             // 
             lb_Puls_1_Count.AutoSize = true;
             lb_Puls_1_Count.BackColor = System.Drawing.Color.Transparent;
-            lb_Puls_1_Count.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_1_Count.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Puls_1_Count.Location = new System.Drawing.Point(95, 28);
             lb_Puls_1_Count.Name = "lb_Puls_1_Count";
-            lb_Puls_1_Count.Size = new System.Drawing.Size(13, 17);
+            lb_Puls_1_Count.Size = new System.Drawing.Size(13, 16);
             lb_Puls_1_Count.TabIndex = 0;
             lb_Puls_1_Count.Text = "-";
             // 
@@ -989,10 +989,10 @@ namespace TeamProject
             // 
             lb_Allview1.AutoSize = true;
             lb_Allview1.BackColor = System.Drawing.Color.Transparent;
-            lb_Allview1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview1.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Allview1.Location = new System.Drawing.Point(57, 9);
             lb_Allview1.Name = "lb_Allview1";
-            lb_Allview1.Size = new System.Drawing.Size(94, 17);
+            lb_Allview1.Size = new System.Drawing.Size(91, 16);
             lb_Allview1.TabIndex = 0;
             lb_Allview1.Text = "상급 농부 (1강)";
             // 
@@ -1026,10 +1026,10 @@ namespace TeamProject
             // 
             lb_Allview.AutoSize = true;
             lb_Allview.BackColor = System.Drawing.Color.Transparent;
-            lb_Allview.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Allview.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Allview.Location = new System.Drawing.Point(57, 9);
             lb_Allview.Name = "lb_Allview";
-            lb_Allview.Size = new System.Drawing.Size(94, 17);
+            lb_Allview.Size = new System.Drawing.Size(93, 16);
             lb_Allview.TabIndex = 0;
             lb_Allview.Text = "하급 농부 (0강)";
             // 
@@ -1037,10 +1037,10 @@ namespace TeamProject
             // 
             lb_Puls_0_Count.AutoSize = true;
             lb_Puls_0_Count.BackColor = System.Drawing.Color.Transparent;
-            lb_Puls_0_Count.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Puls_0_Count.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Puls_0_Count.Location = new System.Drawing.Point(95, 27);
             lb_Puls_0_Count.Name = "lb_Puls_0_Count";
-            lb_Puls_0_Count.Size = new System.Drawing.Size(13, 17);
+            lb_Puls_0_Count.Size = new System.Drawing.Size(13, 16);
             lb_Puls_0_Count.TabIndex = 0;
             lb_Puls_0_Count.Text = "-";
             // 
@@ -1050,7 +1050,7 @@ namespace TeamProject
             btn_Refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             btn_Refresh.FlatAppearance.BorderSize = 0;
             btn_Refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_Refresh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_Refresh.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_Refresh.ForeColor = System.Drawing.Color.Transparent;
             btn_Refresh.Location = new System.Drawing.Point(423, 195);
             btn_Refresh.Name = "btn_Refresh";
@@ -1089,11 +1089,12 @@ namespace TeamProject
             btn_All0.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btn_All0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All0.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_All0.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All0.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             btn_All0.ImageIndex = 0;
             btn_All0.ImageList = characters;
-            btn_All0.Location = new System.Drawing.Point(3, 3);
+            btn_All0.Location = new System.Drawing.Point(18, 20);
+            btn_All0.Margin = new System.Windows.Forms.Padding(18, 20, 3, 3);
             btn_All0.Name = "btn_All0";
             btn_All0.Size = new System.Drawing.Size(64, 50);
             btn_All0.TabIndex = 0;
@@ -1126,11 +1127,12 @@ namespace TeamProject
             btn_All1.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btn_All1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_All1.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             btn_All1.ImageIndex = 1;
             btn_All1.ImageList = characters;
-            btn_All1.Location = new System.Drawing.Point(3, 59);
+            btn_All1.Location = new System.Drawing.Point(18, 76);
+            btn_All1.Margin = new System.Windows.Forms.Padding(18, 3, 3, 3);
             btn_All1.Name = "btn_All1";
             btn_All1.Size = new System.Drawing.Size(64, 50);
             btn_All1.TabIndex = 1;
@@ -1146,11 +1148,12 @@ namespace TeamProject
             btn_All2.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btn_All2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_All2.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             btn_All2.ImageIndex = 2;
             btn_All2.ImageList = characters;
-            btn_All2.Location = new System.Drawing.Point(3, 115);
+            btn_All2.Location = new System.Drawing.Point(18, 132);
+            btn_All2.Margin = new System.Windows.Forms.Padding(18, 3, 3, 3);
             btn_All2.Name = "btn_All2";
             btn_All2.Size = new System.Drawing.Size(64, 50);
             btn_All2.TabIndex = 2;
@@ -1166,11 +1169,12 @@ namespace TeamProject
             btn_All3.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btn_All3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_All3.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             btn_All3.ImageIndex = 3;
             btn_All3.ImageList = characters;
-            btn_All3.Location = new System.Drawing.Point(3, 171);
+            btn_All3.Location = new System.Drawing.Point(18, 188);
+            btn_All3.Margin = new System.Windows.Forms.Padding(18, 3, 3, 3);
             btn_All3.Name = "btn_All3";
             btn_All3.Size = new System.Drawing.Size(64, 50);
             btn_All3.TabIndex = 3;
@@ -1186,11 +1190,12 @@ namespace TeamProject
             btn_All4.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btn_All4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_All4.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             btn_All4.ImageIndex = 4;
             btn_All4.ImageList = characters;
-            btn_All4.Location = new System.Drawing.Point(73, 3);
+            btn_All4.Location = new System.Drawing.Point(88, 20);
+            btn_All4.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             btn_All4.Name = "btn_All4";
             btn_All4.Size = new System.Drawing.Size(64, 50);
             btn_All4.TabIndex = 4;
@@ -1206,11 +1211,11 @@ namespace TeamProject
             btn_All5.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btn_All5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_All5.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             btn_All5.ImageIndex = 5;
             btn_All5.ImageList = characters;
-            btn_All5.Location = new System.Drawing.Point(73, 59);
+            btn_All5.Location = new System.Drawing.Point(88, 76);
             btn_All5.Name = "btn_All5";
             btn_All5.Size = new System.Drawing.Size(64, 50);
             btn_All5.TabIndex = 5;
@@ -1226,11 +1231,11 @@ namespace TeamProject
             btn_All6.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btn_All6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_All6.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All6.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             btn_All6.ImageIndex = 6;
             btn_All6.ImageList = characters;
-            btn_All6.Location = new System.Drawing.Point(73, 115);
+            btn_All6.Location = new System.Drawing.Point(88, 132);
             btn_All6.Name = "btn_All6";
             btn_All6.Size = new System.Drawing.Size(64, 50);
             btn_All6.TabIndex = 6;
@@ -1246,11 +1251,11 @@ namespace TeamProject
             btn_All7.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btn_All7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_All7.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All7.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             btn_All7.ImageIndex = 7;
             btn_All7.ImageList = characters;
-            btn_All7.Location = new System.Drawing.Point(73, 171);
+            btn_All7.Location = new System.Drawing.Point(88, 188);
             btn_All7.Name = "btn_All7";
             btn_All7.Size = new System.Drawing.Size(64, 50);
             btn_All7.TabIndex = 7;
@@ -1266,11 +1271,12 @@ namespace TeamProject
             btn_All8.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btn_All8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_All8.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             btn_All8.ImageIndex = 8;
             btn_All8.ImageList = characters;
-            btn_All8.Location = new System.Drawing.Point(143, 3);
+            btn_All8.Location = new System.Drawing.Point(158, 20);
+            btn_All8.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
             btn_All8.Name = "btn_All8";
             btn_All8.Size = new System.Drawing.Size(64, 50);
             btn_All8.TabIndex = 8;
@@ -1286,11 +1292,11 @@ namespace TeamProject
             btn_All9.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btn_All9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            btn_All9.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            btn_All9.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_All9.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             btn_All9.ImageIndex = 9;
             btn_All9.ImageList = characters;
-            btn_All9.Location = new System.Drawing.Point(143, 59);
+            btn_All9.Location = new System.Drawing.Point(158, 76);
             btn_All9.Name = "btn_All9";
             btn_All9.Size = new System.Drawing.Size(64, 50);
             btn_All9.TabIndex = 9;
@@ -1306,11 +1312,11 @@ namespace TeamProject
             btn_All10.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             btn_All10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_All10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_All10.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All10.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             btn_All10.ImageIndex = 10;
             btn_All10.ImageList = characters;
-            btn_All10.Location = new System.Drawing.Point(143, 115);
+            btn_All10.Location = new System.Drawing.Point(158, 132);
             btn_All10.Name = "btn_All10";
             btn_All10.Size = new System.Drawing.Size(64, 50);
             btn_All10.TabIndex = 10;
@@ -1324,11 +1330,11 @@ namespace TeamProject
             // 
             label3.AutoSize = true;
             label3.BackColor = System.Drawing.Color.Transparent;
-            label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label3.Font = new System.Drawing.Font("Galmuri11 Regular", 14.2499981F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label3.ForeColor = System.Drawing.Color.White;
             label3.Location = new System.Drawing.Point(69, 12);
             label3.Name = "label3";
-            label3.Size = new System.Drawing.Size(85, 24);
+            label3.Size = new System.Drawing.Size(110, 25);
             label3.TabIndex = 0;
             label3.Text = "보유 골드 :";
             // 
@@ -1336,11 +1342,11 @@ namespace TeamProject
             // 
             lb_Money_tab1.AutoSize = true;
             lb_Money_tab1.BackColor = System.Drawing.Color.Transparent;
-            lb_Money_tab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Money_tab1.Font = new System.Drawing.Font("Galmuri11 Regular", 14.2499981F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Money_tab1.ForeColor = System.Drawing.Color.White;
             lb_Money_tab1.Location = new System.Drawing.Point(187, 11);
             lb_Money_tab1.Name = "lb_Money_tab1";
-            lb_Money_tab1.Size = new System.Drawing.Size(93, 24);
+            lb_Money_tab1.Size = new System.Drawing.Size(107, 25);
             lb_Money_tab1.TabIndex = 0;
             lb_Money_tab1.Text = "lb_Money";
             // 
@@ -1349,7 +1355,7 @@ namespace TeamProject
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Controls.Add(tabPage2);
             tabControl1.Controls.Add(tabPage3);
-            tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            tabControl1.Font = new System.Drawing.Font("Galmuri11 Regular", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             tabControl1.Location = new System.Drawing.Point(1, 50);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -1374,10 +1380,10 @@ namespace TeamProject
             tabPage1.Controls.Add(panel1);
             tabPage1.Controls.Add(panel16);
             tabPage1.Cursor = System.Windows.Forms.Cursors.Hand;
-            tabPage1.Location = new System.Drawing.Point(4, 26);
+            tabPage1.Location = new System.Drawing.Point(4, 28);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            tabPage1.Size = new System.Drawing.Size(875, 833);
+            tabPage1.Size = new System.Drawing.Size(875, 831);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "강화소";
             tabPage1.Click += tabPage1_Click;
@@ -1386,11 +1392,11 @@ namespace TeamProject
             // 
             label10.AutoSize = true;
             label10.BackColor = System.Drawing.Color.FromArgb(128, 64, 64);
-            label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label10.Font = new System.Drawing.Font("Galmuri11 Regular", 23.9999981F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label10.ForeColor = System.Drawing.SystemColors.Control;
             label10.Location = new System.Drawing.Point(734, 451);
             label10.Name = "label10";
-            label10.Size = new System.Drawing.Size(67, 37);
+            label10.Size = new System.Drawing.Size(82, 42);
             label10.TabIndex = 21;
             label10.Text = "광산";
             // 
@@ -1476,7 +1482,7 @@ namespace TeamProject
             btn_ViewUnit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             btn_ViewUnit.FlatAppearance.BorderSize = 0;
             btn_ViewUnit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_ViewUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_ViewUnit.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_ViewUnit.ForeColor = System.Drawing.Color.White;
             btn_ViewUnit.Location = new System.Drawing.Point(431, 5);
             btn_ViewUnit.Name = "btn_ViewUnit";
@@ -1493,7 +1499,7 @@ namespace TeamProject
             btn_AllChoice.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             btn_AllChoice.FlatAppearance.BorderSize = 0;
             btn_AllChoice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            btn_AllChoice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            btn_AllChoice.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_AllChoice.ForeColor = System.Drawing.Color.White;
             btn_AllChoice.Location = new System.Drawing.Point(703, 5);
             btn_AllChoice.Name = "btn_AllChoice";
@@ -1565,12 +1571,12 @@ namespace TeamProject
             // label28
             // 
             label28.AutoSize = true;
-            label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label28.Font = new System.Drawing.Font("Galmuri11 Regular", 14.2499981F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label28.ForeColor = System.Drawing.Color.White;
-            label28.Location = new System.Drawing.Point(70, 11);
+            label28.Location = new System.Drawing.Point(73, 12);
             label28.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label28.Name = "label28";
-            label28.Size = new System.Drawing.Size(46, 26);
+            label28.Size = new System.Drawing.Size(50, 25);
             label28.TabIndex = 0;
             label28.Text = "일터";
             // 
@@ -1603,11 +1609,11 @@ namespace TeamProject
             // 
             label23.AutoSize = true;
             label23.BackColor = System.Drawing.Color.Transparent;
-            label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label23.Font = new System.Drawing.Font("Galmuri11 Regular", 14.2499981F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label23.ForeColor = System.Drawing.Color.White;
             label23.Location = new System.Drawing.Point(77, 11);
             label23.Name = "label23";
-            label23.Size = new System.Drawing.Size(88, 25);
+            label23.Size = new System.Drawing.Size(110, 25);
             label23.TabIndex = 0;
             label23.Text = "보유 골드 :";
             // 
@@ -1615,11 +1621,11 @@ namespace TeamProject
             // 
             lb_Money_tab2_1.AutoSize = true;
             lb_Money_tab2_1.BackColor = System.Drawing.Color.Transparent;
-            lb_Money_tab2_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Money_tab2_1.Font = new System.Drawing.Font("Galmuri11 Regular", 14.2499981F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Money_tab2_1.ForeColor = System.Drawing.Color.White;
             lb_Money_tab2_1.Location = new System.Drawing.Point(187, 10);
             lb_Money_tab2_1.Name = "lb_Money_tab2_1";
-            lb_Money_tab2_1.Size = new System.Drawing.Size(98, 25);
+            lb_Money_tab2_1.Size = new System.Drawing.Size(107, 25);
             lb_Money_tab2_1.TabIndex = 0;
             lb_Money_tab2_1.Text = "lb_Money";
             // 
@@ -1768,11 +1774,11 @@ namespace TeamProject
             // lbBuildInfo
             // 
             lbBuildInfo.AutoSize = true;
-            lbBuildInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lbBuildInfo.Font = new System.Drawing.Font("Galmuri11 Regular", 14.2499981F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lbBuildInfo.ForeColor = System.Drawing.Color.White;
-            lbBuildInfo.Location = new System.Drawing.Point(85, 11);
+            lbBuildInfo.Location = new System.Drawing.Point(93, 13);
             lbBuildInfo.Name = "lbBuildInfo";
-            lbBuildInfo.Size = new System.Drawing.Size(185, 26);
+            lbBuildInfo.Size = new System.Drawing.Size(203, 25);
             lbBuildInfo.TabIndex = 5;
             lbBuildInfo.Text = "1단계 건물 방어력 : 1";
             // 
@@ -1845,12 +1851,12 @@ namespace TeamProject
             // 
             label29.AutoSize = true;
             label29.BackColor = System.Drawing.Color.Transparent;
-            label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label29.Font = new System.Drawing.Font("Galmuri11 Regular", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label29.ForeColor = System.Drawing.Color.White;
-            label29.Location = new System.Drawing.Point(70, 11);
+            label29.Location = new System.Drawing.Point(72, 12);
             label29.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label29.Name = "label29";
-            label29.Size = new System.Drawing.Size(46, 26);
+            label29.Size = new System.Drawing.Size(50, 25);
             label29.TabIndex = 0;
             label29.Text = "상점";
             // 
@@ -1883,11 +1889,11 @@ namespace TeamProject
             // 
             label27.AutoSize = true;
             label27.BackColor = System.Drawing.Color.Transparent;
-            label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2000008F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label27.Font = new System.Drawing.Font("Galmuri11 Regular", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label27.ForeColor = System.Drawing.Color.White;
-            label27.Location = new System.Drawing.Point(77, 11);
+            label27.Location = new System.Drawing.Point(79, 12);
             label27.Name = "label27";
-            label27.Size = new System.Drawing.Size(85, 24);
+            label27.Size = new System.Drawing.Size(110, 25);
             label27.TabIndex = 0;
             label27.Text = "보유 골드 :";
             // 
@@ -1895,11 +1901,11 @@ namespace TeamProject
             // 
             lb_Money_tab3_1.AutoSize = true;
             lb_Money_tab3_1.BackColor = System.Drawing.Color.Transparent;
-            lb_Money_tab3_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2000008F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lb_Money_tab3_1.Font = new System.Drawing.Font("Galmuri11 Regular", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Money_tab3_1.ForeColor = System.Drawing.Color.White;
-            lb_Money_tab3_1.Location = new System.Drawing.Point(187, 10);
+            lb_Money_tab3_1.Location = new System.Drawing.Point(189, 11);
             lb_Money_tab3_1.Name = "lb_Money_tab3_1";
-            lb_Money_tab3_1.Size = new System.Drawing.Size(93, 24);
+            lb_Money_tab3_1.Size = new System.Drawing.Size(107, 25);
             lb_Money_tab3_1.TabIndex = 0;
             lb_Money_tab3_1.Text = "lb_Money";
             // 
@@ -1917,10 +1923,11 @@ namespace TeamProject
             // label26
             // 
             label26.AutoSize = true;
+            label26.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label26.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             label26.Location = new System.Drawing.Point(37, 20);
             label26.Name = "label26";
-            label26.Size = new System.Drawing.Size(96, 34);
+            label26.Size = new System.Drawing.Size(97, 32);
             label26.TabIndex = 3;
             label26.Text = "로또(상급)\r\n가격 : 50000원";
             // 
@@ -1938,10 +1945,11 @@ namespace TeamProject
             // label24
             // 
             label24.AutoSize = true;
+            label24.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             label24.Location = new System.Drawing.Point(20, 29);
             label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(110, 34);
+            label24.Size = new System.Drawing.Size(109, 32);
             label24.TabIndex = 3;
             label24.Text = "강화 확률 증가(소)\r\n가격 : 1000원\r\n";
             // 
@@ -1959,10 +1967,11 @@ namespace TeamProject
             // label25
             // 
             label25.AutoSize = true;
+            label25.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label25.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             label25.Location = new System.Drawing.Point(19, 29);
             label25.Name = "label25";
-            label25.Size = new System.Drawing.Size(110, 34);
+            label25.Size = new System.Drawing.Size(109, 32);
             label25.TabIndex = 3;
             label25.Text = "강화 확률 증가(대)\r\n가격 : 50000원";
             // 
@@ -1980,10 +1989,11 @@ namespace TeamProject
             // label22
             // 
             label22.AutoSize = true;
+            label22.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             label22.Location = new System.Drawing.Point(43, 21);
             label22.Name = "label22";
-            label22.Size = new System.Drawing.Size(88, 34);
+            label22.Size = new System.Drawing.Size(89, 32);
             label22.TabIndex = 3;
             label22.Text = "로또 (중급)\r\n가격 : 3000원";
             // 
@@ -2001,10 +2011,11 @@ namespace TeamProject
             // label21
             // 
             label21.AutoSize = true;
+            label21.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label21.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             label21.Location = new System.Drawing.Point(45, 23);
             label21.Name = "label21";
-            label21.Size = new System.Drawing.Size(80, 34);
+            label21.Size = new System.Drawing.Size(81, 32);
             label21.TabIndex = 3;
             label21.Text = "로또 (하급)\r\n가격 : 300원\r\n";
             // 
@@ -2023,10 +2034,11 @@ namespace TeamProject
             // label20
             // 
             label20.AutoSize = true;
+            label20.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             label20.Location = new System.Drawing.Point(79, 26);
             label20.Name = "label20";
-            label20.Size = new System.Drawing.Size(88, 34);
+            label20.Size = new System.Drawing.Size(89, 32);
             label20.TabIndex = 3;
             label20.Text = "기사 10명\r\n가격 : 7700원\r\n";
             // 
@@ -2055,10 +2067,11 @@ namespace TeamProject
             // label19
             // 
             label19.AutoSize = true;
+            label19.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             label19.Location = new System.Drawing.Point(68, 32);
             label19.Name = "label19";
-            label19.Size = new System.Drawing.Size(92, 34);
+            label19.Size = new System.Drawing.Size(91, 32);
             label19.TabIndex = 3;
             label19.Text = "상급 일꾼 10명\r\n가격 : 330원\r\n";
             // 
@@ -2087,11 +2100,11 @@ namespace TeamProject
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label9.Font = new System.Drawing.Font("Galmuri11 Regular", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             label9.Location = new System.Drawing.Point(81, 30);
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(92, 34);
+            label9.Size = new System.Drawing.Size(91, 32);
             label9.TabIndex = 3;
             label9.Text = "하급 농부 10명\r\n가격 : 110원\r\n";
             // 
@@ -2186,12 +2199,12 @@ namespace TeamProject
             // label30
             // 
             label30.AutoSize = true;
-            label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label30.Font = new System.Drawing.Font("Galmuri11 Regular", 14.2499981F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label30.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             label30.Location = new System.Drawing.Point(11, 11);
             label30.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label30.Name = "label30";
-            label30.Size = new System.Drawing.Size(90, 24);
+            label30.Size = new System.Drawing.Size(115, 25);
             label30.TabIndex = 11;
             label30.Text = "용사 키우기";
             // 
