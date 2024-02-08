@@ -702,12 +702,12 @@ namespace TeamProject
                 {
                     Attacksum += i;
                 }
-                Attacksum += TurretAttack;
-                if (pbBuildHP.Value > Attacksum - BuildArmor[cbSelectBuild.SelectedIndex])
+                //Attacksum += TurretAttack;
+                if (pbBuildHP.Value > Attacksum + TurretAttack - BuildArmor[cbSelectBuild.SelectedIndex])
                 {
                     //유닛의 공격력이 방어력보다 클 경우
-                    if (Attacksum >= BuildArmor[cbSelectBuild.SelectedIndex])
-                        pbBuildHP.Value -= Attacksum - BuildArmor[cbSelectBuild.SelectedIndex];
+                    if (Attacksum + TurretAttack >= BuildArmor[cbSelectBuild.SelectedIndex] && Attacksum > BuildArmor[cbSelectBuild.SelectedIndex])
+                        pbBuildHP.Value -= (Attacksum - BuildArmor[cbSelectBuild.SelectedIndex]);
                 }
 
                 //건물 파괴 시
@@ -727,6 +727,10 @@ namespace TeamProject
         private void timer1_Tick(object sender, EventArgs e)
         {
             AttackBuild();
+            if (pbBuildHP.Value > pbBuildHP.Minimum)
+                pbBuildHP.Value -= TurretAttack;
+            else
+                pbBuildHP.Value = pbBuildHP.Minimum;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
