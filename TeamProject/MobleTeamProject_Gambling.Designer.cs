@@ -1394,7 +1394,7 @@ namespace TeamProject
             label10.BackColor = System.Drawing.Color.FromArgb(128, 64, 64);
             label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 23.9999981F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label10.ForeColor = System.Drawing.SystemColors.Control;
-            label10.Location = new System.Drawing.Point(734, 451);
+            label10.Location = new System.Drawing.Point(740, 495);
             label10.Name = "label10";
             label10.Size = new System.Drawing.Size(67, 37);
             label10.TabIndex = 21;
