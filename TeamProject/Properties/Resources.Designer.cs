@@ -140,6 +140,26 @@ namespace TeamProject.Properties {
         }
         
         /// <summary>
+        ///   System.Byte[] 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static byte[] Galmuri11 {
+            get {
+                object obj = ResourceManager.GetObject("Galmuri11", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Byte[] 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static byte[] Galmuri11_Bold {
+            get {
+                object obj = ResourceManager.GetObject("Galmuri11_Bold", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
         internal static System.Drawing.Bitmap gold {

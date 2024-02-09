@@ -7,6 +7,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing.Text;
 using System.Windows.Forms;
 using System.Media;
 using static System.Net.Mime.MediaTypeNames;
@@ -187,14 +188,14 @@ namespace TeamProject
         {
             enhanceButton = new Button();
             enhanceButton.Text = "던전";
-            enhanceButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width + 20, clickedPanel.Location.Y + 10);
+            enhanceButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width + 10, clickedPanel.Location.Y + 10);
             enhanceButton.Click += (s, ev) => StartMovePanelUp(clickedPanel);
             panel_Main.Controls.Add(enhanceButton);
             enhanceButton.BringToFront();
 
             sendButton = new Button();
             sendButton.Text = "광산";
-            sendButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width + 20, clickedPanel.Location.Y + 40);
+            sendButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width + 10, clickedPanel.Location.Y + 35);
             // sendButton 클릭 이벤트 처리
             sendButton.Click += (s, ev) => StartMovePanelRight(clickedPanel);
             panel_Main.Controls.Add(sendButton);
@@ -202,7 +203,7 @@ namespace TeamProject
 
             sellButton = new Button();
             sellButton.Text = "판매";
-            sellButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width + 20, clickedPanel.Location.Y + 70);
+            sellButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width + 10, clickedPanel.Location.Y + 60);
             // sellButton 클릭 이벤트 처리
             sellButton.Click += (s, ev) => Sell(clickedPanel);
             panel_Main.Controls.Add(sellButton);
@@ -213,26 +214,38 @@ namespace TeamProject
         {
             enhanceButton = new Button();
             enhanceButton.Text = "던전";
+            enhanceButton.Location = new Point(648, 330);
+
+            enhanceButton.BackColor = Color.White;
             //enhanceButton.Location = new Point(clickedButton.Location.X + clickedButton.Width + 20, clickedButton.Location.Y + 10);
             enhanceButton.Size = new Size(60, 25);
             enhanceButton.Click += (s, ev) => StartMove_FromButton_Up(clickedButton);
-            flowLayoutPanel1.Controls.Add(enhanceButton);
+            tabPage1.Controls.Add(enhanceButton);
+            //flowLayoutPanel1.Controls.Add(enhanceButton); 638, 330
 
             sendButton = new Button();
             sendButton.Text = "광산";
+            sendButton.Location = new Point(708, 330);
+
+            sendButton.BackColor = Color.White;
             //sendButton.Location = new Point(clickedButton.Location.X + clickedButton.Width + 20, clickedButton.Location.Y + 40);
             sendButton.Size = new Size(60, 25);
             // sendButton 클릭 이벤트 처리
             sendButton.Click += (s, ev) => StartMove_FromButton_Right(clickedButton);
-            flowLayoutPanel1.Controls.Add(sendButton);
+            tabPage1.Controls.Add(sendButton);
+            // flowLayoutPanel1.Controls.Add(sendButton);
 
             sellButton = new Button();
             sellButton.Text = "판매";
+            sellButton.Location = new Point(768, 330);
+
+            sendButton.BackColor = Color.White;
             //sellButton.Location = new Point(clickedButton.Location.X + clickedButton.Width + 20, clickedButton.Location.Y + 70);
             sellButton.Size = new Size(60, 25);
             // sellButton 클릭 이벤트 처리
             sellButton.Click += (s, ev) => Sell_FromButton(clickedButton);
-            flowLayoutPanel1.Controls.Add(sellButton);
+            tabPage1.Controls.Add(sellButton);
+            //flowLayoutPanel1.Controls.Add(sellButton);
         }
         private void StartMovePanelUp(Panel panel) // 판넬(무기)를 위로 보냄
         {
