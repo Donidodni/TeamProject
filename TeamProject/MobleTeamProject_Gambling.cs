@@ -46,6 +46,8 @@ namespace TeamProject
 
         private int speed = 10; // 이동 속도 조절 가능
         SoundPlayer ingame_bgm = new SoundPlayer(TeamProject.Properties.Resources.project_inbgm);
+        private static Timer bgm_loop;
+
 
         public MobleTeamProject_Gambling()
         {
@@ -55,16 +57,21 @@ namespace TeamProject
             Money = 110;
             limit = 10 * 6;  // x의 경우의 수 * y의 경우의 수
             boost = 0;
-            ingame_bgm.Play(); // 김민석 - 해당 코드를 지움으로써 디버깅시 음악을 제거할 수 있습니다.
+
+            ingame_bgm.Play();
             MoneyResult();
             InitializePanelMovement();//상점 캐릭터 이동
+
         }
         private void game_main_exit_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-
+        private void bgmloop_Tick(object sender, EventArgs e)
+        {
+            ingame_bgm.Play();
+        }
         void AddPanels(int type, int count) // type만큼 강화된 무기 count만큼 생성
         {
             if (weaponsDictionary.ContainsKey(type))
@@ -188,14 +195,14 @@ namespace TeamProject
         {
             enhanceButton = new Button();
             enhanceButton.Text = "던전";
-            enhanceButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width + 10, clickedPanel.Location.Y + 10);
+            enhanceButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width + 7, clickedPanel.Location.Y + 10);
             enhanceButton.Click += (s, ev) => StartMovePanelUp(clickedPanel);
             panel_Main.Controls.Add(enhanceButton);
             enhanceButton.BringToFront();
 
             sendButton = new Button();
             sendButton.Text = "광산";
-            sendButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width + 10, clickedPanel.Location.Y + 35);
+            sendButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width + 7, clickedPanel.Location.Y + 35);
             // sendButton 클릭 이벤트 처리
             sendButton.Click += (s, ev) => StartMovePanelRight(clickedPanel);
             panel_Main.Controls.Add(sendButton);
@@ -203,7 +210,7 @@ namespace TeamProject
 
             sellButton = new Button();
             sellButton.Text = "판매";
-            sellButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width + 10, clickedPanel.Location.Y + 60);
+            sellButton.Location = new Point(clickedPanel.Location.X + clickedPanel.Width + 7, clickedPanel.Location.Y + 60);
             // sellButton 클릭 이벤트 처리
             sellButton.Click += (s, ev) => Sell(clickedPanel);
             panel_Main.Controls.Add(sellButton);
@@ -217,35 +224,29 @@ namespace TeamProject
             enhanceButton.Location = new Point(648, 330);
 
             enhanceButton.BackColor = Color.White;
-            //enhanceButton.Location = new Point(clickedButton.Location.X + clickedButton.Width + 20, clickedButton.Location.Y + 10);
             enhanceButton.Size = new Size(60, 25);
             enhanceButton.Click += (s, ev) => StartMove_FromButton_Up(clickedButton);
             tabPage1.Controls.Add(enhanceButton);
-            //flowLayoutPanel1.Controls.Add(enhanceButton); 638, 330
 
             sendButton = new Button();
             sendButton.Text = "광산";
-            sendButton.Location = new Point(708, 330);
+            sendButton.Location = new Point(710, 330);
 
             sendButton.BackColor = Color.White;
-            //sendButton.Location = new Point(clickedButton.Location.X + clickedButton.Width + 20, clickedButton.Location.Y + 40);
             sendButton.Size = new Size(60, 25);
             // sendButton 클릭 이벤트 처리
             sendButton.Click += (s, ev) => StartMove_FromButton_Right(clickedButton);
             tabPage1.Controls.Add(sendButton);
-            // flowLayoutPanel1.Controls.Add(sendButton);
 
             sellButton = new Button();
             sellButton.Text = "판매";
-            sellButton.Location = new Point(768, 330);
+            sellButton.Location = new Point(772, 330);
 
-            sendButton.BackColor = Color.White;
-            //sellButton.Location = new Point(clickedButton.Location.X + clickedButton.Width + 20, clickedButton.Location.Y + 70);
+            sellButton.BackColor = Color.White;
             sellButton.Size = new Size(60, 25);
             // sellButton 클릭 이벤트 처리
             sellButton.Click += (s, ev) => Sell_FromButton(clickedButton);
             tabPage1.Controls.Add(sellButton);
-            //flowLayoutPanel1.Controls.Add(sellButton);
         }
         private void StartMovePanelUp(Panel panel) // 판넬(무기)를 위로 보냄
         {
@@ -1060,6 +1061,9 @@ namespace TeamProject
 
 
         }
+
+
+
 
 
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

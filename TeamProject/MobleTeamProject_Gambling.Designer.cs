@@ -292,6 +292,7 @@ namespace TeamProject
             game_main_exit = new System.Windows.Forms.Button();
             panel6 = new System.Windows.Forms.Panel();
             label30 = new System.Windows.Forms.Label();
+            bgmloop = new System.Windows.Forms.Timer(components);
             panel_Upgrade.SuspendLayout();
             flowLayoutPanel2.SuspendLayout();
             panel21.SuspendLayout();
@@ -356,12 +357,12 @@ namespace TeamProject
             // 
             // lbox_Chat_tab1
             // 
-            lbox_Chat_tab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.999999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lbox_Chat_tab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lbox_Chat_tab1.FormattingEnabled = true;
-            lbox_Chat_tab1.ItemHeight = 20;
+            lbox_Chat_tab1.ItemHeight = 25;
             lbox_Chat_tab1.Location = new System.Drawing.Point(39, 708);
             lbox_Chat_tab1.Name = "lbox_Chat_tab1";
-            lbox_Chat_tab1.Size = new System.Drawing.Size(379, 64);
+            lbox_Chat_tab1.Size = new System.Drawing.Size(379, 79);
             lbox_Chat_tab1.TabIndex = 0;
             // 
             // lbox_Chat_tab3
@@ -397,7 +398,6 @@ namespace TeamProject
             flowLayoutPanel2.BackColor = System.Drawing.Color.Transparent;
             flowLayoutPanel2.BackgroundImage = Properties.Resources.main_view_export;
             flowLayoutPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            flowLayoutPanel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             flowLayoutPanel2.Controls.Add(panel21);
             flowLayoutPanel2.Controls.Add(panel20);
             flowLayoutPanel2.Controls.Add(panel14);
@@ -425,6 +425,7 @@ namespace TeamProject
             panel21.Controls.Add(label34);
             panel21.Controls.Add(label35);
             panel21.Controls.Add(label36);
+            panel21.Cursor = System.Windows.Forms.Cursors.Hand;
             panel21.Location = new System.Drawing.Point(389, 132);
             panel21.Margin = new System.Windows.Forms.Padding(2);
             panel21.Name = "panel21";
@@ -541,6 +542,7 @@ namespace TeamProject
             panel14.Controls.Add(label18);
             panel14.Controls.Add(lb_Puls_8_Count);
             panel14.Controls.Add(lb_Allview8);
+            panel14.Cursor = System.Windows.Forms.Cursors.Hand;
             panel14.Location = new System.Drawing.Point(387, 20);
             panel14.Margin = new System.Windows.Forms.Padding(2);
             panel14.Name = "panel14";
@@ -599,6 +601,7 @@ namespace TeamProject
             panel13.Controls.Add(label17);
             panel13.Controls.Add(lb_Allview7);
             panel13.Controls.Add(lb_Puls_7_Count);
+            panel13.Cursor = System.Windows.Forms.Cursors.Hand;
             panel13.Location = new System.Drawing.Point(205, 188);
             panel13.Margin = new System.Windows.Forms.Padding(2);
             panel13.Name = "panel13";
@@ -657,6 +660,7 @@ namespace TeamProject
             panel12.Controls.Add(label16);
             panel12.Controls.Add(lb_Allview6);
             panel12.Controls.Add(lb_Puls_6_Count);
+            panel12.Cursor = System.Windows.Forms.Cursors.Hand;
             panel12.Location = new System.Drawing.Point(205, 132);
             panel12.Margin = new System.Windows.Forms.Padding(2);
             panel12.Name = "panel12";
@@ -715,6 +719,7 @@ namespace TeamProject
             panel11.Controls.Add(label15);
             panel11.Controls.Add(lb_Allview5);
             panel11.Controls.Add(lb_Puls_5_Count);
+            panel11.Cursor = System.Windows.Forms.Cursors.Hand;
             panel11.Location = new System.Drawing.Point(205, 76);
             panel11.Margin = new System.Windows.Forms.Padding(2);
             panel11.Name = "panel11";
@@ -773,6 +778,7 @@ namespace TeamProject
             panel10.Controls.Add(label14);
             panel10.Controls.Add(lb_Allview4);
             panel10.Controls.Add(lb_Puls_4_Count);
+            panel10.Cursor = System.Windows.Forms.Cursors.Hand;
             panel10.Location = new System.Drawing.Point(205, 20);
             panel10.Margin = new System.Windows.Forms.Padding(2);
             panel10.Name = "panel10";
@@ -831,6 +837,7 @@ namespace TeamProject
             panel9.Controls.Add(label13);
             panel9.Controls.Add(lb_Allview3);
             panel9.Controls.Add(lb_Puls_3_Count);
+            panel9.Cursor = System.Windows.Forms.Cursors.Hand;
             panel9.Location = new System.Drawing.Point(23, 188);
             panel9.Margin = new System.Windows.Forms.Padding(2);
             panel9.Name = "panel9";
@@ -862,6 +869,7 @@ namespace TeamProject
             // 
             lb_Allview3.AutoSize = true;
             lb_Allview3.BackColor = System.Drawing.Color.Transparent;
+            lb_Allview3.Cursor = System.Windows.Forms.Cursors.Hand;
             lb_Allview3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             lb_Allview3.Location = new System.Drawing.Point(57, 9);
             lb_Allview3.Name = "lb_Allview3";
@@ -889,6 +897,7 @@ namespace TeamProject
             panel8.Controls.Add(label12);
             panel8.Controls.Add(lb_Allview2);
             panel8.Controls.Add(lb_Puls_2_Count);
+            panel8.Cursor = System.Windows.Forms.Cursors.Hand;
             panel8.Location = new System.Drawing.Point(23, 132);
             panel8.Margin = new System.Windows.Forms.Padding(2);
             panel8.Name = "panel8";
@@ -947,6 +956,7 @@ namespace TeamProject
             panel7.Controls.Add(label11);
             panel7.Controls.Add(lb_Puls_1_Count);
             panel7.Controls.Add(lb_Allview1);
+            panel7.Cursor = System.Windows.Forms.Cursors.Hand;
             panel7.Location = new System.Drawing.Point(23, 76);
             panel7.Margin = new System.Windows.Forms.Padding(2);
             panel7.Name = "panel7";
@@ -1004,6 +1014,7 @@ namespace TeamProject
             panel2.Controls.Add(pictureBox4);
             panel2.Controls.Add(lb_Allview);
             panel2.Controls.Add(lb_Puls_0_Count);
+            panel2.Cursor = System.Windows.Forms.Cursors.Hand;
             panel2.Location = new System.Drawing.Point(23, 20);
             panel2.Margin = new System.Windows.Forms.Padding(2);
             panel2.Name = "panel2";
@@ -1088,6 +1099,7 @@ namespace TeamProject
             btn_All0.BackColor = System.Drawing.Color.Transparent;
             btn_All0.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All0.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btn_All0.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_All0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn_All0.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All0.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1126,6 +1138,7 @@ namespace TeamProject
             btn_All1.BackColor = System.Drawing.Color.Transparent;
             btn_All1.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btn_All1.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_All1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn_All1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All1.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1147,6 +1160,7 @@ namespace TeamProject
             btn_All2.BackColor = System.Drawing.Color.Transparent;
             btn_All2.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btn_All2.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_All2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn_All2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All2.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1168,6 +1182,7 @@ namespace TeamProject
             btn_All3.BackColor = System.Drawing.Color.Transparent;
             btn_All3.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btn_All3.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_All3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn_All3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All3.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1189,6 +1204,7 @@ namespace TeamProject
             btn_All4.BackColor = System.Drawing.Color.Transparent;
             btn_All4.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btn_All4.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_All4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn_All4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All4.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1210,6 +1226,7 @@ namespace TeamProject
             btn_All5.BackColor = System.Drawing.Color.Transparent;
             btn_All5.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btn_All5.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_All5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn_All5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All5.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1230,6 +1247,7 @@ namespace TeamProject
             btn_All6.BackColor = System.Drawing.Color.Transparent;
             btn_All6.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btn_All6.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_All6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn_All6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All6.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1250,6 +1268,7 @@ namespace TeamProject
             btn_All7.BackColor = System.Drawing.Color.Transparent;
             btn_All7.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btn_All7.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_All7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn_All7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All7.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1270,6 +1289,7 @@ namespace TeamProject
             btn_All8.BackColor = System.Drawing.Color.Transparent;
             btn_All8.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btn_All8.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_All8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn_All8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All8.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1291,6 +1311,7 @@ namespace TeamProject
             btn_All9.BackColor = System.Drawing.Color.Transparent;
             btn_All9.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btn_All9.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_All9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn_All9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All9.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1311,6 +1332,7 @@ namespace TeamProject
             btn_All10.BackColor = System.Drawing.Color.Transparent;
             btn_All10.BackgroundImage = Properties.Resources.main_view_btn_export;
             btn_All10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            btn_All10.Cursor = System.Windows.Forms.Cursors.Hand;
             btn_All10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             btn_All10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             btn_All10.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -1923,11 +1945,11 @@ namespace TeamProject
             // label26
             // 
             label26.AutoSize = true;
-            label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label26.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            label26.Location = new System.Drawing.Point(37, 20);
+            label26.Location = new System.Drawing.Point(37, 18);
             label26.Name = "label26";
-            label26.Size = new System.Drawing.Size(87, 30);
+            label26.Size = new System.Drawing.Size(99, 36);
             label26.TabIndex = 3;
             label26.Text = "로또(상급)\r\n가격 : 50000원";
             // 
@@ -1945,11 +1967,11 @@ namespace TeamProject
             // label24
             // 
             label24.AutoSize = true;
-            label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label24.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            label24.Location = new System.Drawing.Point(20, 29);
+            label24.Location = new System.Drawing.Point(23, 29);
             label24.Name = "label24";
-            label24.Size = new System.Drawing.Size(105, 30);
+            label24.Size = new System.Drawing.Size(117, 36);
             label24.TabIndex = 3;
             label24.Text = "강화 확률 증가(소)\r\n가격 : 1000원\r\n";
             // 
@@ -1967,11 +1989,11 @@ namespace TeamProject
             // label25
             // 
             label25.AutoSize = true;
-            label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label25.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            label25.Location = new System.Drawing.Point(19, 29);
+            label25.Location = new System.Drawing.Point(20, 29);
             label25.Name = "label25";
-            label25.Size = new System.Drawing.Size(105, 30);
+            label25.Size = new System.Drawing.Size(117, 36);
             label25.TabIndex = 3;
             label25.Text = "강화 확률 증가(대)\r\n가격 : 50000원";
             // 
@@ -1989,11 +2011,11 @@ namespace TeamProject
             // label22
             // 
             label22.AutoSize = true;
-            label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label22.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            label22.Location = new System.Drawing.Point(43, 21);
+            label22.Location = new System.Drawing.Point(43, 19);
             label22.Name = "label22";
-            label22.Size = new System.Drawing.Size(80, 30);
+            label22.Size = new System.Drawing.Size(91, 36);
             label22.TabIndex = 3;
             label22.Text = "로또 (중급)\r\n가격 : 3000원";
             // 
@@ -2011,11 +2033,11 @@ namespace TeamProject
             // label21
             // 
             label21.AutoSize = true;
-            label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label21.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             label21.Location = new System.Drawing.Point(45, 23);
             label21.Name = "label21";
-            label21.Size = new System.Drawing.Size(73, 30);
+            label21.Size = new System.Drawing.Size(83, 36);
             label21.TabIndex = 3;
             label21.Text = "로또 (하급)\r\n가격 : 300원\r\n";
             // 
@@ -2034,11 +2056,11 @@ namespace TeamProject
             // label20
             // 
             label20.AutoSize = true;
-            label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label20.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             label20.Location = new System.Drawing.Point(79, 26);
             label20.Name = "label20";
-            label20.Size = new System.Drawing.Size(80, 30);
+            label20.Size = new System.Drawing.Size(91, 36);
             label20.TabIndex = 3;
             label20.Text = "기사 10명\r\n가격 : 7700원\r\n";
             // 
@@ -2067,11 +2089,11 @@ namespace TeamProject
             // label19
             // 
             label19.AutoSize = true;
-            label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label19.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             label19.Location = new System.Drawing.Point(68, 32);
             label19.Name = "label19";
-            label19.Size = new System.Drawing.Size(87, 30);
+            label19.Size = new System.Drawing.Size(97, 36);
             label19.TabIndex = 3;
             label19.Text = "상급 일꾼 10명\r\n가격 : 330원\r\n";
             // 
@@ -2092,6 +2114,7 @@ namespace TeamProject
             pn_Store_1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             pn_Store_1.Controls.Add(label9);
             pn_Store_1.Controls.Add(pictureBox17);
+            pn_Store_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             pn_Store_1.Location = new System.Drawing.Point(41, 177);
             pn_Store_1.Name = "pn_Store_1";
             pn_Store_1.Size = new System.Drawing.Size(215, 94);
@@ -2100,11 +2123,11 @@ namespace TeamProject
             // label9
             // 
             label9.AutoSize = true;
-            label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label9.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            label9.Location = new System.Drawing.Point(81, 30);
+            label9.Location = new System.Drawing.Point(81, 28);
             label9.Name = "label9";
-            label9.Size = new System.Drawing.Size(87, 30);
+            label9.Size = new System.Drawing.Size(95, 40);
             label9.TabIndex = 3;
             label9.Text = "하급 농부 10명\r\n가격 : 110원\r\n";
             // 
@@ -2207,6 +2230,12 @@ namespace TeamProject
             label30.Size = new System.Drawing.Size(90, 24);
             label30.TabIndex = 11;
             label30.Text = "용사 키우기";
+            // 
+            // bgmloop
+            // 
+            bgmloop.Enabled = true;
+            bgmloop.Interval = 192000;
+            bgmloop.Tick += bgmloop_Tick;
             // 
             // MobleTeamProject_Gambling
             // 
@@ -2467,5 +2496,6 @@ namespace TeamProject
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.Button btn_All9;
         private System.Windows.Forms.Button btn_All10;
+        private System.Windows.Forms.Timer bgmloop;
     }
 }
