@@ -9,3 +9,6 @@ This is a personal team project conducted by the Mobile Education Center. Team m
 This project is a pure study project that does not pursue interest rates,<br>
 The resources in the project used free resources.<br>
 If you have any objections or inquiries about this project, please email to cokecake77@naver.com (Minseok Kim).
+
+
+https://1drv.ms/p/s!AtIsXbTYoLXl5Gj6IZ6vXMUzfwpJ?e=8Uynvg
