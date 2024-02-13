@@ -119,7 +119,7 @@
             main_panel.Controls.Add(label2);
             main_panel.Controls.Add(label1);
             main_panel.Location = new System.Drawing.Point(448, 17);
-            main_panel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            main_panel.Margin = new System.Windows.Forms.Padding(2);
             main_panel.Name = "main_panel";
             main_panel.Size = new System.Drawing.Size(598, 178);
             main_panel.TabIndex = 7;
@@ -128,11 +128,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = System.Drawing.Color.Transparent;
-            label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            label2.Location = new System.Drawing.Point(47, 0);
+            label2.Font = new System.Drawing.Font("Galmuri11 Regular", 47.9999962F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label2.Location = new System.Drawing.Point(69, 24);
             label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(472, 108);
+            label2.Size = new System.Drawing.Size(384, 86);
             label2.TabIndex = 6;
             label2.Text = "용사 키우기";
             // 
@@ -140,11 +140,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = System.Drawing.Color.Transparent;
-            label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Font = new System.Drawing.Font("Galmuri11 Regular", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             label1.Location = new System.Drawing.Point(74, 110);
             label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(388, 55);
+            label1.Size = new System.Drawing.Size(375, 49);
             label1.TabIndex = 6;
             label1.Text = ": 황금 용사가 필요해";
             // 
